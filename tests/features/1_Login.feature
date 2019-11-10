@@ -1,9 +1,9 @@
 Feature: Login
+    Background: 
+        Given User Access CSM Website
 
-        Given
-
-    Scenario: Verfiy user input correct username/password
-        When User input correct username/password
+    Scenario: Verfiy user input correct username and password
+        When User input correct username and password
         Then User can login system successful
 
     Scenario: Verify user blank username/password
@@ -18,7 +18,7 @@ Feature: Login
         When User blank password
         Then User can't login system 3rd
 
-    Scenario: Verify user input incorect username/password
+    Scenario: Verify user input incorect username and password
         When User input incorect username/password
         Then User can't login system 4th
 
