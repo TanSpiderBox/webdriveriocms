@@ -9,8 +9,10 @@ const LoginObject = {
 }
 
 const LoginVerify = {
+    lbl_CmsMedSer: '//span[contains(text(),"Company Medical Services")]',
     lbl_Alert: '//*[contains(@class,"alert")]',
-    lbl_ErrorFeedback: '//*[contains(@class,"invalid-feedback")]'
+    lbl_ErrorFeedback: '//*[contains(@class,"invalid-feedback")]',
+    lbl_WarMessage: '//*[contains(text(),"Please enter your username and password")]',
 }
 
 export { LoginObject, LoginVerify}

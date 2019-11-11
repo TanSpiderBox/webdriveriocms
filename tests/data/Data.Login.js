@@ -3,9 +3,17 @@ const DataLogin = {
 
     username: 'admin@companymedicalservices.com.au',
 
+    inusername: 'abcxyz',
+
     password: 'cmsadmin',
 
-    errormessage: 'Invalid username or password',
+    inpassword: 'abcxyz123',
 
+    errormessage: 'Invalid username or password',
     
+    warmessage: 'Please enter your username and password',
+
+    cmsmedlalbel: 'Company Medical Services',
 }
+
+export { DataLogin }

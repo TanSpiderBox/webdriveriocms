@@ -1,70 +1,70 @@
 import { When, Then } from "cucumber";
 import { assert } from 'chai'
-import { LoginData } from "../data/Data.Login";
-import { LoginObjects, LoginVerify} from "../page-object/Login.po"
+import { DataLogin } from "../data/Data.Login";
+import { LoginObject, LoginVerify} from "../page-object/Login.po"
 
 /* TestCase001 */
 When("User input correct username and password", () => {
-    $(LoginObjects.btn_submit).click();
+    $(LoginObject.txt_Username).setValue(DataLogin.username);
+    $(LoginObject.txt_Password).setValue(DataLogin.password);
+    $(LoginObject.btn_Login).click();
 })
 Then("User can login system successful", () => {
-    assert.isObject($(LoginErrorObjects.lbl_error_blank), LoginErrorMessage.blank_error);
+    assert.isObject($(LoginVerify.lbl_CmsMedSer), DataLogin.cmsmedlalbel);
 })
 
 /* TestCase002 */
 When("User blank username and password", () => {
-    $(LoginObjects.txt_userpwd).setValue(LoginData.user_pwd);
-    $(LoginObjects.btn_submit).click();
+    $(LoginObject.btn_Login).click();
 })
 Then("User can't login system 1st", () => {
-    assert.isObject($(LoginErrorObjects.lbl_error_blank), LoginErrorMessage.blank_error);
+    assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
 })
 
 /* TestCase003 */
 When("User blank username", () => {
-    $(LoginObjects.txt_useremail).setValue(LoginData.user_email);
-    $(LoginObjects.btn_submit).click();
+    $(LoginObject.txt_Password).setValue(DataLogin.password);
+    $(LoginObject.btn_Login).click();
 })
 Then("User can't login system 2nd", () => {
-    assert.isObject($(LoginErrorObjects.lbl_error_blank), LoginErrorMessage.blank_error);
+    assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
 })
 
 /* TestCase004 */
 When("User blank password", () => {
-    $(LoginObjects.txt_useremail).setValue(LoginData.user_email_incorrect);
-    $(LoginObjects.txt_userpwd).setValue(LoginData.user_pwd);
-    $(LoginObjects.btn_submit).click();
+    $(LoginObject.txt_Username).setValue(DataLogin.username);
+    $(LoginObject.btn_Login).click();
 })
 Then("User can't login system 3rd", () => {
-    assert.isObject($(LoginErrorObjects.lbl_error_inccorect), LoginErrorMessage.input_error);
+    assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
 })
 
 /* TestCase005 */
 When("User input incorect username and password", () => {
-    $(LoginObjects.txt_useremail).setValue(LoginData.user_email);
-    $(LoginObjects.txt_userpwd).setValue(LoginData.user_email_incorrect);
-    $(LoginObjects.btn_submit).click();
+    $(LoginObject.txt_Username).setValue(DataLogin.inusername);
+    $(LoginObject.txt_Password).setValue(DataLogin.inpassword);
+    $(LoginObject.btn_Login).click();
 })
 Then("User can't login system 4th", () => {
-    assert.isObject($(LoginErrorObjects.lbl_error_inccorect), LoginErrorMessage.input_error);
+    assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
 })
 
 /* TestCase006 */
 When("User input incorrect username", () => {
-    $(LoginObjects.txt_useremail).setValue(LoginData.user_email);
-    $(LoginObjects.txt_userpwd).setValue(LoginData.user_pwd);
-    $(LoginObjects.btn_submit).click();
+    $(LoginObject.txt_Username).setValue(DataLogin.inusername);
+    $(LoginObject.txt_Password).setValue(DataLogin.password);
+    $(LoginObject.btn_Login).click();
 })
 Then("User can't login system 5th", () => {
-    assert.isObject($(LoginSuccessObjects.lbl_success_login), LoginSuccessMessage.login_success);
+    assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
 })
 
 /* TestCase007 */
 When("User input incorrect password", () => {
-    $(LoginObjects.txt_useremail).setValue(LoginData.user_email);
-    $(LoginObjects.txt_userpwd).setValue(LoginData.user_pwd);
-    $(LoginObjects.btn_submit).click();
+    $(LoginObject.txt_Username).setValue(DataLogin.username);
+    $(LoginObject.txt_Password).setValue(DataLogin.inpassword);
+    $(LoginObject.btn_Login).click();
 })
 Then("User can't login system 6th", () => {
-    assert.isObject($(LoginSuccessObjects.lbl_success_login), LoginSuccessMessage.login_success);
+    assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
 })
