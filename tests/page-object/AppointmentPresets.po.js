@@ -9,6 +9,7 @@ const ApPrObject = {
 
     btn_CancelApPr = '//button[text()="Cancel"]',
 
+    //Create New Appointment Preset 
     drop_NewApEyer = 'ng-select[formcontrolname=employerId]',
 
     drop_NewApLocation = 'ng-select[formcontrolname=locationId]',
@@ -54,4 +55,7 @@ const ApPrObject = {
     txt_NewApNote = 'textarea[formcontrolname=notes]'
 }
 
-export { ApPrObject }
+const ApPrVerify = {
+    pop_ApPrSuccess = '//*[contains(@class,"cdk-live-announcer-element")]',
+}
+export { ApPrObject, ApPrVerify }

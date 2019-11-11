@@ -1,9 +1,23 @@
 <?xml version='1.0'?>
-<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1573120323807' stop='1573120323808'>
-    <name>Login: Verify user blank password</name>
-    <title>Login: Verify user blank password</title>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1573462213299' stop='1573462213719'>
+    <name>Login: Verify user can't login when blank password</name>
+    <title>Login: Verify user can't login when blank password</title>
     <test-cases>
-        <test-case start='1573120323807' status='broken' stop='1573120323807'>
+        <test-case start='1573462213299' status='passed' stop='1573462213464'>
+            <name>Given User Access CSM Website</name>
+            <title>Given User Access CSM Website</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1573462213464' status='passed' stop='1573462213707'>
             <name>When User blank password</name>
             <title>When User blank password</title>
             <labels>
@@ -16,12 +30,8 @@
             </parameters>
             <steps/>
             <attachments/>
-            <failure>
-                <message>Step "When User blank password" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.</message>
-                <stack-trace>undefined:undefined</stack-trace>
-            </failure>
         </test-case>
-        <test-case start='1573120323807' status='pending' stop='1573120323807'>
+        <test-case start='1573462213707' status='passed' stop='1573462213718'>
             <name>Then User can't login system 3rd</name>
             <title>Then User can't login system 3rd</title>
             <labels>

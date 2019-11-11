@@ -1,9 +1,23 @@
 <?xml version='1.0'?>
-<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1573119741914' stop='1573119741917'>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1573444338426' stop='1573444338847'>
     <name>Login: Verify user blank password</name>
     <title>Login: Verify user blank password</title>
     <test-cases>
-        <test-case start='1573119741915' status='broken' stop='1573119741916'>
+        <test-case start='1573444338427' status='passed' stop='1573444338597'>
+            <name>Given User Access CSM Website</name>
+            <title>Given User Access CSM Website</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1573444338597' status='passed' stop='1573444338838'>
             <name>When User blank password</name>
             <title>When User blank password</title>
             <labels>
@@ -16,12 +30,8 @@
             </parameters>
             <steps/>
             <attachments/>
-            <failure>
-                <message>Step "When User blank password" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.</message>
-                <stack-trace>undefined:undefined</stack-trace>
-            </failure>
         </test-case>
-        <test-case start='1573119741916' status='pending' stop='1573119741916'>
+        <test-case start='1573444338838' status='passed' stop='1573444338846'>
             <name>Then User can't login system 3rd</name>
             <title>Then User can't login system 3rd</title>
             <labels>
