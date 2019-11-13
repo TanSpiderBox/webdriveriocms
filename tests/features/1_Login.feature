@@ -33,6 +33,6 @@ Feature: Login
         Then User can't login system 5th
 
     @TestCase007
-    Scenario: Verify user can;t login when input incorrect password
+    Scenario: Verify user can't login when input incorrect password
         When User input incorrect password
         Then User can't login system 6th

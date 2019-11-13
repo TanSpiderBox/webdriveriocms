@@ -5,7 +5,7 @@ const LoginObject = {
     btn_ForgotPwd: '//a[@routerlink="/auth/forgot-password"]',
     txt_EmailAddress: 'input[formcontrolname="email"]',
     btn_Submit: '//button[contains(text(),"Submit")]',
-    
+
 }
 
 const LoginVerify = {
@@ -15,4 +15,4 @@ const LoginVerify = {
     lbl_WarMessage: '//*[contains(text(),"Please enter your username and password")]',
 }
 
-export { LoginObject, LoginVerify}
+export { LoginObject, LoginVerify }
