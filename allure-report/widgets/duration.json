@@ -1,0 +1,51 @@
+[ {
+  "uid" : "60ca7672dfd927d0",
+  "name" : "When User input correct username and password",
+  "time" : {
+    "start" : 1573715126878,
+    "stop" : 1573715127255,
+    "duration" : 377
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7a9a2a7043c3d013",
+  "name" : "Given User Access CSM Website",
+  "time" : {
+    "start" : 1573715119893,
+    "stop" : 1573715126878,
+    "duration" : 6985
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "189afdb2c7bca500",
+  "name" : "Then User can login system successful",
+  "time" : {
+    "start" : 1573715127255,
+    "stop" : 1573715127273,
+    "duration" : 18
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "d609e879cad1539d",
+  "name" : "When User create new Appointment with existing Employee",
+  "time" : {
+    "start" : 1573706502250,
+    "stop" : 1573706514720,
+    "duration" : 12470
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "604a95de8471b125",
+  "name" : "Then User create new Appointment Success",
+  "time" : {
+    "start" : 1573715127273,
+    "stop" : 1573715130594,
+    "duration" : 3321
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,74 @@
+{
+  "uid" : "d609e879cad1539d",
+  "name" : "When User create new Appointment with existing Employee",
+  "fullName" : "Calendar: Verify user can create Appointment with existing Employee.When User create new Appointment with existing Employee",
+  "historyId" : "67db30271bfbfa422dafdaae5df5a856",
+  "time" : {
+    "start" : 1573706502250,
+    "stop" : 1573706514720,
+    "duration" : 12470
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Calendar: Verify user can create Appointment with existing Employee"
+  }, {
+    "name" : "testClass",
+    "value" : "Calendar: Verify user can create Appointment with existing Employee"
+  }, {
+    "name" : "testMethod",
+    "value" : "When User create new Appointment with existing Employee"
+  }, {
+    "name" : "package",
+    "value" : "Calendar: Verify user can create Appointment with existing Employee"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "ca7035d70d7df65b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1573706347200,
+        "stop" : 1573706360109,
+        "duration" : 12909
+      }
+    }, {
+      "uid" : "54f113b18c8657f7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1573702762054,
+        "stop" : 1573702774298,
+        "duration" : 12244
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "d609e879cad1539d.json",
+  "parameterValues" : [ "chrome" ]
+}

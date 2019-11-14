@@ -104,6 +104,8 @@ const EyersObj = {
     btn_EloyerNext: '//a[text()="Next"]',
 
     btn_EloyerLast: '//a[text()="Last"]',
+
+    btn_ElEdit: '//*[text()=" Employer_Test "]/following-sibling::td[5]//*[text()="create"]',
 }
 
 export { EyersObj }

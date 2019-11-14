@@ -55,11 +55,11 @@ const CalObject = {
 
     drop_CalNewApStartTime: 'ng-select[formcontrolname=startTime]',
 
-    value_Ap_StarTime: '//span[text()="03:30 PM"]',
+    value_Ap_StarTime: '//span[text()="10:30 AM"]',
 
     drop_CalNewApEndTime: 'ng-select[formcontrolname=endTime]',
 
-    value_Ap_EndTime: '//span[text()="04:00 PM"]',
+    value_Ap_EndTime: '//span[text()="11:00 AM"]',
 
     //Employee
     drop_CalNewApEyee: 'ng-select[formcontrolname=employeeId]',
@@ -71,7 +71,7 @@ const CalObject = {
 
     txt_CalNewApLastName: 'input[formcontrolname=lastName]',
 
-    txt_CalNewApGender: 'ng-select[formcontrolname=gender]',
+    drop_CalNewApGender: 'ng-select[formcontrolname=gender]',
 
     txt_CalNewApDob: 'input[formcontrolname=dob]',
 
@@ -83,7 +83,9 @@ const CalObject = {
 
     txt_CalNewApSuburb: 'input[formcontrolname=suburb]',
 
-    drop_CalNewApState: 'ng-select[formcontrolname=state]',
+    txt_CalNewApState: 'ng-select[formcontrolname=state]',
+
+    value_Ap_State: '//*[text()="VIC"]',
 
     drop_CalNewApPostCode: 'input[formcontrolname=postCode]',
 
@@ -96,13 +98,19 @@ const CalObject = {
 
     txt_CalNewApNote: 'textarea[formcontrolname=notes]',
 
-    lbl_CalDay: '//div[contains(@aria-label," Wednesday November 13")]',
+    lbl_CalDay: '//div[3]//mwl-calendar-month-cell[6]',
+
+    form_ApDetails: 'div[role="application"]>div:last-child>mwl-calendar-event-title',
 
     btn_CalNewApSave: '//button[text()="Save"]',
+    btn_CalNewApCancel: '//*[text()="Cancel"]',
 }
 
 const CalVerify = {
     pop_CalSuccess: '//*[contains(@class,"cdk-live-announcer-element")]',
+    drop_MedVerify: '//ng-select[@formcontrolname="medicalTypeId"]//span[contains(@class,"ng-value-label")]',
+
+    lbl_ElyerMailVerify: 'tbody[role="rowgroup"]>tr:last-child>td:nth-child(2)',
 }
 
 export { CalObject, CalVerify }

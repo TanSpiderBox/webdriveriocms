@@ -1,6 +1,5 @@
 Feature: Calendar
     Background:
-        
 
     @TestCase008
     Scenario: Verify user can create Appointment with existing Employee
@@ -8,13 +7,12 @@ Feature: Calendar
         When User input correct username and password
         Then User can login system successful
         When User create new Appointment with existing Employee
-        # Then User create new Appointment Success
+        Then User create new Appointment Success
 
-    # @TestCase009
-    # Scenario: Verify user can create Appointment which new Employee 
-    #     When User create new Appointment with new Employee
-    #     Then User create new Appointment with new Employee Success
-    #     And Employee added in Employer
+    @TestCase009
+    Scenario: Verify user can create Appointment which new Employee 
+        When User create new Appointment with new Employee
+        Then User create new Appointment with new Employee Success and Employee added in Employer
 
     # @TestCase010
     # Scenario: Verify user can delete Appointment

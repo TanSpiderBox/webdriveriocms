@@ -1,0 +1,56 @@
+{
+  "uid" : "dfa8cf0b45aaa8c0",
+  "name" : "Given User Access CSM Website",
+  "fullName" : "Calendar: Verify user can create Appointment with existing Employee.Given User Access CSM Website",
+  "historyId" : "c28b125c784417669d3adef70dcdb0e9",
+  "time" : {
+    "start" : 1573707953188,
+    "stop" : 1573707958130,
+    "duration" : 4942
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "framework",
+    "value" : "wdio"
+  }, {
+    "name" : "language",
+    "value" : "javascript"
+  }, {
+    "name" : "thread",
+    "value" : "0-0"
+  }, {
+    "name" : "suite",
+    "value" : "Calendar: Verify user can create Appointment with existing Employee"
+  }, {
+    "name" : "testClass",
+    "value" : "Calendar: Verify user can create Appointment with existing Employee"
+  }, {
+    "name" : "testMethod",
+    "value" : "Given User Access CSM Website"
+  }, {
+    "name" : "package",
+    "value" : "Calendar: Verify user can create Appointment with existing Employee"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ {
+    "name" : "browser",
+    "value" : "chrome"
+  } ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "dfa8cf0b45aaa8c0.json",
+  "parameterValues" : [ "chrome" ]
+}
