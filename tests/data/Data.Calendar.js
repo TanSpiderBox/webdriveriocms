@@ -19,6 +19,9 @@ const DataCal = {
     Ap_EyeePostCode: '700000',
     Ap_EyeePosition: 'Position',
     Ap_Department: 'Department',
+
+    //Value Change Date Time
+    Ap_ChangeDate:
 }
 
 export { DataCal }

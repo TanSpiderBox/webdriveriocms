@@ -150,14 +150,24 @@ Then("User create new Appointment with new Employee Success and Employee added i
 //     assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
 // })
 
-// /* TestCase011 */
-// When("User change date time of existing Appointment", () => {
-//     $(CalObject.txt_Username).setValue(DataLogin.username);
-//     $(LoginObject.btn_Login).click();
-// })
-// Then("User change date time of Appointment Success", () => {
-//     assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
-// })
+/* TestCase011 */
+When("User change date time of existing Appointment", () => {
+    browser.pause(3000);
+    //Select Appointment Details
+    $(CalObject.lbl_CalDay).click();
+    browser.pause(3000);
+    $(CalObject.form_ApDetails).click();
+    browser.pause(3000);
+
+    //Change Date Time
+    $(CalObject.txt_CalNewApDate).setValue(DataCal.Ap_Date);
+
+    $(CalObject.drop_CalNewApStartTime).click();
+    $(CalObject.value_Ap_StarTime).click();
+})
+Then("User change date time of Appointment Success", () => {
+    assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
+})
 
 // /* TestCase012 */
 // When("User select Employer in dropdown filter ", () => {
