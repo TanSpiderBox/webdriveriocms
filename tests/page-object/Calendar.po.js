@@ -98,9 +98,10 @@ const CalObject = {
 
     txt_CalNewApNote: 'textarea[formcontrolname=notes]',
 
-    lbl_CalDay: '//div[3]//mwl-calendar-month-cell[6]',
+    lbl_CalDay: '//*[text()="18"]',
 
-    form_ApDetails: 'div[role="application"]>div:last-child>mwl-calendar-event-title',
+    form_ApDetails: '//*[text()="Employer_Test - TEST 10 Employee - 0123456789"]',
+    // div[role="application"]>div:last-child>mwl-calendar-event-title'
 
     btn_CalNewApSave: '//button[text()="Save"]',
     btn_CalNewApCancel: '//*[text()="Cancel"]',

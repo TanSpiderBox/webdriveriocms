@@ -171,9 +171,9 @@ Then("User change date time of Appointment Success", () => {
 
 // /* TestCase012 */
 // When("User select Employer in dropdown filter ", () => {
-//     $(LoginObject.txt_Username).setValue(DataLogin.inusername);
-//     $(LoginObject.txt_Password).setValue(DataLogin.inpassword);
-//     $(LoginObject.btn_Login).click();
+//     $(CalObject.drop_CalEyers).click();
+//     $(CalObject.value_Ap_Employer).click();
+//     $(CalObject.btn_CalAlFt).click();
 // })
 // Then("User can see all list Emloyee of Employers", () => {
 //     assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
