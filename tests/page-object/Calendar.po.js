@@ -105,7 +105,7 @@ const CalObject = {
 
     btn_CalNewApSave: '//button[text()="Save"]',
     btn_CalNewApCancel: '//*[text()="Cancel"]',
-}
+}   
 
 const CalVerify = {
     pop_CalSuccess: '//*[contains(@class,"cdk-live-announcer-element")]',
