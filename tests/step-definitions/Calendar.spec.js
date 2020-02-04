@@ -6,7 +6,9 @@ import { EyersObj } from "../page-object/Employers.po";
 
 /* TestCase008 */
 When("User create new Appointment with existing Employee", () => {
-    browser.pause(6000);
+    browser.pause(3000);
+    $(CalObject.btn_CalMth).click();
+    browser.pause(3000);
     $(CalObject.btn_CalNwAp).click();
     //User Select Employer
     $(CalObject.drop_CalNewApEyer).click();
@@ -21,14 +23,14 @@ When("User create new Appointment with existing Employee", () => {
     $(CalObject.value_Ap_MedType).click();
 
     //User Select Role
-    $(CalObject.drop_CalNewApRole).click();
-    $(CalObject.value_Ap_Role).click();
+    // $(CalObject.drop_CalNewApRole).click();
+    // $(CalObject.value_Ap_Role).click();
 
-    //User Select Date Time
+    // User Select Date Time
     $(CalObject.txt_CalNewApDate).setValue(DataCal.Ap_Date);
 
-    $(CalObject.drop_CalNewApStartTime).click();
-    $(CalObject.value_Ap_StarTime).click();
+    //$(CalObject.drop_CalNewApStartTime).click();
+    //$(CalObject.value_Ap_StarTime).click();
     // browser.pause(50000);
     // $(CalObject.drop_CalNewApEndTime).click();
     // $(CalObject.value_Ap_EndTime).click();
@@ -40,7 +42,7 @@ When("User create new Appointment with existing Employee", () => {
     // $(CalObject.txt_CalNewApFirstName).setValue(DataCal.Ap_Employee);
 
     $(CalObject.btn_CalNewApSave).click();
-    browser.pause(5000);
+    browser.pause(10000);
 })
 Then("User create new Appointment Success", () => {
     browser.pause(3000);
@@ -49,24 +51,17 @@ Then("User create new Appointment Success", () => {
     browser.pause(3000);
     $(CalObject.form_ApDetails).click();
     browser.pause(3000);
+
     // Assert Value of Appointment
     assert.equal($(CalVerify.drop_MedVerify).getText(), DataCal.Ap_MedType, 'Verify Mediccal Type');
 
     assert.equal($(CalObject.drop_CalNewApRole).getText(), DataCal.Ap_Role), 'Verify Role';
 
-    // assert.equal($(CalObject.txt_CalNewApDate).getText(),DataCal.Ap_Date,'Verify Appointment Date');
+    assert.equal($(CalVerify.lblFirstName).getText(),DataCal.Ap_FirstName,'Verify Appointment First Name');
 
-    // assert.equal($(CalObject.drop_CalNewApStartTime).getText(),DataCal.Ap_StarTime,'Verify Appointment Start Time');
+    assert.equal($(CalVerify.lblLastName).getText(),DataCal.Ap_LastName,'Verify Appointment Last Name');
 
-    // assert.equal($(CalObject.drop_CalNewApEndTime).getText(),DataCal.Ap_EndTime,'Verify Appointment End Time');
-
-    // assert.equal($(CalObject.txt_CalNewApFirstName).getText(),DataCal.Ap_FirstName,'Verify Appointment First Name');
-
-    // assert.equal($(CalObject.txt_CalNewApLastName).getText(),DataCal.Ap_LastName,'Verify Appointment Last Name');
-
-    // assert.equal($(CalObject.txt_CalNewAphone).getText(),DataCal.Ap_Phone,'Verify Appointment Phone');
-
-    // assert.equal($(CalObject.txt_CalNewApEmail).getText(),DataCal.Ap_Email,'Verify Appointment Email');
+    assert.equal($(CalVerify.lblEmail).getText(),DataCal.Ap_Email,'Verify Appointment Email');
 
 })
 

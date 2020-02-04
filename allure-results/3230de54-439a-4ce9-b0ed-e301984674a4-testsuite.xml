@@ -1,0 +1,98 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1574930795947' stop='1574930813183'>
+    <name>Calendar: Verify user can create Appointment with existing Employee</name>
+    <title>Calendar: Verify user can create Appointment with existing Employee</title>
+    <test-cases>
+        <test-case start='1574930795947' status='undefined'>
+            <name>Hook</name>
+            <title>Hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930795949' status='passed' stop='1574930803569'>
+            <name>Given User Access CSM Website</name>
+            <title>Given User Access CSM Website</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930803569' status='passed' stop='1574930803934'>
+            <name>When User input correct username and password</name>
+            <title>When User input correct username and password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930803934' status='passed' stop='1574930803949'>
+            <name>Then User can login system successful</name>
+            <title>Then User can login system successful</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930803949' status='failed' stop='1574930813182'>
+            <name>Then User create new Appointment Success</name>
+            <title>Then User create new Appointment Success</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>expected 'New Role\n×' to equal 'New Role'</message>
+                <stack-trace>AssertionError: expected 'New Role\n×' to equal 'New Role'
+                    at World.&lt;anonymous> (D:\cmswebdriverio\tests\step-definitions/Calendar.spec.js:56:12)
+                    at World.executeSync (D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:44:18)
+                    at D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:89:70</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1574930813182' status='undefined'>
+            <name>Hook</name>
+            <title>Hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

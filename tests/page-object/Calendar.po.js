@@ -33,7 +33,7 @@ const CalObject = {
     //Employer
     drop_CalNewApEyer: 'ng-select[formcontrolname=employerId]',
 
-    value_Ap_Employer: '//span[text()="Employer_Test"]',
+    value_Ap_Employer: '//span[text()="Rochell Maffetti"]',
 
     //Location
     drop_CalNewApLocation: 'ng-select[formcontrolname=locationId]',
@@ -55,16 +55,16 @@ const CalObject = {
 
     drop_CalNewApStartTime: 'ng-select[formcontrolname=startTime]',
 
-    value_Ap_StarTime: '//span[text()="10:30 AM"]',
+    value_Ap_StarTime: '//span[text()="04:00 PM"]',
 
     drop_CalNewApEndTime: 'ng-select[formcontrolname=endTime]',
 
     value_Ap_EndTime: '//span[text()="11:00 AM"]',
 
     //Employee
-    drop_CalNewApEyee: 'ng-select[formcontrolname=employeeId]',
+    drop_CalNewApEyee: 'ng-select[formcontrolname="email"]',
 
-    value_Ap_Employee: '//span[text()="Employee Test"]',
+    value_Ap_Employee: '//span[text()="tan+4@spiderbox.design"]',
 
     //New Employee
     txt_CalNewApFirstName: 'input[formcontrolname=firstName]',
@@ -98,9 +98,10 @@ const CalObject = {
 
     txt_CalNewApNote: 'textarea[formcontrolname=notes]',
 
-    lbl_CalDay: '//*[text()="18"]',
+    lbl_CalDay: '(//*[text()="28"])[2]',
 
-    form_ApDetails: '//*[text()="Employer_Test - TEST 10 Employee - 0123456789"]',
+    form_ApDetails: '//*[contains(@aria-label,"123456789, from 11:00 AM")]',
+    // '//*[text()="Employer_Test - TEST 10 Employee - 0123456789"]',
     // div[role="application"]>div:last-child>mwl-calendar-event-title'
 
     btn_CalNewApSave: '//button[text()="Save"]',
@@ -112,6 +113,11 @@ const CalVerify = {
     drop_MedVerify: '//ng-select[@formcontrolname="medicalTypeId"]//span[contains(@class,"ng-value-label")]',
 
     lbl_ElyerMailVerify: 'tbody[role="rowgroup"]>tr:last-child>td:nth-child(2)',
+
+    lblEmail: '//*[text()="tan+12@spiderbox.design"]',
+    lblFirstName: '//*[text()="First Name"]',
+    lblLastName: '//*[text()="Last Name"]',
+    
 }
 
 export { CalObject, CalVerify }

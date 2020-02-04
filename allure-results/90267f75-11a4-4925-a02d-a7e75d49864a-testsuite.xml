@@ -1,0 +1,123 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1574930594713' stop='1574930606039'>
+    <name>Calendar: Verify user can create Appointment with existing Employee</name>
+    <title>Calendar: Verify user can create Appointment with existing Employee</title>
+    <test-cases>
+        <test-case start='1574930594714' status='undefined'>
+            <name>Hook</name>
+            <title>Hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930594716' status='passed' stop='1574930598545'>
+            <name>Given User Access CSM Website</name>
+            <title>Given User Access CSM Website</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930598545' status='passed' stop='1574930598888'>
+            <name>When User input correct username and password</name>
+            <title>When User input correct username and password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930598888' status='passed' stop='1574930598904'>
+            <name>Then User can login system successful</name>
+            <title>Then User can login system successful</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930598904' status='broken' stop='1574930606037'>
+            <name>When User create new Appointment with existing Employee</name>
+            <title>When User create new Appointment with existing Employee</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>element click intercepted: Element &lt;span class="ng-value-label ng-star-inserted">...&lt;/span> is not clickable at point (892, 336). Other element would receive the click: &lt;input role="combobox" type="text" autocorrect="off" autocapitalize="off" autocomplete="abe66b1c9759" aria-expanded="true" aria-owns="abe66b1c9759" aria-activedescendant="abe66b1c9759-18">
+                  (Session info: chrome=78.0.3904.108)</message>
+                <stack-trace>element click intercepted: Element &lt;span class="ng-value-label ng-star-inserted">...&lt;/span> is not clickable at point (892, 336). Other element would receive the click: &lt;input role="combobox" type="text" autocorrect="off" autocapitalize="off" autocomplete="abe66b1c9759" aria-expanded="true" aria-owns="abe66b1c9759" aria-activedescendant="abe66b1c9759-18">
+                  (Session info: chrome=78.0.3904.108)
+                    at getErrorFromResponseBody (D:\cmswebdriverio\node_modules\webdriver\build\utils.js:124:10)
+                    at Request._callback (D:\cmswebdriverio\node_modules\webdriver\build\request.js:110:64)
+                    at Request.self.callback (D:\cmswebdriverio\node_modules\request\request.js:185:22)
+                    at Request.&lt;anonymous> (D:\cmswebdriverio\node_modules\request\request.js:1161:10)
+                    at IncomingMessage.&lt;anonymous> (D:\cmswebdriverio\node_modules\request\request.js:1083:12)
+                    at endReadableNT (_stream_readable.js:1145:12)
+                    at Element.runCommandWithHooks (D:\cmswebdriverio\node_modules\@wdio\sync\build\wrapCommand.js:82:22)
+                    at Element.wrapCommandFn (D:\cmswebdriverio\node_modules\@wdio\sync\build\wrapCommand.js:59:40)
+                    at Element.click (D:\cmswebdriverio\node_modules\webdriverio\build\middlewares.js:40:8)
+                    at World.&lt;anonymous> (D:\cmswebdriverio\tests\step-definitions/Calendar.spec.js:31:36)
+                    at World.executeSync (D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:44:18)
+                    at D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:89:70</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1574930606037' status='pending' stop='1574930606037'>
+            <name>Then User create new Appointment Success</name>
+            <title>Then User create new Appointment Success</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574930606038' status='undefined'>
+            <name>Hook</name>
+            <title>Hook</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

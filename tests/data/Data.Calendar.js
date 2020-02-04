@@ -3,10 +3,14 @@ const DataCal = {
     Ap_Employer: 'Employer_Test' ,
     Ap_Location: 'LocationVVT',
     Ap_MedType: 'TestMedical',
-    Ap_Role: 'New Role',
-    Ap_Date: '18/11/2019',
+    Ap_Role: 'New Role\n×',
+    Ap_Date: '28/11/2019',
     Ap_StarTime: '08:30 AM',
     Ap_EndTime: '09:00 AM',
+    Ap_FirstName: 'First Name',
+    Ap_LastName: 'Last Name',
+    Ap_Phone: '123456789',
+    Ap_Email: 'tan+12@spiderbox.design',
 
     //Value New Employee
     Ap_EyeeFirstName: 'Employee',

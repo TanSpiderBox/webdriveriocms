@@ -1,0 +1,53 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1574048836113' stop='1574048852529'>
+    <name>Calendar: Verify user can create Appointment which new Employee</name>
+    <title>Calendar: Verify user can create Appointment which new Employee</title>
+    <test-cases>
+        <test-case start='1574048836114' status='passed' stop='1574048849414'>
+            <name>When User create new Appointment with new Employee</name>
+            <title>When User create new Appointment with new Employee</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574048849414' status='broken' stop='1574048852529'>
+            <name>Then User create new Appointment with new Employee Success and Employee added in Employer</name>
+            <title>Then User create new Appointment with new Employee Success and Employee added in Employer</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>element click intercepted: Element &lt;mwl-calendar-month-cell class="cal-cell cal-day-cell cal-past cal-in-month ng-star-inserted" dragoverclass="cal-drag-over" mwldroppable="" tabindex="0" data-calendar-clickable="true">...&lt;/mwl-calendar-month-cell> is not clickable at point (1628, 412). Other element would receive the click: &lt;modal-container class="modal fade show" role="dialog" tabindex="-1" style="display: block;" aria-modal="true">...&lt;/modal-container>
+                  (Session info: chrome=78.0.3904.97)</message>
+                <stack-trace>element click intercepted: Element &lt;mwl-calendar-month-cell class="cal-cell cal-day-cell cal-past cal-in-month ng-star-inserted" dragoverclass="cal-drag-over" mwldroppable="" tabindex="0" data-calendar-clickable="true">...&lt;/mwl-calendar-month-cell> is not clickable at point (1628, 412). Other element would receive the click: &lt;modal-container class="modal fade show" role="dialog" tabindex="-1" style="display: block;" aria-modal="true">...&lt;/modal-container>
+                  (Session info: chrome=78.0.3904.97)
+                    at getErrorFromResponseBody (D:\cmswebdriverio\node_modules\webdriver\build\utils.js:124:10)
+                    at Request._callback (D:\cmswebdriverio\node_modules\webdriver\build\request.js:110:64)
+                    at Request.self.callback (D:\cmswebdriverio\node_modules\request\request.js:185:22)
+                    at Request.&lt;anonymous> (D:\cmswebdriverio\node_modules\request\request.js:1161:10)
+                    at IncomingMessage.&lt;anonymous> (D:\cmswebdriverio\node_modules\request\request.js:1083:12)
+                    at endReadableNT (_stream_readable.js:1145:12)
+                    at Element.runCommandWithHooks (D:\cmswebdriverio\node_modules\@wdio\sync\build\wrapCommand.js:82:22)
+                    at Element.wrapCommandFn (D:\cmswebdriverio\node_modules\@wdio\sync\build\wrapCommand.js:59:40)
+                    at Element.click (D:\cmswebdriverio\node_modules\webdriverio\build\middlewares.js:40:8)
+                    at World.&lt;anonymous> (D:\cmswebdriverio\tests\step-definitions/Calendar.spec.js:120:29)
+                    at World.executeSync (D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:44:18)
+                    at D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:89:70</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

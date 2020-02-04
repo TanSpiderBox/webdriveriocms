@@ -1,0 +1,88 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1574406608942' stop='1574406631231'>
+    <name>Calendar: Verify user can create Appointment with existing Employee</name>
+    <title>Calendar: Verify user can create Appointment with existing Employee</title>
+    <test-cases>
+        <test-case start='1574406608945' status='passed' stop='1574406613713'>
+            <name>Given User Access CSM Website</name>
+            <title>Given User Access CSM Website</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574406613714' status='passed' stop='1574406614088'>
+            <name>When User input correct username and password</name>
+            <title>When User input correct username and password</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574406614088' status='passed' stop='1574406614108'>
+            <name>Then User can login system successful</name>
+            <title>Then User can login system successful</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1574406614108' status='broken' stop='1574406631229'>
+            <name>When User create new Appointment with existing Employee</name>
+            <title>When User create new Appointment with existing Employee</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Can't call click on element with selector "//span[text()="Employee Test"]" because element wasn't found</message>
+                <stack-trace>Error: Can't call click on element with selector "//span[text()="Employee Test"]" because element wasn't found
+                    at implicitWait (D:\cmswebdriverio\node_modules\webdriverio\build\utils\implicitWait.js:22:13)
+                    at Element.runCommandWithHooks (D:\cmswebdriverio\node_modules\@wdio\sync\build\wrapCommand.js:82:22)
+                    at Element.wrapCommandFn (D:\cmswebdriverio\node_modules\@wdio\sync\build\wrapCommand.js:59:40)
+                    at Element.click (D:\cmswebdriverio\node_modules\webdriverio\build\middlewares.js:40:8)
+                    at World.&lt;anonymous> (D:\cmswebdriverio\tests\step-definitions/Calendar.spec.js:38:36)
+                    at World.executeSync (D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:44:18)
+                    at D:\cmswebdriverio\node_modules\@wdio\sync\build\index.js:89:70</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1574406631229' status='pending' stop='1574406631229'>
+            <name>Then User create new Appointment Success</name>
+            <title>Then User create new Appointment Success</title>
+            <labels>
+                <label name='language' value='javascript'/>
+                <label name='framework' value='wdio'/>
+                <label name='thread' value='0-0'/>
+            </labels>
+            <parameters>
+                <parameter kind='argument' name='browser' value='chrome'/>
+            </parameters>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
