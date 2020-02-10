@@ -108,4 +108,43 @@ const EyersObj = {
     btn_ElEdit: '//*[text()=" Employer_Test "]/following-sibling::td[5]//*[text()="create"]',
 }
 
-export { EyersObj }
+const EmployerObject = {
+  find: (name) => {
+    return "//tr/td[contains(@class, 'cdk-column-name')]//*[contains(text(), " + "'" + name + "'" + ")]"
+  },
+  updatedSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Updated successfully')]",
+
+  // Employee
+  employeeTab: "//app-employer-details//a[contains(text(), 'Employee') and contains(@class, 'nav-link')]",
+  employeesSection: "//app-employee-list",
+  findEmployee: (email) => {
+    return "//app-employee-list//tr[.//*[contains(@class, 'mat-column-email') and contains(text(), " + "'" + email + "'" + ")] ]//td[contains(@class, 'mat-column-name')]"
+  },
+  // Employee show
+  employee: {
+    editBtn: "//app-employee-details//button[contains(text(), 'Edit')]",
+    supervisorSelector: "//app-employee-details//ng-select[contains(@formcontrolname, 'supervisorId')]",
+    findSupervisor: (email) => {
+      return "//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
+    },
+    saveBtn: "//app-employee-details//*[text() ='Save']",
+    clearSupervisor: "//app-employee-details//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@title, 'Clear all')]",
+  },
+
+  // Medical Type
+  medicalTypeTab: "//app-employer-details//a[contains(text(), 'Medical Types') and contains(@class, 'nav-link')]",
+  medicalTypesSection: "//app-employer-medical-types",
+  findMedicalType: (name) => {
+    return "//app-employer-medical-types//*[contains(@class, 'employer-medical-type-item') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
+  },
+
+  // Supervisor
+  supervisorTab: "//app-employer-details//a[contains(text(), 'Supervisor') and contains(@class, 'nav-link')]",
+  supervisorSection: "//app-employer-supervisor",
+  findSupervisor: (email) => {
+    return "//app-employer-supervisor//*[contains(@class, 'assignable-item') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
+  },
+  failedUnAssign: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Supervisor is already assigned to an employee')]"
+}
+
+export { EyersObj, EmployerObject }
