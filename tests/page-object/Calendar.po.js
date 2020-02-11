@@ -133,6 +133,11 @@ const OnsiteAppoitmentObject = {
   selectMedicalType: function(name) {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
   },
+  staffSelector: "//ng-select[contains(@formcontrolname, 'staffs')]",
+  staffInput: "//ng-select[contains(@formcontrolname, 'staffs')]//input[@role='combobox']",
+  selectStaff: function(email) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] and not(.//*[(contains(text(), 'Add item'))]) ]"
+  },
   saveBtn: "//app-appointment-onsite-form//button[contains(text(), 'Save')]",
   createdSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been confirmed successfully')]",
   find: (opts = {}) => {
@@ -141,9 +146,21 @@ const OnsiteAppoitmentObject = {
     appointments.forEach(el => {
       el.click()
       browser.pause(3000)
-      let isMT = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.type
-      let isEmployer = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.employer
-      if (isMT && isEmployer) {
+      if (opts.type != undefined) {
+        var isType = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.type
+      } else { var isType = true }
+
+      if (opts.employer != undefined) {
+        var isEmployer = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.employer
+      } else { var isEmployer = true }
+      
+      if (opts.staff != undefined) {
+        var isStaff = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'staffs')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.staff + "'" + "]")
+        .isExisting()
+        console.log(isStaff)
+      } else { var isStaff = true }
+
+      if (isType && isEmployer && isStaff) {
         results.push(el)
       }
       $("//app-appointment-onsite-form//button[contains(@aria-label, 'Close')]").click()
