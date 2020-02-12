@@ -67,6 +67,9 @@ const CalObject = {
     value_Ap_Employee: '//span[text()="tan+4@spiderbox.design"]',
 
     //New Employee
+
+    lbl_AddNew: '//*[@role="option"]//*[text()="Add item"]',
+
     txt_CalNewApFirstName: 'input[formcontrolname=firstName]',
 
     txt_CalNewApLastName: 'input[formcontrolname=lastName]',
@@ -98,7 +101,7 @@ const CalObject = {
 
     txt_CalNewApNote: 'textarea[formcontrolname=notes]',
 
-    lbl_CalDay: '(//*[text()="28"])[2]',
+    // lbl_CalDay: '(//*[text()="28"])[2]',
 
     form_ApDetails: '//*[contains(@aria-label,"123456789, from 11:00 AM")]',
     // '//*[text()="Employer_Test - TEST 10 Employee - 0123456789"]',
