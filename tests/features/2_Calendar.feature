@@ -6,74 +6,69 @@ Feature: Calendar
         When User input correct username and password
         Then User can login system successful
         When User create new Appointment with existing Employee
-        # Then User create new Appointment Success
+        Then User create new Appointment Success
 
-# @TestCase009
-# Scenario: Verify user can create Appointment which new Employee
-#     When User create new Appointment with new Employee
-#     Then User create new Appointment with new Employee Success and Employee added in Employer
+    @TestCase009
+    Scenario: Verify user can create Appointment which new Employee
+        When User create new Appointment with new Employee
+        Then User create new Appointment with new Employee Success and Employee added in Employer
 
-# @TestCase010
-# Scenario: Verify user can delete Appointment
-#     When User click button delete exisitng Appointment
-#     Then User delete Appointment Success
+    @TestCase01
+    Scenario: Verify user can update Appointment
+        When User update existing Appointment
+        Then User update Appointment Successful
 
-# @TestCase011
-# Scenario: Verify user can change Appointment date time
-#     When User change date time of existing Appointment
-#     Then User change date time of Appointment Success
+    @TestCase01
+    Scenario: Verify Employee Manager can create New Appointment for Employee
+        When Employee Manager create New Appoinment for Employee
+        Then Employee can see this appointment
 
-# @TestCase012
-# Scenario: Verify user can filter Employee by Employer
-#     When User select Employer in dropdown filter
-#     Then User can see all list Emloyee of Employers
+    @TestCase01
+    Scenario: Verify user can filter Appointment by Location
+        When User select Loccation in dropdown filter
+        Then User can see all Appointment were filter in Calender
 
-# @TestCase013
-# Scenario: Verify user can filter Appointment by Location
-#     When User select Loccation in dropdown filter
-#     Then User can see all Appointment were filter in Calender
+    @TestCase01
+    Scenario: Verify user can clear all Filter
+        When User click button clear all Filter
+        Then User can clear all Filter information
 
-# @TestCase014
-# Scenario: Verify user can clear all Filter
-#     When User click button clear all Filter
-#     Then User can clear all Filter information
+    @TestCase01
+    Scenario: Verify system will auto bidding when user drag and drop Employee
+        When User drag and drop Employee
+        Then System auto bidding information of Employee
 
-# @TestCase015
-# Scenario: Verify system will auto bidding when user drag and drop Employee
-#     When User drag and drop Employee
-#     Then System auto bidding information of Employee
+    @TestCase01
+    Scenario: Verify system will auto clear value when user click button Clear Form
+        When User click button clear form
+        Then All information of New Appointment form will delete
 
-# @TestCase016
-# Scenario: Verify system will auto clear value when user click button Clear Form
-#     When User click button clear form
-#     Then All information of New Appointment form will delete
+    @TestCase01
+    Scenario: Verify dropdown of Employers filter will display all employer exisitng sytem
+        When User select drop down Employer in Filter
+        Then Drop down filter will dispaly all employer existing system correct
 
-# @TestCase017
-# Scenario: Verify dropdown of Employers filter will display all employer exisitng sytem
-#     When User select drop down Employer in Filter
-#     Then Drop down filter will dispaly all employer existing system correct
+    @TestCase01
+    Scenario: Verify dropdown of Employers New Appointment will display all employer exisitng sytem
+        When User select drop down Employer in New Appointment
+        Then Drop down new appointment will dispaly all employer existing system correct
 
-# @TestCase018
-# Scenario: Verify dropdown of Employers New Appointment will display all employer exisitng sytem
-#     When User select drop down Employer in New Appointment
-#     Then Drop down new appointment will dispaly all employer existing system correct
+    @TestCase01
+    Scenario: Verify user can receive email when Appointment created
+        When User create New Appoinment
+        Then Employee have received Email with contains of Appointment
 
-# @TestCase019
-# Scenario: Verify user can receive email when Appointment created
-#     When User create New Appoinment
-#     Then Employee have received Email with contains of Appointment
+    @TestCase0
+    Scenario: Verify user can receive email when Appointment update
+        When User update New Appointment Success
+        Then Employee have received Email with contains of Appointment Reschedule
 
-# @TestCase020
-# Scenario: Verify user can receive email when Appointment update
-#     When User update New Appointment Success
-#     Then Employee have received Email with contains of Appointment Reschedule
+    @TestCase0
+    Scenario: Verify user can view appointment by Week
+        When User click button Week
+        Then All Appointment of week will dispaly correct
 
-# @TestCase021
-# Scenario: Verify user can view appointment by Week
-#     When User click button Week
-#     Then All Appointment of week will dispaly correct
-
-# @TestCase022
-# Scenario: Verify user can view appointment by Day
-#     When User click button Day
-#     Then All Appointment of day will dispaly correct
+    @TestCase0
+    Scenario: Verify user can view appointment by Day
+        When User click button Day
+        Then All Appointment of day will dispaly correct
