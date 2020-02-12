@@ -2,7 +2,7 @@ import { Given, When, Then } from "cucumber"
 import { assert, expect } from "chai"
 import { MedicalTypeObject } from  "../page-object/MedicalType.po"
 import { EmployerObject } from  "../page-object/Employers.po"
-import { OnsiteAppoitmentObject } from  "../page-object/Calendar.po"
+import { OnsiteAppointmentObject } from  "../page-object/Calendar.po"
 import { MenuObject } from "../page-object/shared/Menu.po";
 import { MedicalTypeData } from "../data/Data.MedicalType"
 import { EmployerData } from "../data/Data.Employer"
@@ -92,21 +92,21 @@ When('MT - Create new appointment with sample medical type and employer {string}
   $(MenuObject.calendar).click()
   waitingLoadingInner()
 
-  $(OnsiteAppoitmentObject.newBtn).click()
-  waitingLoad(OnsiteAppoitmentObject.modal)
+  $(OnsiteAppointmentObject.newBtn).click()
+  waitingLoad(OnsiteAppointmentObject.modal)
   // fill form
-  $(OnsiteAppoitmentObject.employerSelect).click()
-  $(OnsiteAppoitmentObject.selectEmployer(employer.name)).waitForExist(20000)
-  $(OnsiteAppoitmentObject.selectEmployer(employer.name)).click()
-  $(OnsiteAppoitmentObject.locationSelect).click()
-  $(OnsiteAppoitmentObject.defaultLocation).waitForExist(20000)
-  $(OnsiteAppoitmentObject.defaultLocation).click()
-  $(OnsiteAppoitmentObject.medicalTypeSelect).click()
-  $(OnsiteAppoitmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).waitForExist(20000)
-  $(OnsiteAppoitmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).click()
-  $(OnsiteAppoitmentObject.saveBtn).click()
+  $(OnsiteAppointmentObject.employerSelect).click()
+  $(OnsiteAppointmentObject.selectEmployer(employer.name)).waitForExist(20000)
+  $(OnsiteAppointmentObject.selectEmployer(employer.name)).click()
+  $(OnsiteAppointmentObject.locationSelect).click()
+  $(OnsiteAppointmentObject.defaultLocation).waitForExist(20000)
+  $(OnsiteAppointmentObject.defaultLocation).click()
+  $(OnsiteAppointmentObject.medicalTypeSelect).click()
+  $(OnsiteAppointmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).waitForExist(20000)
+  $(OnsiteAppointmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).click()
+  $(OnsiteAppointmentObject.saveBtn).click()
 
-  waitingLoad(OnsiteAppoitmentObject.createdSuccessfully)
+  waitingLoad(OnsiteAppointmentObject.createdSuccessfully)
 })
 Then('MT - Cannot un-assign sample medical type', () => {
   $(EmployerObject.medicalTypeTab).click()
@@ -129,13 +129,13 @@ When('MT - Remove the appointment of employer {string}', (num) => {
   $(MenuObject.calendar).click()
   browser.pause(3000)
   // Find all appoinments which contain sample medical type. After that, removing it 
-  OnsiteAppoitmentObject.find({ employer: employer.name, type: MedicalTypeData.sampleMedicalType }).forEach(el => {
+  OnsiteAppointmentObject.find({ employer: employer.name, type: MedicalTypeData.sampleMedicalType }).forEach(el => {
     el.click();
-    waitingLoad(OnsiteAppoitmentObject.removeBtn)
-    $(OnsiteAppoitmentObject.removeBtn).click()
+    waitingLoad(OnsiteAppointmentObject.removeBtn)
+    $(OnsiteAppointmentObject.removeBtn).click()
     waitingLoad(MedicalTypeObject.yesButtonOfConfirmation)
     $(MedicalTypeObject.yesButtonOfConfirmation).click()
-    waitingLoad(OnsiteAppoitmentObject.successfullyDeleted)
+    waitingLoad(OnsiteAppointmentObject.successfullyDeleted)
     browser.pause(2000)
   })
 })
