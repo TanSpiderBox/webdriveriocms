@@ -2,7 +2,7 @@ import { Given, Then, When } from "cucumber";
 import { StaffData } from "../data/Data.Staff";
 import { StaffObject } from "../page-object/Staff.po";
 import { MenuObject } from "../page-object/shared/Menu.po";
-import { OnsiteAppoitmentObject } from "../page-object/Calendar.po";
+import { OnsiteAppointmentObject } from "../page-object/Calendar.po";
 import { EmployerData } from "../data/Data.Employer";
 
 Then('Staff - Create sample staff', () => {
@@ -26,26 +26,26 @@ Then('Staff - Create sample staff', () => {
 
 When('Staff - Create on-site appointment', () => {
   $(MenuObject.calendar).click()
-  $(OnsiteAppoitmentObject.newBtn).click()
-  $(OnsiteAppoitmentObject.modal).waitForExist(20000)
+  $(OnsiteAppointmentObject.newBtn).click()
+  $(OnsiteAppointmentObject.modal).waitForExist(20000)
   // fill form
-  $(OnsiteAppoitmentObject.employerSelect).click()
-  $(OnsiteAppoitmentObject.selectEmployer(EmployerData.employer1.name)).waitForExist(20000)
-  $(OnsiteAppoitmentObject.selectEmployer(EmployerData.employer1.name)).click()
-  $(OnsiteAppoitmentObject.locationSelect).click()
-  $(OnsiteAppoitmentObject.defaultLocation).waitForExist(20000)
-  $(OnsiteAppoitmentObject.defaultLocation).click()
-  $(OnsiteAppoitmentObject.medicalTypeSelect).click()
-  $(OnsiteAppoitmentObject.selectMedicalType('')).waitForExist(20000)
-  $(OnsiteAppoitmentObject.selectMedicalType('')).click()
+  $(OnsiteAppointmentObject.employerSelect).click()
+  $(OnsiteAppointmentObject.selectEmployer(EmployerData.employer1.name)).waitForExist(20000)
+  $(OnsiteAppointmentObject.selectEmployer(EmployerData.employer1.name)).click()
+  $(OnsiteAppointmentObject.locationSelect).click()
+  $(OnsiteAppointmentObject.defaultLocation).waitForExist(20000)
+  $(OnsiteAppointmentObject.defaultLocation).click()
+  $(OnsiteAppointmentObject.medicalTypeSelect).click()
+  $(OnsiteAppointmentObject.selectMedicalType('')).waitForExist(20000)
+  $(OnsiteAppointmentObject.selectMedicalType('')).click()
 
-  $(OnsiteAppoitmentObject.staffSelector).click()
-  $(OnsiteAppoitmentObject.staffInput).setValue(StaffData.sampleStaff.email)
-  $(OnsiteAppoitmentObject.selectStaff(StaffData.sampleStaff.email)).waitForExist(20000)
-  $(OnsiteAppoitmentObject.selectStaff(StaffData.sampleStaff.email)).click()
-  $(OnsiteAppoitmentObject.saveBtn).click()
+  $(OnsiteAppointmentObject.staffSelector).click()
+  $(OnsiteAppointmentObject.staffInput).setValue(StaffData.sampleStaff.email)
+  $(OnsiteAppointmentObject.selectStaff(StaffData.sampleStaff.email)).waitForExist(20000)
+  $(OnsiteAppointmentObject.selectStaff(StaffData.sampleStaff.email)).click()
+  $(OnsiteAppointmentObject.saveBtn).click()
 
-  $(OnsiteAppoitmentObject.createdSuccessfully).waitForExist(20000)
+  $(OnsiteAppointmentObject.createdSuccessfully).waitForExist(20000)
 })
 
 Then('Staff - Cannot remove staff', () => {
@@ -63,13 +63,13 @@ When('Staff - Remove on-site appointment', () => {
   $(MenuObject.calendar).click()
   browser.pause(3000)
   // Find all appoinments which contain sample staff. After that, removing it 
-  OnsiteAppoitmentObject.find({ employer: EmployerData.employer1.name, staff: StaffData.sampleStaff.firstName + ' ' + StaffData.sampleStaff.lastName }).forEach(el => {
+  OnsiteAppointmentObject.find({ employer: EmployerData.employer1.name, staff: StaffData.sampleStaff.firstName + ' ' + StaffData.sampleStaff.lastName }).forEach(el => {
     el.click();
-    $(OnsiteAppoitmentObject.removeBtn).waitForExist(20000)
-    $(OnsiteAppoitmentObject.removeBtn).click()
+    $(OnsiteAppointmentObject.removeBtn).waitForExist(20000)
+    $(OnsiteAppointmentObject.removeBtn).click()
     $(StaffObject.yesButtonOfConfirmation).waitForExist(20000)
     $(StaffObject.yesButtonOfConfirmation).click()
-    $(OnsiteAppoitmentObject.successfullyDeleted).waitForExist(20000)
+    $(OnsiteAppointmentObject.successfullyDeleted).waitForExist(20000)
   })
 })
 

@@ -144,7 +144,35 @@ const EmployerObject = {
   findSupervisor: (email) => {
     return "//app-employer-supervisor//*[contains(@class, 'assignable-item') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
-  failedUnAssign: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Supervisor is already assigned to an employee')]"
+  failedUnAssign: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Supervisor is already assigned to an employee')]",
+
+  // Onsite location
+  onsiteLocationTab: "//app-employer-details//a[contains(text(), 'On-Site Locations') and contains(@class, 'nav-link')]",
+  onsiteLocationSection: "//app-onsite-locations-list",
+  newOnsiteLocationBtn: "//app-onsite-locations-list//button[contains(text(), 'New On-Site Location')]",
+  findOnsiteLocation: (title) => {
+    return "//app-onsite-locations-list//tr[.//button[text()=" + "'" + title + "'" + "] ]"
+  },
+  nextOnsiteLocation: "//app-onsite-locations-list//li[contains(@class, 'pagination-next') and not(contains(@class, 'disabled'))]//a[contains(@class, 'page-link')]",
+  onsiteLocation: {
+    titleInput: "//app-onsite-location-form//input[@formcontrolname='title']",
+    streetLine1Input: "//app-onsite-location-form//input[@formcontrolname='streetLine1']",
+    suburbInput: "//app-onsite-location-form//input[@formcontrolname='suburb']",
+    stateSelector: "//app-onsite-location-form//ng-select[@formcontrolname='state']",
+    defaultState: "//*[contains(@role, 'option')]",
+    postCodeInput: "//app-onsite-location-form//input[@formcontrolname='postCode']",
+    saveBtn: "//modal-container[.//*[text()='New On-Site Location']]//button[text()='Save']",
+    createSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Updated successfully')]",
+    failedDelete: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'This onsite location has appointments')]",
+  },
+  // Location
+  locationTab: "//app-employer-details//a[contains(text(), 'Locations') and contains(@class, 'nav-link')]",
+  findLocation: (title) => {
+    return "//app-employer-locations//*[contains(@class, 'employer-location-item') and h4[text()=" + "'" + title + "'" + "] ]"
+  },
+  locationFailedUnassign: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'This onsite location has appointments')]",
+  deleteBtn: "//button[*[text()='clear']]",
+  yesButtonOfConfirmation: "//app-confirmation//button[contains(text(), 'Yes')]",
 }
 
 export { EyersObj, EmployerObject }

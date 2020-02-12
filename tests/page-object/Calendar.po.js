@@ -120,7 +120,7 @@ const CalVerify = {
     
 }
 
-const OnsiteAppoitmentObject = {
+const OnsiteAppointmentObject = {
   newBtn: "//button[contains(text(), 'New On-site Appointment')]",
   modal: "//modal-container[.//*[contains(text(), 'New On-Site Appointment')] ]",
   employerSelect: "//ng-select[contains(@formcontrolname, 'employerId')]",
@@ -129,6 +129,9 @@ const OnsiteAppoitmentObject = {
   },
   locationSelect: "//ng-select[contains(@formcontrolname, 'locationId')]",
   defaultLocation: "//*[contains(@role, 'option')]",
+  selectLocation: (title) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + title + "'" + ")] ]"
+  },
   medicalTypeSelect: "//ng-select[contains(@formcontrolname, 'medicalTypeId')]",
   selectMedicalType: function(name) {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
@@ -157,10 +160,14 @@ const OnsiteAppoitmentObject = {
       if (opts.staff != undefined) {
         var isStaff = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'staffs')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.staff + "'" + "]")
         .isExisting()
-        console.log(isStaff)
       } else { var isStaff = true }
 
-      if (isType && isEmployer && isStaff) {
+      if (opts.location != undefined) {
+        var isLocation = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.location + "'" + "]")
+        .isExisting()
+      } else { var isLocation = true }
+
+      if (isType && isEmployer && isStaff && isLocation) {
         results.push(el)
       }
       $("//app-appointment-onsite-form//button[contains(@aria-label, 'Close')]").click()
@@ -181,6 +188,9 @@ const AppointmentObject = {
   },
   locationSelector: "//ng-select[contains(@formcontrolname, 'locationId')]",
   defaultLocation: "//*[contains(@role, 'option')]",
+  selectLocation: (title) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + title + "'" + ")] ]"
+  },
   medicalTypeSelector: "//ng-select[contains(@formcontrolname, 'medicalTypeId')]",
   selectMedicalType: (name) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
@@ -188,6 +198,10 @@ const AppointmentObject = {
   emailSelector: "//ng-select[contains(@formcontrolname, 'email')]",
   selectEmail: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
+  },
+  startTimeSelector: "//ng-select[contains(@formcontrolname, 'startTime')]",
+  selectStartTime: (startTime) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + startTime + "'" + ")] ]"
   },
   // firstname: "//*[contains(@formcontrolname, 'firstName')]",
   // lastname: "//*[contains(@formcontrolname, 'lastName')]",
@@ -220,9 +234,19 @@ const AppointmentObject = {
     appointments.forEach(el => {
       el.click()
       browser.pause(3000)
-      let isSupervisor = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.supervisor
-      let isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.employer
-      if (isEmployer && isSupervisor) {
+      if (opts.supervisor != undefined) {
+        var isSupervisor = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.supervisor
+      } else { var isSupervisor = true }
+
+      if (opts.employer != undefined) {
+        var isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.employer
+      } else { var isEmployer = true }
+
+      if (opts.location != undefined) {
+        var isLocation = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.location
+      } else { var isLocation = true }
+
+      if (isEmployer && isSupervisor && isLocation) {
         results.push(el)
       }
       $("//app-appointment-form//button[contains(@aria-label, 'Close')]").click()
@@ -234,4 +258,4 @@ const AppointmentObject = {
   successfullyDeleted: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
 }
 
-export { CalObject, CalVerify, OnsiteAppoitmentObject, AppointmentObject }
+export { CalObject, CalVerify, OnsiteAppointmentObject, AppointmentObject }
