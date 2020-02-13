@@ -29,6 +29,8 @@ const EyersObj = {
 
     btn_EyersSave: '//button[text()="Save"]',
 
+    searchbox_Employer: '//div[contains(@class, "searchbox-container")]/input',
+
     tab_EyersLc: '//a[text()="Locations"]',
 
     tab_EloyerOSL: '//a[text()="On-Site Locations"]',
@@ -105,7 +107,7 @@ const EyersObj = {
 
     btn_EloyerLast: '//a[text()="Last"]',
 
-    btn_ElEdit: '//*[text()=" Employer_Test "]/following-sibling::td[5]//*[text()="create"]',
+    btn_ElEdit: '//*[text()="create"]',
 }
 
 const EmployerObject = {

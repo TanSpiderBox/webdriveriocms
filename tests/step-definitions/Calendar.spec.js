@@ -1,38 +1,31 @@
 import { When, Then, And } from "cucumber";
 import { assert } from 'chai'
 import { DataCal } from "../data/Data.Calendar";
-import { CalObject, CalVerify } from "../page-object/Calendar.po"
+import { CalObject, CalVerify, OnsiteAppointmentObject, AppointmentObject } from "../page-object/Calendar.po"
 import { EyersObj } from "../page-object/Employers.po";
-
+import { MenuObject } from "../page-object/shared/Menu.po";
+import { MedicalTypeObject } from "../page-object/MedicalType.po"
 /* TestCase008 */
 When("User create new Appointment with existing Employee", () => {
 
-    $(CalObject.btn_CalMth).waitForExist(20000);
-    $(CalObject.btn_CalMth).click();
+    // $(CalObject.btn_CalMth).waitForExist(20000);
+    // $(CalObject.btn_CalMth).click();
+    browser.pause(3000);
     $(CalObject.btn_CalNwAp).waitForExist(20000);
     $(CalObject.btn_CalNwAp).click();
 
     //User Select Employer
+    browser.pause(3000);
     $(CalObject.drop_CalNewApEyer).click();
-    $(CalObject.value_Ap_Employer).waitForExist(20000);
     $(CalObject.value_Ap_Employer).click();
 
     //User Select Location
-    $(CalObject.drop_CalNewApLocation).waitForExist(20000);
     $(CalObject.drop_CalNewApLocation).click();
     $(CalObject.value_Ap_Location).click();
 
     //User Select Medical Type
     $(CalObject.drop_CalNewApMedType).click();
     $(CalObject.value_Ap_MedType).click();
-
-    // User Select Date Time
-    $(CalObject.txt_CalNewApDate).setValue(DataCal.Ap_Date);
-    $(CalObject.drop_CalNewApStartTime).click();
-    $(CalObject.value_Ap_StarTime).click();
-    browser.pause(50000);
-    $(CalObject.drop_CalNewApEndTime).click();
-    $(CalObject.value_Ap_EndTime).click();
 
     //User Select Employee
     $(CalObject.drop_CalNewApEyee).click();
@@ -41,30 +34,30 @@ When("User create new Appointment with existing Employee", () => {
     //Save Appoinment
     $(CalObject.btn_CalNewApSave).click();
 })
-Then("User create new Appointment Success", () => {
-    browser.pause(3000);
-    //Select Appointment Details
-    $(CalObject.lbl_CalDay).click();
-    browser.pause(3000);
-    $(CalObject.form_ApDetails).click();
-    browser.pause(3000);
-
-    // Assert Value of Appointment
-    assert.equal($(CalVerify.drop_MedVerify).getText(), DataCal.Ap_MedType, 'Verify Mediccal Type');
-
-    assert.equal($(CalObject.drop_CalNewApRole).getText(), DataCal.Ap_Role), 'Verify Role';
-
-    assert.equal($(CalVerify.lblFirstName).getText(), DataCal.Ap_FirstName, 'Verify Appointment First Name');
-
-    assert.equal($(CalVerify.lblLastName).getText(), DataCal.Ap_LastName, 'Verify Appointment Last Name');
-
-    assert.equal($(CalVerify.lblEmail).getText(), DataCal.Ap_Email, 'Verify Appointment Email');
+Then("User create new Appointment Success {string}", (num) => {
+    if (num == 1) {
+        var employer = DataCal.Ap_Employer1
+    } else {
+        var employer = EmployerData.employer2
+    }
+    $(MenuObject.calendar).click()
+    browser.pause(3000)
+    // Find all appoinments which contain sample medical type. After that, removing it 
+    AppointmentObject.find({ employer: employer.name }).forEach(el => {
+        browser.pause(3000)
+        el.click();
+        // waitingLoad(AppointmentObject.removeBtn)
+        $(AppointmentObject.removeBtn).click()
+        // waitingLoad(MedicalTypeObject.yesButtonOfConfirmation)
+        $(MedicalTypeObject.yesButtonOfConfirmation).click()
+        // waitingLoad(AppointmentObject.successfullyDeleted)
+        browser.pause(2000)
+    })
 
 })
 
 /* TestCase009 */
 When("User create new Appointment with new Employee", () => {
-    browser.pause(6000);
     $(CalObject.btn_CalNwAp).click();
     //User Select Employer
     $(CalObject.drop_CalNewApEyer).click();
@@ -82,54 +75,59 @@ When("User create new Appointment with new Employee", () => {
     $(CalObject.drop_CalNewApRole).click();
     $(CalObject.value_Ap_Role).click();
 
-    //User Select Date Time
-    $(CalObject.txt_CalNewApDate).setValue(DataCal.Ap_Date);
-
-    $(CalObject.drop_CalNewApStartTime).click();
-    $(CalObject.value_Ap_StarTime).click();
-    // browser.pause(50000);
-    // $(CalObject.drop_CalNewApEndTime).click();
-    // $(CalObject.value_Ap_EndTime).click();
-
     //User Select Employee
+    $(CalObject.drop_CalNewApLocation).click();
+    $(CalObject.txt_CalNewApEyee).setValue(DataCal.Ap_NewEmployee);
+    $(CalObject.lbl_AddNew).click();
     $(CalObject.txt_CalNewApFirstName).setValue(DataCal.Ap_EyeeFirstName);
     $(CalObject.txt_CalNewApLastName).setValue(DataCal.Ap_EyeeLastName);
+    $(CalObject.drop_CalNewApGender).click();
+    $(CalObject.value_CalNewApGender).click();
     $(CalObject.txt_CalNewApDob).setValue(DataCal.Ap_EyeeDob);
     $(CalObject.txt_CalNewAphone).setValue(DataCal.Ap_EyeePhone);
-    $(CalObject.txt_CalNewApEmail).setValue(DataCal.Ap_EyeeEmail);
     $(CalObject.txt_CalNewApStrLn1).setValue(DataCal.Ap_EyeeStrln1);
     $(CalObject.txt_CalNewApSuburb).setValue(DataCal.Ap_EyeeSuburd);
     $(CalObject.txt_CalNewApState).click();
     $(CalObject.value_Ap_State).click();
     $(CalObject.drop_CalNewApPostCode).setValue(DataCal.Ap_EyeePostCode);
+    $(CalObject.drop_CalNewApRole).click();
+    $(CalObject.value_Ap_Role).click();
 
     $(CalObject.btn_CalNewApSave).click();
-    browser.pause(5000);
+    browser.pause(3000);
 })
-Then("User create new Appointment with new Employee Success and Employee added in Employer", () => {
-    browser.pause(3000);
-    //Select Appointment Details
-    $(CalObject.lbl_CalDay).click();
-    browser.pause(3000);
-    $(CalObject.form_ApDetails).click();
-    browser.pause(3000);
-    // Assert Value of Appointment
-    assert.equal($(CalVerify.drop_MedVerify).getText(), DataCal.Ap_MedType, 'Verify Mediccal Type');
-
-    assert.equal($(CalObject.drop_CalNewApRole).getText(), DataCal.Ap_Role), 'Verify Role';
+Then("User create new Appointment with new Employee Success and Employee added in Employer {string}", (num) => {
+    // if (num == 1) {
+    //     var employer = DataCal.Ap_Employer1
+    // } else {
+    //     var employer = EmployerData.employer2
+    // }
+    // $(MenuObject.calendar).click()
+    // browser.pause(3000)
+    // // Find all appoinments which contain sample medical type. After that, removing it 
+    // AppointmentObject.find({ employer: employer.name }).forEach(el => {
+    //     browser.pause(3000)
+    //     el.click();
+    //     // waitingLoad(AppointmentObject.removeBtn)
+    //     $(AppointmentObject.removeBtn).click()
+    //     // waitingLoad(MedicalTypeObject.yesButtonOfConfirmation)
+    //     $(MedicalTypeObject.yesButtonOfConfirmation).click()
+    //     // waitingLoad(AppointmentObject.successfullyDeleted)
+    //     browser.pause(2000)
+    // })
 
     //Verify Employee have added in Emloyer
-    $(CalObject.btn_CalNewApCancel).click();
-    browser.pause(2000);
     $(EyersObj.menu_Eyers).click();
     browser.pause(2000);
-    $(EyersObj.btn_EloyerNext).click();
-    browser.pause(2000);
+    $(EyersObj.searchbox_Employer).setValue('Rochell Maffetti')
+    $(EyersObj.searchbox_Employer).keys("\uE007")
+    browser.pause(5000);
+    $(EyersObj.btn_ElEdit).waitForExist(20000)
     $(EyersObj.btn_ElEdit).click();
-    browser.pause(2000);
     $(EyersObj.tabmenu_EyerEyees).click();
+    browser.pause(5000);
 
-    assert.equal($(CalVerify.lbl_ElyerMailVerify).getText(), DataCal.Ap_EyeeEmail, '')
+    // assert.equal($(CalVerify.lbl_ElyerMailVerify).getText(), DataCal.Ap_EyeeEmail, '')
 })
 
 

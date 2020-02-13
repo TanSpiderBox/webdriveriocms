@@ -68,6 +68,8 @@ const CalObject = {
 
     //New Employee
 
+    txt_CalNewApEyee: '//ng-select[@formcontrolname="email"]//input',
+    
     lbl_AddNew: '//*[@role="option"]//*[text()="Add item"]',
 
     txt_CalNewApFirstName: 'input[formcontrolname=firstName]',
@@ -75,6 +77,8 @@ const CalObject = {
     txt_CalNewApLastName: 'input[formcontrolname=lastName]',
 
     drop_CalNewApGender: 'ng-select[formcontrolname=gender]',
+
+    value_CalNewApGender: '//*[text()="Male"]',
 
     txt_CalNewApDob: 'input[formcontrolname=dob]',
 
