@@ -131,15 +131,6 @@ Then("User create new Appointment with new Employee Success and Employee added i
 })
 
 
-// /* TestCase010 */
-// When("User click button delete exisitng Appointment", () => {
-//     $(CalObject.txt_Password).setValue(DataLogin.password);
-//     $(CalObject.btn_Login).click();
-// })
-// Then("User delete Appointment Success", () => {
-//     assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
-// })
-
 /* TestCase011 */
 When("User change date time of existing Appointment", () => {
     browser.pause(3000);

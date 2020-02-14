@@ -122,6 +122,9 @@ const EmployerObject = {
   findEmployee: (email) => {
     return "//app-employee-list//tr[.//*[contains(@class, 'mat-column-email') and contains(text(), " + "'" + email + "'" + ")] ]//td[contains(@class, 'mat-column-name')]"
   },
+  findEmployeeVerify: (opts = {}) =>{
+    return "//app-employee-list//tr[.//*[contains(@class, 'mat-column-email') and contains(text(), " + "'" + opts.email + "'" + ")] and .//*[contains(@class, 'mat-column-name') and .//*[contains(text(), " + "'" + opts.name + "'" + ")] ] and .//*[contains(@class, 'mat-column-phone') and contains(text(), " + "'" + opts.phone + "'" + ") ] ]"
+  },
   // Employee show
   employee: {
     editBtn: "//app-employee-details//button[contains(text(), 'Edit')]",
