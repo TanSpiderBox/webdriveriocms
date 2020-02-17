@@ -8,15 +8,15 @@ Feature: Calendar
         When User create new Appointment with existing Employee
         Then User create new Appointment Success '1'
 
-    @TestCase009
-    Scenario: Verify user can create Appointment which new Employee
-        # When User create new Appointment with new Employee
-        Then User create new Appointment with new Employee Success and Employee added in Employer '1'
+    # @TestCase009
+    # Scenario: Verify user can create Appointment which new Employee
+    #     When User create new Appointment with new Employee
+    #     Then User create new Appointment with new Employee Success and Employee added in Employer '1'
 
-# @TestCase01
-# Scenario: Verify user can update Appointment
-#     When User update existing Appointment
-#     Then User update Appointment Successful
+    @TestCase010
+    Scenario: Verify user can update Appointment
+        When User update existing Appointment '1'
+        Then User update Appointment Successful '1'
 
 # @TestCase01
 # Scenario: Verify Employee Manager can create New Appointment for Employee

@@ -7,9 +7,6 @@ import { MenuObject } from "../page-object/shared/Menu.po";
 import { MedicalTypeObject } from "../page-object/MedicalType.po"
 /* TestCase008 */
 When("User create new Appointment with existing Employee", () => {
-
-    // $(CalObject.btn_CalMth).waitForExist(20000);
-    // $(CalObject.btn_CalMth).click();
     browser.pause(3000);
     $(CalObject.btn_CalNwAp).waitForExist(20000);
     $(CalObject.btn_CalNwAp).click();
@@ -97,57 +94,104 @@ When("User create new Appointment with new Employee", () => {
     browser.pause(3000);
 })
 Then("User create new Appointment with new Employee Success and Employee added in Employer {string}", (num) => {
-    // if (num == 1) {
-    //     var employer = DataCal.Ap_Employer1
-    // } else {
-    //     var employer = EmployerData.employer2
-    // }
-    // $(MenuObject.calendar).click()
-    // browser.pause(3000)
-    // // Find all appoinments which contain sample medical type. After that, removing it 
-    // AppointmentObject.find({ employer: employer.name }).forEach(el => {
-    //     browser.pause(3000)
-    //     el.click();
-    //     // waitingLoad(AppointmentObject.removeBtn)
-    //     $(AppointmentObject.removeBtn).click()
-    //     // waitingLoad(MedicalTypeObject.yesButtonOfConfirmation)
-    //     $(MedicalTypeObject.yesButtonOfConfirmation).click()
-    //     // waitingLoad(AppointmentObject.successfullyDeleted)
-    //     browser.pause(2000)
-    // })
+    if (num == 1) {
+        var employer = DataCal.Ap_Employer1
+    } else {
+        var employer = EmployerData.employer2
+    }
+    $(MenuObject.calendar).click()
+    browser.pause(3000)
+    // Find all appoinments which contain sample medical type. After that, removing it 
+    AppointmentObject.find({ employer: employer.name }).forEach(el => {
+        browser.pause(3000)
+        el.click();
+        // waitingLoad(AppointmentObject.removeBtn)
+        $(AppointmentObject.removeBtn).click()
+        // waitingLoad(MedicalTypeObject.yesButtonOfConfirmation)
+        $(MedicalTypeObject.yesButtonOfConfirmation).click()
+        // waitingLoad(AppointmentObject.successfullyDeleted)
+        browser.pause(2000)
+    })
 
     //Verify Employee have added in Emloyer
     $(EyersObj.menu_Eyers).click();
-    browser.pause(2000);
     $(EyersObj.searchbox_Employer).setValue('Rochell Maffetti')
     $(EyersObj.searchbox_Employer).keys("\uE007")
-    browser.pause(5000);
     $(EyersObj.btn_ElEdit).waitForExist(20000)
     $(EyersObj.btn_ElEdit).click();
     $(EyersObj.tabmenu_EyerEyees).click();
-    browser.pause(5000);
 
+})
+
+
+/* TestCase010 */
+When("User update existing Appointment {string}", (num) => {
+    //Select Calendar Menu
+    $(CalObject.menu_Cal).click();
+
+    browser.pause(3000);
+    $(CalObject.btn_CalNwAp).waitForExist(20000);
+    $(CalObject.btn_CalNwAp).click();
+
+    //User Select Employer
+    browser.pause(3000);
+    $(CalObject.drop_CalNewApEyer).click();
+    $(CalObject.value_Ap_Employer).click();
+
+    //User Select Location
+    $(CalObject.drop_CalNewApLocation).click();
+    $(CalObject.value_Ap_Location).click();
+
+    //User Select Medical Type
+    $(CalObject.drop_CalNewApMedType).click();
+    $(CalObject.value_Ap_MedType).click();
+
+    //User Select Employee
+    $(CalObject.drop_CalNewApEyee).click();
+    $(CalObject.value_Ap_Employee).click();
+
+    //Save Appoinment
+    $(CalObject.btn_CalNewApSave).click();
+
+    //Update existing Appoinment
+    if (num == 1) {
+        var employer = DataCal.Ap_Employer1
+    } else {
+        var employer = EmployerData.employer2
+    }
+    $(MenuObject.calendar).click()
+    browser.pause(3000)
+    // Find all appoinments which contain sample medical type. After that, removing it 
+    AppointmentObject.find({ employer: employer.name }).forEach(el => {
+        browser.pause(3000)
+        el.click();
+
+        $(CalObject.txt_CalNewApNote).setValue('NewUpdate');
+        $(AppointmentObject.updateBtn).waitForExist(20000)
+        $(AppointmentObject.updateBtn).click()
+        browser.pause(1000)
+    })
+})
+Then("User update Appointment Successful {string}", (num) => {
     // assert.equal($(CalVerify.lbl_ElyerMailVerify).getText(), DataCal.Ap_EyeeEmail, '')
-})
+    if (num == 1) {
+        var employer = DataCal.Ap_Employer1
+    } else {
+        var employer = EmployerData.employer2
+    }
+    $(MenuObject.calendar).click()
+    browser.pause(3000)
+    // Find all appoinments which contain sample medical type. After that, removing it 
+    AppointmentObject.find({ employer: employer.name }).forEach(el => {
+        browser.pause(3000)
+        el.click();
 
+        assert.equal($(CalObject.txt_CalNewApNote).getText(), 'NewUpdate', '');
 
-/* TestCase011 */
-When("User change date time of existing Appointment", () => {
-    browser.pause(3000);
-    //Select Appointment Details
-    $(CalObject.lbl_CalDay).click();
-    browser.pause(3000);
-    $(CalObject.form_ApDetails).click();
-    browser.pause(3000);
+        $(AppointmentObject.removeBtn).click()
 
-    //Change Date Time
-    $(CalObject.txt_CalNewApDate).setValue(DataCal.Ap_Date);
-
-    $(CalObject.drop_CalNewApStartTime).click();
-    $(CalObject.value_Ap_StarTime).click();
-})
-Then("User change date time of Appointment Success", () => {
-    assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
+        $(MedicalTypeObject.yesButtonOfConfirmation).click()
+    })
 })
 
 // /* TestCase012 */

@@ -261,6 +261,7 @@ const AppointmentObject = {
     })
     return results
   },
+  updateBtn: "//app-appointment-form//button[contains(text(), 'Update')]",
   removeBtn: "//app-appointment-form//button[contains(text(), 'Delete')]",
   successfullyDeleted: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
 }
