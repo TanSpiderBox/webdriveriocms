@@ -5,6 +5,7 @@ const LoginObject = {
     btn_ForgotPwd: '//a[@routerlink="/auth/forgot-password"]',
     txt_EmailAddress: 'input[formcontrolname="email"]',
     btn_Submit: '//button[contains(text(),"Submit")]',
+    btn_Logout: '//button[contains(@class,"btn-sm")]//*[contains(text(),"power_settings_new")]',
 
 }
 
