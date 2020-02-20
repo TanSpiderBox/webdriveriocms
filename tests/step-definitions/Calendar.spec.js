@@ -7,6 +7,8 @@ import { MenuObject } from "../page-object/shared/Menu.po";
 import { MedicalTypeObject } from "../page-object/MedicalType.po"
 import { LoginObject } from "../page-object/Login.po"
 import { DataLogin } from "../data/Data.Login"
+import { EmployerData } from "../data/Data.Employer"
+
 /* TestCase008 */
 When("User create new Appointment with existing Employee", () => {
     browser.pause(5000);
@@ -259,15 +261,35 @@ Then("Employee can see this appointment {string}", (num) => {
     })
 })
 
-// /* TestCase013 */
-// When("User select Loccation in dropdown filter", () => {
-//     $(LoginObject.txt_Username).setValue(DataLogin.inusername);
-//     $(LoginObject.txt_Password).setValue(DataLogin.password);
-//     $(LoginObject.btn_Login).click();
-// })
-// Then("User can see all Appointment were filter in Calender", () => {
-//     assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
-// })
+/* TestCase013 */
+When("User create new Onsite Appoinment {string}", (num) => {
+    //Login System With Employee Manager Account
+    $(LoginObject.btn_Logout).click();
+    $(LoginObject.txt_Username).setValue(DataLogin.username);
+    $(LoginObject.txt_Password).setValue(DataLogin.password);
+    $(LoginObject.btn_Login).click();
+
+    //Create New Onsite Appointment
+    if (num == 1) {
+        var employerR = EmployerData.employer1
+    } else {
+        var employerR = EmployerData.employer2
+    }
+    $(MenuObject.calendar).click()
+    $(OnsiteAppointmentObject.newBtn).click()
+    // fill form
+    $(OnsiteAppointmentObject.employerSelect).click()
+    $(OnsiteAppointmentObject.selectEmployer(employerR.name)).waitForExist(20000)
+    $(OnsiteAppointmentObject.selectEmployer(employerR.name)).click()
+    $(OnsiteAppointmentObject.locationSelect).click()
+    $(OnsiteAppointmentObject.defaultLocation).waitForExist(20000)
+    $(OnsiteAppointmentObject.defaultLocation).click()
+    $(OnsiteAppointmentObject.saveBtn).click()
+
+})
+Then("User create new Onsite Appoinment successful", () => {
+    // assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
+})
 
 // /* TestCase014 */
 // When("User click button clear all Filter", () => {
@@ -279,82 +301,3 @@ Then("Employee can see this appointment {string}", (num) => {
 //     assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
 // })
 
-// /* TestCase015 */
-// When("User drag and drop Employee ", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("System auto bidding information of Employee", () => {
-//     assert.isObject($(), );
-// })
-
-// /* TestCase016 */
-// When("User click button clear form ", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("All information of New Appointment form will delete", () => {
-//     assert.isObject($(), );
-// })
-
-// /* TestCase017 */
-// When("User select drop down Employer in Filter", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("Drop down filter will dispaly all employer existing system correct", () => {
-//     assert.isObject($(), );
-// })
-
-// /* TestCase018 */
-// When("User select drop down Employer in New Appointment", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("Drop down new appointment will dispaly all employer existing system correct", () => {
-//     assert.isObject($(), );
-// })
-
-// /* TestCase019 */
-// When("User create New Appoinment", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("Employee have received Email with contains of Appointment", () => {
-//     assert.isObject($(), );
-// })
-
-// /* TestCase020 */
-// When("User update New Appointment Success", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("Employee have received Email with contains of Appointment Reschedule", () => {
-//     assert.isObject($(), );
-// })
-
-// /* TestCase021 */
-// When("User click button Week", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("All Appointment of week will dispaly correct", () => {
-//     assert.isObject($(), );
-// })
-
-// /* TestCase022 */
-// When("User click button Day", () => {
-//     $().setValue();
-//     $().setValue();
-//     $().click();
-// })
-// Then("All Appointment of day will dispaly correct", () => {
-//     assert.isObject($(), );
-// })

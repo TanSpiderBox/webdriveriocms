@@ -182,6 +182,9 @@ const OnsiteAppointmentObject = {
     })
     return results
   },
+  publicBtn: "//*[@formcontrolname='timeslotEnable']//input",
+  addroomBtn: "//*[text()='Add Room']",
+  slottimeTxt: '//details//input[@name="slotTime"]',
   removeBtn: "//app-appointment-onsite-form//button[contains(text(), 'Delete')]",
   successfullyDeleted: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
 }
