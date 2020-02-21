@@ -25,8 +25,8 @@ Feature: Calendar
 
     @TestCase013
     Scenario: Verify user can create Onsite Appointment
-        When User create new Onsite Appoinment '1'
-        Then User create new Onsite Appoinment successful
+        When User create new Onsite Appoinment 
+        Then User create new Onsite Appoinment successful '1'
 
     # @TestCase014
     # Scenario: Verify Employee register Onsite Appointment Form

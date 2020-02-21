@@ -40,6 +40,8 @@ const CalObject = {
 
   value_Ap_Location: '//span[text()="LocationVVT"]',
 
+  value_Ap_OnsLocation: '//span[text()="Stevena Deane"]',
+
   //Medical Type
   drop_CalNewApMedType: 'ng-select[formcontrolname=medicalTypeId]',
 
@@ -111,7 +113,7 @@ const CalObject = {
   // '//*[text()="Employer_Test - TEST 10 Employee - 0123456789"]',
   // div[role="application"]>div:last-child>mwl-calendar-event-title'
 
-  btn_CalNewApSave: '//button[text()="Save"]',
+  btn_CalNewApSave: '//button[contains(text(),"Save")]',
   btn_CalNewApCancel: '//*[text()="Cancel"]',
 }
 
@@ -182,9 +184,10 @@ const OnsiteAppointmentObject = {
     })
     return results
   },
-  publicBtn: "//*[@formcontrolname='timeslotEnable']//input",
+  publicBtn: "//*[@formcontrolname='timeslotEnable']/label/div",
   addroomBtn: "//*[text()='Add Room']",
   slottimeTxt: '//details//input[@name="slotTime"]',
+  timeslotBtn: "//*[contains(@class,'timeslot-grid ng-star-inserted')]/div",
   removeBtn: "//app-appointment-onsite-form//button[contains(text(), 'Delete')]",
   successfullyDeleted: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
 }

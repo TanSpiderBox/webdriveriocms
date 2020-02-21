@@ -262,7 +262,7 @@ Then("Employee can see this appointment {string}", (num) => {
 })
 
 /* TestCase013 */
-When("User create new Onsite Appoinment {string}", (num) => {
+When("User create new Onsite Appoinment", () => {
     //Login System With Employee Manager Account
     $(LoginObject.btn_Logout).click();
     $(LoginObject.txt_Username).setValue(DataLogin.username);
@@ -270,34 +270,44 @@ When("User create new Onsite Appoinment {string}", (num) => {
     $(LoginObject.btn_Login).click();
 
     //Create New Onsite Appointment
-    if (num == 1) {
-        var employerR = EmployerData.employer1
-    } else {
-        var employerR = EmployerData.employer2
-    }
-    $(MenuObject.calendar).click()
     $(OnsiteAppointmentObject.newBtn).click()
-    // fill form
-    $(OnsiteAppointmentObject.employerSelect).click()
-    $(OnsiteAppointmentObject.selectEmployer(employerR.name)).waitForExist(20000)
-    $(OnsiteAppointmentObject.selectEmployer(employerR.name)).click()
-    $(OnsiteAppointmentObject.locationSelect).click()
-    $(OnsiteAppointmentObject.defaultLocation).waitForExist(20000)
-    $(OnsiteAppointmentObject.defaultLocation).click()
-    $(OnsiteAppointmentObject.saveBtn).click()
+
+    //User Select Employer
+    browser.pause(3000);
+    $(CalObject.drop_CalNewApEyer).click();
+    $(CalObject.value_Ap_Employer).click();
+
+    //User Select Location
+    $(CalObject.drop_CalNewApLocation).click();
+    $(CalObject.value_Ap_OnsLocation).click();
+
+    //User Select Medical Type
+    $(CalObject.drop_CalNewApMedType).click();
+    $(CalObject.value_Ap_MedType).click();
+
+    //User Select Public Time Slot
+    $(OnsiteAppointmentObject.publicBtn).click(),
+
+    //User Add Room
+    $(OnsiteAppointmentObject.addroomBtn).click(),
+    $(OnsiteAppointmentObject.slottimeTxt).setValue(20);
+    $(OnsiteAppointmentObject.slottimeTxt).keys("\uE007");
+    // $(OnsiteAppointmentObject.timeslotBtn).click(),
+
+    //Save Appoinment
+    $(CalObject.btn_CalNewApSave).click();
+    browser.pause(3000)
 
 })
-Then("User create new Onsite Appoinment successful", () => {
-    // assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
+Then("User create new Onsite Appoinment successful {string}", (num) => {
+    
 })
 
-// /* TestCase014 */
-// When("User click button clear all Filter", () => {
-//     $(LoginObject.txt_Username).setValue(DataLogin.username);
-//     $(LoginObject.txt_Password).setValue(DataLogin.inpassword);
-//     $(LoginObject.btn_Login).click();
+/* TestCase014 */
+// When("User fill all valid information", () => {
+//     browser
 // })
-// Then("User can clear all Filter information", () => {
-//     assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
+// Then("User can register Onsite Appoinment Success", () => {
+    
 // })
 
