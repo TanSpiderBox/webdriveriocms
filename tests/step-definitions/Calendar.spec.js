@@ -10,15 +10,22 @@ import { DataLogin } from "../data/Data.Login"
 import { EmployerData } from "../data/Data.Employer"
 
 /* TestCase008 */
-When("User create new Appointment with existing Employee", () => {
+When("User create new Appointment with existing Employee {string}", (num) => {
+    if (num == 1) {
+        var employer = EmployerData.employerR
+        var email = DataCal.employeeEmail
+    } else {
+        var employer = EmployerData.employer2
+    }
     browser.pause(5000);
     $(CalObject.btn_CalNwAp).waitForExist(20000);
     $(CalObject.btn_CalNwAp).click();
 
     //User Select Employer
     browser.pause(3000);
-    $(CalObject.drop_CalNewApEyer).click();
-    $(CalObject.value_Ap_Employer).click();
+    $(AppointmentObject.employerSelector).click();
+    $(AppointmentObject.selectEmployer(employer.name)).click();
+
 
     //User Select Location
     $(CalObject.drop_CalNewApLocation).click();
@@ -29,8 +36,8 @@ When("User create new Appointment with existing Employee", () => {
     $(CalObject.value_Ap_MedType).click();
 
     //User Select Employee
-    $(CalObject.drop_CalNewApEyee).click();
-    $(CalObject.value_Ap_Employee).click();
+    $(AppointmentObject.emailSelector).click();
+    $(AppointmentObject.selectEmail(email.emailemployee)).click();
 
     //Save Appoinment
     $(CalObject.btn_CalNewApSave).click();
@@ -288,9 +295,9 @@ When("User create new Onsite Appoinment", () => {
     //User Select Public Time Slot
     $(OnsiteAppointmentObject.publicBtn).click(),
 
-    //User Add Room
-    $(OnsiteAppointmentObject.addroomBtn).click(),
-    $(OnsiteAppointmentObject.slottimeTxt).setValue(20);
+        //User Add Room
+        $(OnsiteAppointmentObject.addroomBtn).click(),
+        $(OnsiteAppointmentObject.slottimeTxt).setValue(20);
     $(OnsiteAppointmentObject.slottimeTxt).keys("\uE007");
     // $(OnsiteAppointmentObject.timeslotBtn).click(),
 
@@ -300,7 +307,7 @@ When("User create new Onsite Appoinment", () => {
 
 })
 Then("User create new Onsite Appoinment successful {string}", (num) => {
-    
+
 })
 
 /* TestCase014 */
@@ -308,6 +315,6 @@ Then("User create new Onsite Appoinment successful {string}", (num) => {
 //     browser
 // })
 // Then("User can register Onsite Appoinment Success", () => {
-    
+
 // })
 

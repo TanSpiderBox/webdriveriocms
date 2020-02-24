@@ -57,16 +57,10 @@ const CalObject = {
 
   drop_CalNewApStartTime: 'ng-select[formcontrolname=startTime]',
 
-  value_Ap_StarTime: '//span[text()="04:00 PM"]',
-
   drop_CalNewApEndTime: 'ng-select[formcontrolname=endTime]',
-
-  value_Ap_EndTime: '//span[text()="11:00 AM"]',
 
   //Employee
   drop_CalNewApEyee: 'ng-select[formcontrolname="email"]',
-
-  value_Ap_Employee: '//span[text()="tan+3@spiderbox.design"]',
 
   //New Employee
 
@@ -107,26 +101,23 @@ const CalObject = {
 
   txt_CalNewApNote: 'textarea[formcontrolname=notes]',
 
-  // lbl_CalDay: '(//*[text()="28"])[2]',
-
-  form_ApDetails: '//*[contains(@aria-label,"123456789, from 11:00 AM")]',
-  // '//*[text()="Employer_Test - TEST 10 Employee - 0123456789"]',
-  // div[role="application"]>div:last-child>mwl-calendar-event-title'
-
   btn_CalNewApSave: '//button[contains(text(),"Save")]',
+
   btn_CalNewApCancel: '//*[text()="Cancel"]',
 }
 
 const CalVerify = {
   pop_CalSuccess: '//*[contains(@class,"cdk-live-announcer-element")]',
+
   drop_MedVerify: '//ng-select[@formcontrolname="medicalTypeId"]//span[contains(@class,"ng-value-label")]',
 
   lbl_ElyerMailVerify: 'tbody[role="rowgroup"]>tr:last-child>td:nth-child(2)',
 
   lblEmail: '//*[text()="tan+12@spiderbox.design"]',
-  lblFirstName: '//*[text()="First Name"]',
-  lblLastName: '//*[text()="Last Name"]',
 
+  lblFirstName: '//*[text()="First Name"]',
+
+  lblLastName: '//*[text()="Last Name"]',
 }
 
 const OnsiteAppointmentObject = {

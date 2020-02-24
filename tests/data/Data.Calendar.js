@@ -25,7 +25,9 @@ const DataCal = {
     Ap_EyeePosition: 'Position',
     Ap_Department: 'Department',
 
-    Ap_NewEmployee: 'tan+25789@spiderbox.design'
+    Ap_NewEmployee: 'tan+26@spiderbox.design',
+
+    employeeEmail: { emailemployee: 'tan+4@spiderbox.design' }
     //Value Change Date Time
     // Ap_ChangeDate:
 }
