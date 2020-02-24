@@ -33,24 +33,14 @@ const CalObject = {
   //Employer
   drop_CalNewApEyer: 'ng-select[formcontrolname=employerId]',
 
-  value_Ap_Employer: '//span[text()="Rochell Maffetti"]',
-
   //Location
   drop_CalNewApLocation: 'ng-select[formcontrolname=locationId]',
-
-  value_Ap_Location: '//span[text()="LocationVVT"]',
-
-  value_Ap_OnsLocation: '//span[text()="Stevena Deane"]',
 
   //Medical Type
   drop_CalNewApMedType: 'ng-select[formcontrolname=medicalTypeId]',
 
-  value_Ap_MedType: '//span[text()="TestMedical"]',
-
   //Role
   drop_CalNewApRole: 'ng-select[formcontrolname=masterRoleId]',
-
-  value_Ap_Role: '//span[text()="New Role"]',
 
   //Date Time
   txt_CalNewApDate: 'input[formcontrolname=date]',
@@ -87,8 +77,6 @@ const CalObject = {
   txt_CalNewApSuburb: 'input[formcontrolname=suburb]',
 
   txt_CalNewApState: 'ng-select[formcontrolname=state]',
-
-  value_Ap_State: '//*[text()="VIC"]',
 
   drop_CalNewApPostCode: 'input[formcontrolname=postCode]',
 
@@ -192,12 +180,12 @@ const AppointmentObject = {
   },
   locationSelector: "//ng-select[contains(@formcontrolname, 'locationId')]",
   defaultLocation: "//*[contains(@role, 'option')]",
-  selectLocation: (title) => {
-    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + title + "'" + ")] ]"
+  selectLocation: (location) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + location + "'" + ")] ]"
   },
   medicalTypeSelector: "//ng-select[contains(@formcontrolname, 'medicalTypeId')]",
-  selectMedicalType: (name) => {
-    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
+  selectMedicalType: (medicaltype) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + medicaltype + "'" + ")] ]"
   },
   emailSelector: "//ng-select[contains(@formcontrolname, 'email')]",
   selectEmail: (email) => {
@@ -207,23 +195,16 @@ const AppointmentObject = {
   selectStartTime: (startTime) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + startTime + "'" + ")] ]"
   },
-  // firstname: "//*[contains(@formcontrolname, 'firstName')]",
-  // lastname: "//*[contains(@formcontrolname, 'lastName')]",
-  // genderSelector: "//ng-select[contains(@formcontrolname, 'gender')]",
-  // defaultGender: "//*[contains(@role, 'option')]",
-  // dob: "//*[contains(@formcontrolname, 'dob')]",
-  // defaultDob: "//bs-datepicker-container//*[contains(@role, 'gridcell') and .//*[not(contains(@class, 'is-other-month'))] ]",
-  // phone: "//*[contains(@formcontrolname, 'phone')]",
-  // streetLine1: "//*[contains(@formcontrolname, 'streetLine1')]",
-  // suburb: "//*[contains(@formcontrolname, 'Suburb')]",
-  // streetLine1: "//*[contains(@formcontrolname, 'streetLine1')]",
-  // stateSelector: "//ng-select[contains(@formcontrolname, 'state')]",
-  // defaultState: "//*[contains(@role, 'option')]",
-  // postCode: "//*[contains(@formcontrolname, 'postCode')]",
-  // roleSelector: "//ng-select[contains(@formcontrolname, 'masterRoleId')]",
-  // selectrole: (role) => {
-  //   return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + role + "'" + ")] ]"
-  // },
+  selectState: function (state) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + state + "'" + ")] ]"
+  },
+  selectRole: function (role) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + role + "'" + ")] ]"
+  },
+  selectGender: function (gender) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + gender + "'" + ")] ]"
+  },
+
   supervisorSelector: "//ng-select[contains(@formcontrolname, 'supervisorId')]",
   selectSupervisor: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
