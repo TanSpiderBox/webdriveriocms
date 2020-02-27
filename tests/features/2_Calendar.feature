@@ -13,25 +13,25 @@ Feature: Calendar
         When User create new Appointment with new Employee
         Then User create new Appointment with new Employee Success and Employee added in Employer '1'
 
-    @TestCase010
-    Scenario: Verify user can update Appointment
-        When User update existing Appointment 
-        Then User update Appointment Successful
+    # @TestCase010
+    # Scenario: Verify user can update Appointment
+    #     When User update existing Appointment 
+    #     Then User update Appointment Successful
 
-    @TestCase011
-    Scenario: Verify Employee Manager can create New Appointment for Employee
-        When Employee Manager create New Appoinment for Employee 
-        Then Employee can see this appointment 
+    # @TestCase011
+    # Scenario: Verify Employee Manager can create New Appointment for Employee
+    #     When Employee Manager create New Appoinment for Employee 
+    #     Then Employee can see this appointment 
 
-    @TestCase013
-    Scenario: Verify user can create Onsite Appointment
-        When User create new Onsite Appoinment 
-        Then User create new Onsite Appoinment successful 
+    # @TestCase013
+    # Scenario: Verify user can create Onsite Appointment
+    #     When User create new Onsite Appoinment 
+    #     Then User create new Onsite Appoinment successful 
 
-    @TestCase014
-    Scenario: Verify user can create Onsite Appointment with none employee
-        When User create new Onsite Appoinment with none employee
-        Then User create new Onsite Appoinment successful 
+    # @TestCase014
+    # Scenario: Verify user can create Onsite Appointment with none employee
+    #     When User create new Onsite Appoinment with none employee
+    #     Then User create new Onsite Appoinment successful 
 
 # @TestCase015
 # Scenario: Verify Employee register Onsite Appointment Form

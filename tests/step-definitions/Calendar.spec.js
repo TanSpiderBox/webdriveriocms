@@ -58,6 +58,9 @@ When("User create new Appointment with new Employee", () => {
     var employer = appointmentdata.apemployer;
     var location = appointmentdata.aplocation;
     var medical = appointmentdata.apmedtype;
+    var gender = employeedata.employeegender;
+    var state = employeedata.employeestate;
+    var role = employeedata.employeerole;
 
     //Create New Appointment
     $(CalObject.btn_CalNwAp).click();
@@ -85,13 +88,14 @@ When("User create new Appointment with new Employee", () => {
     $(CalObject.txt_CalNewApLastName).setValue(DataCal.Ap_EyeeLastName);
 
     $(CalObject.drop_CalNewApGender).click();
-    $(CalObject.txt_CalNewApDob).setValue(employeedata.Ap_EyeeDob);
-    $(CalObject.txt_CalNewAphone).setValue(employeedata.Ap_EyeePhone);
-    $(CalObject.txt_CalNewApStrLn1).setValue(employeedata.Ap_EyeeStrln1);
-    $(CalObject.txt_CalNewApSuburb).setValue(employeedata.Ap_EyeeSuburd);
-    $(CalObject.txt_CalNewApState).click();
-    $(CalObject.drop_CalNewApPostCode).setValue(employeedata.Ap_EyeePostCode);
-    $(CalObject.drop_CalNewApRole).click();
+    $(AppointmentObject.selectGender(gender.gender)).click();
+    $(CalObject.txt_CalNewApDob).setValue(employeedata.employeedob);
+    $(CalObject.txt_CalNewAphone).setValue(employeedata.employeephone);
+    $(CalObject.txt_CalNewApStrLn1).setValue(employeedata.employeestrline);
+    $(CalObject.txt_CalNewApSuburb).setValue(employeedata.employeesuburb);
+    $(AppointmentObject.selectState(state.state)).click();
+    $(CalObject.drop_CalNewApPostCode).setValue(employeedata.employeepostalcode);
+    $(AppointmentObject.selectRole(role.role)).click();
 
     $(CalObject.btn_CalNewApSave).click();
     browser.pause(3000);

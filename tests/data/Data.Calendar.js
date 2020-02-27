@@ -12,17 +12,19 @@ const appointmentdata = {
 
 const employeedata = {
     employeeEmail: { employeeemail: 'tan+3@spiderbox.design' },
-    employeefirstname: { firstname: 'Employee' },
-    employeelastname: { lastname: 'Test2' },
+    employeefirstname: 'Employee',
+    employeelastname: 'Test2',
     employeegender: { gender: 'Male' },
-    employeedob: { dob: '16/06/1994' },
-    employeephone: { phone: '0123456789' },
-    employeestrline: { strline: '364' },
-    employeesuburb: { suburb: 'hcm' },
-    employeepostalcode: { postalcode: '700000' },
+    employeedob: '16/06/1994',
+    employeephone: '0123456789',
+    employeestrline: '364',
+    employeesuburb: 'hcm',
+    employeestate: { state: 'VIC' },
+    employeepostalcode: '700000',
+    employeerole: { role: 'New Role' },
     employeeposition: { position: 'Position' },
     employeedepartment: { deparment: 'Department' },
-    newemployeeemail: { nwemployeeemail: 'tan+26@spiderbox.design' },
+    newemployeeemail: 'tan+27@spiderbox.design',
     employeemanageremail: { manageremail: 'tan+4@spiderbox.design' },
 }
 
