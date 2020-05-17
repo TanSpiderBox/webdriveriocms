@@ -1,251 +1,232 @@
-import { When, Then, And } from "cucumber";
+import { When, Then } from "cucumber";
 import { assert } from 'chai'
 import { appointmentdata, employeedata } from "../data/Data.Calendar";
-import { CalObject, CalVerify, OnsiteAppointmentObject, AppointmentObject } from "../page-object/Calendar.po";
+import { CalendarObject, CalendarVerify, OnsiteAppointmentObject, AppointmentObject } from "../page-object/Calendar.po";
 import { MenuObject } from "../page-object/shared/Menu.po";
 import { LoginObject } from "../page-object/Login.po";
 import { DataLogin } from "../data/Data.Login";
 import { MedicalTypeObject } from "../page-object/MedicalType.po";
 
+const timeout = 4000
+var employer = appointmentdata.apemployer;
+var email = appointmentdata.apemail;
+var location = appointmentdata.aplocation;
+var medical = appointmentdata.apmedtype;
+var gender = employeedata.employeegender;
+var state = employeedata.employeestate;
+var role = employeedata.employeerole;
+var onsite = appointmentdata.onsitelocation
+var medical = appointmentdata.apmedtype
+
 /* TestCase008 */
 When("User create new Appointment with existing Employee", () => {
-    var employer = appointmentdata.apemployer;
-    var email = appointmentdata.apemail;
-    var location = appointmentdata.aplocation;
-    var medical = appointmentdata.apmedtype;
-
-    browser.pause(1000);
-    $(CalObject.btn_CalNwAp).waitForExist(20000);
-    $(CalObject.btn_CalNwAp).click();
+    browser.pause(timeout);
+    $(AppointmentObject.appointmentNewBtn).click();
 
     //User Select Employer
-    browser.pause(1000);
+    browser.pause(timeout);
     $(AppointmentObject.employerSelector).click();
     $(AppointmentObject.selectEmployer(employer.name)).click();
 
     //User Select Location
-    $(CalObject.drop_CalNewApLocation).click();
+    $(AppointmentObject.locationSelector).click();
     $(AppointmentObject.selectLocation(location.location)).click();
 
     //User Select Medical Type
-    $(CalObject.drop_CalNewApMedType).click();
+    $(AppointmentObject.medicalTypeSelector).click();
     $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
+    $(AppointmentObject.emailInput).setValue(email.email);
     $(AppointmentObject.selectEmail(email.email)).click();
 
     //Save Appoinment
-    $(CalObject.btn_CalNewApSave).click();
-    browser.pause(1000)
+    $(CalendarObject.appointmentSaveBtn).click();
 })
+
 Then("User create new Appointment Success", () => {
-    var employer = appointmentdata.apemployer;
     $(MenuObject.calendar).click()
-    browser.pause(1000)
+    browser.pause(timeout)
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.find({ employer: employer.name }).forEach(el => {
-        browser.pause(1000)
+        browser.pause(timeout)
         el.click();
-        $(AppointmentObject.removeBtn).click()
+        $(CalendarObject.appointmentRemoveBtn).click()
+        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
-        browser.pause(1000)
+        browser.pause(timeout)
     })
 })
 
 /* TestCase009 */
 When("User create new Appointment with new Employee", () => {
-    var employer = appointmentdata.apemployer;
-    var location = appointmentdata.aplocation;
-    var medical = appointmentdata.apmedtype;
-    var gender = employeedata.employeegender;
-    var state = employeedata.employeestate;
-    var role = employeedata.employeerole;
-
     //Create New Appointment
-    $(CalObject.btn_CalNwAp).click();
+    $(AppointmentObject.appointmentNewBtn).click();
 
     //User Select Employer
-    browser.pause(1000);
+    browser.pause(timeout);
     $(AppointmentObject.employerSelector).click();
     $(AppointmentObject.selectEmployer(employer.name)).click();
 
     //User Select Location
-    $(CalObject.drop_CalNewApLocation).click();
+    $(AppointmentObject.locationSelector).click();
     $(AppointmentObject.selectLocation(location.location)).click();
 
     //User Select Medical Type
-    $(CalObject.drop_CalNewApMedType).click();
+    $(AppointmentObject.medicalTypeSelector).click();
     $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
     //Add new Employee
-    $(CalObject.drop_CalNewApLocation).click();
-    $(CalObject.txt_CalNewApEyee).setValue(employeedata.newemployeeemail);
-    $(CalObject.lbl_AddNew).click();
+    $(AppointmentObject.emailSelector).click();
+    $(AppointmentObject.emailInput).setValue(employeedata.newemployeeemail);
+    $(CalendarObject.ememployeeSelect).click();
 
     //Fill Data
-    $(CalObject.txt_CalNewApFirstName).setValue(DataCal.Ap_EyeeFirstName);
-    $(CalObject.txt_CalNewApLastName).setValue(DataCal.Ap_EyeeLastName);
+    $(CalendarObject.employeeFirstNameInput).setValue(employeedata.employeefirstname);
+    $(CalendarObject.employeeLastNameInput).setValue(employeedata.employeelastname);
 
-    $(CalObject.drop_CalNewApGender).click();
+    $(AppointmentObject.genderSelector).click();
     $(AppointmentObject.selectGender(gender.gender)).click();
-    $(CalObject.txt_CalNewApDob).setValue(employeedata.employeedob);
-    $(CalObject.txt_CalNewAphone).setValue(employeedata.employeephone);
-    $(CalObject.txt_CalNewApStrLn1).setValue(employeedata.employeestrline);
-    $(CalObject.txt_CalNewApSuburb).setValue(employeedata.employeesuburb);
+
+    $(CalendarObject.employeeDoBInput).setValue(employeedata.employeedob);
+    $(CalendarObject.employeePhoneInput).setValue(employeedata.employeephone);
+    $(CalendarObject.employeeStrLn1Input).setValue(employeedata.employeestrline);
+    $(CalendarObject.employeeSuburbInput).setValue(employeedata.employeesuburb);
+
+    $(AppointmentObject.stateSelector).click();
     $(AppointmentObject.selectState(state.state)).click();
-    $(CalObject.drop_CalNewApPostCode).setValue(employeedata.employeepostalcode);
+
+    $(CalendarObject.employeePostCodeInput).setValue(employeedata.employeepostalcode);
+
+    $(AppointmentObject.masterRoleSelector).click();
     $(AppointmentObject.selectRole(role.role)).click();
 
-    $(CalObject.btn_CalNewApSave).click();
-    browser.pause(3000);
+    $(CalendarObject.appointmentSaveBtn).click();
+    browser.pause(timeout);
 })
-Then("User create new Appointment with new Employee Success and Employee added in Employer {string}", (num) => {
-    num == 1
-    var employer = DataCal.Ap_Employer1
-
+Then("User create new Appointment with new Employee Success and Employee added in Employer", () => {
     $(MenuObject.calendar).click()
-    browser.pause(3000)
+    browser.pause(timeout)
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.find({ employer: employer.name }).forEach(el => {
-        browser.pause(3000)
+        browser.pause(timeout)
         el.click();
-        // waitingLoad(AppointmentObject.removeBtn)
-        $(AppointmentObject.removeBtn).click()
-        // waitingLoad(MedicalTypeObject.yesButtonOfConfirmation)
+        $(CalendarObject.appointmentRemoveBtn).click()
+        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
-        // waitingLoad(AppointmentObject.successfullyDeleted)
-        browser.pause(2000)
+        browser.pause(timeout)
     })
 
-    //Verify Employee have added in Emloyer
-    $(EyersObj.menu_Eyers).click();
-    $(EyersObj.searchbox_Employer).setValue('Rochell Maffetti')
-    $(EyersObj.searchbox_Employer).keys("\uE007")
-    $(EyersObj.btn_ElEdit).waitForExist(20000)
-    $(EyersObj.btn_ElEdit).click();
-    $(EyersObj.tabmenu_EyerEyees).click();
+    // $(MenuObject.employer).click()
+    // //Verify Employee have added in Emloyer
+    // $(EyersObj.menu_Eyers).click();
+    // $(EyersObj.searchbox_Employer).setValue('Rochell Maffetti')
+    // $(EyersObj.searchbox_Employer).keys("\uE007")
+    // $(EyersObj.btn_ElEdit).waitForExist(timeout)
+    // $(EyersObj.btn_ElEdit).click();
+    // $(EyersObj.tabmenu_EyerEyees).click();
 
 })
 
-
 /* TestCase010 */
-When("User update existing Appointment {string}", (num) => {
-    num == 1
-    var employer = EmployerData.employerR
-    var email = DataCal.employeeEmail
-
+When("User update existing Appointment", () => {
     //Select Calendar Menu
-    $(CalObject.menu_Cal).click();
+    $(MenuObject.calendar).click();
 
-    browser.pause(3000);
-    $(CalObject.btn_CalNwAp).waitForExist(20000);
-    $(CalObject.btn_CalNwAp).click();
+    browser.pause(timeout);
+    $(AppointmentObject.appointmentNewBtn).click()
 
-    //User Select Employer
-    browser.pause(3000);
+    ///User Select Employer
+    browser.pause(timeout);
     $(AppointmentObject.employerSelector).click();
     $(AppointmentObject.selectEmployer(employer.name)).click();
 
     //User Select Location
-    $(CalObject.drop_CalNewApLocation).click();
-    $(CalObject.value_Ap_Location).click();
+    $(AppointmentObject.locationSelector).click();
+    $(AppointmentObject.selectLocation(location.location)).click();
 
     //User Select Medical Type
-    $(CalObject.drop_CalNewApMedType).click();
-    $(CalObject.value_Ap_MedType).click();
+    $(AppointmentObject.medicalTypeSelector).click();
+    $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
-    $(AppointmentObject.selectEmail(email.employeeemail)).click();
+    $(AppointmentObject.emailInput).setValue(email.email);
+    $(AppointmentObject.selectEmail(email.email)).click();
 
     //Save Appoinment
-    $(CalObject.btn_CalNewApSave).click();
+    $(CalendarObject.appointmentSaveBtn).click();
 
     //Update existing Appoinment
     $(MenuObject.calendar).click()
-    browser.pause(3000)
+    browser.pause(timeout)
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.find({ employer: employer.name }).forEach(el => {
-        browser.pause(3000)
+        browser.pause(timeout)
         el.click();
 
-        $(CalObject.txt_CalNewApNote).setValue('NewUpdate');
-        $(AppointmentObject.updateBtn).waitForExist(20000)
-        $(AppointmentObject.updateBtn).click()
-        browser.pause(1000)
+        $(CalendarObject.employeeNoteInput).setValue('NewUpdate');
+        $(CalendarObject.appointmentUpdateBtn).click()
+        browser.pause(timeout)
     })
 })
-Then("User update Appointment Successful {string}", (num) => {
-    // assert.equal($(CalVerify.lbl_ElyerMailVerify).getText(), DataCal.Ap_EyeeEmail, '')
-    num == 1
-    var employer = DataCal.Ap_Employer1
-
+Then("User update Appointment Successful", () => {
     $(MenuObject.calendar).click()
-    browser.pause(3000)
+    browser.pause(timeout)
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.find({ employer: employer.name }).forEach(el => {
-        browser.pause(3000)
+        browser.pause(timeout)
         el.click();
 
-        $(AppointmentObject.removeBtn).click()
-
+        $(CalendarObject.appointmentRemoveBtn).click()
+        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
-
-        browser.pause(2000)
+        browser.pause(timeout)
     })
 })
 
 /* TestCase011 */
-When("Employee Manager create New Appoinment for Employee {string}", (num) => {
-    num == 1
-    var employer = EmployerData.apemployer
-    var email = DataCal.employeeEmail
-
+When("Employee Manager create New Appoinment for Employee", () => {
     //Login System With Employee Manager Account
+    $(LoginObject.btn_Logout).scrollIntoView();
     $(LoginObject.btn_Logout).click();
     $(LoginObject.txt_Username).setValue(DataLogin.employeeMusername);
     $(LoginObject.txt_Password).setValue(DataLogin.employeeMpassword);
     $(LoginObject.btn_Login).click();
 
     //Select Calendar Menu
-    $(CalObject.menu_Cal).click();
-
-    browser.pause(3000);
-    $(CalObject.btn_CalNwAp).waitForExist(20000);
-    $(CalObject.btn_CalNwAp).click();
+    browser.pause(timeout);
+    $(AppointmentObject.appointmentNewBtn).click();
 
     //User Select Employer
-    browser.pause(3000);
+    browser.pause(timeout);
     $(AppointmentObject.employerSelector).click();
     $(AppointmentObject.selectEmployer(employer.name)).click();
 
     //User Select Location
-    $(CalObject.drop_CalNewApLocation).click();
-    $(CalObject.value_Ap_Location).click();
+    $(AppointmentObject.locationSelector).click();
+    $(AppointmentObject.selectLocation(location.location)).click();
 
     //User Select Medical Type
-    $(CalObject.drop_CalNewApMedType).click();
-    $(CalObject.value_Ap_MedType).click();
+    $(AppointmentObject.medicalTypeSelector).click();
+    $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
-    $(AppointmentObject.selectEmail(email.employeeemail)).click();
+    $(AppointmentObject.emailInput).setValue(email.email);
+    $(AppointmentObject.selectEmail(email.email)).click();
 
     //Save Appoinment
-    $(CalObject.btn_CalNewApSave).click();
-
+    $(CalendarObject.appointmentSaveBtn).click();
 })
-Then("Employee can see this appointment {string}", (num) => {
+Then("Employee can see this appointment", () => {
     //Employee Login System
-    browser.pause(3000)
+    $(LoginObject.btn_Logout).scrollIntoView();
     $(LoginObject.btn_Logout).click();
     $(LoginObject.txt_Username).setValue(DataLogin.employeeusername);
     $(LoginObject.txt_Password).setValue(DataLogin.employeepassword);
     $(LoginObject.btn_Login).click();
-
-    num == 1
-    var employer = EmployerData.employerR
 
     $(MenuObject.calendar).click()
     browser.pause(3000)
@@ -254,53 +235,58 @@ Then("Employee can see this appointment {string}", (num) => {
         browser.pause(3000)
         elConf.click();
         $(AppointmentObject.removeBtn).click()
+        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
         browser.pause(2000)
     })
 })
 
 /* TestCase013 */
-When("User create new Onsite Appoinment {string}", (num) => {
-    num == 1
-    var employer = EmployerData.employerR
-
-    //Login System With Employee Manager Account
-    $(LoginObject.btn_Logout).click();
-    $(LoginObject.txt_Username).setValue(DataLogin.username);
-    $(LoginObject.txt_Password).setValue(DataLogin.password);
-    $(LoginObject.btn_Login).click();
+When("User create new Onsite Appoinment", () => {
 
     //Create New Onsite Appointment
-    $(OnsiteAppointmentObject.newBtn).click()
+    $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
 
     //User Select Employer
     browser.pause(3000);
-    $(AppointmentObject.employerSelector).click();
-    $(AppointmentObject.selectEmployer(employer.name)).click();
+    $(OnsiteAppointmentObject.employerSelect).click();
+    $(OnsiteAppointmentObject.selectEmployer(employer.name)).click();
+
+    ///User Select Employer
+    browser.pause(timeout);
+    $(OnsiteAppointmentObject.employerSelect).click();
+    $(OnsiteAppointmentObject.selectEmployer(employer.name)).click();
 
     //User Select Location
-    $(CalObject.drop_CalNewApLocation).click();
-    $(CalObject.value_Ap_OnsLocation).click();
+    $(OnsiteAppointmentObject.locationSelect).click();
+    $(OnsiteAppointmentObject.selectLocation(onsite.onsitelocatio)).click();
 
     //User Select Medical Type
-    $(CalObject.drop_CalNewApMedType).click();
-    $(CalObject.value_Ap_MedType).click();
+    $(OnsiteAppointmentObject.medicalTypeSelect).click();
+    $(OnsiteAppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
-    //User Select Public Time Slot
-    $(OnsiteAppointmentObject.publicBtn).click();
-
+    //User Select Enable Time Slot
+    $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
+    $(OnsiteAppointmentObject.onsiteappointmentPublicBtn).click();
     //User Add Room
-    $(OnsiteAppointmentObject.addroomBtn).click();
-    $(OnsiteAppointmentObject.slottimeTxt).setValue(20);
-    $(OnsiteAppointmentObject.slottimeTxt).keys("\uE007");
-    // $(OnsiteAppointmentObject.timeslotBtn).click(),
+    $(OnsiteAppointmentObject.onsiteappointmentAddRoomBtn).click();
+    $(OnsiteAppointmentObject.onsiteappointmentSlottimeTxt).setValue(5);
+    browser.keys("\uE007");
+
+    //User Select Employee
+    $(OnsiteAppointmentObject.employeeDetails).click();
+    $(OnsiteAppointmentObject.emailSelector).click();
+    $(OnsiteAppointmentObject.emailInput).setValue(email.email);
+    $(OnsiteAppointmentObject.selectEmail(email.email)).click();
+    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+
 
     //Save Appoinment
-    $(CalObject.btn_CalNewApSave).click();
+    $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(3000)
 
 })
-Then("User create new Onsite Appoinment successful {string}", (num) => {
+Then("User create new Onsite Appoinment successful", () => {
 
 })
 

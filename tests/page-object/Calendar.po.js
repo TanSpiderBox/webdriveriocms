@@ -1,136 +1,107 @@
-import { DataCal } from '../data/Data.Calendar'
-const CalObject = {
-  menu_Cal: '//*[contains(text(),"Calendar")]',
-
+const CalendarObject = {
   //Filter
-  drop_CalEyers: '//ng-select[@formcontrolname="employers"]',
-
-  drop_CalLc: '//ng-select[@formcontrolname="locations"]',
-
-  btn_CalAlFt: '//button[contains(text()," Apply Filter ")]',
-
-  btn_CalClFt: '//button[contains(text()," Clear Filter ")]',
-
-  txt_CalEyeeFt: '//input[@formcontrolname="employeeFilter"]',
+  calendarApplyFilterBtn: '//button[contains(text()," Apply Filter ")]',
+  calendarClearFileterBtn: '//button[contains(text()," Clear Filter ")]',
+  calendarEmployeeInput: '//input[@formcontrolname="employeeFilter"]',
 
   //Calendar
-  btn_CalPreVw: 'button[mwlcalendarpreviousview]',
-
-  btn_CalNtVw: 'button[mwlcalendarnextview]',
-
-  btn_CalCalTd: 'button[mwlcalendartoday]',
-
-  btn_CalMth: '//button[contains(text(),"MONTH")]',
-
-  btn_CalWk: '//button[contains(text(),"WEEK")]',
-
-  btn_CalDay: '//button[contains(text(),"DAY")]',
-
-  //Create New Appointment Preset 
-
-  btn_CalNwAp: '//button[contains(text()," New Appointment ")]',
-
-  //Employer
-  drop_CalNewApEyer: 'ng-select[formcontrolname=employerId]',
-
-  //Location
-  drop_CalNewApLocation: 'ng-select[formcontrolname=locationId]',
-
-  //Medical Type
-  drop_CalNewApMedType: 'ng-select[formcontrolname=medicalTypeId]',
-
-  //Role
-  drop_CalNewApRole: 'ng-select[formcontrolname=masterRoleId]',
-
-  //Date Time
-  txt_CalNewApDate: 'input[formcontrolname=date]',
-
-  drop_CalNewApStartTime: 'ng-select[formcontrolname=startTime]',
-
-  drop_CalNewApEndTime: 'ng-select[formcontrolname=endTime]',
+  calendarPreviousBtn: 'button[mwlcalendarpreviousview]',
+  calendarNextBtn: 'button[mwlcalendarnextview]',
+  calendarTodayBtn: 'button[mwlcalendartoday]',
+  calendarMonthBtn: '//button[contains(text(),"MONTH")]',
+  calendarWeekBtn: '//button[contains(text(),"WEEK")]',
+  calendarDayBtn: '//button[contains(text(),"DAY")]',
 
   //Employee
-  drop_CalNewApEyee: 'ng-select[formcontrolname="email"]',
+  ememployeeSelect: '//ng-select[@formcontrolname="email"]//span[@class="ng-star-inserted"]',
+  employeeFirstNameInput: 'input[formcontrolname=firstName]',
+  employeeLastNameInput: 'input[formcontrolname=lastName]',
+  employeeDoBInput: 'input[formcontrolname=dob]',
+  employeePhoneInput: 'input[formcontrolname=phone]',
+  employeeStrLn1Input: 'input[formcontrolname=streetLine1]',
+  employeeSuburbInput: 'input[formcontrolname=suburb]',
+  employeePostCodeInput: 'input[formcontrolname=postCode]',
+  employeePositionInput: 'input[formcontrolname=position]',
+  employeeDepartmentInput: 'input[formcontrolname=department]',
+  employeeNoteInput: 'textarea[formcontrolname=notes]',
 
-  //New Employee
-
-  txt_CalNewApEyee: '//ng-select[@formcontrolname="email"]//input',
-
-  lbl_AddNew: '//*[@role="option"]//*[text()="Add item"]',
-
-  txt_CalNewApFirstName: 'input[formcontrolname=firstName]',
-
-  txt_CalNewApLastName: 'input[formcontrolname=lastName]',
-
-  drop_CalNewApGender: 'ng-select[formcontrolname=gender]',
-
-  value_CalNewApGender: '//*[text()="Male"]',
-
-  txt_CalNewApDob: 'input[formcontrolname=dob]',
-
-  txt_CalNewAphone: 'input[formcontrolname=phone]',
-
-  txt_CalNewApEmail: 'input[formcontrolname=email]',
-
-  txt_CalNewApStrLn1: 'input[formcontrolname=streetLine1]',
-
-  txt_CalNewApSuburb: 'input[formcontrolname=suburb]',
-
-  txt_CalNewApState: 'ng-select[formcontrolname=state]',
-
-  drop_CalNewApPostCode: 'input[formcontrolname=postCode]',
-
-  //Position Department Job Catrgory
-  txt_CalNewApPosition: 'input[formcontrolname=position]',
-
-  txt_CalNewApDepartment: 'input[formcontrolname=department]',
-
-  drop_CalNewApJobClass: 'ng-select[formcontrolname=jobCategory]',
-
-  txt_CalNewApNote: 'textarea[formcontrolname=notes]',
-
-  btn_CalNewApSave: '//button[contains(text(),"Save")]',
-
-  btn_CalNewApCancel: '//*[text()="Cancel"]',
+  //Appointment
+  appointmentDateInput: 'input[formcontrolname=date]',
+  appointmentSaveBtn: '//button[contains(@class,"btn-primary") and (text()=" Save ")]',
+  appointmentSaveAddBtn: "//button[contains(@aria-controls, 'add-to-calendar')]",
+  appointmentCancelBtn: '//*[text()="Cancel"]',
+  appointmentUpdateBtn: "//app-appointment-form//button[contains(text(), 'Update')]",
+  appointmentRemoveBtn: "//button[contains(text(), 'Delete')]",
 }
 
-const CalVerify = {
-  pop_CalSuccess: '//*[contains(@class,"cdk-live-announcer-element")]',
-
-  drop_MedVerify: '//ng-select[@formcontrolname="medicalTypeId"]//span[contains(@class,"ng-value-label")]',
-
-  lbl_ElyerMailVerify: 'tbody[role="rowgroup"]>tr:last-child>td:nth-child(2)',
-
-  lblEmail: '//*[text()="tan+12@spiderbox.design"]',
-
-  lblFirstName: '//*[text()="First Name"]',
-
-  lblLastName: '//*[text()="Last Name"]',
+const CalendarVerify = {
+  createdSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been confirmed successfully')]",
+  deletedSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
 }
 
 const OnsiteAppointmentObject = {
-  newBtn: "//button[contains(text(), 'New On-site Appointment')]",
+  appointmentNewOnsiteBtn: "//button[contains(text(), 'New On-site Appointment')]",
   modal: "//modal-container[.//*[contains(text(), 'New On-Site Appointment')] ]",
+
   employerSelect: "//ng-select[contains(@formcontrolname, 'employerId')]",
   selectEmployer: (name) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
   },
+
   locationSelect: "//ng-select[contains(@formcontrolname, 'locationId')]",
   defaultLocation: "//*[contains(@role, 'option')]",
   selectLocation: (title) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + title + "'" + ")] ]"
   },
+
   medicalTypeSelect: "//ng-select[contains(@formcontrolname, 'medicalTypeId')]",
   selectMedicalType: function (name) {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
   },
+
   staffSelector: "//ng-select[contains(@formcontrolname, 'staffs')]",
   staffInput: "//ng-select[contains(@formcontrolname, 'staffs')]//input[@role='combobox']",
   selectStaff: function (email) {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] and not(.//*[(contains(text(), 'Add item'))]) ]"
   },
-  saveBtn: "//app-appointment-onsite-form//button[contains(text(), 'Save')]",
-  createdSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been confirmed successfully')]",
+
+  employeeDetails: "//*[contains(text(),'Employee details')]",
+  emailSelector: "//ng-select[contains(@formcontrolname, 'email')]",
+  selectEmail: (email) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
+  },
+  emailInput: "//ng-select[@formcontrolname='email']//input",
+
+  startTimeSelector: "//ng-select[contains(@formcontrolname, 'startTime')]",
+  selectStartTime: (startTime) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + startTime + "'" + ")] ]"
+  },
+
+  endTimeSelector: "ng-select[formcontrolname=endTime]",
+  selectEndTime: (endTime) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + endTime + "'" + ")] ]"
+  },
+
+  stateSelector: "ng-select[formcontrolname=state]",
+  selectState: function (state) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + state + "'" + ")] ]"
+  },
+
+  masterRoleSelector: 'ng-select[formcontrolname=masterRoleId]',
+  selectRole: function (role) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + role + "'" + ")] ]"
+  },
+
+  genderSelector: "ng-select[formcontrolname=gender]",
+  selectGender: function (gender) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + gender + "'" + ")] ]"
+  },
+
+  supervisorSelector: "//ng-select[contains(@formcontrolname, 'supervisorId')]",
+  selectSupervisor: (email) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
+  },
+
   find: (opts = {}) => {
     let appointments = $$("//mwl-calendar-week-view-event//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(23, 162, 184)') and contains(@aria-label, " + "'- " + opts.employer + " -'" + ")]")
     let results = [];
@@ -163,44 +134,67 @@ const OnsiteAppointmentObject = {
     })
     return results
   },
-  publicBtn: "//*[@formcontrolname='timeslotEnable']/label/div",
-  addroomBtn: "//*[text()='Add Room']",
-  slottimeTxt: '//details//input[@name="slotTime"]',
-  timeslotBtn: "//*[contains(@class,'timeslot-grid ng-star-inserted')]/div",
-  removeBtn: "//app-appointment-onsite-form//button[contains(text(), 'Delete')]",
-  successfullyDeleted: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
+  onsiteappointmentEnableBtn: "//*[@formcontrolname='timeslotEnable']/label/div",
+  onsiteappointmentPublicBtn: "//*[@formcontrolname='publicAvailability']/label/div",
+  onsiteappointmentAddRoomBtn: "//*[text()=' Add Room ']",
+  onsiteappointmentSlottimeTxt: '//details//input[@name="slotTime"]',
+  onsiteappointmentSlottimBtn: "//*[contains(@class,'timeslot-grid ng-star-inserted')]/div",
+  onsiteappointmentAddEmployeeListBtn: "//button[contains(text(),' Add to Employee List ')]",
 }
 
 const AppointmentObject = {
-  newBtn: "//button[contains(text(), 'New Appointment')]",
+  appointmentNewBtn: "//button[contains(text(), 'New Appointment')]",
   modal: "//modal-container[.//*[contains(text(), 'New Appointment')] ]",
+
   employerSelector: "//ng-select[contains(@formcontrolname, 'employerId')]",
   selectEmployer: (name) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + name + "'" + ")] ]"
   },
+
   locationSelector: "//ng-select[contains(@formcontrolname, 'locationId')]",
   defaultLocation: "//*[contains(@role, 'option')]",
   selectLocation: (location) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + location + "'" + ")] ]"
   },
+
   medicalTypeSelector: "//ng-select[contains(@formcontrolname, 'medicalTypeId')]",
   selectMedicalType: (medicaltype) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + medicaltype + "'" + ")] ]"
   },
+
+  staffSelector: "//ng-select[contains(@formcontrolname, 'staffs')]",
+  staffInput: "//ng-select[contains(@formcontrolname, 'staffs')]//input[@role='combobox']",
+  selectStaff: function (email) {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] and not(.//*[(contains(text(), 'Add item'))]) ]"
+  },
+
   emailSelector: "//ng-select[contains(@formcontrolname, 'email')]",
   selectEmail: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
+  emailInput: "//ng-select[@formcontrolname='email']//input",
+
   startTimeSelector: "//ng-select[contains(@formcontrolname, 'startTime')]",
   selectStartTime: (startTime) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + startTime + "'" + ")] ]"
   },
+
+  endTimeSelector: "ng-select[formcontrolname=endTime]",
+  selectEndTime: (endTime) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + endTime + "'" + ")] ]"
+  },
+
+  stateSelector: "ng-select[formcontrolname=state]",
   selectState: function (state) {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + state + "'" + ")] ]"
   },
+
+  masterRoleSelector: 'ng-select[formcontrolname=masterRoleId]',
   selectRole: function (role) {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + role + "'" + ")] ]"
   },
+
+  genderSelector: "ng-select[formcontrolname=gender]",
   selectGender: function (gender) {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + gender + "'" + ")] ]"
   },
@@ -209,10 +203,6 @@ const AppointmentObject = {
   selectSupervisor: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
-  saveBtn: "//app-appointment-form//button[contains(text(), 'Save')]",
-  createdSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been confirmed successfully')]",
-  removeBtn: "//app-appointment-form//button[contains(text(), 'Delete')]",
-  successfullyDeleted: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
 
   findConf: (optsConf = {}) => {
     let appointmentConf = $$("//mwl-calendar-week-view-event//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(220, 53, 69)') and contains(@aria-label, " + "'- " + optsConf.employer + " -'" + ")]")
@@ -273,9 +263,6 @@ const AppointmentObject = {
     })
     return results
   },
-  updateBtn: "//app-appointment-form//button[contains(text(), 'Update')]",
-  removeBtn: "//app-appointment-form//button[contains(text(), 'Delete')]",
-  successfullyDeleted: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
 }
 
-export { CalObject, CalVerify, OnsiteAppointmentObject, AppointmentObject }
+export { CalendarObject, CalendarVerify, OnsiteAppointmentObject, AppointmentObject }

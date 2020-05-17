@@ -132,7 +132,7 @@ const EmployerObject = {
     findSupervisor: (email) => {
       return "//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
     },
-    saveBtn: "//app-employee-details//*[text() ='Save']",
+    saveBtn: "//*[contains(text(),'Save')]",
     clearSupervisor: "//app-employee-details//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@title, 'Clear all')]",
   },
 
@@ -156,7 +156,7 @@ const EmployerObject = {
   onsiteLocationSection: "//app-onsite-locations-list",
   newOnsiteLocationBtn: "//app-onsite-locations-list//button[contains(text(), 'New On-Site Location')]",
   findOnsiteLocation: (title) => {
-    return "//app-onsite-locations-list//tr[.//button[text()=" + "'" + title + "'" + "] ]"
+    return "//app-onsite-locations-list//tr[.//button[contains(text()," + "'" + title + "'" + ")] ]//button[*[text()='clear']]"
   },
   nextOnsiteLocation: "//app-onsite-locations-list//li[contains(@class, 'pagination-next') and not(contains(@class, 'disabled'))]//a[contains(@class, 'page-link')]",
   onsiteLocation: {
@@ -166,7 +166,7 @@ const EmployerObject = {
     stateSelector: "//app-onsite-location-form//ng-select[@formcontrolname='state']",
     defaultState: "//*[contains(@role, 'option')]",
     postCodeInput: "//app-onsite-location-form//input[@formcontrolname='postCode']",
-    saveBtn: "//modal-container[.//*[text()='New On-Site Location']]//button[text()='Save']",
+    saveBtn: "//*[contains(text(),'Save')]",
     createSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Updated successfully')]",
     failedDelete: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'This onsite location has appointments')]",
   },

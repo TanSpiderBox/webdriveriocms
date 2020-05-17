@@ -1,6 +1,6 @@
 const EmployerData =  {
-  employer1: { name: 'Spiderbox' },
-  employer2: { name: 'Spiderbox - 2'},
+  employer1: { name: 'Rochell Maffetti' },
+  employer2: { name: 'Thedrick Lynett'},
 }
 
 export { EmployerData }

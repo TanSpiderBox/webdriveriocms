@@ -8,9 +8,6 @@ exports.config = {
     // on a remote machine).
     runner: 'local',
     //
-    // Override default path ('/wd/hub') for chromedriver service.
-    path: '/',
-    //
     // ==================
     // Specify Test Files
     // ==================
@@ -49,6 +46,7 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
+    
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -57,7 +55,9 @@ exports.config = {
         browserName: 'chrome',
         'goog:chromeOptions': {
             args: [
-                'start-maximized'
+                'start-maximized',
+                '--headless',
+                '--window-size=1920,1080',
             ]
         },
         // If outputDir is provided WebdriverIO can capture driver session logs
@@ -102,7 +102,7 @@ exports.config = {
     waitforTimeout: 10000,
     //
     // Default timeout in milliseconds for request
-    // if Selenium Grid doesn't send response
+    // if browser driver or grid doesn't send response
     connectionRetryTimeout: 90000,
     //
     // Default request retries count
@@ -125,15 +125,13 @@ exports.config = {
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
     //
+    // Whether or not retried specfiles should be retried immediately or deferred to the end of the queue
+    // specFileRetriesDeferred: false,
+    //
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec', ['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: false,
-        useCucumberStepReporter: false
-    }]],
+    reporters: ['spec'],
  //
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
@@ -167,6 +165,17 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      */
     // onPrepare: function (config, capabilities) {
+    // },
+    /**
+     * Gets executed before a worker process is spawned and can be used to initialise specific service
+     * for that worker as well as modify runtime environments in an async fashion.
+     * @param  {String} cid      capability id (e.g 0-0)
+     * @param  {[type]} caps     object containing capabilities for session that will be spawn in the worker
+     * @param  {[type]} specs    specs to be run in the worker process
+     * @param  {[type]} args     object that will be merged with the main configuration once worker is initialised
+     * @param  {[type]} execArgv list of string arguments passed to the worker process
+     */
+    // onWorkerStart: function (cid, caps, specs, args, execArgv) {
     // },
     /**
      * Gets executed just before initialising the webdriver session and test framework. It allows you
@@ -205,12 +214,12 @@ exports.config = {
     /**
      * Runs before a Cucumber step
      */
-    // beforeStep: function (uri, feature, stepData, context) {
+    // beforeStep: function ({ uri, feature, step }, context) {
     // },
     /**
      * Runs after a Cucumber step
      */
-    // afterStep: function (uri, feature, { error, result, duration, passed }, stepData, context) {
+    // afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
     // },
     /**
      * Runs after a Cucumber scenario
