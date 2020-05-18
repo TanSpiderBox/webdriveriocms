@@ -2,7 +2,7 @@ const appointmentdata = {
     //Verify Data
     apemployer: { name: 'Rochell Maffetti' },
     aplocation: { location: 'LocationVVT' },
-    onsitelocation: { onsitelocatio: 'Stevena Deane' },
+    onsitelocation: { onsite: 'Stevena Deane' },
     apmedtype: { medicaltype: 'TestMedical' },
     apdate: { date: '28/11/2019' },
     apstartime: { starttime: '08:30 AM' },
@@ -26,6 +26,8 @@ const employeedata = {
     employeedepartment: { deparment: 'Department' },
     newemployeeemail: 'tan+27@spiderbox.design',
     employeemanageremail: { manageremail: 'tan+4@spiderbox.design' },
+
+    registerurl: 'http://cms.spiderbox.design/onsite?key=87ec5408-13be-4b21-9b72-27af0a7c7d48&eid=NDWt2HMxMDbLotBYiYp%2FvQ%3D%3D&step=1'
 }
 
 export { appointmentdata, employeedata }

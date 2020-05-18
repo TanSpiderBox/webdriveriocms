@@ -7,13 +7,16 @@ import { LoginObject } from "../page-object/Login.po";
 import { DataLogin } from "../data/Data.Login";
 import { MedicalTypeObject } from "../page-object/MedicalType.po";
 
+var employer = appointmentdata.apemployer;
+var email = appointmentdata.apemail;
+var location = appointmentdata.aplocation;
+var medical = appointmentdata.apmedtype;
+var employeeemail = employeedata.employeeEmail
+
+var onsitelocation = appointmentdata.onsitelocation;
+
 /* TestCase008 */
 When("User create new Appointment with existing Employee", () => {
-    var employer = appointmentdata.apemployer;
-    var email = appointmentdata.apemail;
-    var location = appointmentdata.aplocation;
-    var medical = appointmentdata.apmedtype;
-
     browser.pause(1000);
     $(CalObject.btn_CalNwAp).waitForExist(20000);
     $(CalObject.btn_CalNwAp).click();
@@ -40,7 +43,6 @@ When("User create new Appointment with existing Employee", () => {
     browser.pause(1000)
 })
 Then("User create new Appointment Success", () => {
-    var employer = appointmentdata.apemployer;
     $(MenuObject.calendar).click()
     browser.pause(1000)
     // Find all appoinments which contain sample medical type. After that, removing it 
@@ -100,8 +102,7 @@ When("User create new Appointment with new Employee", () => {
     $(CalObject.btn_CalNewApSave).click();
     browser.pause(3000);
 })
-Then("User create new Appointment with new Employee Success and Employee added in Employer {string}", (num) => {
-    num == 1
+Then("User create new Appointment with new Employee Success and Employee added in Employer", () => {
     var employer = DataCal.Ap_Employer1
 
     $(MenuObject.calendar).click()
@@ -130,11 +131,7 @@ Then("User create new Appointment with new Employee Success and Employee added i
 
 
 /* TestCase010 */
-When("User update existing Appointment {string}", (num) => {
-    num == 1
-    var employer = EmployerData.employerR
-    var email = DataCal.employeeEmail
-
+When("User update existing Appointment", () => {
     //Select Calendar Menu
     $(CalObject.menu_Cal).click();
 
@@ -149,15 +146,15 @@ When("User update existing Appointment {string}", (num) => {
 
     //User Select Location
     $(CalObject.drop_CalNewApLocation).click();
-    $(CalObject.value_Ap_Location).click();
+    $(AppointmentObject.selectLocation(location.location)).click();
 
     //User Select Medical Type
     $(CalObject.drop_CalNewApMedType).click();
-    $(CalObject.value_Ap_MedType).click();
+    $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
-    $(AppointmentObject.selectEmail(email.employeeemail)).click();
+    $(AppointmentObject.selectEmail(email.email)).click();
 
     //Save Appoinment
     $(CalObject.btn_CalNewApSave).click();
@@ -176,11 +173,7 @@ When("User update existing Appointment {string}", (num) => {
         browser.pause(1000)
     })
 })
-Then("User update Appointment Successful {string}", (num) => {
-    // assert.equal($(CalVerify.lbl_ElyerMailVerify).getText(), DataCal.Ap_EyeeEmail, '')
-    num == 1
-    var employer = DataCal.Ap_Employer1
-
+Then("User update Appointment Successful", () => {
     $(MenuObject.calendar).click()
     browser.pause(3000)
     // Find all appoinments which contain sample medical type. After that, removing it 
@@ -197,10 +190,7 @@ Then("User update Appointment Successful {string}", (num) => {
 })
 
 /* TestCase011 */
-When("Employee Manager create New Appoinment for Employee {string}", (num) => {
-    num == 1
-    var employer = EmployerData.apemployer
-    var email = DataCal.employeeEmail
+When("Employee Manager create New Appoinment for Employee", () => {
 
     //Login System With Employee Manager Account
     $(LoginObject.btn_Logout).click();
@@ -222,30 +212,27 @@ When("Employee Manager create New Appoinment for Employee {string}", (num) => {
 
     //User Select Location
     $(CalObject.drop_CalNewApLocation).click();
-    $(CalObject.value_Ap_Location).click();
+    $(AppointmentObject.selectLocation(location.location)).click();
 
     //User Select Medical Type
     $(CalObject.drop_CalNewApMedType).click();
-    $(CalObject.value_Ap_MedType).click();
+    $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
-    $(AppointmentObject.selectEmail(email.employeeemail)).click();
+    $(AppointmentObject.selectEmail(employeeemail.employeeemail)).click();
 
     //Save Appoinment
     $(CalObject.btn_CalNewApSave).click();
 
 })
-Then("Employee can see this appointment {string}", (num) => {
+Then("Employee can see this appointment", () => {
     //Employee Login System
     browser.pause(3000)
     $(LoginObject.btn_Logout).click();
     $(LoginObject.txt_Username).setValue(DataLogin.employeeusername);
     $(LoginObject.txt_Password).setValue(DataLogin.employeepassword);
     $(LoginObject.btn_Login).click();
-
-    num == 1
-    var employer = EmployerData.employerR
 
     $(MenuObject.calendar).click()
     browser.pause(3000)
@@ -260,10 +247,7 @@ Then("Employee can see this appointment {string}", (num) => {
 })
 
 /* TestCase013 */
-When("User create new Onsite Appoinment {string}", (num) => {
-    num == 1
-    var employer = EmployerData.employerR
-
+When("User create new Onsite Appoinment", () => {
     //Login System With Employee Manager Account
     $(LoginObject.btn_Logout).click();
     $(LoginObject.txt_Username).setValue(DataLogin.username);
@@ -280,11 +264,11 @@ When("User create new Onsite Appoinment {string}", (num) => {
 
     //User Select Location
     $(CalObject.drop_CalNewApLocation).click();
-    $(CalObject.value_Ap_OnsLocation).click();
+    $(AppointmentObject.selectLocation(onsitelocation.onsite)).click();
 
     //User Select Medical Type
     $(CalObject.drop_CalNewApMedType).click();
-    $(CalObject.value_Ap_MedType).click();
+    $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
     //User Select Public Time Slot
     $(OnsiteAppointmentObject.publicBtn).click();
@@ -297,11 +281,12 @@ When("User create new Onsite Appoinment {string}", (num) => {
 
     //Save Appoinment
     $(CalObject.btn_CalNewApSave).click();
-    browser.pause(3000)
+    browser.pause(1000)
 
 })
-Then("User create new Onsite Appoinment successful {string}", (num) => {
-
+Then("User create new Onsite Appoinment successful", () => {
+    browser.url(employeedata.registerurl);
+    browser.pause(1000)
 })
 
 /* TestCase014 */
