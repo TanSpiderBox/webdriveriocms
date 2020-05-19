@@ -2,7 +2,7 @@ import { Given, When, Then } from "cucumber"
 import { assert, expect } from "chai"
 import { MedicalTypeObject } from  "../page-object/MedicalType.po"
 import { EmployerObject } from  "../page-object/Employers.po"
-import { OnsiteAppointmentObject } from  "../page-object/Calendar.po"
+import { OnsiteAppointmentObject, CalendarObject } from  "../page-object/Calendar.po"
 import { MenuObject } from "../page-object/shared/Menu.po";
 import { MedicalTypeData } from "../data/Data.MedicalType"
 import { EmployerData } from "../data/Data.Employer"
@@ -92,7 +92,7 @@ When('MT - Create new appointment with sample medical type and employer {string}
   $(MenuObject.calendar).click()
   waitingLoadingInner()
 
-  $(OnsiteAppointmentObject.newBtn).click()
+  $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
   waitingLoad(OnsiteAppointmentObject.modal)
   // fill form
   $(OnsiteAppointmentObject.employerSelect).click()
@@ -104,9 +104,9 @@ When('MT - Create new appointment with sample medical type and employer {string}
   $(OnsiteAppointmentObject.medicalTypeSelect).click()
   $(OnsiteAppointmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).waitForExist(20000)
   $(OnsiteAppointmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).click()
-  $(OnsiteAppointmentObject.saveBtn).click()
+  $(CalendarObject.appointmentSaveBtn).click()
 
-  waitingLoad(OnsiteAppointmentObject.createdSuccessfully)
+  // waitingLoad(OnsiteAppointmentObject.createdSuccessfully)
 })
 Then('MT - Cannot un-assign sample medical type', () => {
   $(EmployerObject.medicalTypeTab).click()
@@ -131,11 +131,9 @@ When('MT - Remove the appointment of employer {string}', (num) => {
   // Find all appoinments which contain sample medical type. After that, removing it 
   OnsiteAppointmentObject.find({ employer: employer.name, type: MedicalTypeData.sampleMedicalType }).forEach(el => {
     el.click();
-    waitingLoad(OnsiteAppointmentObject.removeBtn)
-    $(OnsiteAppointmentObject.removeBtn).click()
-    waitingLoad(MedicalTypeObject.yesButtonOfConfirmation)
+    $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+    $(CalendarObject.appointmentRemoveBtn).click()
     $(MedicalTypeObject.yesButtonOfConfirmation).click()
-    waitingLoad(OnsiteAppointmentObject.successfullyDeleted)
     browser.pause(2000)
   })
 })

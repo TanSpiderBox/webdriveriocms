@@ -2,6 +2,9 @@ import { Given, When, Then } from "cucumber"
 import { assert, expect } from "chai"
 import { MasterRoleObject } from  "../page-object/MasterRole.po"
 import { MasterRoleData } from "../data/Data.MasterRole";
+import { EmployerData } from "../data/Data.Employer";
+import { EmployerObject } from "../page-object/Employers.po.js";
+import { EmployeeData } from "../data/Data.Employee";
 
 var removeRoleButton = function (name) {
   return "//tr[.//button[contains(text(), " + "'" + name + "'" + ")]]//button/i[contains(text(), 'clear')]";
@@ -24,7 +27,7 @@ When('MSI - User click save button', () => {
 })
 
 Then('MSI - A failed message is appeared', () => {
-  browser.pause(2000)
+  browser.pause(3000)
   assert.include($(MasterRoleObject.errorNewMasterRole).getText(), 'Please review required fields!')
 })
 
@@ -33,7 +36,7 @@ When('MSI - User input valid role name', () => {
 })
 
 Then('MSI - Create a new master role successfully', () => {
-  browser.pause(2000)
+  browser.pause(3000)
   assert.equal($(MasterRoleObject.successfullySaved).getText(), 'Successfully saved')
 })
 
@@ -89,15 +92,16 @@ When('MS - Create sample role', () => {
   $(MasterRoleObject.saveButton).click()
 })
 
-When('MS - User moves to employer screen, choosing Spiderbox', () => {
+When('MS - User moves to employer screen, choosing Employer', () => {
   $(MasterRoleObject.employerMenu).click()
   // [Warning] - Because the loading-inner 
   $(MasterRoleObject.masterRoleMenu).click()
   $(MasterRoleObject.employerMenu).click()
-  browser.waitUntil(() => {
-    return $("//*[contains(@class, 'loading-inner')]").isExisting() == false
-  }, 20000)
-  $("//tr/td[contains(@class, 'cdk-column-name')]//*[contains(text(), 'Spiderbox')]").click()
+  $(EmployerObject.searchboxEmployer).click()
+  $(EmployerObject.searchboxEmployer).setValue(EmployerData.employer1.name);
+  browser.keys("\uE007");
+  $(EmployerObject.find(EmployerData.employer1.name)).click()
+  browser.pause(3000)
 })
 
 When('MS - Assign sample role to employer', () => {
@@ -151,23 +155,19 @@ Then('MS - Remove sample role successfully', () => {
   expect(failedAlert).to.be.true
 })
 When('MS - Assign sample role to employee', () => {
-  // Assign to hoang
+  // Assign to employee
   $(MasterRoleObject.employeeOnEmployer).click()
-  browser.pause(2000)
-  $("//app-employee-list//tr[.//td[contains(@class, 'mat-column-email') and contains(text(), 'hoang@spiderbox.design')]]//*[contains(@class, 'link')]").click()
-  browser.pause(2000)
-
-  $("//app-employee-details//button[contains(text(), 'Edit')]").click();
+  $(EmployerObject.searchboxEmployer).click()
+  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  browser.keys('Enter');
+  $(EmployerObject.EditEmployeeBtn).click()
+  $(EmployerObject.employee.editBtn).click()
+  
+  $(EmployerObject.roleSelector).click()
+  $(EmployerObject.roleInput).setValue(MasterRoleData.sampleRole)
+  browser.keys('Enter');
+  $(EmployerObject.employee.saveBtn).click()
   browser.pause(1000)
-  $("//app-employee-form//ng-select[contains(@formcontrolname, 'masterRoleId')]").click();
-  browser.pause(1000)
-  $("//app-employee-form//ng-select[contains(@formcontrolname, 'masterRoleId')]//ng-dropdown-panel//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]").click();
-  browser.pause(2000)
-  $("//app-employee-details//button[contains(text(), 'Save')]").click()
-  browser.pause(3000)
-  let updateSuccess = $("//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Updated successfully')]").isExisting()
-  browser.pause(3000)
-  expect(updateSuccess).to.be.true
 })
 Then('MS - Cannot un-assign sample role from employer', () => {
   $(MasterRoleObject.roleOnEmployer).click()
@@ -179,18 +179,17 @@ Then('MS - Cannot un-assign sample role from employer', () => {
 })
 When('MS - Un-assign sample role from employee', () => {
   $(MasterRoleObject.employeeOnEmployer).click()
-  browser.pause(2000)
-  $("//app-employee-list//tr[.//td[contains(@class, 'mat-column-email') and contains(text(), 'hoang@spiderbox.design')]]//*[contains(@class, 'link')]").click()
-  browser.pause(2000)
-
-  $("//app-employee-details//button[contains(text(), 'Edit')]").click();
+  $(EmployerObject.searchboxEmployer).click()
+  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  browser.keys('Enter');
+  $(EmployerObject.EditEmployeeBtn).click()
+  $(EmployerObject.employee.editBtn).click()
+  
+  $(EmployerObject.roleSelector).click()
+  $(EmployerObject.roleInput).setValue(MasterRoleData.defaultRole)
+  browser.keys('Enter');
+  $(EmployerObject.employee.saveBtn).click()
   browser.pause(1000)
-  $("//app-employee-form//ng-select[contains(@formcontrolname, 'masterRoleId')]").click();
-  browser.pause(1000)
-  $("//app-employee-form//ng-select[contains(@formcontrolname, 'masterRoleId')]//ng-dropdown-panel//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + MasterRoleData.defaultRole + "'" + ")]]").click();
-  browser.pause(2000)
-  $("//app-employee-details//button[contains(text(), 'Save')]").click()
-  browser.pause(3000)
   let updateSuccess = $("//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Updated successfully')]").isExisting()
   browser.pause(3000)
   expect(updateSuccess).to.be.true

@@ -6,7 +6,7 @@ import { SupervisorData } from "../data/Data.Supervisor";
 import { EmployerObject } from "../page-object/Employers.po";
 import { EmployerData } from "../data/Data.Employer";
 import { EmployeeData } from "../data/Data.Employee";
-import { AppointmentObject } from "../page-object/Calendar.po";
+import { AppointmentObject, CalendarObject } from "../page-object/Calendar.po";
 
 function waitingLoadingInner() {
   browser.waitUntil(() => {
@@ -45,12 +45,12 @@ When('S - Assign sample supervisor to employer', () => {
   }, 20000)
 })
 
-Then('S - Cannot remove sample supervisor', () =>{
+Then('S - Cannot remove sample supervisor', () => {
   $(MenuObject.supervisor).click()
   waitingLoadingInner();
-  // $(SupervisorObject.searchInput).setValue(SupervisorData.sampleSupervisor)
-  // browser.keys("\uE007")
-  // [Warning] The search function isn't working
+  $(SupervisorObject.searchInput).click();
+  $(SupervisorObject.searchInput).setValue(SupervisorData.sampleSupervisor)
+  browser.keys("\uE007")
 
   waitingLoad(SupervisorObject.find(SupervisorData.sampleSupervisor))
   $(SupervisorObject.find(SupervisorData.sampleSupervisor)).$(SupervisorObject.removeBtn).click()
@@ -63,13 +63,11 @@ Then('S - Cannot remove sample supervisor', () =>{
 
 When('S - Assign sample supervisor to employee', () => {
   $(EmployerObject.employeeTab).click()
-
-  waitingLoad(EmployerObject.employeesSection)
-  $(EmployerObject.findEmployee(EmployeeData.emp1.email)).$("span").click()
-
-  waitingLoad(EmployerObject.employee.editBtn)
+  $(EmployerObject.searchboxEmployer).click()
+  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  browser.keys('Enter');
+  $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()
-  browser.pause(1000)
 
   $(EmployerObject.employee.supervisorSelector).click()
   $(EmployerObject.employee.findSupervisor(SupervisorData.sampleSupervisor)).click()
@@ -90,13 +88,11 @@ Then('S - Cannot unassign supervisor from employer', () => {
 
 When('S - Can un-assign sample supervisor from employee', () => {
   $(EmployerObject.employeeTab).click()
-
-  waitingLoad(EmployerObject.employeesSection)
-  $(EmployerObject.findEmployee(EmployeeData.emp1.email)).$("span").click()
-
-  waitingLoad(EmployerObject.employee.editBtn)
+  $(EmployerObject.searchboxEmployer).click()
+  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  browser.keys('Enter');
+  $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()
-  browser.pause(1000)
 
   $(EmployerObject.employee.clearSupervisor).click()
 
@@ -118,7 +114,7 @@ When('S - Create appointment which contains sample supervisor', () => {
   $(MenuObject.calendar).click()
   waitingLoadingInner()
 
-  $(AppointmentObject.newBtn).click()
+  $(AppointmentObject.appointmentNewBtn).click();
   waitingLoad(AppointmentObject.modal)
 
   // fill form
@@ -135,7 +131,7 @@ When('S - Create appointment which contains sample supervisor', () => {
   $(AppointmentObject.selectMedicalType('')).click()
 
   $(AppointmentObject.emailSelector).click()
-  $(AppointmentObject.selectEmail(EmployeeData.emp1.email)).waitForExist(20000)
+  $(AppointmentObject.emailInput).setValue(EmployeeData.emp1.email);
   $(AppointmentObject.selectEmail(EmployeeData.emp1.email)).click()
 
   $(AppointmentObject.supervisorSelector).click()
@@ -143,19 +139,17 @@ When('S - Create appointment which contains sample supervisor', () => {
   $(AppointmentObject.selectSupervisor(SupervisorData.sampleSupervisor)).click()
 
   browser.pause(1000)
-  $(AppointmentObject.saveBtn).click()
-
-  waitingLoad(AppointmentObject.createdSuccessfully)
+  $(CalendarObject.appointmentSaveBtn).click();
 })
 
 Then('S - Supervisor was be assigned to employee', () => {
   $(EmployerObject.employeeTab).click()
-  waitingLoad(EmployerObject.employeesSection)
-
-  $(EmployerObject.findEmployee(EmployeeData.emp1.email)).$("span").click()
-  waitingLoad(EmployerObject.employee.editBtn)
+  $(EmployerObject.searchboxEmployer).click()
+  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  browser.keys('Enter');
+  $(EmployerObject.EditEmployeeBtn).click()
+  $(EmployerObject.employee.editBtn).click()
   browser.pause(2000)
-
   expect($(EmployerObject.employee.supervisorSelector).getText()).to.include(SupervisorData.sampleSupervisor)
 })
 
@@ -170,11 +164,9 @@ When('S - Remove the appointment of employer {string}', (num) => {
   // Find all appoinments which contain sample supervisor. After that, removing it 
   AppointmentObject.find({ employer: employer.name, supervisor: SupervisorData.sampleSupervisor }).forEach(el => {
     el.click();
-    waitingLoad(AppointmentObject.removeBtn)
-    $(AppointmentObject.removeBtn).click()
-    waitingLoad(SupervisorObject.yesButtonOfConfirmation)
+    $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+    $(CalendarObject.appointmentRemoveBtn).click()
     $(SupervisorObject.yesButtonOfConfirmation).click()
-    waitingLoad(AppointmentObject.successfullyDeleted)
     browser.pause(2000)
   })
 })
@@ -182,11 +174,8 @@ When('S - Remove the appointment of employer {string}', (num) => {
 Then("S - Deleted sample supervisor successfully", () => {
   $(MenuObject.supervisor).click()
   waitingLoadingInner()
-
   $(SupervisorObject.find(SupervisorData.sampleSupervisor)).$(SupervisorObject.removeBtn).click()
-
   waitingLoad(SupervisorObject.yesButtonOfConfirmation)
   $(SupervisorObject.yesButtonOfConfirmation).click()
-
   waitingLoad(SupervisorObject.successfullyDeleted)
 })

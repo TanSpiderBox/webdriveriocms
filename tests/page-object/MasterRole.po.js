@@ -17,6 +17,5 @@ const MasterRoleObject = {
   employerMenu: "//a[contains(@class, 'menu__link') and .//*[contains(text(), 'Employers')]]",
   employeeOnEmployer: "//app-employer-details//a[contains(text(), 'Employees') and contains(@class, 'nav-link')]",
   roleOnEmployer: "//app-employer-details//a[contains(text(), 'Roles') and contains(@class, 'nav-link')]",
-
 };
 export { MasterRoleObject }

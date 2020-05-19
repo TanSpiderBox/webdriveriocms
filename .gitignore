@@ -1,9 +1,4 @@
 node_modules
 allure-results
 allure-report
-.DS_Store
-debug.log
-debug.log
-.gitignore
-.gitignore
 debug.log

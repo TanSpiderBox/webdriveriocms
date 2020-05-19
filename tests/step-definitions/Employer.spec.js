@@ -11,13 +11,17 @@ function waitingLoad(name) {
 }
 
 When('Employer - Choose employer {string}', (num) => {
+  $(MenuObject.employer).click()
   if (num == 1) {
     var employer = EmployerData.employer1
   } else {
     var employer = EmployerData.employer2
   }
-  $(MenuObject.employer).click()
+  browser.pause(2000)
+  $(EmployerObject.searchboxEmployer).click()
+  $(EmployerObject.searchboxEmployer).setValue(employer.name);
+  browser.keys("\uE007");
   waitingLoad(EmployerObject.find(employer.name))
   $(EmployerObject.find(employer.name)).click()
-  browser.pause(1000)
+  browser.pause(3000)
 })

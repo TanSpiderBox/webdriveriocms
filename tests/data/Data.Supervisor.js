@@ -1,5 +1,5 @@
 const SupervisorData = {
-  sampleSupervisor: 'hoang+' + Date.now() + '@spiderbox.design'
+  sampleSupervisor: 'tan+' + Date.now() + '@spiderbox.design'
 }
 
 export { SupervisorData }
