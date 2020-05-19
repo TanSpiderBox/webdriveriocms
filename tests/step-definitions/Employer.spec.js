@@ -21,7 +21,9 @@ When('Employer - Choose employer {string}', (num) => {
   $(EmployerObject.searchboxEmployer).click()
   $(EmployerObject.searchboxEmployer).setValue(employer.name);
   browser.keys("\uE007");
+  browser.pause(2000)
   waitingLoad(EmployerObject.find(employer.name))
+  $(EmployerObject.find(employer.name)).scrollIntoView();
   $(EmployerObject.find(employer.name)).click()
   browser.pause(3000)
 })
