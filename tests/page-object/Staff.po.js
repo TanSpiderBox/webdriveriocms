@@ -20,6 +20,30 @@ const StaffObject = {
   },
   removeBtn: "//button/i[contains(text(), 'clear')]",
   yesButtonOfConfirmation: "//app-confirmation//button[contains(text(), 'Yes')]",
+
+  selectCalendar: (date) => {
+    return "//*[contains(@class,'day-of-week')]//*[contains(text()," + "'" + date + "'" + ")]"
+  },
+  selectAppointment: (time) => {
+    return "//*[contains(@class,'appt-item-header')]//*[contains(text()," + "'" + time + "'" + ")]/following-sibling::div"
+  },
+  selectForm: (form) => {
+    return "//*[contains(@class,'btn')]//*[contains(text()," + "'" + form + "'" + ")]"
+  },
+  backBtn: "//*[contains(text(),'BACK')]",
+  acceptBtn: "//*[contains(text(),'ACCEPT')]",
+  absentBTN: "//app-medical-staff-appt-employee-item//*[contains(text(),' ABSENT ')]",
+  startsessionBtn: "//app-medical-staff-appt-employee-item//*[contains(text(),' START SESSION ')]",
+  selectEmployee: (employee) => {
+    return "//app-medical-staff-appt-employee-item//*[contains(@class,'fa fa-user')]/parent::span[contains(text()," + "'" + employee + "'" + ")]"
+  },
+  medicalform: "//*[contains(@class,'medical-forms')]",
+  presentBtn: "//app-medical-staff-appt-employee-item//*[contains(text(),'PRESENT')]",
+  newwalkinBtn: "//app-medical-staff-layout//*[contains(@class,'fas fa-plus walk-in')]",
+  staffusername: '//*[@formcontrolname="email"]',
+  staffpassword: '//*[@formcontrolname="password"]',
+  staffloginBtn : '//*[@type="submit"]',
+  stafflogoutBtn: "//*[contains(@class,'fa fa-sign-out log-out')]",
 }
 
 export { StaffObject }

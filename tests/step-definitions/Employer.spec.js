@@ -11,6 +11,8 @@ function waitingLoad(name) {
 }
 
 When('Employer - Choose employer {string}', (num) => {
+  browser.pause(1000)
+  $(MenuObject.employer).scrollIntoView()
   $(MenuObject.employer).click()
   if (num == 1) {
     var employer = EmployerData.employer1
@@ -19,6 +21,7 @@ When('Employer - Choose employer {string}', (num) => {
   }
   browser.pause(2000)
   $(EmployerObject.searchboxEmployer).click()
+  browser.pause(1000)
   $(EmployerObject.searchboxEmployer).setValue(employer.name);
   browser.keys("\uE007");
   browser.pause(2000)
@@ -27,3 +30,22 @@ When('Employer - Choose employer {string}', (num) => {
   $(EmployerObject.find(employer.name)).click()
   browser.pause(3000)
 })
+
+// When('User input all valid information of Employer', () => {
+//   browser.pause(1000)
+//   $(MenuObject.employer).scrollIntoView()
+//   $(MenuObject.employer).click()
+
+
+// })
+
+// Then('User can create Employee Scuccessfull', () => {
+
+// })
+
+// When('User input all valid information of Employee', () => {
+
+// })
+// Then('User can creat new Employee Successfull', () => {
+
+// })

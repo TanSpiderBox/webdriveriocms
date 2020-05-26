@@ -11,6 +11,7 @@ import { LocationObject } from '../page-object/Location.po'
 Then('L - Create a onsite Location', () => {
   $(EmployerObject.onsiteLocationTab).click()
   $(EmployerObject.newOnsiteLocationBtn).click()
+  browser.pause(1000)
   // fill form
   $(EmployerObject.onsiteLocation.titleInput).setValue(LocationData.sampleOnsiteLocation.title)
   $(EmployerObject.onsiteLocation.streetLine1Input).setValue(LocationData.sampleOnsiteLocation.streetLine1)
@@ -23,6 +24,7 @@ Then('L - Create a onsite Location', () => {
 })
 
 When('L - Create a new onsite appointment', () => {
+  browser.pause(1000)
   $(MenuObject.calendar).click()
   $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
   $(OnsiteAppointmentObject.modal).waitForExist(20000)
@@ -36,9 +38,10 @@ When('L - Create a new onsite appointment', () => {
   $(OnsiteAppointmentObject.medicalTypeSelect).click()
   $(OnsiteAppointmentObject.selectMedicalType('')).waitForExist(20000)
   $(OnsiteAppointmentObject.selectMedicalType('')).click()
-
+  //User Select Enable Time Slot
+  $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
+  $(OnsiteAppointmentObject.onsiteappointmentPublicBtn).click();
   $(CalendarObject.appointmentSaveBtn).click()
-  $(CalendarVerify.createdSuccessfully).waitForExist(20000)
 })
 
 Then('L - Cannot delete onsite appointment', () => {
@@ -50,6 +53,7 @@ Then('L - Cannot delete onsite appointment', () => {
     browser.pause(2000)
   }
   $(EmployerObject.findOnsiteLocation(LocationData.sampleOnsiteLocation.title)).click()
+  browser.pause(1000)
   $(EmployerObject.yesButtonOfConfirmation).click()
   browser.pause(2000)
   expect($(EmployerObject.onsiteLocation.failedDelete).isNull === undefined).to.be.equal(true);
@@ -62,9 +66,10 @@ When('L - Delete onsite appointment', () => {
   OnsiteAppointmentObject.find({ employer: EmployerData.employer1.name, location: LocationData.sampleOnsiteLocation.title }).forEach(el => {
     el.click();
     $(CalendarObject.appointmentRemoveBtn).click()
+    browser.pause(1000)
     $(EmployerObject.yesButtonOfConfirmation).waitForExist(20000)
+    browser.pause(1000)
     $(EmployerObject.yesButtonOfConfirmation).click()
-    // $(CalendarVerify.successfullyDeleted).waitForExist(20000)
   })
   browser.pause(1000)
 })
@@ -112,7 +117,9 @@ Given("L - Create sample location if it isn't exist", () => {
 })
 
 When('L - Assign sample location to employer', () => {
+  browser.pause(1000)
   $(EmployerObject.locationTab).click()
+  browser.pause(1000)
   $(EmployerObject.findLocation(LocationData.sampleLocation.title)).click()
   browser.pause(1000)
   browser.waitUntil(() => {
@@ -123,6 +130,7 @@ When('L - Assign sample location to employer', () => {
 
 When('L - Create a new appointment with sample location and employer {string}', (num) => {
   let employer = EmployerData['employer' + num]
+  browser.pause(1000)
   $(MenuObject.calendar).click()
   browser.pause(1000)
 
@@ -147,11 +155,10 @@ When('L - Create a new appointment with sample location and employer {string}', 
 
   browser.pause(1000)
   $(CalendarObject.appointmentSaveBtn).click()
-
-  // $(CalendarVerify.createdSuccessfully).waitForExist(20000)
 })
 
 Then('L - Cannot un-assign sample location', () => {
+  browser.pause(1000)
   $(EmployerObject.locationTab).click()
 
   $(EmployerObject.findLocation(LocationData.sampleLocation.title)).click()
@@ -161,22 +168,22 @@ Then('L - Cannot un-assign sample location', () => {
 
 When('L - Remove appointment of employer {string}', (num) => {
   let employer = EmployerData['employer' + num]
+  browser.pause(1000)
   $(MenuObject.calendar).click()
   browser.pause(3000)
   // Find all appoinments which contain sample supervisor. After that, removing it 
   AppointmentObject.find({ employer: employer.name, location: LocationData.sampleLocation.title }).forEach(el => {
     el.click();
     $(CalendarObject.appointmentRemoveBtn).click()
-    $(LocationObject.yesButtonOfConfirmation).waitForExist(20000)
+    browser.pause(1000)
     $(LocationObject.yesButtonOfConfirmation).click()
-    // $(AppointmentObject.successfullyDeleted).waitForExist(20000)
     browser.pause(2000)
   })
 })
 
 Then('L - Can un-assign sample location', () => {
+  browser.pause(1000)
   $(EmployerObject.locationTab).click()
-
   $(EmployerObject.findLocation(LocationData.sampleLocation.title)).click()
   browser.pause(2000)
   let classAttr = $(EmployerObject.findLocation(LocationData.sampleLocation.title)).getAttribute('class')

@@ -159,13 +159,18 @@ When('S - Remove the appointment of employer {string}', (num) => {
   } else {
     var employer = EmployerData.employer2
   }
+  browser.pause(2000)
+  $(MenuObject.calendar).scrollIntoView()
   $(MenuObject.calendar).click()
   browser.pause(3000)
   // Find all appoinments which contain sample supervisor. After that, removing it 
   AppointmentObject.find({ employer: employer.name, supervisor: SupervisorData.sampleSupervisor }).forEach(el => {
     el.click();
+    browser.pause(1000)
     $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+    browser.pause(1000)
     $(CalendarObject.appointmentRemoveBtn).click()
+    browser.pause(1000)
     $(SupervisorObject.yesButtonOfConfirmation).click()
     browser.pause(2000)
   })
@@ -174,6 +179,9 @@ When('S - Remove the appointment of employer {string}', (num) => {
 Then("S - Deleted sample supervisor successfully", () => {
   $(MenuObject.supervisor).click()
   waitingLoadingInner()
+  $(SupervisorObject.searchInput).click();
+  $(SupervisorObject.searchInput).setValue(SupervisorData.sampleSupervisor)
+  browser.keys("\uE007")
   $(SupervisorObject.find(SupervisorData.sampleSupervisor)).$(SupervisorObject.removeBtn).click()
   waitingLoad(SupervisorObject.yesButtonOfConfirmation)
   $(SupervisorObject.yesButtonOfConfirmation).click()

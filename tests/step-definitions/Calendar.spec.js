@@ -36,6 +36,11 @@ When("User create new Appointment with existing Employee", () => {
     $(AppointmentObject.medicalTypeSelector).click();
     $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
+    //User Select Medical Staff
+    $(AppointmentObject.staffSelector).click();
+    $(AppointmentObject.staffInput).setValue(employeedata.emailmedicalstaff.medicalstaff);
+    $(AppointmentObject.selectStaff(employeedata.emailmedicalstaff.medicalstaff)).click();
+
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
     $(AppointmentObject.emailInput).setValue(email.email);
@@ -46,14 +51,18 @@ When("User create new Appointment with existing Employee", () => {
 })
 
 Then("User create new Appointment Success", () => {
+    browser.pause(2000)
+    $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
-    browser.pause(timeout)
+    browser.pause(3000)
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.find({ employer: employer.name, employee: email.email }).forEach(el => {
         el.click();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).click()
-        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
         browser.pause(timeout)
     })
@@ -76,6 +85,11 @@ When("User create new Appointment with new Employee", () => {
     //User Select Medical Type
     $(AppointmentObject.medicalTypeSelector).click();
     $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
+
+    //User Select Medical Staff
+    $(AppointmentObject.staffSelector).click();
+    $(AppointmentObject.staffInput).setValue(employeedata.emailmedicalstaff.medicalstaff);
+    $(AppointmentObject.selectStaff(employeedata.emailmedicalstaff.medicalstaff)).click();
 
     //Add new Employee
     $(AppointmentObject.emailSelector).click();
@@ -106,14 +120,18 @@ When("User create new Appointment with new Employee", () => {
     browser.pause(timeout);
 })
 Then("User create new Appointment with new Employee Success and Employee added in Employer", () => {
+    browser.pause(2000)
+    $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
-    browser.pause(timeout)
+    browser.pause(3000)
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.find({ employer: employer.name, employee: employeedata.newemployeeemail }).forEach(el => {
+    AppointmentObject.find({ employer: employer.name, employee: email.email }).forEach(el => {
         el.click();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).click()
-        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
         browser.pause(timeout)
     })
@@ -137,6 +155,11 @@ When("User update existing Appointment", () => {
     $(AppointmentObject.medicalTypeSelector).click();
     $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
+    //User Select Medical Staff
+    $(AppointmentObject.staffSelector).click();
+    $(AppointmentObject.staffInput).setValue(employeedata.emailmedicalstaff.medicalstaff);
+    $(AppointmentObject.selectStaff(employeedata.emailmedicalstaff.medicalstaff)).click();
+
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
     $(AppointmentObject.emailInput).setValue(email.email);
@@ -146,25 +169,34 @@ When("User update existing Appointment", () => {
     $(CalendarObject.appointmentSaveBtn).click();
 
     //Update existing Appoinment
+    browser.pause(2000)
+    $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
-    browser.pause(timeout)
+    browser.pause(3000)
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.find({ employer: employer.name, employee: email.email }).forEach(el => {
         el.click();
         $(CalendarObject.employeeNoteInput).setValue('NewUpdate');
+        browser.pause(2000)
         $(CalendarObject.appointmentUpdateBtn).click()
         browser.pause(timeout)
     })
 })
 Then("User update Appointment Successful", () => {
+    browser.pause(2000)
+    $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
-    browser.pause(timeout)
+    browser.pause(3000)
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.find({ employer: employer.name, employee: email.email }).forEach(el => {
         el.click();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).click()
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
         browser.pause(timeout)
     })
@@ -196,6 +228,11 @@ When("Employee Manager create New Appoinment for Employee", () => {
     $(AppointmentObject.medicalTypeSelector).click();
     $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
 
+    //User Select Medical Staff
+    $(AppointmentObject.staffSelector).click();
+    $(AppointmentObject.staffInput).setValue(employeedata.emailmedicalstaff.medicalstaff);
+    $(AppointmentObject.selectStaff(employeedata.emailmedicalstaff.medicalstaff)).click();
+
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
     $(AppointmentObject.emailInput).setValue(email.email);
@@ -212,14 +249,20 @@ Then("Employee can see this appointment", () => {
     $(LoginObject.txt_Password).setValue(DataLogin.employeepassword);
     $(LoginObject.btn_Login).click();
 
+    browser.pause(2000)
+    $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     browser.pause(3000)
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.findConf({ employer: employer.name }).forEach(elConf => {
+    AppointmentObject.findConf({ employer: employer.name, employee: email.email }).forEach(elConf => {
         elConf.click();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+        browser.pause(1000)
         $(AppointmentObject.removeBtn).click()
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
         browser.pause(timeout)
     })
@@ -227,6 +270,9 @@ Then("Employee can see this appointment", () => {
 
 /* TestCase013 */
 When("User create new Onsite Appoinment", () => {
+    browser.pause(2000)
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
     //Create New Onsite Appointment
     $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
 
@@ -242,11 +288,23 @@ When("User create new Onsite Appoinment", () => {
 
     //User Select Location
     $(OnsiteAppointmentObject.locationSelect).click();
-    $(OnsiteAppointmentObject.selectLocation(onsite.onsitelocatio)).click();
+    $(OnsiteAppointmentObject.selectLocation(onsite.onsitelocation)).click();
 
     //User Select Medical Type
     $(OnsiteAppointmentObject.medicalTypeSelect).click();
     $(OnsiteAppointmentObject.selectMedicalType(medical.medicaltype)).click();
+
+    //User Select Medical Staff
+    $(OnsiteAppointmentObject.staffSelector).click();
+    $(OnsiteAppointmentObject.staffInput).setValue(employeedata.emailmedicalstaff.medicalstaff);
+    $(OnsiteAppointmentObject.selectStaff(employeedata.emailmedicalstaff.medicalstaff)).click();
+
+    //User Select Date Time
+    $(CalendarObject.appointmentDateInput).setValue(appointmentdata.date, appointmentdata.month, appointmentdata.year)
+    $(OnsiteAppointmentObject.startTimeSelector).click()
+    $(OnsiteAppointmentObject.selectStartTime(appointmentdata.apstartime.starttime)).click()
+    $(OnsiteAppointmentObject.endTimeSelector).click()
+    $(OnsiteAppointmentObject.selectEndTime(appointmentdata.apendtime.endtime)).click()
 
     //User Select Enable Time Slot
     $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
@@ -257,11 +315,11 @@ When("User create new Onsite Appoinment", () => {
     browser.keys("\uE007");
 
     //User Select Employee
-    $(OnsiteAppointmentObject.employeeDetails).click();
-    $(OnsiteAppointmentObject.emailSelector).click();
-    $(OnsiteAppointmentObject.emailInput).setValue(email.email);
-    $(OnsiteAppointmentObject.selectEmail(email.email)).click();
-    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+    // $(OnsiteAppointmentObject.employeeDetails).click();
+    // $(OnsiteAppointmentObject.emailSelector).click();
+    // $(OnsiteAppointmentObject.emailInput).setValue(email.email);
+    // $(OnsiteAppointmentObject.selectEmail(email.email)).click();
+    // $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
 
     //Save Appoinment
     $(CalendarObject.appointmentSaveBtn).click();
@@ -272,84 +330,13 @@ Then("User create new Onsite Appoinment successful", () => {
     browser.pause(timeout)
     OnsiteAppointmentObject.find({ employer: employer.name }).forEach(el => {
         el.click();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).click()
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
-        $(MedicalTypeObject.yesButtonOfConfirmation).click()
-        browser.pause(timeout)
-    })
-})
-
-/* TestCase014 */
-When("User fill all valid information", () => {
-    //Create New Onsite Appointment
-    $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
-
-    //User Select Employer
-    browser.pause(3000);
-    $(OnsiteAppointmentObject.employerSelect).click();
-    $(OnsiteAppointmentObject.selectEmployer(employer.name)).click();
-
-    ///User Select Employer
-    browser.pause(timeout);
-    $(OnsiteAppointmentObject.employerSelect).click();
-    $(OnsiteAppointmentObject.selectEmployer(employer.name)).click();
-
-    //User Select Location
-    $(OnsiteAppointmentObject.locationSelect).click();
-    $(OnsiteAppointmentObject.selectLocation(onsite.onsitelocatio)).click();
-
-    //User Select Medical Type
-    $(OnsiteAppointmentObject.medicalTypeSelect).click();
-    $(OnsiteAppointmentObject.selectMedicalType(medical.medicaltype)).click();
-
-    //User Select Enable Time Slot
-    $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
-    $(OnsiteAppointmentObject.onsiteappointmentPublicBtn).click();
-    //User Add Room
-    $(OnsiteAppointmentObject.onsiteappointmentAddRoomBtn).click();
-    $(OnsiteAppointmentObject.onsiteappointmentSlottimeTxt).setValue(5);
-    browser.keys("\uE007");
-
-    //Add new Employee
-    $(AppointmentObject.emailSelector).click();
-    $(AppointmentObject.emailInput).setValue(employeedata.newemployeeemail);
-    $(CalendarObject.ememployeeSelect).click();
-
-    //Fill Data
-    $(CalendarObject.employeeFirstNameInput).setValue(employeedata.employeefirstname);
-    $(CalendarObject.employeeLastNameInput).setValue(employeedata.employeelastname);
-
-    $(AppointmentObject.genderSelector).click();
-    $(AppointmentObject.selectGender(gender.gender)).click();
-
-    $(CalendarObject.employeeDoBInput).setValue(employeedata.employeedob);
-    $(CalendarObject.employeePhoneInput).setValue(employeedata.employeephone);
-    $(CalendarObject.employeeStrLn1Input).setValue(employeedata.employeestrline);
-    $(CalendarObject.employeeSuburbInput).setValue(employeedata.employeesuburb);
-
-    $(AppointmentObject.stateSelector).click();
-    $(AppointmentObject.selectState(state.state)).click();
-
-    $(CalendarObject.employeePostCodeInput).setValue(employeedata.employeepostalcode);
-
-    $(AppointmentObject.masterRoleSelector).click();
-    $(AppointmentObject.selectRole(role.role)).click();
-
-    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
-
-    //Save Appoinment
-    $(CalendarObject.appointmentSaveBtn).click();
-    browser.pause(timeout)
-})
-Then("User can register Onsite Appoinment Success", () => {
-    $(MenuObject.calendar).click()
-    browser.pause(timeout)
-    OnsiteAppointmentObject.find({ employer: employer.name }).forEach(el => {
-        el.click();
-        $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
-        $(CalendarObject.appointmentRemoveBtn).click()
-        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+        browser.pause(1000)
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
         browser.pause(timeout)
     })

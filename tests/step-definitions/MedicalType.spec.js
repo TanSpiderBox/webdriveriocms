@@ -1,8 +1,8 @@
 import { Given, When, Then } from "cucumber"
 import { assert, expect } from "chai"
-import { MedicalTypeObject } from  "../page-object/MedicalType.po"
-import { EmployerObject } from  "../page-object/Employers.po"
-import { OnsiteAppointmentObject, CalendarObject } from  "../page-object/Calendar.po"
+import { MedicalTypeObject } from "../page-object/MedicalType.po"
+import { EmployerObject } from "../page-object/Employers.po"
+import { OnsiteAppointmentObject, CalendarObject } from "../page-object/Calendar.po"
 import { MenuObject } from "../page-object/shared/Menu.po";
 import { MedicalTypeData } from "../data/Data.MedicalType"
 import { EmployerData } from "../data/Data.Employer"
@@ -26,8 +26,9 @@ Given('MT - User opens index page', () => {
 })
 
 When('MT - Create sample medical type', () => {
+  browser.pause(1000)
   $(MenuObject.medicalType).click()
-  waitingLoadingInner();
+  browser.pause(1000)
   $(MedicalTypeObject.newButton).click()
   $(MedicalTypeObject.nameInput).setValue(MedicalTypeData.sampleMedicalType)
   $(MedicalTypeObject.saveButton).click()
@@ -104,6 +105,9 @@ When('MT - Create new appointment with sample medical type and employer {string}
   $(OnsiteAppointmentObject.medicalTypeSelect).click()
   $(OnsiteAppointmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).waitForExist(20000)
   $(OnsiteAppointmentObject.selectMedicalType(MedicalTypeData.sampleMedicalType)).click()
+  //User Select Enable Time Slot
+  $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
+  $(OnsiteAppointmentObject.onsiteappointmentPublicBtn).click();
   $(CalendarObject.appointmentSaveBtn).click()
 
   // waitingLoad(OnsiteAppointmentObject.createdSuccessfully)
@@ -126,13 +130,18 @@ When('MT - Remove the appointment of employer {string}', (num) => {
   } else {
     var employer = EmployerData.employer2
   }
+  browser.pause(2000)
+  $(MenuObject.calendar).scrollIntoView()
   $(MenuObject.calendar).click()
   browser.pause(3000)
   // Find all appoinments which contain sample medical type. After that, removing it 
   OnsiteAppointmentObject.find({ employer: employer.name, type: MedicalTypeData.sampleMedicalType }).forEach(el => {
     el.click();
+    browser.pause(1000)
     $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+    browser.pause(1000)
     $(CalendarObject.appointmentRemoveBtn).click()
+    browser.pause(1000)
     $(MedicalTypeObject.yesButtonOfConfirmation).click()
     browser.pause(2000)
   })
