@@ -7,62 +7,69 @@ import { LoginObject } from "../page-object/Login.po";
 import { DataLogin } from "../data/Data.Login";
 import { MedicalTypeObject } from "../page-object/MedicalType.po";
 
-const timeout = 4000
-var employer = appointmentdata.apemployer;
-var email = appointmentdata.apemail;
-var location = appointmentdata.aplocation;
-var medical = appointmentdata.apmedtype;
-var gender = employeedata.employeegender;
-var state = employeedata.employeestate;
-var role = employeedata.employeerole;
-var onsite = appointmentdata.onsitelocation
-var medical = appointmentdata.apmedtype
+const timeout = 2000
 
 /* TestCase008 */
 When("User create new Appointment with existing Employee", () => {
+    console.log(appointmentdata.hours)
+    console.log(appointmentdata.minutes)
     browser.pause(timeout);
     $(AppointmentObject.appointmentNewBtn).click();
 
     //User Select Employer
     browser.pause(timeout);
     $(AppointmentObject.employerSelector).click();
-    $(AppointmentObject.selectEmployer(employer.name)).click();
+    $(AppointmentObject.selectEmployer(appointmentdata.apemployer)).click();
 
     //User Select Location
     $(AppointmentObject.locationSelector).click();
-    $(AppointmentObject.selectLocation(location.location)).click();
+    $(AppointmentObject.selectLocation(appointmentdata.aplocation)).click();
 
     //User Select Medical Type
     $(AppointmentObject.medicalTypeSelector).click();
-    $(AppointmentObject.selectMedicalType(medical.medicaltype)).click();
+    $(AppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
 
     //User Select Medical Staff
     $(AppointmentObject.staffSelector).click();
-    $(AppointmentObject.staffInput).setValue(employeedata.emailmedicalstaff.medicalstaff);
-    $(AppointmentObject.selectStaff(employeedata.emailmedicalstaff.medicalstaff)).click();
+    $(AppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+    $(AppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
+
+    //User Select Date
+    $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate)
+
+    //User Select Start Time
+    $(AppointmentObject.startTimeSelector).click();
+    $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+    //User Select End Time
+    $(AppointmentObject.endTimeSelector).click();
+    $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
 
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
-    $(AppointmentObject.emailInput).setValue(email.email);
-    $(AppointmentObject.selectEmail(email.email)).click();
+    $(AppointmentObject.emailInput).setValue(appointmentdata.employeeEmail);
+    $(AppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
 
     //Save Appoinment
     $(CalendarObject.appointmentSaveBtn).click();
+    browser.pause(timeout)
 })
 
 Then("User create new Appointment Success", () => {
-    browser.pause(2000)
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
-    browser.pause(3000)
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.find({ employer: employer.name, employee: email.email }).forEach(el => {
+    AppointmentObject.find({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail }).forEach(el => {
         el.click();
-        browser.pause(1000)
+        assert.equal($(AppointmentObject.employerSelector).getText(), appointmentdata.apemployer)
+        assert.equal($(AppointmentObject.locationSelector).getValue(), appointmentdata.aplocation);
+        assert.equal($(AppointmentObject.medicalTypeSelector).getValue(), appointmentdata.apmedtype);
+        assert.equal($(AppointmentObject.staffSelector).getValue(), appointmentdata.staffname);
+        assert.equal($(CalendarObject.appointmentDateInput).getValue(), appointmentdata.fulldate);
+
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
-        browser.pause(1000)
         $(CalendarObject.appointmentRemoveBtn).click()
-        browser.pause(1000)
+        browser.pause(timeout)
         $(MedicalTypeObject.yesButtonOfConfirmation).click()
         browser.pause(timeout)
     })
