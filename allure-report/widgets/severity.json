@@ -1,50 +1,110 @@
 [ {
-  "uid" : "7a9a2a7043c3d013",
-  "name" : "Given User Access CSM Website",
+  "uid" : "80743b0ced7ec0b8",
+  "name" : "Verify user can't login when blank username and password",
   "time" : {
-    "start" : 1573715119893,
-    "stop" : 1573715126878,
-    "duration" : 6985
+    "start" : 1590749591953,
+    "stop" : 1590749599790,
+    "duration" : 7837
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "60ca7672dfd927d0",
-  "name" : "When User input correct username and password",
+  "uid" : "23637b4860e7ddb1",
+  "name" : "Verify user can't login when incorect username and password",
   "time" : {
-    "start" : 1573715126878,
-    "stop" : 1573715127255,
-    "duration" : 377
+    "start" : 1590749600578,
+    "stop" : 1590749600973,
+    "duration" : 395
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "189afdb2c7bca500",
-  "name" : "Then User can login system successful",
+  "uid" : "fd9884d305625761",
+  "name" : "Verify user can update Appointment",
   "time" : {
-    "start" : 1573715127255,
-    "stop" : 1573715127273,
-    "duration" : 18
+    "start" : 1590749698486,
+    "stop" : 1590749749975,
+    "duration" : 51489
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "d609e879cad1539d",
-  "name" : "When User create new Appointment with existing Employee",
+  "uid" : "393d83c608b58ac9",
+  "name" : "Verify user can create Appointment with existing Employee",
   "time" : {
-    "start" : 1573706502250,
-    "stop" : 1573706514720,
-    "duration" : 12470
+    "start" : 1590749611357,
+    "stop" : 1590749656812,
+    "duration" : 45455
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "604a95de8471b125",
-  "name" : "Then User create new Appointment Success",
+  "uid" : "348c28327d574a2",
+  "name" : "Verify user can create Appointment which new Employee",
   "time" : {
-    "start" : 1573715127273,
-    "stop" : 1573715130594,
-    "duration" : 3321
+    "start" : 1590749656813,
+    "stop" : 1590749698485,
+    "duration" : 41672
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6e869b4aaab5e061",
+  "name" : "Verfiy user can login system with correct username and password",
+  "time" : {
+    "start" : 1590749601857,
+    "stop" : 1590749605340,
+    "duration" : 3483
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e8b1a73b153b6a70",
+  "name" : "Verify user can't login when input incorrect password",
+  "time" : {
+    "start" : 1590749601366,
+    "stop" : 1590749601857,
+    "duration" : 491
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "655ee9519f49a664",
+  "name" : "Verify user can't login when blank password",
+  "time" : {
+    "start" : 1590749600182,
+    "stop" : 1590749600577,
+    "duration" : 395
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "508229cbd8c5fc6",
+  "name" : "Verify user can't login when input incorrect username",
+  "time" : {
+    "start" : 1590749600974,
+    "stop" : 1590749601365,
+    "duration" : 391
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "50a4f50a44242115",
+  "name" : "Verify user can create Onsite Appointment",
+  "time" : {
+    "start" : 1590749749976,
+    "stop" : 1590749779166,
+    "duration" : 29190
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "a2d278ec66183b28",
+  "name" : "Verify user can't login when blank username",
+  "time" : {
+    "start" : 1590749599791,
+    "stop" : 1590749600181,
+    "duration" : 390
   },
   "status" : "passed",
   "severity" : "normal"

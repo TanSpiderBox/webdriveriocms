@@ -1,26 +1,24 @@
-function convertTime(number) {
-    return number < 10 ? `0${number}` : number;
-}
+import moment from "moment";
 const appointmentdata = {
     apemployer: 'Rochell Maffetti',
     aplocation: 'LocationVVT',
     onsitelocation: 'Stevena Deane',
     apmedtype: 'TestMedical',
-    date: new Date().getDate() + 2,
-    month: new Date().getMonth(),
-    year: new Date().getFullYear(),
-    fulldate: `${convertTime(new Date().getDate() + 2)}/${convertTime(new Date().getMonth() + 1)}/${new Date().getFullYear()}`,
-    apstartime: new Date().getHours(),
-    apendtime: new Date().getHours() + 1,
+    fulldate: moment().add(2, 'day').format('DD/MM/YYYY'),
+    apstartime: moment().format('HH:00'),
+    apendtime: moment().add(1, 'hours').format('HH:00'),
+    timeslot: `${moment().format('HH:00')} - ${moment().format('HH:05')}`,
+    calendardate: `${moment().add(2, 'day').format('dddd')}`,
+    calendarday: `${moment().add(2, 'day').format('DD')}`,
 
     employeeEmail: 'tan+3@spiderbox.design',
     employeefirstname: 'Tan',
     employeelastname: 'NGUYEN',
     employeegender: 'Male',
     employeedob: '16/06/1994',
-    employeephone: '+84769847942',
+    employeephone: '+8476 984 7942',
     employeestrline: '364',
-    employeesuburb: 'hcm',
+    employeesuburb: 'Hcm',
     employeestate: 'VIC',
     employeepostalcode: '700000',
     employeerole: 'Community Care Personnel',

@@ -46,7 +46,7 @@ exports.config = {
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
     capabilities: [{
-    
+
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -113,7 +113,7 @@ exports.config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     services: ['chromedriver'],
-    
+
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks.html
@@ -131,8 +131,13 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter.html
-    reporters: ['spec'],
- //
+    reporters: ['spec', ['allure', {
+        outputDir: 'allure-results',
+        // disableWebdriverStepsReporting: true,
+        disableWebdriverScreenshotsReporting: false,
+        useCucumberStepReporter: true,
+    }]],
+    //
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         requireModule: ['@babel/register'],  // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -150,7 +155,7 @@ exports.config = {
         timeout: 60000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
     },
-    
+
     //
     // =====
     // Hooks
@@ -219,8 +224,11 @@ exports.config = {
     /**
      * Runs after a Cucumber step
      */
-    // afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
-    // },
+    afterStep: function ({ uri, feature, step }, context, { error, result, duration, passed, retries }) {
+        if (error !== undefined) {
+            browser.takeScreenshot();
+        }
+    },
     /**
      * Runs after a Cucumber scenario
      */
@@ -231,7 +239,6 @@ exports.config = {
      */
     // afterFeature: function (uri, feature, scenarios) {
     // },
-    
     /**
      * Runs after a WebdriverIO command gets executed
      * @param {String} commandName hook command name

@@ -100,7 +100,7 @@ Given("User access Staff page successful", () => {
   browser.url(StaffData.stafurl)
 })
 When("User input correct Staff username and password", () => {
-  $(StaffObject.staffusername).setValue(employeedata.emailmedicalstaff.medicalstaff);
+  $(StaffObject.staffusername).setValue(appointmentdata.emailmedicalstaff);
   $(StaffObject.staffpassword).setValue(123456);
   $(StaffObject.staffloginBtn).click();
 })
@@ -108,9 +108,9 @@ Then("User can login Staff successful", () => {
 
 })
 When("User complete question and assessment", () => {
-  $(StaffObject.selectCalendar(appointmentdata.date)).click();
-  $(StaffObject.selectAppointment(appointmentdata.apstartime.starttime)).click();
-  $(StaffObject.selectEmployee(employeedata.employeefirstname)).click();
+  $(StaffObject.selectCalendar(appointmentdata.calendarday)).click();
+  $(StaffObject.selectAppointment(appointmentdata.apstartime)).click();
+  $(StaffObject.selectEmployee(appointmentdata.employeefirstname)).click();
   $(StaffObject.startsessionBtn).click();
   browser.pause(1000)
   $(StaffObject.selectForm(StaffData.staffasseessment)).click();
@@ -127,14 +127,14 @@ When("User complete question and assessment", () => {
 
   $(BizUIObject.bizuiDeclarationCk).click();
   $(BizUIObject.bizuiPrintNameInput).setValue(DataBizUI.printName);
-  $(BizUIObject.bizuiDateInput).setValue(appointmentdata.year, appointmentdata.month, appointmentdata.date);
+  $(BizUIObject.bizuiDateInput).setValue(appointmentdata.fulldate);
 
   $(StaffObject.acceptBtn).click();
   browser.pause(1000)
 })
 Then("User can accept onsite appointment", () => {
   $(StaffObject.backBtn).click();
-  $(StaffObject.selectEmployee(employeedata.employeefirstname)).click();
+  $(StaffObject.selectEmployee(appointmentdata.employeefirstname)).click();
   assert.equal($(StaffObject.medicalform).isExisting(),true)
   $(StaffObject.backBtn).click();
   $(StaffObject.stafflogoutBtn).click();

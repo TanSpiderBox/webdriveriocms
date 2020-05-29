@@ -11,6 +11,9 @@ const CalendarObject = {
   calendarMonthBtn: '//button[contains(text(),"MONTH")]',
   calendarWeekBtn: '//button[contains(text(),"WEEK")]',
   calendarDayBtn: '//button[contains(text(),"DAY")]',
+  selectCalendar: (calendarday, calendardate) => {
+    return "//*[contains(@aria-label," + "'" + calendardate + "'" + ")]//*[contains(text()," + "'" + calendarday + "'" + ")]"
+  },
 
   //Employee
   ememployeeSelect: '//ng-select[@formcontrolname="email"]//span[@class="ng-star-inserted"]',
@@ -37,6 +40,7 @@ const CalendarObject = {
 const CalendarVerify = {
   createdSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been confirmed successfully')]",
   deletedSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been deleted successfully')]",
+  updateSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Appointment has been updated successfully')]",
 }
 
 const OnsiteAppointmentObject = {
@@ -66,7 +70,7 @@ const OnsiteAppointmentObject = {
   },
 
   employeeDetails: "//*[contains(text(),'Employee details')]",
-  emailSelector: "//ng-select[contains(@formcontrolname, 'email')]",
+  emailSelector: "//*[contains(@formcontrolname, 'email')]",
   selectEmail: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
@@ -100,6 +104,39 @@ const OnsiteAppointmentObject = {
   supervisorSelector: "//ng-select[contains(@formcontrolname, 'supervisorId')]",
   selectSupervisor: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
+  },
+
+  findApMonth: (Mnthopts = {}) => {
+    let monthappointments = $$("//mwl-calendar-open-day-events//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(23, 162, 184)')]/following-sibling::mwl-calendar-event-title[contains(@aria-label," + "'- " + Mnthopts.employer + " -'" + ")]");
+    let results = [];
+    monthappointments.forEach(elmth => {
+      elmth.click()
+      browser.pause(3000)
+      if (Mnthopts.type != undefined) {
+        var isType = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.type
+      } else { var isType = true }
+
+      if (Mnthopts.employer != undefined) {
+        var isEmployer = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.employer
+      } else { var isEmployer = true }
+
+      if (Mnthopts.staff != undefined) {
+        var isStaff = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'staffs')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.staff + "'" + "]")
+          .isExisting()
+      } else { var isStaff = true }
+
+      if (Mnthopts.location != undefined) {
+        var isLocation = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.location + "'" + "]")
+          .isExisting()
+      } else { var isLocation = true }
+
+      if (isType && isEmployer && isStaff && isLocation) {
+        results.push(elmth)
+      }
+      $("//app-appointment-onsite-form//button[contains(@aria-label, 'Close')]").click()
+      browser.pause(2000)
+    })
+    return results
   },
 
   find: (opts = {}) => {
@@ -168,7 +205,7 @@ const AppointmentObject = {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] and not(.//*[(contains(text(), 'Add item'))]) ]"
   },
 
-  emailSelector: "//ng-select[contains(@formcontrolname, 'email')]",
+  emailSelector: "//*[contains(@formcontrolname, 'email')]",
   selectEmail: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
@@ -203,43 +240,40 @@ const AppointmentObject = {
   selectSupervisor: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
-
-  findConf: (optsConf = {}) => {
-    let appointmentConf = $$("//mwl-calendar-week-view-event//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(220, 53, 69)') and contains(@aria-label, " + "'- " + optsConf.employer + " -'" + ")]")
-    let resultsConf = [];
-    appointmentConf.forEach(elConf => {
-      elConf.click()
+  findApMonth: (Mnthopts = {}) => {
+    let monthappointments = $$("//mwl-calendar-open-day-events//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(26, 179, 148)')]/following-sibling::mwl-calendar-event-title[contains(@aria-label," + "'- " + Mnthopts.employer + " -'" + ")]");
+    let results = [];
+    monthappointments.forEach(elmth => {
+      elmth.click()
       browser.pause(3000)
-      if (optsConf.type != undefined) {
-        var isType = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label')]").getText() == optsConf.type
-      } else { var isType = true }
+      if (Mnthopts.supervisor != undefined) {
+        var isSupervisor = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.supervisor
+      } else { var isSupervisor = true }
 
-      if (optsConf.employer != undefined) {
-        var isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == optsConf.employer
+      if (Mnthopts.employer != undefined) {
+        var isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.employer
       } else { var isEmployer = true }
 
-      if (optsConf.staff != undefined) {
-        var isStaff = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'staffs')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + optsConf.staff + "'" + "]")
-          .isExisting()
-      } else { var isStaff = true }
-
-      if (optsConf.location != undefined) {
-        var isLocation = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + optsConf.location + "'" + "]")
-          .isExisting()
+      if (Mnthopts.location != undefined) {
+        var isLocation = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.location
       } else { var isLocation = true }
 
-      if (isType && isEmployer && isStaff && isLocation) {
-        resultsConf.push(elConf)
+      if (Mnthopts.employee != undefined) {
+        var isEmployee = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'email')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.employee + "'" + "]")
+      } else { var isEmployee = true }
+
+      if (isEmployer && isSupervisor && isLocation && isEmployee) {
+        results.push(elmth)
       }
       $("//app-appointment-form//button[contains(@aria-label, 'Close')]").click()
       browser.pause(2000)
     })
-    return resultsConf
+    return results
   },
-
   find: (opts = {}) => {
     let appointments = $$("//mwl-calendar-week-view-event//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(26, 179, 148)') and contains(@aria-label, " + "'- " + opts.employer + " -'" + ")]")
     let results = [];
+
     appointments.forEach(el => {
       el.click()
       browser.pause(3000)
@@ -265,6 +299,7 @@ const AppointmentObject = {
       $("//app-appointment-form//button[contains(@aria-label, 'Close')]").click()
       browser.pause(2000)
     })
+
     return results
   },
 }

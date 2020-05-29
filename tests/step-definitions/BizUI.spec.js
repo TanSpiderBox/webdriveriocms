@@ -38,19 +38,19 @@ Then("User can access guest Biz UI", () => {
 When('User input all valid information', () => {
     var timeout = 1000
     browser.pause(timeout)
-    $(BizUIObject.selectbizuiMedicalType(appointmentdata.apmedtype.medicaltype)).click()
+    $(BizUIObject.selectbizuiMedicalType(appointmentdata.apmedtype)).click()
     browser.pause(timeout)
     $(BizUIObject.bizuiNextBtn).click();
 
-    $(BizUIObject.selectbizuiDateTime(appointmentdata.date, appointmentdata.month, appointmentdata.year)).click();
+    $(BizUIObject.selectbizuiDateTime(appointmentdata.fulldate)).click();
     browser.pause(timeout)
     $(BizUIObject.bizuiNextBtn).click();
 
-    $(BizUIObject.selectbizuiRoom(DataBizUI.room1, DataBizUI.timeslot1)).click();
+    $(BizUIObject.selectbizuiRoom(DataBizUI.room1, appointmentdata.apstartime)).click();
     browser.pause(timeout)
     $(BizUIObject.bizuiNextBtn).click();
 
-    $(BizUIObject.bizuiEmailInput).setValue(appointmentdata.apemail.email);
+    $(BizUIObject.bizuiEmailInput).setValue(appointmentdata.employeeEmail);
     $(BizUIObject.bizuiNextBnt).click();
     browser.pause(timeout)
     $(BizUIObject.bizuiNextBtn).click();
@@ -75,18 +75,15 @@ When('User input all valid information', () => {
 
     $(BizUIObject.bizuiDeclarationCk).click();
     $(BizUIObject.bizuiPrintNameInput).setValue(DataBizUI.printName);
-    $(BizUIObject.bizuiDateInput).setValue(appointmentdata.year, appointmentdata.month, appointmentdata.date);
+    $(BizUIObject.bizuiDateInput).setValue(appointmentdata.fulldate);
     $(BizUIObject.bizuiNextBtn).click();
     browser.pause(timeout)
 })
 Then('User can create appointment in guest Biz UI', () => {
-    var time = $(BizUIObject.bizuiTime).getText().slice(0, 13)
-    var room = $(BizUIObject.bizuiTime).getText().slice(15, 21)
-
-    assert.equal($(BizUIObject.bizuiDate).getText(), DataBizUI.appointmentverifydate, '')
-    assert.equal(time, DataBizUI.timeslot1, '')
-    assert.equal(room, DataBizUI.room1, '')
-    assert.equal($(BizUIObject.bizuiMedical).getText(), appointmentdata.apmedtype.medicaltype, '')
+    assert.equal($(BizUIObject.bizuiDate).getText(), DataBizUI.appointmentverifydate);
+    assert.equal($(BizUIObject.bizuiTime).getText().slice(0, 13), appointmentdata.timeslot);
+    assert.equal($(BizUIObject.bizuiTime).getText().slice(15, 21), DataBizUI.room1);
+    assert.equal($(BizUIObject.bizuiMedical).getText(), appointmentdata.apmedtype);
     $(BizUIObject.bizuiLoginLink).click();
 })
 
@@ -109,12 +106,12 @@ Then('User can login Biz UI successful', () => {
 /* BU007 */
 When('User click button re-schedule appointment', () => {
     var timeout = 1000
-    $(BizUIObject.selectbizuiAction(DataBizUI.timeslot1, DataBizUI.reschdule)).click();
-    $(BizUIObject.selectbizuiDateTime(appointmentdata.date, appointmentdata.month, appointmentdata.year)).click();
+    $(BizUIObject.selectbizuiAction(appointmentdata.timeslot, DataBizUI.reschdule)).click();
+    $(BizUIObject.selectbizuiDateTime(appointmentdata.fulldate)).click();
     $(BizUIObject.bizuiNextBtn).click();
     browser.pause(timeout)
 
-    $(BizUIObject.selectbizuiRoom(DataBizUI.room2, DataBizUI.timeslot2)).click();
+    $(BizUIObject.selectbizuiRoom(DataBizUI.room2, appointmentdata.apstartime)).click();
     browser.pause(timeout)
     $(BizUIObject.bizuiNextBtn).click();
 
@@ -122,20 +119,17 @@ When('User click button re-schedule appointment', () => {
     $(BizUIObject.bizuiNextBtn).click();
 })
 Then('User can change date time and room appointment successfull', () => {
-    var time = $(BizUIObject.bizuiTime).getText().slice(0, 13)
-    var room = $(BizUIObject.bizuiTime).getText().slice(15, 21)
-
     assert.equal($(BizUIObject.bizuiDate).getText(), DataBizUI.appointmentverifydate, '')
-    assert.equal(time, DataBizUI.timeslot2, '')
-    assert.equal(room, DataBizUI.room2, '')
-    assert.equal($(BizUIObject.bizuiMedical).getText(), appointmentdata.apmedtype.medicaltype, '')
+    assert.equal($(BizUIObject.bizuiTime).getText().slice(0, 13), appointmentdata.timeslot)
+    assert.equal($(BizUIObject.bizuiTime).getText().slice(15, 21), DataBizUI.room2, '')
+    assert.equal($(BizUIObject.bizuiMedical).getText(), appointmentdata.apmedtype, '')
 })
 
 /* BU008 */
 When('User click button edit questionare appointment', () => {
     $(BizUIObject.bizuiHomePageBtn).click();
     var timeout = 1000
-    $(BizUIObject.selectbizuiAction(DataBizUI.timeslot2, DataBizUI.editquestion)).click();
+    $(BizUIObject.selectbizuiAction(appointmentdata.timeslot, DataBizUI.editquestion)).click();
 
     $(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion2, DataBizUI.answeryes)).click()
     $(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion5, DataBizUI.answeryes)).click()
@@ -153,18 +147,17 @@ Then('User can change questionare appointment successful', () => {
     assert.equal($(BizUIObject.bizuiDate).getText(), DataBizUI.appointmentverifydate, '')
     // assert.equal(time, DataBizUI.timeslot2, '')
     // assert.equal(room, DataBizUI.room2, '')
-    assert.equal($(BizUIObject.bizuiMedical).getText(), appointmentdata.apmedtype.medicaltype, '')
+    assert.equal($(BizUIObject.bizuiMedical).getText(), appointmentdata.apmedtype, '')
 })
 
 /* BU009 */
 When('User click button delete appointment', () => {
     $(BizUIObject.bizuiHomePageBtn).click();
     var timeout = 1000
-    $(BizUIObject.selectbizuiAction(DataBizUI.timeslot2, DataBizUI.cancel)).click();
+    $(BizUIObject.selectbizuiAction(appointmentdata.timeslot, DataBizUI.cancel)).click();
     $(BizUIObject.bizuiConfirmYesBtn).click();
 })
 Then('User can delete appointment successfull', () => {
-    var successful = $(BizUIObject.bizuiPopUp).getText().slice(0, 43)
-    assert.equal(successful, DataBizUI.deletesuccessfull, '');
+    assert.equal($(BizUIObject.bizuiPopUp).getText().slice(0, 43), DataBizUI.deletesuccessfull, '');
     $(BizUIObject.bizuiLogOutBtn).click();
 })

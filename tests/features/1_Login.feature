@@ -1,6 +1,8 @@
 Feature: Login
+    As a User I want check all login functional
     Background: 
         Given User Access CSM Website
+
     @TestCase001
     Scenario: Verify user can't login when blank username and password
         When User blank username and password

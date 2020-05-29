@@ -1,15 +1,26 @@
 {
-  "total" : 1,
+  "total" : 2,
   "items" : [ {
-    "uid" : "700dc87c26134731f3090c15f777eca2",
-    "name" : "Calendar: Verify user can create Appointment with existing Employee",
+    "uid" : "ac6f2152e63f3392cc0bab44858be2ab",
+    "name" : "Calendar",
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 3,
+      "unknown" : 0,
+      "total" : 4
+    }
+  }, {
+    "uid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+    "name" : "Login",
     "statistic" : {
       "failed" : 0,
       "broken" : 0,
       "skipped" : 0,
-      "passed" : 5,
+      "passed" : 7,
       "unknown" : 0,
-      "total" : 5
+      "total" : 7
     }
   } ]
 }

@@ -113,7 +113,6 @@ Then('S - Can unassign sample supervisor from employer', () => {
 When('S - Create appointment which contains sample supervisor', () => {
   $(MenuObject.calendar).click()
   waitingLoadingInner()
-
   $(AppointmentObject.appointmentNewBtn).click();
   waitingLoad(AppointmentObject.modal)
 
@@ -133,6 +132,7 @@ When('S - Create appointment which contains sample supervisor', () => {
   $(AppointmentObject.emailSelector).click()
   $(AppointmentObject.emailInput).setValue(EmployeeData.emp1.email);
   $(AppointmentObject.selectEmail(EmployeeData.emp1.email)).click()
+  browser.pause(1000)
 
   $(AppointmentObject.supervisorSelector).click()
   $(AppointmentObject.selectSupervisor(SupervisorData.sampleSupervisor)).waitForExist(20000)
