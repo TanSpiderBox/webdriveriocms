@@ -109,7 +109,7 @@ Then("User can login Staff successful", () => {
 })
 When("User complete question and assessment", () => {
   $(StaffObject.selectCalendar(appointmentdata.calendarday)).click();
-  $(StaffObject.selectAppointment(appointmentdata.apstartime)).click();
+  $(StaffObject.selectAppointment(appointmentdata.fulltime)).click();
   $(StaffObject.selectEmployee(appointmentdata.employeefirstname)).click();
   $(StaffObject.startsessionBtn).click();
   browser.pause(1000)

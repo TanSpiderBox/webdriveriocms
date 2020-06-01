@@ -7,9 +7,10 @@ const appointmentdata = {
     fulldate: moment().add(2, 'day').format('DD/MM/YYYY'),
     apstartime: moment().format('HH:00'),
     apendtime: moment().add(1, 'hours').format('HH:00'),
+    fulltime: `${moment().format('HH:00')} ─ ${moment().add(1, 'hours').format('HH:00')}`,
     timeslot: `${moment().format('HH:00')} - ${moment().format('HH:05')}`,
     calendardate: `${moment().add(2, 'day').format('dddd')}`,
-    calendarday: `${moment().add(2, 'day').format('DD')}`,
+    calendarday: `${moment().add(2, 'day').format('D')}`,
 
     employeeEmail: 'tan+3@spiderbox.design',
     employeefirstname: 'Tan',

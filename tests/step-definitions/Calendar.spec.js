@@ -60,7 +60,7 @@ Then("User create new Appointment Success", () => {
     $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail }).forEach(elmth => {
+    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
         elmth.click();
         browser.pause(timeout);
         assert.equal($(AppointmentObject.employerSelector).getText(), appointmentdata.apemployer)
@@ -157,7 +157,7 @@ Then("User create new Appointment with new Employee Success and Employee added i
     $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail }).forEach(elmth => {
+    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
         elmth.click();
         browser.pause(timeout);
         //Verify Calendar Data
@@ -265,7 +265,7 @@ When("User update existing Appointment", () => {
     $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
 
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail }).forEach(elmth => {
+    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
         elmth.click();
         browser.pause(timeout);
         $(CalendarObject.employeeNoteInput).setValue('NewUpdate');
@@ -282,7 +282,7 @@ Then("User update Appointment Successful", () => {
     $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail }).forEach(elmth => {
+    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
         elmth.click();
         browser.pause(timeout);
         //Verify Appointment
@@ -369,7 +369,7 @@ Then("User create new Onsite Appoinment successful", () => {
     $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
-    OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail }).forEach(elmth => {
+    OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.onsitelocation }).forEach(elmth => {
         elmth.click();
         browser.pause(timeout);
         browser.pause();
@@ -379,7 +379,7 @@ Then("User create new Onsite Appoinment successful", () => {
         assert.equal($(AppointmentObject.staffSelector).getText().slice(1, 11), appointmentdata.staffname);
         assert.equal($(CalendarObject.appointmentDateInput).getValue(), appointmentdata.fulldate);
         assert.equal($(AppointmentObject.startTimeSelector).getText(), appointmentdata.apstartime);
-        assert.equal($(AppointmentObject.endTimeSelector).getText(), appointmentdata.apstartime);
+        assert.equal($(AppointmentObject.endTimeSelector).getText(), appointmentdata.apendtime);
 
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
         $(CalendarObject.appointmentRemoveBtn).click()

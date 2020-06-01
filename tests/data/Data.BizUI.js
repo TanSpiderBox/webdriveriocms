@@ -1,3 +1,4 @@
+import moment from "moment";
 const DataBizUI = {
     urlBizUI: 'http://cms.spiderbox.design/onsiteregistration/rochell-maffetti',
     incorrectPasscode: '11111',
@@ -8,9 +9,7 @@ const DataBizUI = {
     medicalType: 'Flu Shot',
     room1: 'Room 1',
     room2: 'Room 2',
-    timeslot1: '08:00 - 08:05',
-    timeslot2: '08:55 - 09:00',
-
+    
     fluquestion1: 'Have you ever received a flu vaccine?',
     fluquestion2: 'Have you ever experienced any problems after receiving a flu vaccine or any vaccine in the past?',
     fluquestion3: 'Are you allergic to eggs or egg products',
@@ -25,17 +24,17 @@ const DataBizUI = {
     answerno: 'No',
 
     printName: 'Tan Nguyen',
-
-    appointmentverifydate: new Date().getDate() + 2 + '\nMay',
+    
+    appointmentverifydate: `${moment().add(2, 'day').format('DD')}\n${moment().format('MMM')}`,
 
     reschdule: 'Reschedule Appointment',
     editquestion: 'Edit Questionnaire',
     cancel: 'Cancel Appointment',
-
+    
     deletesuccessfull: 'Appointment has been cancelled successfully',
     errorcodeBlankRequiredField: 'Please review required fields!',
     errorcodeIncorrect: 'Invalid password',
-    firstPage: 'Please select medical type from options below'
+    firstPage:'Please select medical type from options below'
 }
 
 export { DataBizUI }

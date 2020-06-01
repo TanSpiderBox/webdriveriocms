@@ -105,7 +105,13 @@ const OnsiteAppointmentObject = {
   selectSupervisor: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
-
+  timeslotSelector: '//ng-select[@formcontrolname="slotId"]',
+  selectTimSlot: (timeslot)=>{
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + timeslot + "'" + ")] ]"
+  },
+  selectRoom: (room) => {
+    return "//label[@for='slotTime']//*[contains(text()," + "'" + room + "'" + ")]"
+  },
   findApMonth: (Mnthopts = {}) => {
     let monthappointments = $$("//mwl-calendar-open-day-events//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(23, 162, 184)')]/following-sibling::mwl-calendar-event-title[contains(@aria-label," + "'- " + Mnthopts.employer + " -'" + ")]");
     let results = [];
@@ -177,6 +183,7 @@ const OnsiteAppointmentObject = {
   onsiteappointmentSlottimeTxt: '//details//input[@name="slotTime"]',
   onsiteappointmentSlottimBtn: "//*[contains(@class,'timeslot-grid ng-star-inserted')]/div",
   onsiteappointmentAddEmployeeListBtn: "//button[contains(text(),' Add to Employee List ')]",
+  errorlbl: '//*[@class="form-group"]//*[contains(@class,"text-danger")]',
 }
 
 const AppointmentObject = {
