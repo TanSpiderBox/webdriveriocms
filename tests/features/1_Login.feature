@@ -1,39 +1,39 @@
 Feature: Login
-    As a User I want check all login functional
-    Background: 
+
+    Background: As a User I want to check all scenario of Login feature
         Given User Access CSM Website
 
-    @TestCase001
-    Scenario: Verify user can't login when blank username and password
-        When User blank username and password
-        Then User can't login system 1st
+    @LG001
+    Scenario: Verify user can not login when blank UserName and Password
+        When User blank UserName and Password
+        Then User can not login System with blank UserName and Password
 
-    @TestCase002
-    Scenario: Verify user can't login when blank username
-        When User blank username
-        Then User can't login system 2nd
+    @LG002
+    Scenario: Verify user can not login when blank UserName
+        When User blank UserName
+        Then User can not login System with blank UserName
 
-    @TestCase003
-    Scenario: Verify user can't login when blank password
-        When User blank password
-        Then User can't login system 3rd
+    @LG003
+    Scenario: Verify user can not login when blank Password
+        When User blank Password
+        Then User can not login System with blank Password
 
-    @TestCase004
-    Scenario: Verify user can't login when incorect username and password
-        When User input incorect username and password
-        Then User can't login system 4th
+    @LG004
+    Scenario: Verify user can not login when incorect UserName and Password
+        When User input incorect UserName and Password
+        Then User can not login System with incorrect UserName and Password
 
-    @TestCase005
-    Scenario: Verify user can't login when input incorrect username
-        When User input incorrect username
-        Then User can't login system 5th
+    @LG005
+    Scenario: Verify user can not login when input incorrect UserName
+        When User input incorrect UserName
+        Then User can not login System with incorrect UserName
 
-    @TestCase006
-    Scenario: Verify user can't login when input incorrect password
-        When User input incorrect password
-        Then User can't login system 6th
+    @LG006
+    Scenario: Verify user can not login when input incorrect Password
+        When User input incorrect Password
+        Then User can not login System with incorrect Password
 
-    @TestCase007
-    Scenario: Verfiy user can login system with correct username and password
-        When User input correct username and password
-        Then User can login system successful
+    @LG007
+    Scenario: Verfiy user can login System with correct UserName and Password
+        When User input correct UserName and Password
+        Then User can login System Successfully

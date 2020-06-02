@@ -31,6 +31,21 @@ const BizUIObject = {
     selectbizuiAction: (Time, Action) => {
         return "//*[contains(@class,'nopadding')]//div[contains(text()," + "'" + Time + "'" + ")]/../../../..//button[contains(text()," + "'" + Action + "'" + ")]"
     },
+    verifydate: (date, month) => {
+        return "//div[contains(text()," + "'" + date + "'" + ")]/following-sibling::span[contains(text()," + "'" + month + "'" + ")]/parent::div"
+    },
+    verifytimeslot: (timeslot, room) => {
+        return "//div[contains(text()," + "'" + timeslot + "'" + ")]/following-sibling::span[contains(text()," + "'" + room + "'" + ")]/parent::div"
+    },
+
+    verifyaddress: (timeslot, room, address) =>{
+        return  "//div[contains(text()," + "'" + timeslot + "'" + ")]/following-sibling::span[contains(text()," + "'" + room + "'" + ")]/parent::div/parent::div/parent::div//*[contains(text()," + "'" + address + "'" + ")]"
+    },
+
+    verifymedicaltype: (timeslot, room, medicaltype) =>{
+        return  "//div[contains(text()," + "'" + timeslot + "'" + ")]/following-sibling::span[contains(text()," + "'" + room + "'" + ")]/parent::div/parent::div/parent::div//*[contains(text()," + "'" + medicaltype + "'" + ")]"
+    },
+
     bizuiNewApBtn: '//button[contains(@class,"btn btn-responsive")]//*',
     bizuiHomePageBtn: '//button[contains(text()," Go to home page ")]',
 

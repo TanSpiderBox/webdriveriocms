@@ -3,69 +3,69 @@ import { assert } from 'chai'
 import { DataLogin } from "../data/Data.Login";
 import { LoginObject, LoginVerify } from "../page-object/Login.po"
 
-/* TestCase001 */
-When("User blank username and password", () => {
+/* LG001 */
+When("User blank UserName and Password", () => {
     $(LoginObject.btn_Login).click();
 })
-Then("User can't login system 1st", () => {
+Then("User can not login System with blank UserName and Password", () => {
     assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
 })
 
-/* TestCase002 */
-When("User blank username", () => {
+/* LG002 */
+When("User blank UserName", () => {
     $(LoginObject.txt_Password).setValue(DataLogin.password);
     $(LoginObject.btn_Login).click();
 })
-Then("User can't login system 2nd", () => {
+Then("User can not login System with blank UserName", () => {
     assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
 })
 
-/* TestCase003 */
-When("User blank password", () => {
+/* LG003 */
+When("User blank Password", () => {
     $(LoginObject.txt_Username).setValue(DataLogin.username);
     $(LoginObject.btn_Login).click();
 })
-Then("User can't login system 3rd", () => {
+Then("User can not login System with blank Password", () => {
     assert.isObject($(LoginVerify.lbl_WarMessage), DataLogin.warmessage);
 })
 
-/* TestCase004 */
-When("User input incorect username and password", () => {
+/* LG004 */
+When("User input incorect UserName and Password", () => {
     $(LoginObject.txt_Username).setValue(DataLogin.inusername);
     $(LoginObject.txt_Password).setValue(DataLogin.inpassword);
     $(LoginObject.btn_Login).click();
 })
-Then("User can't login system 4th", () => {
+Then("User can not login System with incorrect UserName and Password", () => {
     assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
 })
 
-/* TestCase005 */
-When("User input incorrect username", () => {
+/* LG005 */
+When("User input incorrect UserName", () => {
     $(LoginObject.txt_Username).setValue(DataLogin.inusername);
     $(LoginObject.txt_Password).setValue(DataLogin.password);
     $(LoginObject.btn_Login).click();
 })
-Then("User can't login system 5th", () => {
+Then("User can not login System with incorrect UserName", () => {
     assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
 })
 
-/* TestCase006 */
-When("User input incorrect password", () => {
+/* LG006 */
+When("User input incorrect Password", () => {
     $(LoginObject.txt_Username).setValue(DataLogin.username);
     $(LoginObject.txt_Password).setValue(DataLogin.inpassword);
     $(LoginObject.btn_Login).click();
 })
-Then("User can't login system 6th", () => {
+Then("User can not login System with incorrect Password", () => {
     assert.isObject($(LoginVerify.lbl_ErrorFeedback), DataLogin.errormessage);
 })
 
-/* TestCase007 */
-When("User input correct username and password", () => {
+/* LG007 */
+When("User input correct UserName and Password", () => {
     $(LoginObject.txt_Username).setValue(DataLogin.username);
     $(LoginObject.txt_Password).setValue(DataLogin.password);
     $(LoginObject.btn_Login).click();
 })
-Then("User can login system successful", () => {
+Then("User can login System Successfully", () => {
     assert.isObject($(LoginVerify.lbl_CmsMedSer), DataLogin.cmsmedlalbel);
     browser.pause(3000)
 })

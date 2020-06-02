@@ -31,6 +31,9 @@ const appointmentdata = {
     employeemanageremail: 'tan+3@spiderbox.design',
     emailmedicalstaff: 'tan+6@spiderbox.design',
     staffname: 'Amitie Haw',
+
+    //Verify Data
+    employeebooking: '',
 }
 
 export { appointmentdata }

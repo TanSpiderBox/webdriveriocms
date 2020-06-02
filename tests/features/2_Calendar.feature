@@ -1,90 +1,98 @@
 Feature: Calendar
 
+    Background: As a User I want check all scenario of Calendar feature
+
     @CL001
     Scenario: Verify user can create Appointment with existing Employee
         Given User Access CSM Website
-        When User input correct username and password
-        Then User can login system successful
-        When User create new Appointment with existing Employee
-        Then User create new Appointment Success
+        When User input correct UserName and Password
+        Then User can login System Successfully
+    #     When User create new Appointment with existing Employee
+    #     Then User create new Appointment Successfully
 
-    @LG002
-    Scenario: Verify user can create Appointment which new Employee
-        When User create new Appointment with new Employee
-        Then User create new Appointment with new Employee Success and Employee added in Employer
-        Then User can view Employee added in Employer
+    # @CL002
+    # Scenario: Verify user can create Appointment which new Employee
+    #     When User create new Appointment with new Employee
+    #     Then User create new Appointment with new Employee Success and Employee added in Employer
+    #     And User can view Employee added in Employer
 
-    @LG003
-    Scenario: Verify user can update Appointment
-        When User update existing Appointment
-        Then User update Appointment Successful
+    # @CL003
+    # Scenario: Verify user can update Appointment
+    #     When User update existing Appointment
+    #     Then User update Appointment Successfully
 
-    @LG004
-    Scenario: Verify user can create Onsite Appointment
-        When User create new Onsite Appoinment
-        Then User create new Onsite Appoinment successful
+    # @CL004
+    # Scenario: Verify user can create Onsite Appointment
+    #     When User create new Onsite Appoinment
+    #     Then User create new Onsite Appointment Successfully
 
-    @LG005
-    Scenario: User can create Onsite Appointment with existing employee
-        When User create new Onsite Appoinment with existing Employee
-        Then User create new Onsite Appoinment with existing Employee successful
+    # @CL005
+    # Scenario: User can create Onsite Appointment with existing employee
+    #     When User create new Onsite Appoinment with existing Employee
+    #     Then User create new Onsite Appointment Successfully
 
-    @LG006
-    Scenario: User can create Onsite Appointment with new employee
-        When User create new Onsite Appoinment with new Employee
-        Then User create new Onsite Appoinment with new Employee successful
-        Then User can view Employee added in Employer
+    # @CL006
+    # Scenario: User can create Onsite Appointment with new employee
+    #     When User create new Onsite Appoinment with new Employee
+    #     Then User create new Onsite Appointment Successfully
+    #     And User can view Employee added in Employer
 
-    @LG007
-    Scenario: User can create Onsite Appointment and don't enable time slot
-        When User create Onsite Appoinment and don't enable time slot
-        And Employee can not select time slot of Appoinment
-        Then User create new Onsite Appoinment successful
+    # @CL007
+    # Scenario: User can create Onsite Appointment and do not enable time slot
+    #     When User create Onsite Appoinment and do not enable time slot
+    #     And Employee can not select time slot of Appoinment
+    #     Then User create new Onsite Appointment Successfully
 
-    @LG008
+    @CL008
     Scenario: User can create Onsite Appointment and enable time slot
         When User create Onsite Appoinment and enable time slot
         And Employee can select time slot of Appoinment
-        Then User create new Onsite Appoinment successful
+        Given User access Biz UI Successfully
+        When User input correct employee UserName Password
+        And Employee can view Appoinment in BizUI
+        Given User Access CSM Website
+        When User input correct UserName and Password
+        Then User can login System Successfully
+        Then User create new Onsite Appointment Successfully
 
-    @LG009
-    Scenario: User can create Onsite Appointment and do not public time slot
-        When User create Onsite Appointment and do not public time slot
-        Then Employee can view time slot in BizUI
+# @CL009
+# Scenario: User can create Onsite Appointment and do not public time slot
+#     When User create Onsite Appointment and do not public time slot
+#     Then Employee can view time slot in BizUI
 
-    @LG010
-    Scenario: User can create Onsite Appointment and edit duration time slot
-        When User create Onsite Appointment and edit duration time slot
-        Then User create new Onsite Appoinment successful
+# @CL010
+# Scenario: User can create Onsite Appointment and edit duration time slot
+#     When User create Onsite Appointment and edit duration time slot
+#     Then User create new Onsite Appoinment Successfully
 
-    @LG011
-    Scenario: User can create Onsite Appointment and add room
-        When User create Onsite Appointment and add room
-        And User can select time slot with room
-        Then User create new Onsite Appoinment successful
+# @CL011
+# Scenario: User can create Onsite Appointment and add room
+#     When User create Onsite Appointment and add room
+#     And User can select time slot with room
+#     Then User create new Onsite Appoinment Successfully
 
-    @LG012
-    Scenario: User can create Onsite Appointment and remove room
-        When User create Onsite Appointment and remove room
-        And User can select room removed
-        Then User create new Onsite Appoinment successful
+# @CL012
+# Scenario: User can create Onsite Appointment and remove room
+#     When User create Onsite Appointment and remove room
+#     And User can not select room removed
+#     Then User create new Onsite Appoinment Successfully
 
-    @LG013
-    Scenario: User can view Question form in Onsite Appointment
-        When
-        Then
+# @CL013
+# Scenario: User can view Question form in Onsite Appointment
+#     When User open Onsite Appoinment have Employee
+#     Then User can view Question form of Employee
 
-    @LG014
-    Scenario:User can view Assessment form in Onsite Appointment
-        When
-        Then
+# @CL014
+# Scenario:User can view Assessment form in Onsite Appointment
+#     When User open Onsite Appoinment have Employee
+#     Then User can view Assessment form of Employee
 
-    @LG015
-    Scenario: User can reschedule of Employee in Onsite Appointment
-        When
-        Then
+# @CL015
+# Scenario: User can reschedule of Employee in Onsite Appointment
+#     When User open Onsite Appoinment have Employee
+#     Then User can reschedule of Employee
 
-    @LG016
-    Scenario: User can remove Employee in Onsite Appointment
-        When
-        Then
+# @CL016
+# Scenario: User can remove Employee in Onsite Appointment
+#     When User open Onsite Appoinment have Employee
+#     Then User can remove Employee in Onsite Appoinment Successfully

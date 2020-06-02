@@ -106,12 +106,30 @@ const OnsiteAppointmentObject = {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
   timeslotSelector: '//ng-select[@formcontrolname="slotId"]',
-  selectTimSlot: (timeslot)=>{
+  selectTimSlot: (timeslot) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + timeslot + "'" + ")] ]"
   },
   selectRoom: (room) => {
     return "//label[@for='slotTime']//*[contains(text()," + "'" + room + "'" + ")]"
   },
+  verifyName: (firstname, lastname) => {
+    return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + firstname + ' ' + lastname + "'" + ")]"
+  },
+  verifyPhone: (phone) => {
+    return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + phone + "'" + ")]"
+  },
+  verifyemail: (email) => {
+    return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + email + "'" + ")]"
+  },
+
+  verifyaddress: (address) => {
+    return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + address + "'" + ")]"
+  },
+
+  verifytimeslot: (timeslot, room) => {
+    return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + timeslot + ' ' + '(' + room + ')' + "'" + ")]"
+  },
+
   findApMonth: (Mnthopts = {}) => {
     let monthappointments = $$("//mwl-calendar-open-day-events//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(23, 162, 184)')]/following-sibling::mwl-calendar-event-title[contains(@aria-label," + "'- " + Mnthopts.employer + " -'" + ")]");
     let results = [];
@@ -183,6 +201,7 @@ const OnsiteAppointmentObject = {
   onsiteappointmentSlottimeTxt: '//details//input[@name="slotTime"]',
   onsiteappointmentSlottimBtn: "//*[contains(@class,'timeslot-grid ng-star-inserted')]/div",
   onsiteappointmentAddEmployeeListBtn: "//button[contains(text(),' Add to Employee List ')]",
+  timeslotslected: "//*[contains(@class,'timeslot-grid')]//*[contains(@class,'slot btn-success')]",
   errorlbl: '//*[@class="form-group"]//*[contains(@class,"text-danger")]',
 }
 

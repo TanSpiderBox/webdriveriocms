@@ -1,18 +1,16 @@
 import { Given, When, Then } from "cucumber"
-import { LoginObject } from "../page-object/Login.po"
 import { BizUIObject } from "../page-object/BizUI.po";
 import { DataBizUI } from "../data/Data.BizUI";
 import { assert } from 'chai';
 import { appointmentdata } from "../data/Data.Calendar";
 
 /* BU001 */
-Given('User access Biz UI successful', () => {
-    browser.pause(1000)
-    $(LoginObject.btn_Logout).click();
+Given('User access Biz UI Successfully', () => {
+    browser.reloadSession()
     browser.url(DataBizUI.urlBizUI);
-    $(BizUIObject.bizuiNewUserBtn).click()
 })
 When('User input incorrect passcode', () => {
+    $(BizUIObject.bizuiNewUserBtn).click()
     $(BizUIObject.bizuiPasswordInput).setValue(DataBizUI.incorrectPasscode)
     browser.keys('Enter');
 })
@@ -88,19 +86,14 @@ Then('User can create appointment in guest Biz UI', () => {
 })
 
 /* BU004 */
-When('User input correct employee username password', () => {
+When('User input correct employee UserName Password', () => {
+    $(BizUIObject.bizuiReturnUserBtn).click()
     $(BizUIObject.bizuiUsername).setValue(DataBizUI.username);
     $(BizUIObject.bizuiPassword).setValue(DataBizUI.password);
     browser.keys('Enter')
 })
 Then('User can login Biz UI successful', () => {
-    // var time = $(BizUIObject.bizuiTime).getText().slice(0, 13)
-    // var room = $(BizUIObject.bizuiTime).getText().slice(15, 21)
-
-    // assert.equal($(BizUIObject.bizuiDate).getText(), DataBizUI.appointmentverifydate, '')
-    // assert.equal(time, DataBizUI.timeslot1, '')
-    // assert.equal(room, DataBizUI.room1, '')
-    // assert.equal($(BizUIObject.bizuiMedical).getText(), DataBizUI.medicalType, '')
+    
 })
 
 /* BU007 */

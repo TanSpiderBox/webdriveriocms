@@ -1,5 +1,5 @@
 const DataLogin = {
-    url: 'http://cms.spiderbox.design/auth/login',
+    url: '/auth/login',
     urlBizUI:'http://cms.spiderbox.design/onsiteregistration/rochell-maffetti',
     username: 'admin@companymedicalservices.com.au',
     employeeMusername: 'tan+3@spiderbox.design',

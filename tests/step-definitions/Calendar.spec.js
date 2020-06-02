@@ -1,14 +1,16 @@
 import { When, Then } from "cucumber";
 import { assert } from 'chai'
-import { appointmentdata, employeedata } from "../data/Data.Calendar";
+import { appointmentdata } from "../data/Data.Calendar";
 import { CalendarObject, CalendarVerify, OnsiteAppointmentObject, AppointmentObject } from "../page-object/Calendar.po";
 import { MenuObject } from "../page-object/shared/Menu.po";
 import { MedicalTypeObject } from "../page-object/MedicalType.po";
 import { EmployerObject } from "../page-object/Employers.po";
+import { BizUIObject } from "../page-object/BizUI.po";
+import { DataBizUI } from "../data/Data.BizUI";
 
 const timeout = 3000
 
-/* TestCase008 */
+/* CL001 */
 When("User create new Appointment with existing Employee", () => {
     browser.pause(timeout);
     $(AppointmentObject.appointmentNewBtn).click();
@@ -45,6 +47,7 @@ When("User create new Appointment with existing Employee", () => {
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
     $(AppointmentObject.emailInput).setValue(appointmentdata.employeeEmail);
+    browser.pause(timeout);
     $(AppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
 
     //Save Appoinment
@@ -53,7 +56,7 @@ When("User create new Appointment with existing Employee", () => {
     browser.pause(timeout)
 })
 
-Then("User create new Appointment Success", () => {
+Then("User create new Appointment Successfully", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
@@ -86,7 +89,7 @@ Then("User create new Appointment Success", () => {
     })
 })
 
-/* TestCase009 */
+/* CL002 */
 When("User create new Appointment with new Employee", () => {
     browser.pause(timeout)
     //Create New Appointment
@@ -213,7 +216,7 @@ Then("User can view Employee added in Employer", () => {
     assert.equal($(AppointmentObject.masterRoleSelector).getText(), appointmentdata.employeerole);
 })
 
-/* TestCase010 */
+/* CL003 */
 When("User update existing Appointment", () => {
     $(MenuObject.calendar).click();
     browser.pause(timeout);
@@ -252,6 +255,7 @@ When("User update existing Appointment", () => {
     //User Select Employee
     $(AppointmentObject.emailSelector).click();
     $(AppointmentObject.emailInput).setValue(appointmentdata.employeeEmail);
+    browser.pause(timeout);
     $(AppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
 
     //Save Appoinment
@@ -275,7 +279,7 @@ When("User update existing Appointment", () => {
     $(CalendarVerify.updateSuccessfully).waitForExist(timeout)
     browser.pause(timeout)
 })
-Then("User update Appointment Successful", () => {
+Then("User update Appointment Successfully", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
@@ -309,7 +313,7 @@ Then("User update Appointment Successful", () => {
     })
 })
 
-/* TestCase013 */
+/* CL004 */
 When("User create new Onsite Appoinment", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
@@ -362,7 +366,7 @@ When("User create new Onsite Appoinment", () => {
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
     browser.pause(timeout)
 })
-Then("User create new Onsite Appoinment successful", () => {
+Then("User create new Onsite Appointment Successfully", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
@@ -390,9 +394,270 @@ Then("User create new Onsite Appoinment successful", () => {
     })
 })
 
-//User Select Employee
-    // $(OnsiteAppointmentObject.employeeDetails).click();
-    // $(OnsiteAppointmentObject.emailSelector).click();
-    // $(OnsiteAppointmentObject.emailInput).setValue(email.email);
-    // $(OnsiteAppointmentObject.selectEmail(email.email)).click();
-    // $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+/* CL005 */
+When('User create new Onsite Appoinment with existing Employee', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    browser.pause(timeout);
+
+    //Create New Onsite Appointment
+    $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
+
+    //User Select Employer
+    browser.pause(timeout);
+    $(OnsiteAppointmentObject.employerSelect).click();
+    $(OnsiteAppointmentObject.selectEmployer(appointmentdata.apemployer)).click();
+
+    //User Select Location
+    $(OnsiteAppointmentObject.locationSelect).click();
+    $(OnsiteAppointmentObject.selectLocation(appointmentdata.onsitelocation)).click();
+
+    //User Select Medical Type
+    $(OnsiteAppointmentObject.medicalTypeSelect).click();
+    $(OnsiteAppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
+
+    //User Select Medical Staff
+    $(OnsiteAppointmentObject.staffSelector).click();
+    $(OnsiteAppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+    $(OnsiteAppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
+
+    //User Select Date Time
+    $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate)
+
+    //User Select Start Time
+    $(AppointmentObject.startTimeSelector).click();
+    $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+    //User Select End Time
+    $(AppointmentObject.endTimeSelector).click();
+    $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
+
+    //User Select Employee
+    $(OnsiteAppointmentObject.employeeDetails).click();
+    $(OnsiteAppointmentObject.emailSelector).click();
+    $(OnsiteAppointmentObject.emailInput).setValue(appointmentdata.employeeEmail);
+    browser.pause(timeout)
+    $(OnsiteAppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
+    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+    browser.pause(timeout)
+
+    //Save Appoinment
+    $(CalendarObject.appointmentSaveBtn).click();
+    browser.pause(timeout)
+    $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
+    browser.pause(timeout)
+})
+
+/* CL006 */
+When('User create new Onsite Appoinment with new Employee', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    browser.pause(timeout);
+
+    //Create New Onsite Appointment
+    $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
+
+    //User Select Employer
+    browser.pause(timeout);
+    $(OnsiteAppointmentObject.employerSelect).click();
+    $(OnsiteAppointmentObject.selectEmployer(appointmentdata.apemployer)).click();
+
+    //User Select Location
+    $(OnsiteAppointmentObject.locationSelect).click();
+    $(OnsiteAppointmentObject.selectLocation(appointmentdata.onsitelocation)).click();
+
+    //User Select Medical Type
+    $(OnsiteAppointmentObject.medicalTypeSelect).click();
+    $(OnsiteAppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
+
+    //User Select Medical Staff
+    $(OnsiteAppointmentObject.staffSelector).click();
+    $(OnsiteAppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+    $(OnsiteAppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
+
+    //User Select Date Time
+    $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate)
+
+    //User Select Start Time
+    $(AppointmentObject.startTimeSelector).click();
+    $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+    //User Select End Time
+    $(AppointmentObject.endTimeSelector).click();
+    $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
+
+    //User Select Employee
+    $(OnsiteAppointmentObject.employeeDetails).click();
+    $(OnsiteAppointmentObject.emailSelector).click();
+    $(OnsiteAppointmentObject.emailInput).setValue(appointmentdata.newemployeeemail);
+    $(OnsiteAppointmentObject.selectEmail(appointmentdata.newemployeeemail)).click();
+
+    //Fill Data
+    $(CalendarObject.employeeFirstNameInput).setValue(appointmentdata.employeefirstname);
+    $(CalendarObject.employeeLastNameInput).setValue(appointmentdata.employeelastname);
+
+    $(OnsiteAppointmentObject.genderSelector).click();
+    $(OnsiteAppointmentObject.selectGender(appointmentdata.employeegender)).click();
+
+    $(CalendarObject.employeeDoBInput).setValue(appointmentdata.employeedob);
+    $(CalendarObject.employeePhoneInput).setValue(appointmentdata.employeephone);
+    $(CalendarObject.employeeStrLn1Input).setValue(appointmentdata.employeestrline);
+    $(CalendarObject.employeeSuburbInput).setValue(appointmentdata.employeesuburb);
+
+    $(OnsiteAppointmentObject.stateSelector).click();
+    $(OnsiteAppointmentObject.selectState(appointmentdata.employeestate)).click();
+
+    $(CalendarObject.employeePostCodeInput).setValue(appointmentdata.employeepostalcode);
+
+    $(OnsiteAppointmentObject.masterRoleSelector).click();
+    $(OnsiteAppointmentObject.selectRole(appointmentdata.employeerole)).click();
+
+    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+    browser.pause(timeout)
+    $(MedicalTypeObject.yesButtonOfConfirmation).click()
+    browser.pause(timeout)
+    //Save Appoinment
+    $(CalendarObject.appointmentSaveBtn).click();
+    browser.pause(timeout)
+    $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
+    browser.pause(timeout)
+})
+
+/* CL007 */
+When('User create Onsite Appoinment and do not enable time slot', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    browser.pause(timeout);
+
+    //Create New Onsite Appointment
+    $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
+
+    //User Select Employer
+    browser.pause(timeout);
+    $(OnsiteAppointmentObject.employerSelect).click();
+    $(OnsiteAppointmentObject.selectEmployer(appointmentdata.apemployer)).click();
+
+    //User Select Location
+    $(OnsiteAppointmentObject.locationSelect).click();
+    $(OnsiteAppointmentObject.selectLocation(appointmentdata.onsitelocation)).click();
+
+    //User Select Medical Type
+    $(OnsiteAppointmentObject.medicalTypeSelect).click();
+    $(OnsiteAppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
+
+    //User Select Medical Staff
+    $(OnsiteAppointmentObject.staffSelector).click();
+    $(OnsiteAppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+    $(OnsiteAppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
+
+    //User Select Date Time
+    $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate)
+
+    //User Select Start Time
+    $(AppointmentObject.startTimeSelector).click();
+    $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+    //User Select End Time
+    $(AppointmentObject.endTimeSelector).click();
+    $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
+})
+Then('Employee can not select time slot of Appoinment', () => {
+    //User Select Employee
+    $(OnsiteAppointmentObject.employeeDetails).click();
+    $(OnsiteAppointmentObject.emailSelector).click();
+    $(OnsiteAppointmentObject.emailInput).setValue(appointmentdata.employeeEmail);
+    browser.pause(timeout)
+    $(OnsiteAppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
+    assert.equal($(OnsiteAppointmentObject.timeslotSelector).isExisting(), false);
+    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+    browser.pause(timeout)
+    //Save Appoinment
+    $(CalendarObject.appointmentSaveBtn).click();
+    browser.pause(timeout)
+    $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
+    browser.pause(timeout)
+})
+
+/* CL008 */
+When('User create Onsite Appoinment and enable time slot', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    browser.pause(timeout);
+
+    //Create New Onsite Appointment
+    $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
+
+    //User Select Employer
+    browser.pause(timeout);
+    $(OnsiteAppointmentObject.employerSelect).click();
+    $(OnsiteAppointmentObject.selectEmployer(appointmentdata.apemployer)).click();
+
+    //User Select Location
+    $(OnsiteAppointmentObject.locationSelect).click();
+    $(OnsiteAppointmentObject.selectLocation(appointmentdata.onsitelocation)).click();
+
+    //User Select Medical Type
+    $(OnsiteAppointmentObject.medicalTypeSelect).click();
+    $(OnsiteAppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
+
+    //User Select Medical Staff
+    $(OnsiteAppointmentObject.staffSelector).click();
+    $(OnsiteAppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+    $(OnsiteAppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
+
+    //User Select Date Time
+    $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate)
+
+    //User Select Start Time
+    $(AppointmentObject.startTimeSelector).click();
+    $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+    //User Select End Time
+    $(AppointmentObject.endTimeSelector).click();
+    $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
+
+    //User Select Enable Time Slot
+    $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
+    $(OnsiteAppointmentObject.onsiteappointmentPublicBtn).click();
+
+    //User Add Room
+    $(OnsiteAppointmentObject.onsiteappointmentAddRoomBtn).click();
+    $(OnsiteAppointmentObject.onsiteappointmentSlottimeTxt).setValue(5);
+    browser.keys("\uE007");
+
+})
+Then('Employee can select time slot of Appoinment', () => {
+    //User Select Employee
+    $(OnsiteAppointmentObject.employeeDetails).click();
+    $(OnsiteAppointmentObject.emailSelector).click();
+    $(OnsiteAppointmentObject.emailInput).setValue(appointmentdata.employeeEmail);
+    browser.pause(timeout)
+    $(OnsiteAppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
+    assert.equal($(OnsiteAppointmentObject.timeslotSelector).isExisting(), true);
+    $(OnsiteAppointmentObject.timeslotSelector).click();
+    $(OnsiteAppointmentObject.selectTimSlot(appointmentdata.timeslot)).click();
+    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+    browser.pause(timeout)
+
+    assert.equal($(OnsiteAppointmentObject.timeslotslected).isExisting(), true);
+
+    assert.equal($(OnsiteAppointmentObject.verifyName(appointmentdata.employeefirstname, appointmentdata.employeelastname)).isExisting(), true);
+    assert.equal($(OnsiteAppointmentObject.verifyPhone(appointmentdata.employeephone)).isExisting(), true);
+    assert.equal($(OnsiteAppointmentObject.verifyemail(appointmentdata.employeeEmail)).isExisting(), true);
+    // assert.equal($(OnsiteAppointmentObject.verifyaddress(appointmentdata.)).isExisting(), true);
+    assert.equal($(OnsiteAppointmentObject.verifytimeslot(appointmentdata.timeslot,DataBizUI.room1)).isExisting(), true);
+
+    //Save Appoinment
+    $(CalendarObject.appointmentSaveBtn).click();
+    browser.pause(timeout)
+    $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
+    browser.pause(timeout)
+})
+
+Then('Employee can view Appoinment in BizUI', () => {
+    browser.pause(timeout)
+    assert.equal($(BizUIObject.verifydate(DataBizUI.appointmentverifydate,DataBizUI.appointmentverifymonth)).isExisting(), true)
+    assert.equal($(BizUIObject.verifytimeslot(appointmentdata.timeslot,DataBizUI.room1)).isExisting(), true)
+    // assert.equal($(BizUIObject.verifyaddress()).isExisting(), true)
+    assert.equal($(BizUIObject.verifymedicaltype(appointmentdata.timeslot,DataBizUI.room1,appointmentdata.apmedtype)).isExisting(), true)
+})
