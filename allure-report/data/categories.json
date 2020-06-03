@@ -1,5 +1,26 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "selector needs to be typeof `string` or `function`",
+      "children" : [ {
+        "name" : "User can create Onsite Appointment and remove room",
+        "uid" : "de55ec8865fcf44e",
+        "parentUid" : "c4c512edabbdc6f15b328ef755322870",
+        "status" : "broken",
+        "time" : {
+          "start" : 1591181351206,
+          "stop" : 1591181418425,
+          "duration" : 67219
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "c4c512edabbdc6f15b328ef755322870"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
 }

@@ -12,6 +12,7 @@
     "chai-dom": "^1.8.2",
     "chromedriver": "^83.0.0",
     "cucumber": "^6.0.5",
+    "faker": "^4.1.0",
     "make-dir": "^3.1.0",
     "moment": "^2.26.0",
     "process-argv": "^1.0.0",

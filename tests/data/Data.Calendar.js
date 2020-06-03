@@ -1,5 +1,8 @@
 import moment from "moment";
+var faker = require('faker');
+faker.locale = "az";
 const appointmentdata = {
+
     apemployer: 'Rochell Maffetti',
     aplocation: 'LocationVVT',
     onsitelocation: 'Stevena Deane',
@@ -26,14 +29,17 @@ const appointmentdata = {
     employeeposition: 'Position',
     employeedepartment: 'Department',
 
-    newemployeeemail: "tan+" + Date.now() + "@spiderbox.design",
-
+    newemployeeemail:()=>{
+        return `${"tan+" + Date.now() + "@spiderbox.design"}`
+    },
+    // newemail:`${faker.internet.email()}`,
     employeemanageremail: 'tan+3@spiderbox.design',
     emailmedicalstaff: 'tan+6@spiderbox.design',
     staffname: 'Amitie Haw',
 
-    //Verify Data
-    employeebooking: '',
+    // Verify Data
+    errortimeslot: "Slot time cannot greater than appointment duration."
+,
 }
 
 export { appointmentdata }

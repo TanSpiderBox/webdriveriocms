@@ -33,7 +33,7 @@ const CalendarObject = {
   appointmentSaveBtn: '//button[contains(@class,"btn-primary") and (text()=" Save ")]',
   appointmentSaveAddBtn: "//button[contains(@aria-controls, 'add-to-calendar')]",
   appointmentCancelBtn: '//*[text()="Cancel"]',
-  appointmentUpdateBtn: "//app-appointment-form//button[contains(text(), 'Update')]",
+  appointmentUpdateBtn: "(//button[contains(text(), 'Update')])[1]",
   appointmentRemoveBtn: "//button[contains(text(), 'Delete')]",
 }
 
@@ -105,19 +105,32 @@ const OnsiteAppointmentObject = {
   selectSupervisor: (email) => {
     return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + email + "'" + ")] ]"
   },
+
   timeslotSelector: '//ng-select[@formcontrolname="slotId"]',
-  selectTimSlot: (timeslot) => {
-    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + timeslot + "'" + ")] ]"
+  selectTimeSlot: (timeslot, room) => {
+    return "//*[contains(@role, 'option') and .//*[contains(text(), " + "'" + timeslot + ' ' + '(' + room + ')' + "'" + ")] ]"
   },
+
   selectRoom: (room) => {
     return "//label[@for='slotTime']//*[contains(text()," + "'" + room + "'" + ")]"
   },
+
+  employeeDropdown: (timeslot, room) => {
+    return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + timeslot + ' ' + '(' + room + ')' + "'" + ")]/parent::div/following-sibling::div//*[contains(@id,'button-basic')]"
+  },
+
+  dropdownAction: (action) => {
+    return "//*[contains(@role,'menuitem')]//*[contains(text()," + "'" + action + "'" + ")]"
+  },
+
   verifyName: (firstname, lastname) => {
     return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + firstname + ' ' + lastname + "'" + ")]"
   },
+
   verifyPhone: (phone) => {
     return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + phone + "'" + ")]"
   },
+
   verifyemail: (email) => {
     return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + email + "'" + ")]"
   },
@@ -130,6 +143,9 @@ const OnsiteAppointmentObject = {
     return "//*[contains(@class,'list-group')]//*[contains(text()," + "'" + timeslot + ' ' + '(' + room + ')' + "'" + ")]"
   },
 
+  removeRoom: (room) => {
+    return "//*[contains(text()," + "'" + room + "'" + ")]/parent::label/parent::div/parent::div/parent::div//*[contains(@title, 'Remove room')]"
+  },
   findApMonth: (Mnthopts = {}) => {
     let monthappointments = $$("//mwl-calendar-open-day-events//*[contains(@data-calendar-clickable, true) and contains(@style, 'background-color: rgb(23, 162, 184)')]/following-sibling::mwl-calendar-event-title[contains(@aria-label," + "'- " + Mnthopts.employer + " -'" + ")]");
     let results = [];
@@ -201,7 +217,9 @@ const OnsiteAppointmentObject = {
   onsiteappointmentSlottimeTxt: '//details//input[@name="slotTime"]',
   onsiteappointmentSlottimBtn: "//*[contains(@class,'timeslot-grid ng-star-inserted')]/div",
   onsiteappointmentAddEmployeeListBtn: "//button[contains(text(),' Add to Employee List ')]",
-  timeslotslected: "//*[contains(@class,'timeslot-grid')]//*[contains(@class,'slot btn-success')]",
+  timeslotSlected: (timeslot) => {
+    return "//*[contains(@class,'timeslot-grid')]//*[contains(@class,'btn-success') and contains(text()," + "'" + timeslot + "'" + ")]"
+  },
   errorlbl: '//*[@class="form-group"]//*[contains(@class,"text-danger")]',
 }
 
