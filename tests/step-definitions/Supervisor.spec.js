@@ -22,11 +22,7 @@ function waitingLoad(name) {
   }, 20000)
 }
 
-Given('S - User opens index page', () => {
-  browser.url('http://cms.spiderbox.design/')
-})
-
-Then('S - Create sample supervisor', () => {
+Then('Create sample Supervisor', () => {
   $(MenuObject.supervisor).click()
   waitingLoadingInner()
 
@@ -35,7 +31,7 @@ Then('S - Create sample supervisor', () => {
   $(SupervisorObject.saveButton).click()
 })
 
-When('S - Assign sample supervisor to employer', () => {
+When('Assign sample Supervisor to Employer', () => {
   $(EmployerObject.supervisorTab).click()
   waitingLoad(EmployerObject.supervisorSection)
   $(EmployerObject.findSupervisor(SupervisorData.sampleSupervisor)).click()
@@ -45,7 +41,7 @@ When('S - Assign sample supervisor to employer', () => {
   }, 20000)
 })
 
-Then('S - Cannot remove sample supervisor', () => {
+Then('Can not remove sample Supervisor', () => {
   $(MenuObject.supervisor).click()
   waitingLoadingInner();
   $(SupervisorObject.searchInput).click();
@@ -61,7 +57,7 @@ Then('S - Cannot remove sample supervisor', () => {
   waitingLoad(SupervisorObject.FailedDelete)
 })
 
-When('S - Assign sample supervisor to employee', () => {
+When('Assign sample Supervisor to Employee', () => {
   $(EmployerObject.employeeTab).click()
   $(EmployerObject.searchboxEmployer).click()
   $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
@@ -77,7 +73,7 @@ When('S - Assign sample supervisor to employee', () => {
   waitingLoad(EmployerObject.updatedSuccessfully)
 })
 
-Then('S - Cannot unassign supervisor from employer', () => {
+Then('Can not unassign Supervisor from Employer', () => {
   $(EmployerObject.supervisorTab).click()
   waitingLoad(EmployerObject.supervisorSection)
 
@@ -86,7 +82,7 @@ Then('S - Cannot unassign supervisor from employer', () => {
   waitingLoad(EmployerObject.failedUnAssign)
 })
 
-When('S - Can un-assign sample supervisor from employee', () => {
+When('Can un-assign sample Supervisor from Employee', () => {
   $(EmployerObject.employeeTab).click()
   $(EmployerObject.searchboxEmployer).click()
   $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
@@ -100,7 +96,7 @@ When('S - Can un-assign sample supervisor from employee', () => {
   waitingLoad(EmployerObject.updatedSuccessfully)
 })
 
-Then('S - Can unassign sample supervisor from employer', () => {
+Then('Can unassign sample Supervisor from Employer', () => {
   $(EmployerObject.supervisorTab).click()
   waitingLoad(EmployerObject.supervisorSection)
   $(EmployerObject.findSupervisor(SupervisorData.sampleSupervisor)).click()
@@ -110,7 +106,7 @@ Then('S - Can unassign sample supervisor from employer', () => {
   }, 20000)
 })
 
-When('S - Create appointment which contains sample supervisor', () => {
+When('Create appointment which contains sample Supervisor', () => {
   $(MenuObject.calendar).click()
   waitingLoadingInner()
   $(AppointmentObject.appointmentNewBtn).click();
@@ -142,7 +138,7 @@ When('S - Create appointment which contains sample supervisor', () => {
   $(CalendarObject.appointmentSaveBtn).click();
 })
 
-Then('S - Supervisor was be assigned to employee', () => {
+Then('Supervisor was be assigned to Employee', () => {
   $(EmployerObject.employeeTab).click()
   $(EmployerObject.searchboxEmployer).click()
   $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
@@ -153,7 +149,7 @@ Then('S - Supervisor was be assigned to employee', () => {
   expect($(EmployerObject.employee.supervisorSelector).getText()).to.include(SupervisorData.sampleSupervisor)
 })
 
-When('S - Remove the appointment of employer {string}', (num) => {
+When('Remove the appointment of Employer {string}', (num) => {
   if (num == 1) {
     var employer = EmployerData.employer1
   } else {
@@ -176,7 +172,7 @@ When('S - Remove the appointment of employer {string}', (num) => {
   })
 })
 
-Then("S - Deleted sample supervisor successfully", () => {
+Then("Deleted sample Supervisor Successfully", () => {
   $(MenuObject.supervisor).click()
   waitingLoadingInner()
   $(SupervisorObject.searchInput).click();

@@ -2,44 +2,44 @@ Feature: Supervisor
 
   Background: As a User I want check all scenario of Supervisor feature
 
-  Scenario: Create a Supervisor Successfully
-    Given User opens index page
-    When User input correct username and password
+  Scenario: Verify User can create a Supervisor Successfully
+    Given User Access CSM Website
+    When User input correct UserName and Password
     Then Create sample Supervisor
 
-  Scenario: User can create Supervisor in Appointment Successfully
+  Scenario: Verify User can create Supervisor in Appointment Successfully
 
-  Scenario: User can create Supervisor in Onsite Appointment Successfully
+  Scenario: Verify User can create Supervisor in Onsite Appointment Successfully
 
-  Scenario: Can not delete Supervisor which was be assiged to employer
-    When Employer - Choose employer "1"
-    When Assign sample Supervisor to employer
+  Scenario: Verify User can not delete Supervisor which was be assiged to Employer
+    When Employer - Choose Employer "1"
+    When Assign sample Supervisor to Employer
     Then Can not remove sample Supervisor
 
-  Scenario: Can not unassign Supervisor which was be assigned to employee
-    When Employer - Choose employer "1"
-    When Assign sample Supervisor to employee
-    When Employer - Choose employer "1"
-    Then Can not unassign Supervisor from employer
+  Scenario: Verify User can not unassign Supervisor which was be assigned to Employee
+    When Employer - Choose Employer "1"
+    When Assign sample Supervisor to Employee
+    When Employer - Choose Employer "1"
+    Then Can not unassign Supervisor from Employer
 
-  Scenario: Can unassign Supervisor which isn't be assigned to employee
-    When Can un-assign sample Supervisor from employee
-    When Employer - Choose employer "1"
-    Then Can unassign sample Supervisor from employer
+  Scenario: Verify User can unassign Supervisor which isn't be assigned to Employee
+    When Can un-assign sample Supervisor from Employee
+    When Employer - Choose Employer "1"
+    Then Can unassign sample Supervisor from Employer
 
-  Scenario: Auto assign Supervisor to employee if appointment is created
-    When Employer - Choose employer "1"
-    When Assign sample Supervisor to employer
+  Scenario: Verify Supervisor Auto assign Supervisor to Employee if appointment is created
+    When Employer - Choose Employer "1"
+    When Assign sample Supervisor to Employer
     When Create appointment which contains sample Supervisor
-    When Employer - Choose employer "1"
-    Then Supervisor was be assigned to employee
-    When Employer - Choose employer "1"
-    Then Can not unassign Supervisor from employer
+    When Employer - Choose Employer "1"
+    Then Supervisor was be assigned to Employee
+    When Employer - Choose Employer "1"
+    Then Can not unassign Supervisor from Employer
 
-  Scenario: Can delete Supervisor which haven't be assigned to anything
-    When Remove the appointment of employer "1"
-    When Employer - Choose employer "1"
-    When Can un-assign sample Supervisor from employee
-    When Employer - Choose employer "1"
-    Then Can unassign sample Supervisor from employer
+  Scenario: Verify User can delete Supervisor which haven't be assigned to anything
+    When Remove the appointment of Employer "1"
+    When Employer - Choose Employer "1"
+    When Can un-assign sample Supervisor from Employee
+    When Employer - Choose Employer "1"
+    Then Can unassign sample Supervisor from Employer
     Then Deleted sample Supervisor Successfully

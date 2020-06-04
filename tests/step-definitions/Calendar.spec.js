@@ -50,7 +50,7 @@ When("User create new Appointment with existing Employee", () => {
     browser.pause(timeout);
     $(AppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
     browser.pause(timeout)
@@ -259,11 +259,11 @@ When("User update existing Appointment", () => {
     browser.pause(timeout);
     $(AppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
 
-    //Update existing Appoinment
+    //Update existing Appointment
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
@@ -315,7 +315,7 @@ Then("User update Appointment Successfully", () => {
 })
 
 /* CL004 */
-When("User create new Onsite Appoinment", () => {
+When("User create new Onsite Appointment", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     browser.pause(timeout);
@@ -361,7 +361,7 @@ When("User create new Onsite Appoinment", () => {
     $(OnsiteAppointmentObject.onsiteappointmentSlottimeTxt).setValue(5);
     browser.keys("\uE007");
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
@@ -395,7 +395,7 @@ Then("User create new Onsite Appointment Successfully", () => {
 })
 
 /* CL005 */
-When('User create new Onsite Appoinment with existing Employee', () => {
+When('User create new Onsite Appointment with existing Employee', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     browser.pause(timeout);
@@ -441,7 +441,7 @@ When('User create new Onsite Appoinment with existing Employee', () => {
     $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
     browser.pause(timeout)
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
@@ -449,7 +449,7 @@ When('User create new Onsite Appoinment with existing Employee', () => {
 })
 
 /* CL006 */
-When('User create new Onsite Appoinment with new Employee', () => {
+When('User create new Onsite Appointment with new Employee', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     browser.pause(timeout);
@@ -517,7 +517,7 @@ When('User create new Onsite Appoinment with new Employee', () => {
     browser.pause(timeout)
     $(MedicalTypeObject.yesButtonOfConfirmation).click()
     browser.pause(timeout)
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
@@ -525,7 +525,7 @@ When('User create new Onsite Appoinment with new Employee', () => {
 })
 
 /* CL007 */
-When('User create Onsite Appoinment and do not enable time slot', () => {
+When('User create Onsite Appointment and do not enable time slot', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     browser.pause(timeout);
@@ -562,7 +562,7 @@ When('User create Onsite Appoinment and do not enable time slot', () => {
     $(AppointmentObject.endTimeSelector).click();
     $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
 })
-Then('Employee can not select time slot of Appoinment', () => {
+Then('Employee can not select time slot of Appointment', () => {
     //User Select Employee
     $(OnsiteAppointmentObject.employeeDetails).click();
     $(OnsiteAppointmentObject.emailSelector).click();
@@ -572,7 +572,7 @@ Then('Employee can not select time slot of Appoinment', () => {
     assert.equal($(OnsiteAppointmentObject.timeslotSelector).isExisting(), false);
     $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
     browser.pause(timeout)
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
@@ -580,7 +580,7 @@ Then('Employee can not select time slot of Appoinment', () => {
 })
 
 /* CL008 */
-When('User create Onsite Appoinment and enable time slot', () => {
+When('User create Onsite Appointment and enable time slot', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     browser.pause(timeout);
@@ -627,7 +627,7 @@ When('User create Onsite Appoinment and enable time slot', () => {
     browser.keys("\uE007");
 
 })
-Then('Employee can select time slot of Appoinment', () => {
+Then('Employee can select time slot of Appointment', () => {
     //User Select Employee
     $(OnsiteAppointmentObject.employeeDetails).click();
     $(OnsiteAppointmentObject.emailSelector).click();
@@ -648,14 +648,14 @@ Then('Employee can select time slot of Appoinment', () => {
     // assert.equal($(OnsiteAppointmentObject.verifyaddress(appointmentdata.)).isExisting(), true);
     assert.equal($(OnsiteAppointmentObject.verifytimeslot(appointmentdata.timeslot, DataBizUI.room1)).isExisting(), true);
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
     browser.pause(timeout)
 })
 
-Then('Employee can view Appoinment in BizUI', () => {
+Then('Employee can view Appointment in BizUI', () => {
     browser.pause(timeout)
     assert.equal($(BizUIObject.verifydate(DataBizUI.appointmentverifydate, DataBizUI.appointmentverifymonth)).isExisting(), true)
     assert.equal($(BizUIObject.verifytimeslot(appointmentdata.timeslot, DataBizUI.room1)).isExisting(), true)
@@ -704,7 +704,7 @@ When('User create Onsite Appointment and do not public time slot', () => {
     //User Select Enable Time Slot
     $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
@@ -768,9 +768,9 @@ When('User create Onsite Appointment and edit duration time slot', () => {
     $(OnsiteAppointmentObject.onsiteappointmentSlottimeTxt).setValue(5);
     browser.keys("\uE007");
 
-    assert.equal($("//button[contains(@class,'btn-primary') and contains(text(),'5')]").isExisting(), true),
-        //Save Appoinment
-        $(CalendarObject.appointmentSaveBtn).click();
+    assert.equal($("//button[contains(@class,'btn-primary') and contains(text(),'5')]").isExisting(), true);
+    //Save Appointment
+    $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
     browser.pause(timeout)
@@ -832,19 +832,17 @@ Then('User can select time slot with room', () => {
     $(OnsiteAppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
     assert.equal($(OnsiteAppointmentObject.timeslotSelector).isExisting(), true);
     $(OnsiteAppointmentObject.timeslotSelector).click();
-    $(OnsiteAppointmentObject.selectTimeSlot(appointmentdata.timeslot, DataBizUI.room1)).click();
+    $(OnsiteAppointmentObject.selectTimeSlot(appointmentdata.timeslot, DataBizUI.room2)).click();
     $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
     browser.pause(timeout)
 
     assert.equal($(OnsiteAppointmentObject.timeslotSlected(appointmentdata.timeslot)).isExisting(), true);
-
     assert.equal($(OnsiteAppointmentObject.verifyName(appointmentdata.employeefirstname, appointmentdata.employeelastname)).isExisting(), true);
     assert.equal($(OnsiteAppointmentObject.verifyPhone(appointmentdata.employeephone)).isExisting(), true);
     assert.equal($(OnsiteAppointmentObject.verifyemail(appointmentdata.employeeEmail)).isExisting(), true);
-    // assert.equal($(OnsiteAppointmentObject.verifyaddress(appointmentdata.)).isExisting(), true);
     assert.equal($(OnsiteAppointmentObject.verifytimeslot(appointmentdata.timeslot, DataBizUI.room2)).isExisting(), true);
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
@@ -918,7 +916,7 @@ When('User create Onsite Appointment and remove room', () => {
     // assert.equal($(OnsiteAppointmentObject.verifyaddress(appointmentdata.)).isExisting(), true);
     assert.equal($(OnsiteAppointmentObject.verifytimeslot(appointmentdata.timeslot, DataBizUI.room2)).isExisting(), true);
 
-    //Save Appoinment
+    //Save Appointment
     $(CalendarObject.appointmentSaveBtn).click();
     browser.pause(timeout)
     $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
@@ -982,33 +980,175 @@ Then('User can not select room removed', () => {
 })
 
 /* CL013 */
-When('User open Onsite Appoinment have Employee', () => {
+When('User open Onsite Appointment have Employee', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    browser.pause(timeout);
 
+    //Create New Onsite Appointment
+    $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
+
+    //User Select Employer
+    browser.pause(timeout);
+    $(OnsiteAppointmentObject.employerSelect).click();
+    $(OnsiteAppointmentObject.selectEmployer(appointmentdata.apemployer)).click();
+
+    //User Select Location
+    $(OnsiteAppointmentObject.locationSelect).click();
+    $(OnsiteAppointmentObject.selectLocation(appointmentdata.onsitelocation)).click();
+
+    //User Select Medical Type
+    $(OnsiteAppointmentObject.medicalTypeSelect).click();
+    $(OnsiteAppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
+
+    //User Select Medical Staff
+    $(OnsiteAppointmentObject.staffSelector).click();
+    $(OnsiteAppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+    $(OnsiteAppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
+
+    //User Select Date Time
+    $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate)
+
+    //User Select Start Time
+    $(AppointmentObject.startTimeSelector).click();
+    $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+    //User Select End Time
+    $(AppointmentObject.endTimeSelector).click();
+    $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
+
+    //User Select Enable Time Slot
+    $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
+    $(OnsiteAppointmentObject.onsiteappointmentPublicBtn).click();
+
+    //User Add Room
+    $(OnsiteAppointmentObject.onsiteappointmentAddRoomBtn).click();
+    $(OnsiteAppointmentObject.onsiteappointmentSlottimeTxt).setValue(5);
+    browser.keys("\uE007");
+
+    //User Select Employee
+    $(OnsiteAppointmentObject.employeeDetails).click();
+    $(OnsiteAppointmentObject.emailSelector).click();
+    $(OnsiteAppointmentObject.emailInput).setValue(appointmentdata.employeeEmail);
+    browser.pause(timeout)
+    $(OnsiteAppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
+    $(OnsiteAppointmentObject.timeslotSelector).click();
+    $(OnsiteAppointmentObject.selectTimeSlot(appointmentdata.timeslot, DataBizUI.room1)).click();
+    $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+    browser.pause(timeout)
+
+    //Save Appointment
+    $(CalendarObject.appointmentSaveBtn).click();
+    browser.pause(timeout)
+    $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
+    browser.pause(timeout)
 })
 Then('User can view Question form of Employee', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    $(CalendarObject.calendarMonthBtn).click();
+    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    // Find all appoinments which contain sample medical type. After that, removing it 
+    OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
+        elmth.click();
+        browser.pause(timeout);
+        $(OnsiteAppointmentObject.employeeDropdown(appointmentdata.timeslot, DataBizUI.room1)).click();
+        browser.pause(timeout)
+        $(OnsiteAppointmentObject.dropdownAction('Medical Questionnare form')).click();
+        browser.pause(timeout)
 
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion1, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion2, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion3, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion4, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion5, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion6, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion7, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion8, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion9, DataBizUI.answerno)).isExisting(), true);
+
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion1, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion2, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion3, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion4, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion5, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion6, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion7, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion8, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion9, DataBizUI.answeryes)).isExisting(), true);
+
+        browser.keys('Escape');
+        browser.pause(timeout);
+        browser.keys('Escape');
+    })
 })
-
 /* CL014 */
-When('User open Onsite Appoinment have Employee', () => {
-
-})
 Then('User can view Assessment form of Employee', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    $(CalendarObject.calendarMonthBtn).click();
+    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    // Find all appoinments which contain sample medical type. After that, removing it 
+    OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
+        elmth.click();
+        browser.pause(timeout);
+        $(OnsiteAppointmentObject.employeeDropdown(appointmentdata.timeslot, DataBizUI.room1)).click();
+        browser.pause(timeout)
+        $(OnsiteAppointmentObject.dropdownAction('Assessment form')).click();
+        browser.pause(timeout)
 
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion1, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion2, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion3, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion4, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion5, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion6, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion7, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion8, DataBizUI.answerno)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion9, DataBizUI.answerno)).isExisting(), true);
+
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion1, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion2, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion3, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion4, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion5, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion6, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion7, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion8, DataBizUI.answeryes)).isExisting(), true);
+        assert.equal($(BizUIObject.selectbizuiQuestion(DataBizUI.fluquestion9, DataBizUI.answeryes)).isExisting(), true);
+
+        browser.keys('Escape');
+        browser.pause(timeout);
+        browser.keys('Escape');
+    })
 })
 
 /* CL015 */
-When('User open Onsite Appoinment have Employee', () => {
-
-})
 Then('User can reschedule of Employee', () => {
 
 })
 
 /* CL016 */
-When('User open Onsite Appoinment have Employee', () => {
-
-})
-Then('User can remove Employee in Onsite Appoinment Successfully', () => {
-
+Then('User can remove Employee in Onsite Appointment Successfully', () => {
+    $(MenuObject.calendar).scrollIntoView()
+    $(MenuObject.calendar).click()
+    $(CalendarObject.calendarMonthBtn).click();
+    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    // Find all appoinments which contain sample medical type. After that, removing it 
+    OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
+        elmth.click();
+        browser.pause(timeout);
+        $(OnsiteAppointmentObject.employeeDropdown(appointmentdata.timeslot, DataBizUI.room1)).click();
+        browser.pause(timeout)
+        $(OnsiteAppointmentObject.dropdownAction('Remove')).click();
+        browser.pause(timeout)
+        $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+        $(MedicalTypeObject.yesButtonOfConfirmation).click()
+        browser.pause(timeout);
+        $(CalendarObject.appointmentUpdateBtn).click();
+        browser.pause(timeout);
+    })
 })

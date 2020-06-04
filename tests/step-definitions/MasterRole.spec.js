@@ -10,75 +10,75 @@ var removeRoleButton = function (name) {
   return "//tr[.//button[contains(text(), " + "'" + name + "'" + ")]]//button/i[contains(text(), 'clear')]";
 }
 
-Given("MSI - User open index page", () => {
+Given("User open index page", () => {
   browser.url('http://cms.spiderbox.design/r/master-roles')
 })
 
-Then('MSI - User is navigated to index page', () => {
+Then('User is navigated to index page', () => {
   assert.strictEqual($(MasterRoleObject.title).getText(), 'Master Roles')
 })
 
-When('MSI - User click new button', () => {
+When('User click new button', () => {
   $(MasterRoleObject.newButton).click()
 })
 
-When('MSI - User click save button', () => {
+When('User click save button', () => {
   $(MasterRoleObject.saveButton).click()
 })
 
-Then('MSI - A failed message is appeared', () => {
+Then('A failed message is appeared', () => {
   browser.pause(3000)
   assert.include($(MasterRoleObject.errorNewMasterRole).getText(), 'Please review required fields!')
 })
 
-When('MSI - User input valid role name', () => {
+When('User input valid Role name', () => {
   $(MasterRoleObject.nameInput).setValue(MasterRoleData.sampleRole)
 })
 
-Then('MSI - Create a new master role successfully', () => {
+Then('Create a new Master Role Successfully', () => {
   browser.pause(3000)
   assert.equal($(MasterRoleObject.successfullySaved).getText(), 'Successfully saved')
 })
 
-When('MSI - User input sample role', () => {
+When('User input sample Role', () => {
   $(MasterRoleObject.searchInput).setValue(MasterRoleData.sampleRole)
 })
 
-When('MSI - User presses enter', () => {
+When('User presses enter', () => {
   $(MasterRoleObject.searchInput).setValue(MasterRoleData.sampleRole)
   $(MasterRoleObject.searchInput).click();
   browser.keys("\uE007");
 })
 
-Then('MSI - Sample role was be found', () => {
+Then('Sample Role was be found', () => {
   browser.pause(2000)
   assert.exists($("//table//tr//button[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]").getText(), MasterRoleData.sampleRole)
 })
 
-When('MSI - User clicks edit button of sample role', () => {
+When('User clicks edit button of sample Role', () => {
   $("//tr[.//button[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]//button/i[contains(text(), 'create')]").click()
 })
 
-When('MSI - Edit modal is appeared, user inputs a new role name', () => {
+When('Edit modal is appeared, user inputs a new Role name', () => {
   assert.exists($(MasterRoleObject.editModal))
   $(MasterRoleObject.nameInput).setValue(MasterRoleData.newName)
 })
 
-Then('MSI - Updated the sample role successfully', () => {
+Then('Updated the sample Role Successfully', () => {
   browser.pause(2000)
   assert.equal($(MasterRoleObject.successfullySaved).getText(), 'Successfully saved')
 })
 
-When('MSI - User clicks remove button of sample role', () => {
+When('User clicks remove button of sample Role', () => {
   $(removeRoleButton(MasterRoleData.newName)).click()
 })
 
-When('MSI - A confirm alert is appeared, user clicks Yes', () => {
+When('A confirm alert is appeared, user clicks Yes', () => {
   assert.exists($(MasterRoleObject.confirmAlert))
   $(MasterRoleObject.yesButtonOfConfirmation).click()
 })
 
-Then('MSI - Removed a master role successfully', () => {
+Then('Removed a Master Role Successfully', () => {
   browser.pause(2000)
   assert.equal($(MasterRoleObject.successfullyDeleted).getText(), 'Successfully deleted')
 })
@@ -86,13 +86,13 @@ Then('MSI - Removed a master role successfully', () => {
 //
 // overview logic
 //
-When('MS - Create sample role', () => {
+When('Create sample Role', () => {
   $(MasterRoleObject.newButton).click()
   $(MasterRoleObject.nameInput).setValue(MasterRoleData.sampleRole)
   $(MasterRoleObject.saveButton).click()
 })
 
-When('MS - User moves to employer screen, choosing Employer', () => {
+When('User moves to Employer screen, choosing Employer', () => {
   $(MasterRoleObject.employerMenu).click()
   // [Warning] - Because the loading-inner 
   $(MasterRoleObject.masterRoleMenu).click()
@@ -104,7 +104,7 @@ When('MS - User moves to employer screen, choosing Employer', () => {
   browser.pause(3000)
 })
 
-When('MS - Assign sample role to employer', () => {
+When('Assign sample Role to Employer', () => {
   $(MasterRoleObject.roleOnEmployer).click()
   browser.pause(2000)
   $("//app-employer-roles//*[contains(@class, 'employer-master-role-item') and .//*[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]").click()
@@ -112,7 +112,7 @@ When('MS - Assign sample role to employer', () => {
   let assignSuccess = $("//app-employer-roles//*[contains(@class, 'bg-primary') and .//*[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]").isExisting()
   expect(assignSuccess).to.be.true
 })
-Then('MS - Cannot remove sample role', () => {
+Then('Cannot remove sample Role', () => {
   $(MasterRoleObject.masterRoleMenu).click()
   browser.pause(2000)
 
@@ -129,7 +129,7 @@ Then('MS - Cannot remove sample role', () => {
   let failedAlert = $(MasterRoleObject.FailedDelete).isExisting()
   expect(failedAlert).to.be.true
 })
-When('MS - Un-assign sample role', () => {
+When('Un-assign sample Role', () => {
   $(MasterRoleObject.roleOnEmployer).click()
   browser.pause(2000)
   $("//app-employer-roles//*[contains(@class, 'employer-master-role-item') and .//*[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]").click()
@@ -137,7 +137,7 @@ When('MS - Un-assign sample role', () => {
   let assignSuccess = $("//app-employer-roles//*[contains(@class, 'bg-primary') and .//*[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]").isExisting()
   expect(assignSuccess).to.be.false
 })
-Then('MS - Remove sample role successfully', () => {
+Then('Remove sample Role Successfully', () => {
   $(MasterRoleObject.masterRoleMenu).click()
   browser.pause(2000)
 
@@ -154,7 +154,7 @@ Then('MS - Remove sample role successfully', () => {
   let failedAlert = $(MasterRoleObject.successfullyDeleted).isExisting()
   expect(failedAlert).to.be.true
 })
-When('MS - Assign sample role to employee', () => {
+When('Assign sample Role to Employee', () => {
   // Assign to employee
   $(MasterRoleObject.employeeOnEmployer).click()
   $(EmployerObject.searchboxEmployer).click()
@@ -169,7 +169,7 @@ When('MS - Assign sample role to employee', () => {
   $(EmployerObject.employee.saveBtn).click()
   browser.pause(1000)
 })
-Then('MS - Cannot un-assign sample role from employer', () => {
+Then('Cannot un-assign sample Role from Employer', () => {
   $(MasterRoleObject.roleOnEmployer).click()
   browser.pause(2000)
   $("//app-employer-roles//*[contains(@class, 'employer-master-role-item') and .//*[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]").click()
@@ -177,7 +177,7 @@ Then('MS - Cannot un-assign sample role from employer', () => {
   let assignSuccess = $("//app-employer-roles//*[contains(@class, 'bg-primary') and .//*[contains(text(), " + "'" + MasterRoleData.sampleRole + "'" + ")]]").isExisting()
   expect(assignSuccess).to.be.true
 })
-When('MS - Un-assign sample role from employee', () => {
+When('Un-assign sample Role from Employee', () => {
   $(MasterRoleObject.employeeOnEmployer).click()
   $(EmployerObject.searchboxEmployer).click()
   $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)

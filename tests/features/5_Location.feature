@@ -3,35 +3,35 @@ Feature: Location
   Background: As a User I want check all scenario of Location feature
 
   @LC001
-  Scenario: Create Onsite Location Successfully
+  Scenario: Verify User create Onsite Location Successfully
     Given User Access CSM Website
-    When User input correct username and password
+    When User input correct UserName and Password
     When Employer - Choose Employer "1"
-    Then Create a onsite Location
+    Then Create a Onsite Location
 
   @LC002
-  Scenario: Can not delete Onsite Location if it has a Appointment
-    When Create a new onsite Appointment
+  Scenario: Verify User can not delete Onsite Location if it has a Appointment
+    When Create a new Onsite Appointment
     When Employer - Choose Employer "1"
-    Then Cannot delete onsite Appointment
+    Then Can not delete Onsite Appointment
 
   @LC003
-  Scenario: Can delete Onsite Location if it has not any Appointments
-    When Delete onsite Appointment
+  Scenario: Verify User can delete Onsite Location if it has not any Appointments
+    When Delete Onsite Appointment
     When Employer - Choose Employer "1"
-    Then Can delete onsite Appointment
+    Then Can delete Onsite Appointment
 
   @LC004
-  Scenario: Cannot un-assign a Location if if has a Appointment
+  Scenario: Verify User can not un-assign a Location if if has a Appointment
     Given Create sample Location if it is not exist
     When Employer - Choose Employer "1"
     When Assign sample Location to Employer
     When Create a new Appointment with sample Location and Employer "1"
     When Employer - Choose Employer "1"
-    Then Cannot un-assign sample Location
+    Then Can not un-assign sample Location
 
   @LC005
-  Scenario: Can un-assign sample Location from Employer
+  Scenario: Verify User can un-assign sample Location from Employer
     When Employer - Choose Employer "2"
     When Assign sample Location to Employer
     When Create a new Appointment with sample Location and Employer "2"

@@ -21,11 +21,11 @@ function waitingLoad(name) {
   }, 20000)
 }
 
-Given('MT - User opens index page', () => {
+Given('User opens index page', () => {
   browser.url('http://cms.spiderbox.design/r/medical-types')
 })
 
-When('MT - Create sample medical type', () => {
+When('Create sample Medical Type', () => {
   browser.pause(1000)
   $(MenuObject.medicalType).click()
   browser.pause(1000)
@@ -33,7 +33,7 @@ When('MT - Create sample medical type', () => {
   $(MedicalTypeObject.nameInput).setValue(MedicalTypeData.sampleMedicalType)
   $(MedicalTypeObject.saveButton).click()
 })
-When('MT - Assign sample medical type to employer', () => {
+When('Assign sample Medical Type to Employer', () => {
   $(EmployerObject.medicalTypeTab).click()
   browser.waitUntil(() => {
     return $(EmployerObject.medicalTypesSection).isExisting() == true
@@ -44,7 +44,7 @@ When('MT - Assign sample medical type to employer', () => {
     return expect(classAttr).to.include('bg-primary')
   }, 20000)
 })
-Then('MT - Cannot remove sample medical type', () => {
+Then('Can not remove sample Medical Type', () => {
   $(MenuObject.medicalType).click()
   waitingLoadingInner();
   $(MedicalTypeObject.searchInput).setValue(MedicalTypeData.sampleMedicalType)
@@ -59,7 +59,7 @@ Then('MT - Cannot remove sample medical type', () => {
   waitingLoad(MedicalTypeObject.FailedDelete)
 })
 
-Then('MT - Un-assign sample medical type', () => {
+Then('Un-assign sample Medical Type', () => {
   $(EmployerObject.medicalTypeTab).click()
   waitingLoad(EmployerObject.medicalTypesSection)
 
@@ -69,7 +69,7 @@ Then('MT - Un-assign sample medical type', () => {
     return expect(classAttr).to.not.include('bg-primary')
   }, 20000)
 })
-Then('MT - Remove sample medical type successfully', () => {
+Then('Remove sample Medical Type Successfully', () => {
   $(MenuObject.medicalType).click()
   waitingLoadingInner();
   $(MedicalTypeObject.searchInput).setValue(MedicalTypeData.sampleMedicalType)
@@ -84,7 +84,7 @@ Then('MT - Remove sample medical type successfully', () => {
   waitingLoad(MedicalTypeObject.successfullyDeleted)
 })
 
-When('MT - Create new appointment with sample medical type and employer {string}', (num) => {
+When('Create new Appointment with sample Medical Type and Employer {string}', (num) => {
   if (num == 1) {
     var employer = EmployerData.employer1
   } else {
@@ -112,7 +112,7 @@ When('MT - Create new appointment with sample medical type and employer {string}
 
   // waitingLoad(OnsiteAppointmentObject.createdSuccessfully)
 })
-Then('MT - Cannot un-assign sample medical type', () => {
+Then('Can not un-assign sample Medical Type', () => {
   $(EmployerObject.medicalTypeTab).click()
   waitingLoad(EmployerObject.medicalTypesSection)
 
@@ -124,7 +124,7 @@ Then('MT - Cannot un-assign sample medical type', () => {
   }, 20000)
 })
 
-When('MT - Remove the appointment of employer {string}', (num) => {
+When('Remove the Appointment of Employer {string}', (num) => {
   if (num == 1) {
     var employer = EmployerData.employer1
   } else {

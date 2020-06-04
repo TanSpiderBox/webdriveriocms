@@ -5,10 +5,10 @@ import { LocationData } from '../data/Data.Location'
 import { EmployerData } from '../data/Data.Employer'
 import { EmployeeData } from '../data/Data.Employee'
 import { MenuObject } from '../page-object/shared/Menu.po'
-import { CalendarVerify, CalendarObject, OnsiteAppointmentObject, AppointmentObject } from '../page-object/Calendar.po'
+import { CalendarObject, OnsiteAppointmentObject, AppointmentObject } from '../page-object/Calendar.po'
 import { LocationObject } from '../page-object/Location.po'
 
-Then('L - Create a onsite Location', () => {
+Then('Create a Onsite Location', () => {
   $(EmployerObject.onsiteLocationTab).click()
   $(EmployerObject.newOnsiteLocationBtn).click()
   browser.pause(1000)
@@ -23,7 +23,7 @@ Then('L - Create a onsite Location', () => {
   $(EmployerObject.onsiteLocation.saveBtn).click()
 })
 
-When('L - Create a new onsite appointment', () => {
+When('Create a new Onsite Appointment', () => {
   browser.pause(1000)
   $(MenuObject.calendar).click()
   $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
@@ -44,7 +44,7 @@ When('L - Create a new onsite appointment', () => {
   $(CalendarObject.appointmentSaveBtn).click()
 })
 
-Then('L - Cannot delete onsite appointment', () => {
+Then('Can not delete Onsite Appointment', () => {
   $(EmployerObject.onsiteLocationTab).click()
   browser.pause(2000)
   while (!$(EmployerObject.findOnsiteLocation(LocationData.sampleOnsiteLocation.title)).isExisting()) {
@@ -59,7 +59,7 @@ Then('L - Cannot delete onsite appointment', () => {
   expect($(EmployerObject.onsiteLocation.failedDelete).isNull === undefined).to.be.equal(true);
 })
 
-When('L - Delete onsite appointment', () => {
+When('Delete Onsite Appointment', () => {
   $(MenuObject.calendar).click()
   browser.pause(2000)
   // Find all appoinments which contain sample staff. After that, removing it 
@@ -74,7 +74,7 @@ When('L - Delete onsite appointment', () => {
   browser.pause(1000)
 })
 
-Then('L - Can delete onsite appointment', () => {
+Then('Can delete Onsite Appointment', () => {
   $(EmployerObject.onsiteLocationTab).click()
   browser.pause(2000)
   while (!$(EmployerObject.findOnsiteLocation(LocationData.sampleOnsiteLocation.title)).isExisting()) {
@@ -88,7 +88,7 @@ Then('L - Can delete onsite appointment', () => {
   // expect($(EmployerObject.onsiteLocation.failedDelete).isNull === undefined).to.be.equal(false);
 })
 
-Given("L - Create sample location if it isn't exist", () => {
+Given("Create sample Location if it is not exist", () => {
   $(MenuObject.location).click()
   browser.pause(2000)
   while (!$(LocationObject.find(LocationData.sampleLocation.title)).isExisting()) {
@@ -116,7 +116,7 @@ Given("L - Create sample location if it isn't exist", () => {
   }
 })
 
-When('L - Assign sample location to employer', () => {
+When('Assign sample Location to Employer', () => {
   browser.pause(1000)
   $(EmployerObject.locationTab).click()
   browser.pause(1000)
@@ -128,7 +128,7 @@ When('L - Assign sample location to employer', () => {
   }, 20000)
 })
 
-When('L - Create a new appointment with sample location and employer {string}', (num) => {
+When('Create a new Appointment with sample Location and Employer {string}', (num) => {
   let employer = EmployerData['employer' + num]
   browser.pause(1000)
   $(MenuObject.calendar).click()
@@ -157,7 +157,7 @@ When('L - Create a new appointment with sample location and employer {string}', 
   $(CalendarObject.appointmentSaveBtn).click()
 })
 
-Then('L - Cannot un-assign sample location', () => {
+Then('Can not un-assign sample Location', () => {
   browser.pause(1000)
   $(EmployerObject.locationTab).click()
 
@@ -166,7 +166,7 @@ Then('L - Cannot un-assign sample location', () => {
   browser.pause(1000)
 })
 
-When('L - Remove appointment of employer {string}', (num) => {
+When('Remove Appointment of Employer {string}', (num) => {
   let employer = EmployerData['employer' + num]
   browser.pause(1000)
   $(MenuObject.calendar).click()
@@ -181,7 +181,7 @@ When('L - Remove appointment of employer {string}', (num) => {
   })
 })
 
-Then('L - Can un-assign sample location', () => {
+Then('Can un-assign sample Location', () => {
   browser.pause(1000)
   $(EmployerObject.locationTab).click()
   $(EmployerObject.findLocation(LocationData.sampleLocation.title)).click()

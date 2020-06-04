@@ -84,7 +84,7 @@ When('Staff - Remove on-site appointment', () => {
   })
 })
 
-Then('Staff - Remove staff successfully', () => {
+Then('Staff - Remove staff Successfully', () => {
   $(MenuObject.staff).click()
   $(StaffObject.searchInput).setValue(StaffData.sampleStaff.email)
   browser.keys("\uE007")
@@ -96,7 +96,8 @@ Then('Staff - Remove staff successfully', () => {
 })
 
 
-Given("User access Staff page successful", () => {
+Given("User access Staff page Successfully", () => {
+  browser.reloadSession();
   browser.url(StaffData.stafurl)
 })
 When("User input correct Staff username and password", () => {
@@ -104,7 +105,7 @@ When("User input correct Staff username and password", () => {
   $(StaffObject.staffpassword).setValue(123456);
   $(StaffObject.staffloginBtn).click();
 })
-Then("User can login Staff successful", () => {
+Then("User can login Staff Successfully", () => {
 
 })
 When("User complete question and assessment", () => {

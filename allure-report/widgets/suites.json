@@ -1,15 +1,92 @@
 {
-  "total" : 1,
+  "total" : 8,
   "items" : [ {
+    "uid" : "8b035d66f144a3d156cbd803eadae74e",
+    "name" : "Staff",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 13,
+      "unknown" : 0,
+      "total" : 13
+    }
+  }, {
     "uid" : "ac6f2152e63f3392cc0bab44858be2ab",
     "name" : "Calendar",
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 0,
       "skipped" : 0,
-      "passed" : 1,
+      "passed" : 13,
       "unknown" : 0,
-      "total" : 2
+      "total" : 13
+    }
+  }, {
+    "uid" : "89ed139b2a59efbc7be22270fdc1fbc2",
+    "name" : "Master Role",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 13,
+      "unknown" : 0,
+      "total" : 13
+    }
+  }, {
+    "uid" : "f1f0bc2e97c02609302506e196166cab",
+    "name" : "BizUI",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 12,
+      "unknown" : 0,
+      "total" : 12
+    }
+  }, {
+    "uid" : "4cda5371764b9192c2fa8c0673ca6e89",
+    "name" : "Supervisor",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 8,
+      "unknown" : 0,
+      "total" : 8
+    }
+  }, {
+    "uid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+    "name" : "Login",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 7,
+      "unknown" : 0,
+      "total" : 7
+    }
+  }, {
+    "uid" : "078e3b92bea8e4b3acaf9e861a67c529",
+    "name" : "Location",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 5,
+      "unknown" : 0,
+      "total" : 5
+    }
+  }, {
+    "uid" : "3b791ce9f3cfa7f1c851b2f6004ff92c",
+    "name" : "Medical Type",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 4,
+      "unknown" : 0,
+      "total" : 4
     }
   } ]
 }
