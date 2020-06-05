@@ -22,7 +22,7 @@ function waitingLoad(name) {
   }, 20000)
 }
 
-Then('Create sample Supervisor', () => {
+Then('User Create sample Supervisor', () => {
   $(MenuObject.supervisor).click()
   waitingLoadingInner()
 
@@ -59,8 +59,8 @@ Then('Can not remove sample Supervisor', () => {
 
 When('Assign sample Supervisor to Employee', () => {
   $(EmployerObject.employeeTab).click()
-  $(EmployerObject.searchboxEmployer).click()
-  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  $(EmployerObject.searchBox).click()
+  $(EmployerObject.searchBox).setValue(EmployeeData.emp1.email)
   browser.keys('Enter');
   $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()
@@ -84,8 +84,8 @@ Then('Can not unassign Supervisor from Employer', () => {
 
 When('Can un-assign sample Supervisor from Employee', () => {
   $(EmployerObject.employeeTab).click()
-  $(EmployerObject.searchboxEmployer).click()
-  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  $(EmployerObject.searchBox).click()
+  $(EmployerObject.searchBox).setValue(EmployeeData.emp1.email)
   browser.keys('Enter');
   $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()
@@ -140,8 +140,8 @@ When('Create appointment which contains sample Supervisor', () => {
 
 Then('Supervisor was be assigned to Employee', () => {
   $(EmployerObject.employeeTab).click()
-  $(EmployerObject.searchboxEmployer).click()
-  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  $(EmployerObject.searchBox).click()
+  $(EmployerObject.searchBox).setValue(EmployeeData.emp1.email)
   browser.keys('Enter');
   $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()

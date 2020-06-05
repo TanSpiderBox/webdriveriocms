@@ -1,3 +1,4 @@
+@ignore
 Feature: Email Template
 
     Background: As a User I want check all scenario of Email Template Feature

@@ -1,3 +1,4 @@
+@ignore
 Feature: SMS Template
 
     Background: As a User I want check all scenario of SMS Template feature

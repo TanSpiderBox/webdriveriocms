@@ -1,3 +1,4 @@
+@ignore
 Feature: Medical Form Libary
 
     Background: As a User I want check all scenario of Medical Form Libary

@@ -1,3 +1,4 @@
+@ignore
 Feature: Appointment Presets
 
     Background: As a User I want check all scenario of Appointment Presets

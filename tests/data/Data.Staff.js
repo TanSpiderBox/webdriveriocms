@@ -1,5 +1,5 @@
 const StaffData = {
-  stafurl: 'http://cms.spiderbox.design/medical-staff/auth/login',
+  stafurl: '/medical-staff/auth/login',
   staffasseessment: 'Assessment',
   sampleStaff: {
     firstName: 'Sample',

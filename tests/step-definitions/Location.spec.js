@@ -8,7 +8,7 @@ import { MenuObject } from '../page-object/shared/Menu.po'
 import { CalendarObject, OnsiteAppointmentObject, AppointmentObject } from '../page-object/Calendar.po'
 import { LocationObject } from '../page-object/Location.po'
 
-Then('Create a Onsite Location', () => {
+Then('User create new Onsite Location Successfully', () => {
   $(EmployerObject.onsiteLocationTab).click()
   $(EmployerObject.newOnsiteLocationBtn).click()
   browser.pause(1000)
@@ -44,7 +44,7 @@ When('Create a new Onsite Appointment', () => {
   $(CalendarObject.appointmentSaveBtn).click()
 })
 
-Then('Can not delete Onsite Appointment', () => {
+Then('User can not delete Onsite Appointment', () => {
   $(EmployerObject.onsiteLocationTab).click()
   browser.pause(2000)
   while (!$(EmployerObject.findOnsiteLocation(LocationData.sampleOnsiteLocation.title)).isExisting()) {
@@ -59,7 +59,7 @@ Then('Can not delete Onsite Appointment', () => {
   expect($(EmployerObject.onsiteLocation.failedDelete).isNull === undefined).to.be.equal(true);
 })
 
-When('Delete Onsite Appointment', () => {
+When('User delete Onsite Appointment', () => {
   $(MenuObject.calendar).click()
   browser.pause(2000)
   // Find all appoinments which contain sample staff. After that, removing it 
@@ -74,7 +74,7 @@ When('Delete Onsite Appointment', () => {
   browser.pause(1000)
 })
 
-Then('Can delete Onsite Appointment', () => {
+Then('User can delete Onsite Appointment', () => {
   $(EmployerObject.onsiteLocationTab).click()
   browser.pause(2000)
   while (!$(EmployerObject.findOnsiteLocation(LocationData.sampleOnsiteLocation.title)).isExisting()) {

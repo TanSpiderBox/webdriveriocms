@@ -97,8 +97,8 @@ When('User moves to Employer screen, choosing Employer', () => {
   // [Warning] - Because the loading-inner 
   $(MasterRoleObject.masterRoleMenu).click()
   $(MasterRoleObject.employerMenu).click()
-  $(EmployerObject.searchboxEmployer).click()
-  $(EmployerObject.searchboxEmployer).setValue(EmployerData.employer1.name);
+  $(EmployerObject.searchBox).click()
+  $(EmployerObject.searchBox).setValue(EmployerData.employer1.name);
   browser.keys("\uE007");
   $(EmployerObject.find(EmployerData.employer1.name)).click()
   browser.pause(3000)
@@ -157,8 +157,8 @@ Then('Remove sample Role Successfully', () => {
 When('Assign sample Role to Employee', () => {
   // Assign to employee
   $(MasterRoleObject.employeeOnEmployer).click()
-  $(EmployerObject.searchboxEmployer).click()
-  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  $(EmployerObject.searchBox).click()
+  $(EmployerObject.searchBox).setValue(EmployeeData.emp1.email)
   browser.keys('Enter');
   $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()
@@ -179,8 +179,8 @@ Then('Cannot un-assign sample Role from Employer', () => {
 })
 When('Un-assign sample Role from Employee', () => {
   $(MasterRoleObject.employeeOnEmployer).click()
-  $(EmployerObject.searchboxEmployer).click()
-  $(EmployerObject.searchboxEmployer).setValue(EmployeeData.emp1.email)
+  $(EmployerObject.searchBox).click()
+  $(EmployerObject.searchBox).setValue(EmployeeData.emp1.email)
   browser.keys('Enter');
   $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()

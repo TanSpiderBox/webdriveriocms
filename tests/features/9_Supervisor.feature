@@ -5,7 +5,7 @@ Feature: Supervisor
   Scenario: Verify User can create a Supervisor Successfully
     Given User Access CSM Website
     When User input correct UserName and Password
-    Then Create sample Supervisor
+    Then User Create sample Supervisor
 
   Scenario: Verify User can create Supervisor in Appointment Successfully
 

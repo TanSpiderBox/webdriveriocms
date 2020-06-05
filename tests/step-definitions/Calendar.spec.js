@@ -191,13 +191,13 @@ Then("User create new Appointment with new Employee Success and Employee added i
 Then("User can view Employee added in Employer", () => {
     //Select Employer
     $(MenuObject.employer).click();
-    $(EmployerObject.searchboxEmployer).click()
-    $(EmployerObject.searchboxEmployer).setValue(appointmentdata.apemployer)
+    $(EmployerObject.searchBox).click()
+    $(EmployerObject.searchBox).setValue(appointmentdata.apemployer)
     browser.keys('Enter');
     $(EmployerObject.find(appointmentdata.apemployer)).click()
     $(EmployerObject.employeeTab).click()
-    $(EmployerObject.searchboxEmployer).click()
-    $(EmployerObject.searchboxEmployer).setValue(employee1)
+    $(EmployerObject.searchBox).click()
+    $(EmployerObject.searchBox).setValue(employee1)
     browser.keys('Enter');
     $(EmployerObject.EditEmployeeBtn).click()
     browser.pause(timeout)

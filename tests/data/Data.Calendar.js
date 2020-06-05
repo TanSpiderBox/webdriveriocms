@@ -22,6 +22,7 @@ const appointmentdata = {
     employeedob: '16/06/1994',
     employeephone: '+8476 984 7942',
     employeestrline: '364',
+    employeestrline2: 'District 3',
     employeesuburb: 'Hcm',
     employeestate: 'VIC',
     employeepostalcode: '700000',
@@ -35,7 +36,7 @@ const appointmentdata = {
     // newemail:`${faker.internet.email()}`,
     employeemanageremail: 'tan+3@spiderbox.design',
     emailmedicalstaff: 'tan+6@spiderbox.design',
-    staffname: 'Amitie Haw',
+    staffname: 'Amitie HAW',
 
     // Verify Data
     errortimeslot: "Slot time cannot greater than appointment duration."

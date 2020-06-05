@@ -1,3 +1,4 @@
+@ignore
 Feature: Employees
 
     Background: As a User I want check all scenario of Employees feature

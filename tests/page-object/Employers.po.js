@@ -1,120 +1,31 @@
-const EyersObj = {
-  menu_Eyers: '//*[text()="Employers"]',
-
-  btn_NwEyers: '//button[text()=" New Employer "]',
-
-  txt_EyersName: 'input[formcontrolname="name"]',
-
-  txt_EyersPhone: 'input[formcontrolname="phone"]',
-
-  txt_EyersEmail: 'input[formcontrolname="email"]',
-
-  txt_EyersStrLn1: 'input[formcontrolname="streetLine1"]',
-
-  txt_EyersStrLn2: 'input[formcontrolname="streetLine2"]',
-
-  txt_EyersSuburb: 'input[formcontrolname="suburb"]',
-
-  txt_EyersState: 'ng-select[formcontrolname="state"]',
-
-  txt_EyersPostCode: 'input[formcontrolname="postCode"]',
-
-  txt_EyersSecrect: 'input[formcontrolname="secret"]',
-
-  lbl_EyersURL: '//label[text()="Register Url"]/following-sibling::input',
-
-  btn_EyersClose: 'button[aria-label="Close"]',
-
-  btn_EyersCancel: '//button[text()="Cancel"]',
-
-  btn_EyersSave: '//button[text()="Save"]',
-
-
-
-  tab_EyersLc: '//a[text()="Locations"]',
-
-  tab_EloyerOSL: '//a[text()="On-Site Locations"]',
-
-  btn_EloyerNOSL: '//button[text()=" New On-Site Location "]',
-
-  txt_NOSLTitile: 'input[formcontrolname="title"]',
-
-  txt_NOSLStrLn1: '//div[@class="modal-content"]//input[@formcontrolname="streetLine1"]',
-
-  txt_NOSLStrLn2: '//div[@class="modal-content"]//input[@formcontrolname="streetLine2"]',
-
-  txt_NOSLSuburb: '//div[@class="modal-content"]//input[@formcontrolname="Suburb"]',
-
-  txt_NOSLState: '//div[@class="modal-content"]//ng-select[@formcontrolname="state"]',
-
-  txt_NOSLPostCode: '//div[@class="modal-content"]//input[@formcontrolname="postCode"]',
-
-  lbl_NOSLAlert: '//div[@role="alert"]',
-
-  lbl_NOSLInvdFb: '//div[@class="invalid-feedback ng-star-inserted"]',
-
-  lbl_NOSLInvdFbStrLn1: '//div[@class="modal-content"]//input[@formcontrolname="streetLine1"]/following-sibling::div',
-
-  lbl_NOSLInvdFbStrLn2: '//div[@class="modal-content"]//input[@formcontrolname="streetLine2"]/following-sibling::div',
-
-  lbl_NOSLInvdFbSuburb: '//div[@class="modal-content"]//input[@formcontrolname="Suburb"]/following-sibling::div',
-
-  tabmenu_EyerEyees: '//a[text()="Employees"]',
-
-  btn_NwEyee: '//button[text()=" New Employee "]',
-
-  txt_EyeeFirstName: 'input[formcontrolname=firstName]',
-
-  txt_EyeeLastName: 'input[formcontrolname=lastName]',
-
-  txt_EyeeGender: 'ng-select[formcontrolname=gender]',
-
-  txt_EyeeDob: 'input[formcontrolname=dob]',
-
-  txt_EyeeIdType: 'ng-select[formcontrolname=idType]',
-
-  txt_EyeeIdTypeValue: 'input[formcontrolname=idTypeValue]',
-
-  txt_EyeePhone: '//div[@class="modal-content"]//input[@formcontrolname="phone"]',
-
-  txt_EyeeEmail: '//div[@class="modal-content"]//input[@formcontrolname="email"]',
-
-  txt_EyeeStrLn1: '//div[@class="modal-content"]//input[@formcontrolname="streetLine1"]',
-
-  txt_EyeeStrLn2: '//div[@class="modal-content"]//input[@formcontrolname="streetLine2"]',
-
-  txt_EyeeSurb: '//div[@class="modal-content"]//input[@formcontrolname="Suburb"]',
-
-  txt_EyeeState: '//div[@class="modal-content"]//ng-select[@formcontrolname="state"]',
-
-  txt_EyeePostCode: '//div[@class="modal-content"]//input[@formcontrolname="postCode"]',
-
-  txt_EyeeMasterRoleID: '//ng-select[@formcontrolname="masterRoleId"]',
-
-  txt_EyeeIsManager: '//div[@class="modal-content"]//mat-checkbox[@formcontrolname="isManager"]',
-
-  txt_EyeeIsMainContact: '//div[@class="modal-content"]//mat-checkbox[@formcontrolname="isMainContact"]',
-
-  txt_EyeeMedicalTypes: '//a[text()="Medical Types"]',
-
-  tab_EyerRoles: '//a[text()="Roles"]',
-
-  btn_EloyerFrist: '//a[text()="First"]',
-
-  btn_EloyerPrevious: '//a[text()="Previous"]',
-
-  btn_EloyerNext: '//a[text()="Next"]',
-
-  btn_EloyerLast: '//a[text()="Last"]',
-
-  btn_ElEdit: '//*[text()="create"]',
-}
-
 const EmployerObject = {
   find: (name) => {
     return "//tr/td[contains(@class, 'cdk-column-name')]//*[contains(text(), " + "'" + name + "'" + ")]"
   },
   updatedSuccessfully: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'Updated successfully')]",
+
+  //Create new Employer
+  newEmployerBtn: '//button[text()=" New Employer "]',
+  employerName: 'input[formcontrolname="name"]',
+  employerPhone: 'input[formcontrolname="phone"]',
+  employerEmail: 'input[formcontrolname="email"]',
+  employerStrLn1: 'input[formcontrolname="streetLine1"]',
+  employerStrLn2: 'input[formcontrolname="streetLine2"]',
+  employerSuburb: 'input[formcontrolname="suburb"]',
+  employerState: 'ng-select[formcontrolname="state"]',
+  stateSelector: (state) => {
+    return "//ng-select[@formcontrolname='state']//*[contains(text()," + "'" + state + "'" + ")]"
+  },
+  employerPostCode: 'input[formcontrolname="postCode"]',
+  employerSecrect: 'input[formcontrolname="secret"]',
+  employerOnsitePassword: 'input[formcontrolname="onsitePassword"]',
+  employersURL: '//label[text()="Register Url"]/following-sibling::input',
+
+  closeBtn: '//button[contains(@aria-label,"Close")]',
+  cancelBtn: '//button[contains(text(),"Cancel")]',
+  saveBtn: '//button[contains(text(),"Save")]',
+
+  employerPopup: '//snack-bar-container/simple-snack-bar/span',
 
   // Employee
   employeeTab: "//app-employer-details//a[contains(text(), 'Employee') and contains(@class, 'nav-link')]",
@@ -135,6 +46,28 @@ const EmployerObject = {
     saveBtn: "//*[contains(text(),'Save')]",
     clearSupervisor: "//app-employee-details//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@title, 'Clear all')]",
   },
+
+  //Create new Employee
+  employeeNewBtn: '//button[text()=" New Employee "]',
+  employeeFirstName: 'input[formcontrolname=firstName]',
+  employeeLastName: 'input[formcontrolname=lastName]',
+  employeeGender: 'ng-select[formcontrolname=gender]',
+  employeeDob: 'input[formcontrolname=dob]',
+  employeeIdType: 'ng-select[formcontrolname=idType]',
+  selectIdType: (IdType) => {
+    return "//ng-select[@formcontrolname='idType']//*[contains(text()," + "'" + IdType + "'" + ")]"
+  },
+  employeedTypeValue: 'input[formcontrolname=idTypeValue]',
+  employeePhone: '//div[@class="modal-content"]//input[@formcontrolname="phone"]',
+  employeeEmail: '//div[@class="modal-content"]//input[@formcontrolname="email"]',
+  employeeStrLn1: '//div[@class="modal-content"]//input[@formcontrolname="streetLine1"]',
+  employeeStrLn2: '//div[@class="modal-content"]//input[@formcontrolname="streetLine2"]',
+  employeeSurb: '//div[@class="modal-content"]//input[@formcontrolname="suburb"]',
+  employeeState: '//div[@class="modal-content"]//ng-select[@formcontrolname="state"]',
+  employeePostCode: '//div[@class="modal-content"]//input[@formcontrolname="postCode"]',
+  employeeMasterRoleID: '//ng-select[@formcontrolname="masterRoleId"]',
+  employeeIsManager: '//mat-checkbox[@formcontrolname="isManager"]//div[contains(@class,"mat-checkbox-inner")]',
+  employeeIsMainContact: '//mat-checkbox[@formcontrolname="isMainContact"]//div[contains(@class,"mat-checkbox-inner")]',
 
   // Medical Type
   medicalTypeTab: "//app-employer-details//a[contains(text(), 'Medical Types') and contains(@class, 'nav-link')]",
@@ -162,6 +95,7 @@ const EmployerObject = {
   onsiteLocation: {
     titleInput: "//app-onsite-location-form//input[@formcontrolname='title']",
     streetLine1Input: "//app-onsite-location-form//input[@formcontrolname='streetLine1']",
+    streetLine2Input: "//app-onsite-location-form//input[@formcontrolname='streetLine2']",
     suburbInput: "//app-onsite-location-form//input[@formcontrolname='suburb']",
     stateSelector: "//app-onsite-location-form//ng-select[@formcontrolname='state']",
     defaultState: "//*[contains(@role, 'option')]",
@@ -175,14 +109,15 @@ const EmployerObject = {
   findLocation: (title) => {
     return "//app-employer-locations//*[contains(@class, 'employer-location-item') and h4[text()=" + "'" + title + "'" + "] ]"
   },
+  allerRequired: '//div[@role="alert"]',
   roleSelector: "//ng-select[@formcontrolname='masterRoleId']",
   roleInput: "//ng-select[@formcontrolname='masterRoleId']//input",
   EditEmployeeBtn: '//*[text()="create"]',
-  searchboxEmployer: '//div[contains(@class, "searchbox-container")]/input',
+  searchBox: '//div[contains(@class, "searchbox-container")]/input',
   locationFailedUnassign: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'This onsite location has appointments')]",
   deleteBtn: "//button[*[text()='clear']]",
   yesButtonOfConfirmation: "//app-confirmation//button[contains(text(), 'Yes')]",
   nextPage: "//li[contains(@class, 'pagination-next') and not(contains(@class, 'disabled'))]//a[contains(@class, 'page-link')]",
 }
 
-export { EyersObj, EmployerObject }
+export { EmployerObject }

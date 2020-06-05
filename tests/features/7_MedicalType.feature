@@ -1,3 +1,4 @@
+
 Feature: Medical Type
 
   Background: As a User I want check all scenario of Medical Type Feature

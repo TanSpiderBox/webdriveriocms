@@ -7,19 +7,19 @@ Feature: Location
     Given User Access CSM Website
     When User input correct UserName and Password
     When Employer - Choose Employer "1"
-    Then Create a Onsite Location
+    Then User create new Onsite Location Successfully
 
   @LC002
   Scenario: Verify User can not delete Onsite Location if it has a Appointment
     When Create a new Onsite Appointment
     When Employer - Choose Employer "1"
-    Then Can not delete Onsite Appointment
+    Then User can not delete Onsite Appointment
 
   @LC003
   Scenario: Verify User can delete Onsite Location if it has not any Appointments
-    When Delete Onsite Appointment
+    When User delete Onsite Appointment
     When Employer - Choose Employer "1"
-    Then Can delete Onsite Appointment
+    Then User can delete Onsite Appointment
 
   @LC004
   Scenario: Verify User can not un-assign a Location if if has a Appointment

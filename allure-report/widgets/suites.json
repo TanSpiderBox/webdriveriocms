@@ -1,6 +1,17 @@
 {
-  "total" : 8,
+  "total" : 9,
   "items" : [ {
+    "uid" : "b142e4e0f27cd46549676ff5c8acfa40",
+    "name" : "Employers",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 2
+    }
+  }, {
     "uid" : "8b035d66f144a3d156cbd803eadae74e",
     "name" : "Staff",
     "statistic" : {

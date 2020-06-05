@@ -1,465 +1,305 @@
 [ {
-  "uid" : "d8adf6547695eed",
-  "name" : "Verify Can un-assign Medical Type if Appointment is not existed",
-  "time" : {
-    "start" : 1591268878516,
-    "stop" : 1591268965200,
-    "duration" : 86684
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "ee3fddd944f3ef73",
-  "name" : "Verify Staff can complete Onsite Appointment assigned",
-  "time" : {
-    "start" : 1591269281879,
-    "stop" : 1591269384964,
-    "duration" : 103085
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "98d5091275dcaaf1",
-  "name" : "Verify User can not remove staff which was be assiged to Appointment",
-  "time" : {
-    "start" : 1591269244924,
-    "stop" : 1591269244925,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b1326ff6f522f571",
-  "name" : "Verify User can create new Staff in Onsite Appointment Successfully",
-  "time" : {
-    "start" : 1591269244921,
-    "stop" : 1591269244923,
-    "duration" : 2
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "7baeaa6e2b38733",
-  "name" : "Verify User can remove staff Successfully if it wasn't be assigned to anything",
-  "time" : {
-    "start" : 1591269252142,
-    "stop" : 1591269281874,
-    "duration" : 29732
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "dd57bd58ef101ebb",
-  "name" : "Verify User can un-assign sample Location from Employer",
-  "time" : {
-    "start" : 1591268736054,
-    "stop" : 1591268806547,
-    "duration" : 70493
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "255a308af6c6b047",
-  "name" : "Verify User can not delete Supervisor which was be assiged to Employer",
-  "time" : {
-    "start" : 1591269084627,
-    "stop" : 1591269098389,
-    "duration" : 13762
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c96b6741a26728b5",
-  "name" : "Verify User can delete Onsite Location if it has not any Appointments",
-  "time" : {
-    "start" : 1591268660457,
-    "stop" : 1591268700779,
-    "duration" : 40322
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "d4e7429e3d526fe6",
-  "name" : "Verify user can not login when input incorrect UserName",
-  "time" : {
-    "start" : 1591268044222,
-    "stop" : 1591268049901,
-    "duration" : 5679
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "59de3b2b6d44172c",
-  "name" : "Verify User can create Supervisor in Onsite Appointment Successfully",
-  "time" : {
-    "start" : 1591269084626,
-    "stop" : 1591269084627,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b9c7bbbc5cee2abf",
-  "name" : "Verify User can acess guest BizUI",
-  "time" : {
-    "start" : 1591269471142,
-    "stop" : 1591269484558,
-    "duration" : 13416
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c68c997419613b91",
-  "name" : "Verify user can create Appointment with existing Employee",
-  "time" : {
-    "start" : 1591268068441,
-    "stop" : 1591268109259,
-    "duration" : 40818
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "32febe971bbe716a",
-  "name" : "Verify User can remove a Master Role not assigned",
-  "time" : {
-    "start" : 1591268990179,
-    "stop" : 1591268993335,
-    "duration" : 3156
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "fefcae0168e7bf9e",
-  "name" : "Verify User can remove staff successfully if it wasn't be assigned to anything",
-  "time" : {
-    "start" : 1591259761870,
-    "stop" : 1591259791713,
-    "duration" : 29843
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "58e44fb6bd62e7fb",
-  "name" : "Verify User can not view time slot disable",
-  "time" : {
-    "start" : 1591267680790,
-    "stop" : 1591267680791,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b5317781961bf6b1",
-  "name" : "Verify User can assign Master Role to Employer",
-  "time" : {
-    "start" : 1591268993335,
-    "stop" : 1591268993336,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c66b52c6906b8066",
-  "name" : "Verify User can create Appointment in Return User",
-  "time" : {
-    "start" : 1591267628860,
-    "stop" : 1591267628861,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "8a1a283b1795b410",
-  "name" : "Verify User can create new Staff Successfully",
-  "time" : {
-    "start" : 1591269229037,
-    "stop" : 1591269244919,
-    "duration" : 15882
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "4f03c52e6e346387",
-  "name" : "Verify User can not view Appointment don't public time slot",
-  "time" : {
-    "start" : 1591267669849,
-    "stop" : 1591267680789,
-    "duration" : 10940
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "3fe77490f576148c",
+  "uid" : "19c19fca7a15d74",
   "name" : "Verify User can create Master Role Successfully",
   "time" : {
-    "start" : 1591268980315,
-    "stop" : 1591268983864,
-    "duration" : 3549
+    "start" : 1591348786301,
+    "stop" : 1591348789851,
+    "duration" : 3550
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "85d31c0c5fd2ac0",
-  "name" : "Verify User can login Biz UI",
+  "uid" : "e9355152ff1c09c",
+  "name" : "Verify User can create Onsite Appointment and add room",
   "time" : {
-    "start" : 1591269496731,
-    "stop" : 1591269508056,
-    "duration" : 11325
+    "start" : 1591348167610,
+    "stop" : 1591348197926,
+    "duration" : 30316
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "b04aeab90b491f81",
+  "uid" : "ea5118b629f4196e",
+  "name" : "Verify User can create Supervisor in Onsite Appointment Successfully",
+  "time" : {
+    "start" : 1591348889671,
+    "stop" : 1591348889672,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a5d1a494294c6f67",
+  "name" : "Verify User can remove staff Successfully if it wasn't be assigned to anything",
+  "time" : {
+    "start" : 1591347564440,
+    "stop" : 1591347594241,
+    "duration" : 29801
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5b16c6da4cbbe5d4",
+  "name" : "Verify user can create Appointment with existing Employee",
+  "time" : {
+    "start" : 1591347861618,
+    "stop" : 1591347908643,
+    "duration" : 47025
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4a5a1c1551b39278",
   "name" : "Verify User can create new Staff in Appointment Successfully",
   "time" : {
-    "start" : 1591269244920,
-    "stop" : 1591269244921,
+    "start" : 1591347557245,
+    "stop" : 1591347557246,
     "duration" : 1
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "75c0a2bba9266e4e",
-  "name" : "Verify Can not unassign Medical Type if Appointment is existed",
+  "uid" : "dffe70baa09f5ba2",
+  "name" : "Verify User can create Onsite Appointment and do not enable time slot",
   "time" : {
-    "start" : 1591268848690,
-    "stop" : 1591268878514,
-    "duration" : 29824
+    "start" : 1591348003250,
+    "stop" : 1591348033011,
+    "duration" : 29761
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "361930cd361c970d",
-  "name" : "Verify User can create Onsite Appointment and edit duration time slot",
-  "time" : {
-    "start" : 1591268346838,
-    "stop" : 1591268372739,
-    "duration" : 25901
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "bf8168b985ebf39e",
+  "uid" : "c97e9a4002c3140",
   "name" : "Verify Supervisor Auto assign Supervisor to Employee if appointment is created",
   "time" : {
-    "start" : 1591269138336,
-    "stop" : 1591269182074,
-    "duration" : 43738
+    "start" : 1591348944604,
+    "stop" : 1591348988861,
+    "duration" : 44257
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "70bf6aaf38022408",
-  "name" : "Verify User can create Onsite Appointment with existing employee",
+  "uid" : "9bd40caf496a6a16",
+  "name" : "Verify User can not creating a new Master Role with a blank field",
   "time" : {
-    "start" : 1591268173605,
-    "stop" : 1591268203360,
-    "duration" : 29755
+    "start" : 1591348782699,
+    "stop" : 1591348786300,
+    "duration" : 3601
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "aa916e12c863a82e",
-  "name" : "Verify User can not unassign Master Role assigned to Employee",
+  "uid" : "f6ce878560a18e74",
+  "name" : "Verify User can not remove staff which was be assiged to Onsite appointment",
   "time" : {
-    "start" : 1591268993338,
-    "stop" : 1591268993339,
-    "duration" : 1
+    "start" : 1591347557248,
+    "stop" : 1591347564439,
+    "duration" : 7191
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "4fa2a7a864dd8ee",
-  "name" : "Verify user can update Appointment",
-  "time" : {
-    "start" : 1591268109259,
-    "stop" : 1591268147781,
-    "duration" : 38522
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "6ee7013162b12d25",
-  "name" : "Verify User can delete Appointment",
-  "time" : {
-    "start" : 1591269519151,
-    "stop" : 1591269549533,
-    "duration" : 30382
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "87afbf163a0f60c5",
-  "name" : "Verify User can search Master Role",
-  "time" : {
-    "start" : 1591268983867,
-    "stop" : 1591268986447,
-    "duration" : 2580
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b76c78ef1b80f1e1",
-  "name" : "Verify User can view all Appointment incompleted",
-  "time" : {
-    "start" : 1591267628859,
-    "stop" : 1591267628860,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "2618c75810589809",
-  "name" : "Verify user can not login when incorect UserName and Password",
-  "time" : {
-    "start" : 1591268037608,
-    "stop" : 1591268044220,
-    "duration" : 6612
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "11b90cb500575d8",
-  "name" : "Verify User can edit questionare",
-  "time" : {
-    "start" : 1591269515480,
-    "stop" : 1591269519150,
-    "duration" : 3670
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "57f7dd715a04f992",
-  "name" : "Verify Staff can login system with password recived in email",
-  "time" : {
-    "start" : 1591269244923,
-    "stop" : 1591269244924,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "afe4a1095fb7f925",
-  "name" : "Verfiy user can login System with correct UserName and Password",
-  "time" : {
-    "start" : 1591268055159,
-    "stop" : 1591268063727,
-    "duration" : 8568
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "356d91c4901f2e35",
-  "name" : "Verify user can not login when blank UserName",
-  "time" : {
-    "start" : 1591268024984,
-    "stop" : 1591268030571,
-    "duration" : 5587
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "8a4c853b4cd7427c",
-  "name" : "Verify User can assign Master Role to Employee",
-  "time" : {
-    "start" : 1591268993336,
-    "stop" : 1591268993337,
-    "duration" : 1
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "4b7da8015586bfcb",
-  "name" : "Verify Staff can complete Appointment assigned",
-  "time" : {
-    "start" : 1591269384965,
-    "stop" : 1591269425904,
-    "duration" : 40939
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c336d666b0cb0071",
-  "name" : "Verify User can delete Supervisor which haven't be assigned to anything",
-  "time" : {
-    "start" : 1591269182074,
-    "stop" : 1591269224316,
-    "duration" : 42242
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "f4cd78abc4f14b3b",
-  "name" : "Verify Can not remove Medical Type when it was be assigned to Employer",
-  "time" : {
-    "start" : 1591268811318,
-    "stop" : 1591268835021,
-    "duration" : 23703
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "c8965afc08657a83",
+  "uid" : "51c037e78de294dd",
   "name" : "Verify Overview Logic",
   "time" : {
-    "start" : 1591268993342,
-    "stop" : 1591269067413,
-    "duration" : 74071
+    "start" : 1591348799426,
+    "stop" : 1591348872586,
+    "duration" : 73160
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "c207d76e76ca7d02",
-  "name" : "Verify User can create a Supervisor Successfully",
+  "uid" : "65d2054da85e62d0",
+  "name" : "Verify user can create Onsite Appointment",
   "time" : {
-    "start" : 1591269072116,
-    "stop" : 1591269084624,
-    "duration" : 12508
+    "start" : 1591347947464,
+    "stop" : 1591347973352,
+    "duration" : 25888
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "69d5feed1e1044a7",
+  "uid" : "21adaba557a67e05",
   "name" : "Verify User can reschedule",
   "time" : {
-    "start" : 1591269508056,
-    "stop" : 1591269515478,
-    "duration" : 7422
+    "start" : 1591347815885,
+    "stop" : 1591347823278,
+    "duration" : 7393
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "6aecf2ab4559d493",
+  "uid" : "e394ee2ed2061150",
+  "name" : "Verify User can not delete Supervisor which was be assiged to Employer",
+  "time" : {
+    "start" : 1591348889672,
+    "stop" : 1591348903379,
+    "duration" : 13707
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2ff3653457cd1931",
+  "name" : "Verify User can remove Employee in Onsite Appointment",
+  "time" : {
+    "start" : 1591348360697,
+    "stop" : 1591348409154,
+    "duration" : 48457
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e776b7b88efd56ab",
   "name" : "Verify User can select Master Role when create new Employee in Onsite Appointment",
   "time" : {
-    "start" : 1591268993338,
-    "stop" : 1591268993338,
+    "start" : 1591348799419,
+    "stop" : 1591348799419,
     "duration" : 0
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "5445b3c72659799b",
-  "name" : "Verify User can view Assessment form in Onsite Appointment",
+  "uid" : "40f3a71bd6a7c4d8",
+  "name" : "Verify User can un-assign sample Location from Employer",
   "time" : {
-    "start" : 1591268517714,
-    "stop" : 1591268565089,
-    "duration" : 47375
+    "start" : 1591348534563,
+    "stop" : 1591348605481,
+    "duration" : 70918
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "db8a831dce85d938",
-  "name" : "Verify User can add Appointment to calendar",
+  "uid" : "77a382e513bbbb8b",
+  "name" : "Verify User can search Master Role",
   "time" : {
-    "start" : 1591267628861,
-    "stop" : 1591267628862,
+    "start" : 1591348789852,
+    "stop" : 1591348792398,
+    "duration" : 2546
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "469429a065359bfd",
+  "name" : "Verify User can edit questionare",
+  "time" : {
+    "start" : 1591347823280,
+    "stop" : 1591347826894,
+    "duration" : 3614
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c5d1aff0d8c5c49e",
+  "name" : "Verify User can create new Employer",
+  "time" : {
+    "start" : 1591352736261,
+    "stop" : 1591352753463,
+    "duration" : 17202
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "76d529bbaf2c41fd",
+  "name" : "Verify User can view Question form in Onsite Appointment",
+  "time" : {
+    "start" : 1591348264895,
+    "stop" : 1591348312893,
+    "duration" : 47998
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5658ee7f8fb3758e",
+  "name" : "Verify User can select Master Role when create new Employee in Appointment",
+  "time" : {
+    "start" : 1591348799418,
+    "stop" : 1591348799419,
     "duration" : 1
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "801439adefa13546",
+  "uid" : "b410fce612910cc2",
+  "name" : "Verify User can add New Employee in Employer",
+  "time" : {
+    "start" : 1591352753464,
+    "stop" : 1591352762464,
+    "duration" : 9000
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "aa72db1792f92325",
+  "name" : "Verify User can not acess guest BizUI",
+  "time" : {
+    "start" : 1591347734501,
+    "stop" : 1591347777036,
+    "duration" : 42535
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "8aa3f98498979e7b",
+  "name" : "Verify User can not un-assign a Location if if has a Appointment",
+  "time" : {
+    "start" : 1591348498160,
+    "stop" : 1591348534557,
+    "duration" : 36397
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1c64c4a0d8878bdd",
+  "name" : "Verify User can update a Master Role Successfully",
+  "time" : {
+    "start" : 1591348792399,
+    "stop" : 1591348796164,
+    "duration" : 3765
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1f61666a27c565e8",
+  "name" : "Verify Visit Master Role index screen Successfully",
+  "time" : {
+    "start" : 1591348774100,
+    "stop" : 1591348782699,
+    "duration" : 8599
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2e65f30187155da8",
+  "name" : "Verify User can unassign Supervisor which isn't be assigned to Employee",
+  "time" : {
+    "start" : 1591348929555,
+    "stop" : 1591348944603,
+    "duration" : 15048
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "267233fb3e8c9c18",
+  "name" : "Verify User can not delete Onsite Location if it has a Appointment",
+  "time" : {
+    "start" : 1591348437912,
+    "stop" : 1591348457781,
+    "duration" : 19869
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fc90ce71c8b69a3d",
+  "name" : "Verify Can not unassign Medical Type if Appointment is existed",
+  "time" : {
+    "start" : 1591348651556,
+    "stop" : 1591348681719,
+    "duration" : 30163
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f496162af1f2abe5",
   "name" : "Verify User can create new Staff in Onsite Appointment successfully",
   "time" : {
     "start" : 1591259754523,
@@ -469,267 +309,347 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "2b36413137307641",
-  "name" : "Verify user can not login when input incorrect Password",
+  "uid" : "627c26a0661fff02",
+  "name" : "Verify User can remove a Master Role not assigned",
   "time" : {
-    "start" : 1591268049903,
-    "stop" : 1591268055159,
-    "duration" : 5256
+    "start" : 1591348796166,
+    "stop" : 1591348799416,
+    "duration" : 3250
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "b9d2f890e2c57d37",
-  "name" : "Verify Can remove Medical Type if it was be un-assigned from Employer",
-  "time" : {
-    "start" : 1591268835022,
-    "stop" : 1591268848689,
-    "duration" : 13667
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b9b9c5b2589909e4",
-  "name" : "Verify User can create Onsite Appointment and do not public time slot",
-  "time" : {
-    "start" : 1591268287669,
-    "stop" : 1591268346837,
-    "duration" : 59168
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "f2b09590b931882a",
-  "name" : "Verify User can create Onsite Appointment and remove room",
-  "time" : {
-    "start" : 1591268403136,
-    "stop" : 1591268470024,
-    "duration" : 66888
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "cb56959b9c2fab3f",
-  "name" : "Verify User can update a Master Role Successfully",
-  "time" : {
-    "start" : 1591268986448,
-    "stop" : 1591268990178,
-    "duration" : 3730
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "e922bd8f1562af10",
-  "name" : "Verify User can create new Staff successfully",
-  "time" : {
-    "start" : 1591259739563,
-    "stop" : 1591259754521,
-    "duration" : 14958
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "b473966b806eb794",
-  "name" : "Verify Visit Master Role index screen Successfully",
-  "time" : {
-    "start" : 1591268970009,
-    "stop" : 1591268976699,
-    "duration" : 6690
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "bfa971257cdaa87d",
-  "name" : "Verify user can not login when blank UserName and Password",
-  "time" : {
-    "start" : 1591268014811,
-    "stop" : 1591268024982,
-    "duration" : 10171
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "1f623001160b61e4",
-  "name" : "Verify User can not creating a new Master Role with a blank field",
-  "time" : {
-    "start" : 1591268976701,
-    "stop" : 1591268980314,
-    "duration" : 3613
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "359b04fa5298fde6",
-  "name" : "Verify User can view Question form in Onsite Appointment",
-  "time" : {
-    "start" : 1591268470026,
-    "stop" : 1591268517711,
-    "duration" : 47685
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "fd2ad6950836c320",
-  "name" : "Verify User can create Onsite Appointment and do not enable time slot",
-  "time" : {
-    "start" : 1591268203362,
-    "stop" : 1591268233094,
-    "duration" : 29732
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "3a73819beff90c56",
-  "name" : "Verify User can unassign Supervisor which isn't be assigned to Employee",
-  "time" : {
-    "start" : 1591269123983,
-    "stop" : 1591269138335,
-    "duration" : 14352
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "e449f6559125bb14",
-  "name" : "Verify user can not login when blank Password",
-  "time" : {
-    "start" : 1591268030571,
-    "stop" : 1591268037608,
-    "duration" : 7037
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "571d1b8243317f0b",
-  "name" : "Verify User can not un-assign a Location if if has a Appointment",
-  "time" : {
-    "start" : 1591268700783,
-    "stop" : 1591268736047,
-    "duration" : 35264
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "438291248381af85",
-  "name" : "Verify User can create Onsite Appointment and enable time slot",
-  "time" : {
-    "start" : 1591268233102,
-    "stop" : 1591268287665,
-    "duration" : 54563
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "546cb05912e6412c",
-  "name" : "Verify User can not remove staff which was be assiged to Onsite appointment",
-  "time" : {
-    "start" : 1591269244925,
-    "stop" : 1591269252140,
-    "duration" : 7215
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "eb8d6f925f6430f",
-  "name" : "Verify User can not acess guest BizUI",
-  "time" : {
-    "start" : 1591269430622,
-    "stop" : 1591269471141,
-    "duration" : 40519
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "f0996c3dc8765a7d",
-  "name" : "Verify user can create Onsite Appointment",
-  "time" : {
-    "start" : 1591268147782,
-    "stop" : 1591268173603,
-    "duration" : 25821
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "bbe0cf5195a5160",
-  "name" : "Verify User create Onsite Location Successfully",
-  "time" : {
-    "start" : 1591268618432,
-    "stop" : 1591268641000,
-    "duration" : 22568
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "a33662e146cc8db6",
-  "name" : "Verify User can not delete Onsite Location if it has a Appointment",
-  "time" : {
-    "start" : 1591268641001,
-    "stop" : 1591268660456,
-    "duration" : 19455
-  },
-  "status" : "passed",
-  "severity" : "normal"
-}, {
-  "uid" : "6ff90cfe6d53f4dc",
+  "uid" : "2cb93b3181442d41",
   "name" : "Verify User can create Supervisor in Appointment Successfully",
   "time" : {
-    "start" : 1591269084625,
-    "stop" : 1591269084626,
+    "start" : 1591348889670,
+    "stop" : 1591348889671,
     "duration" : 1
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "a4c7f431e514983",
-  "name" : "Verify User can remove Employee in Onsite Appointment",
+  "uid" : "28aee6931b8aa101",
+  "name" : "Verify User can delete Onsite Location if it has not any Appointments",
   "time" : {
-    "start" : 1591268565093,
-    "stop" : 1591268613727,
-    "duration" : 48634
+    "start" : 1591348457781,
+    "stop" : 1591348498159,
+    "duration" : 40378
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "4026c9eec9916469",
-  "name" : "Verify User can not unassign Supervisor which was be assigned to Employee",
+  "uid" : "31527cf58ed80f0e",
+  "name" : "Verify User can view all Appointment incompleted",
   "time" : {
-    "start" : 1591269098389,
-    "stop" : 1591269123983,
-    "duration" : 25594
+    "start" : 1591267628859,
+    "stop" : 1591267628860,
+    "duration" : 1
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "7162cb0136a7e58b",
+  "uid" : "a0ed071b20605441",
+  "name" : "Verify User can create Appointment in guest Biz UI",
+  "time" : {
+    "start" : 1591347791863,
+    "stop" : 1591347803949,
+    "duration" : 12086
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4e225936eb39614d",
+  "name" : "Verify User create Onsite Location Successfully",
+  "time" : {
+    "start" : 1591348416136,
+    "stop" : 1591348437911,
+    "duration" : 21775
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "89d083fc3e591304",
+  "name" : "Verify User can not unassign Master Role assigned to Employee",
+  "time" : {
+    "start" : 1591348799419,
+    "stop" : 1591348799420,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "88dc1f21d18f8c7",
+  "name" : "Verify User can create Onsite Appointment and edit duration time slot",
+  "time" : {
+    "start" : 1591348141814,
+    "stop" : 1591348167608,
+    "duration" : 25794
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ae5c6a6bc35cf3ff",
+  "name" : "Verify user can update Appointment",
+  "time" : {
+    "start" : 1591347908644,
+    "stop" : 1591347947463,
+    "duration" : 38819
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e686559d94c5d603",
   "name" : "Verify User can not unassign Master Role assigned to Employer",
   "time" : {
-    "start" : 1591268993339,
-    "stop" : 1591268993339,
+    "start" : 1591348799420,
+    "stop" : 1591348799421,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7f7de60301d6ac4e",
+  "name" : "Verify User can login Biz UI",
+  "time" : {
+    "start" : 1591347803951,
+    "stop" : 1591347815885,
+    "duration" : 11934
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9090167187e1b60b",
+  "name" : "Verify User can create Onsite Appointment and remove room",
+  "time" : {
+    "start" : 1591348197928,
+    "stop" : 1591348264893,
+    "duration" : 66965
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5953f29824e6e95d",
+  "name" : "Verify User can not view time slot disable",
+  "time" : {
+    "start" : 1591267680790,
+    "stop" : 1591267680791,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c5f2c654d53dd139",
+  "name" : "Verify User can delete Appointment",
+  "time" : {
+    "start" : 1591347826895,
+    "stop" : 1591347856883,
+    "duration" : 29988
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "21a518344c76fc73",
+  "name" : "Verify Staff can complete Appointment assigned",
+  "time" : {
+    "start" : 1591347688117,
+    "stop" : 1591347725567,
+    "duration" : 37450
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5aef938ed1834f29",
+  "name" : "Verify Staff can complete Onsite Appointment assigned",
+  "time" : {
+    "start" : 1591347594243,
+    "stop" : 1591347688116,
+    "duration" : 93873
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "12d2e329cc5ae178",
+  "name" : "Verify User can acess guest BizUI",
+  "time" : {
+    "start" : 1591347777037,
+    "stop" : 1591347791862,
+    "duration" : 14825
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ace064f6a48802f7",
+  "name" : "Verify User can not remove staff which was be assiged to Appointment",
+  "time" : {
+    "start" : 1591347557247,
+    "stop" : 1591347557248,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b78e93af2b470067",
+  "name" : "Verify User can create new Staff in Onsite Appointment Successfully",
+  "time" : {
+    "start" : 1591347557246,
+    "stop" : 1591347557247,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "62dc42d393489926",
+  "name" : "Verify user can not login when input incorrect UserName",
+  "time" : {
+    "start" : 1591347521079,
+    "stop" : 1591347527274,
+    "duration" : 6195
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f829ad2e55bea24c",
+  "name" : "Verify user can not login when incorect UserName and Password",
+  "time" : {
+    "start" : 1591347515406,
+    "stop" : 1591347521079,
+    "duration" : 5673
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3b0cc2b24137d25a",
+  "name" : "Verify User can assign Master Role to Employee",
+  "time" : {
+    "start" : 1591348799417,
+    "stop" : 1591348799418,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1462b883da30d875",
+  "name" : "Verify user can not login when blank UserName",
+  "time" : {
+    "start" : 1591347503529,
+    "stop" : 1591347509187,
+    "duration" : 5658
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b0da235e8dc15076",
+  "name" : "Verify User can create Onsite Appointment and enable time slot",
+  "time" : {
+    "start" : 1591348033015,
+    "stop" : 1591348090952,
+    "duration" : 57937
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e51711c234348e0b",
+  "name" : "Verify Can un-assign Medical Type if Appointment is not existed",
+  "time" : {
+    "start" : 1591348681721,
+    "stop" : 1591348769199,
+    "duration" : 87478
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5b589a5af2b8b663",
+  "name" : "Verify User can remove staff successfully if it wasn't be assigned to anything",
+  "time" : {
+    "start" : 1591259761870,
+    "stop" : 1591259791713,
+    "duration" : 29843
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f8395c3fcd0c796b",
+  "name" : "Verify User can assign Master Role to Employer",
+  "time" : {
+    "start" : 1591348799417,
+    "stop" : 1591348799417,
     "duration" : 0
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "a40fc0eefa7bec6d",
-  "name" : "Verify User can create Onsite Appointment and add room",
+  "uid" : "4e8e568ed37c0c6",
+  "name" : "Verify User can not view Appointment don't public time slot",
   "time" : {
-    "start" : 1591268372742,
-    "stop" : 1591268403134,
-    "duration" : 30392
+    "start" : 1591267669849,
+    "stop" : 1591267680789,
+    "duration" : 10940
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "3cd82e5fcc078fee",
-  "name" : "Verify User can select Master Role when create new Employee in Appointment",
+  "uid" : "9cce40de395ec468",
+  "name" : "Verify user can not login when input incorrect Password",
   "time" : {
-    "start" : 1591268993337,
-    "stop" : 1591268993338,
+    "start" : 1591347527275,
+    "stop" : 1591347533672,
+    "duration" : 6397
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9a1619bdc93b9f46",
+  "name" : "Verify Staff can login system with password recived in email",
+  "time" : {
+    "start" : 1591347557247,
+    "stop" : 1591347557247,
+    "duration" : 0
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e32324fc09ce9a77",
+  "name" : "Verify User can not unassign Supervisor which was be assigned to Employee",
+  "time" : {
+    "start" : 1591348903379,
+    "stop" : 1591348929555,
+    "duration" : 26176
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a08764d8c0dfdad2",
+  "name" : "Verify User can add Appointment to calendar",
+  "time" : {
+    "start" : 1591267628861,
+    "stop" : 1591267628862,
     "duration" : 1
   },
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "ad814b3a066208b1",
+  "uid" : "ce1f38124507de2b",
+  "name" : "Verify Can remove Medical Type if it was be un-assigned from Employer",
+  "time" : {
+    "start" : 1591348637652,
+    "stop" : 1591348651555,
+    "duration" : 13903
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "25dfba9c5eafe7e5",
+  "name" : "Verify User can create Onsite Appointment with existing employee",
+  "time" : {
+    "start" : 1591347973354,
+    "stop" : 1591348003248,
+    "duration" : 29894
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2d5ccc39873f7bed",
   "name" : "Verify User can create new Staff in Appointment successfully",
   "time" : {
     "start" : 1591259754522,
@@ -739,12 +659,112 @@
   "status" : "passed",
   "severity" : "normal"
 }, {
-  "uid" : "d4b5a6748b438f4c",
-  "name" : "Verify User can create Appointment in guest Biz UI",
+  "uid" : "178ad389fd5f5f75",
+  "name" : "Verify User can create new Staff Successfully",
   "time" : {
-    "start" : 1591269484558,
-    "stop" : 1591269496729,
-    "duration" : 12171
+    "start" : 1591347547076,
+    "stop" : 1591347557244,
+    "duration" : 10168
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ba2330564109ca07",
+  "name" : "Verify User can view Assessment form in Onsite Appointment",
+  "time" : {
+    "start" : 1591348312894,
+    "stop" : 1591348360695,
+    "duration" : 47801
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5e0fd11a292839b9",
+  "name" : "Verify User can create a Supervisor Successfully",
+  "time" : {
+    "start" : 1591348877444,
+    "stop" : 1591348889670,
+    "duration" : 12226
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "6efe4c4485d98990",
+  "name" : "Verify User can delete Supervisor which haven't be assigned to anything",
+  "time" : {
+    "start" : 1591348988862,
+    "stop" : 1591349032219,
+    "duration" : 43357
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e8a8e537f2641a2",
+  "name" : "Verify User can create new Staff successfully",
+  "time" : {
+    "start" : 1591259739563,
+    "stop" : 1591259754521,
+    "duration" : 14958
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "619cf5c8634f9774",
+  "name" : "Verify Can not remove Medical Type when it was be assigned to Employer",
+  "time" : {
+    "start" : 1591348611451,
+    "stop" : 1591348637652,
+    "duration" : 26201
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "7ce80a0d6ade57f7",
+  "name" : "Verify user can not login when blank UserName and Password",
+  "time" : {
+    "start" : 1591347494282,
+    "stop" : 1591347503529,
+    "duration" : 9247
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e6c526d0bea57981",
+  "name" : "Verfiy user can login System with correct UserName and Password",
+  "time" : {
+    "start" : 1591347533673,
+    "stop" : 1591347542375,
+    "duration" : 8702
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cfb943218661f40a",
+  "name" : "Verify User can create Appointment in Return User",
+  "time" : {
+    "start" : 1591267628860,
+    "stop" : 1591267628861,
+    "duration" : 1
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "91d0a04c0988dd2",
+  "name" : "Verify user can not login when blank Password",
+  "time" : {
+    "start" : 1591347509187,
+    "stop" : 1591347515405,
+    "duration" : 6218
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "34f2b6ec5b854672",
+  "name" : "Verify User can create Onsite Appointment and do not public time slot",
+  "time" : {
+    "start" : 1591348090956,
+    "stop" : 1591348141812,
+    "duration" : 50856
   },
   "status" : "passed",
   "severity" : "normal"
