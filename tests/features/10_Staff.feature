@@ -28,7 +28,7 @@ Feature: Staff
     Given User access Biz UI Successfully
     When User input correct passcode
     When User input all valid information
-    # Then User can create appointment in guest Biz UI
+    Then User can create Appointment in guest Biz UI
     Given User access Staff page Successfully
     When User input correct Staff username and password
     Then User can login Staff Successfully

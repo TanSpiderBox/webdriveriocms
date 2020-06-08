@@ -13,7 +13,9 @@ const EmployerData =  {
   employerSecrect:'123456',
   onsitepassword: '123456',
 
-  successmessage:'Employer has been saved successfully',
+  employersuccessmessage:'Employer has been saved successfully',
+  onsitesuccessmessage: 'Successfully',
+  required:'Please review required fields!',
 
   employeeIdType: 'Passport',
   employeePassport: '12345679'

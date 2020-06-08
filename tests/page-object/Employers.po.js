@@ -69,6 +69,13 @@ const EmployerObject = {
   employeeIsManager: '//mat-checkbox[@formcontrolname="isManager"]//div[contains(@class,"mat-checkbox-inner")]',
   employeeIsMainContact: '//mat-checkbox[@formcontrolname="isMainContact"]//div[contains(@class,"mat-checkbox-inner")]',
 
+  verifyemployeePhone: '//input[@formcontrolname="phone"]',
+  verifyemployeeEmail: '//input[@formcontrolname="email"]',
+  verifyemployeeStrLn1: '//input[@formcontrolname="streetLine1"]',
+  verifyemployeeStrLn2: '//input[@formcontrolname="streetLine2"]',
+  verifyemployeeSurb: '//input[@formcontrolname="suburb"]',
+  verifyemployeeState: '//ng-select[@formcontrolname="state"]',
+  verifyemployeePostCode: '//input[@formcontrolname="postCode"]',
   // Medical Type
   medicalTypeTab: "//app-employer-details//a[contains(text(), 'Medical Types') and contains(@class, 'nav-link')]",
   medicalTypesSection: "//app-employer-medical-types",
@@ -88,8 +95,8 @@ const EmployerObject = {
   onsiteLocationTab: "//app-employer-details//a[contains(text(), 'On-Site Locations') and contains(@class, 'nav-link')]",
   onsiteLocationSection: "//app-onsite-locations-list",
   newOnsiteLocationBtn: "//app-onsite-locations-list//button[contains(text(), 'New On-Site Location')]",
-  findOnsiteLocation: (title) => {
-    return "//app-onsite-locations-list//tr[.//button[contains(text()," + "'" + title + "'" + ")] ]//button[*[text()='clear']]"
+  findOnsiteLocation: (onsiteLocation) => {
+    return "//app-onsite-locations-list//tr[.//button[contains(text()," + "'" + onsiteLocation + "'" + ")] ]//button[*[text()='clear']]"
   },
   nextOnsiteLocation: "//app-onsite-locations-list//li[contains(@class, 'pagination-next') and not(contains(@class, 'disabled'))]//a[contains(@class, 'page-link')]",
   onsiteLocation: {
@@ -106,18 +113,27 @@ const EmployerObject = {
   },
   // Location
   locationTab: "//app-employer-details//a[contains(text(), 'Locations') and contains(@class, 'nav-link')]",
-  findLocation: (title) => {
-    return "//app-employer-locations//*[contains(@class, 'employer-location-item') and h4[text()=" + "'" + title + "'" + "] ]"
+  findLocation: (location) => {
+    return "//app-employer-locations//*[contains(@class, 'employer-location-item')]//*[contains(text()," + "'" + location + "'" + ")]"
   },
-  allerRequired: '//div[@role="alert"]',
-  roleSelector: "//ng-select[@formcontrolname='masterRoleId']",
+
+  //Role
+  roleTab: "//app-employer-details//a[contains(text(), 'Role') and contains(@class, 'nav-link')]",
+  findRole: (role) => {
+    return "//app-employer-roles//*[contains(@class, 'employer-master-role-item') and div[text()=" + "'" + role + "'" + "] ]"
+  },
   roleInput: "//ng-select[@formcontrolname='masterRoleId']//input",
+
+  verify: "//app-employer-locations//*[contains(@class, 'bg-primary')]",
+  allerRequired: "//*[contains(text(),'Please review required fields!')]",
+
   EditEmployeeBtn: '//*[text()="create"]',
   searchBox: '//div[contains(@class, "searchbox-container")]/input',
   locationFailedUnassign: "//*[contains(@class, 'cdk-overlay-container')]//*[contains(text(), 'This onsite location has appointments')]",
   deleteBtn: "//button[*[text()='clear']]",
   yesButtonOfConfirmation: "//app-confirmation//button[contains(text(), 'Yes')]",
   nextPage: "//li[contains(@class, 'pagination-next') and not(contains(@class, 'disabled'))]//a[contains(@class, 'page-link')]",
+  employerEditBtn: "//button[contains(text(),'Edit')]",
 }
 
 export { EmployerObject }

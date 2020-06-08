@@ -30,17 +30,14 @@ const appointmentdata = {
     employeeposition: 'Position',
     employeedepartment: 'Department',
 
-    newemployeeemail:()=>{
-        return `${"tan+" + Date.now() + "@spiderbox.design"}`
-    },
-    // newemail:`${faker.internet.email()}`,
+    newemployeeemail: "tan+" + Date.now() + "@spiderbox.design",
     employeemanageremail: 'tan+3@spiderbox.design',
     emailmedicalstaff: 'tan+6@spiderbox.design',
     staffname: 'Amitie HAW',
 
     // Verify Data
     errortimeslot: "Slot time cannot greater than appointment duration."
-,
+    ,
 }
 
 export { appointmentdata }

@@ -5,11 +5,11 @@
     "name" : "Employers",
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 1,
+      "broken" : 4,
+      "skipped" : 3,
+      "passed" : 7,
       "unknown" : 0,
-      "total" : 2
+      "total" : 14
     }
   }, {
     "uid" : "8b035d66f144a3d156cbd803eadae74e",

@@ -21,7 +21,7 @@ Feature: BizUI
     @BU003
     Scenario: Verify User can create Appointment in guest Biz UI
         When User input all valid information
-    # Then User can create Appointment in guest Biz UI
+        Then User can create Appointment in guest Biz UI
 
     @BU004
     Scenario: Verify User can login Biz UI
@@ -29,17 +29,13 @@ Feature: BizUI
         When User input correct employee UserName Password
         Then User can login Biz UI Successfully
 
-    # @BU005
-    @ignore
+    @BU005
     Scenario: Verify User can view all Appointment incompleted
 
-    # @BU006
-    @ignore 
+    @BU006
     Scenario: Verify User can create Appointment in Return User
 
-    # @BU007
-    
-    @ignore 
+    @BU007
     Scenario: Verify User can add Appointment to calendar
 
     @BU008
@@ -52,7 +48,7 @@ Feature: BizUI
         When User click button edit questionare Appointment
         Then User can change questionare Appointment Successfully
 
-    # @BU010
+    @BU010
     Scenario: Verify User can delete Appointment
         When User click button delete Appointment
         Then User can delete Appointment Successfully
@@ -61,11 +57,9 @@ Feature: BizUI
         Then User can login System Successfully
         Then User create new Onsite Appointment Successfully
 
-    # @BU011
-    @ignore 
+    @BU011
     Scenario: Verify User can not view Appointment don't public time slot
         When User create Onsite Appointment and do not public time slot
 
-    # @BU012
-    @ignore 
+    @BU012
     Scenario: Verify User can not view time slot disable

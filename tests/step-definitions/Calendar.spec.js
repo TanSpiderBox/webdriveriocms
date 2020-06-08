@@ -90,7 +90,6 @@ Then("User create new Appointment Successfully", () => {
 })
 /* CL002 */
 When("User create new Appointment with new Employee", () => {
-
     browser.pause(timeout)
     //Create New Appointment
     $(AppointmentObject.appointmentNewBtn).click();
@@ -126,9 +125,9 @@ When("User create new Appointment with new Employee", () => {
 
     //Add new Employee
     $(AppointmentObject.emailSelector).click();
-    $(AppointmentObject.emailInput).setValue(appointmentdata.newemployeeemail());
+    $(AppointmentObject.emailInput).setValue(appointmentdata.newemployeeemail);
     browser.pause(timeout)
-    $(AppointmentObject.selectEmail(appointmentdata.newemployeeemail())).click();
+    $(AppointmentObject.selectEmail(appointmentdata.newemployeeemail)).click();
 
     //Fill Data
     $(CalendarObject.employeeFirstNameInput).setValue(appointmentdata.employeefirstname);
@@ -161,7 +160,7 @@ Then("User create new Appointment with new Employee Success and Employee added i
     $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
-    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: employee1, location: appointmentdata.aplocation }).forEach(elmth => {
+    AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.newemployeeemail, location: appointmentdata.aplocation }).forEach(elmth => {
         elmth.click();
         browser.pause(timeout);
         //Verify Calendar Data
@@ -173,7 +172,7 @@ Then("User create new Appointment with new Employee Success and Employee added i
         assert.equal($(AppointmentObject.startTimeSelector).getText(), appointmentdata.apstartime);
         assert.equal($(AppointmentObject.endTimeSelector).getText(), appointmentdata.apendtime);
 
-        assert.equal($(AppointmentObject.emailSelector).getText(), employee1);
+        assert.equal($(AppointmentObject.emailSelector).getText(), appointmentdata.newemployeeemail);
         assert.equal($(CalendarObject.employeeFirstNameInput).getValue(), appointmentdata.employeefirstname);
         assert.equal($(CalendarObject.employeeLastNameInput).getValue(), appointmentdata.employeelastname);
         assert.equal($(CalendarObject.employeePhoneInput).getValue(), appointmentdata.employeephone);
@@ -197,13 +196,13 @@ Then("User can view Employee added in Employer", () => {
     $(EmployerObject.find(appointmentdata.apemployer)).click()
     $(EmployerObject.employeeTab).click()
     $(EmployerObject.searchBox).click()
-    $(EmployerObject.searchBox).setValue(employee1)
+    $(EmployerObject.searchBox).setValue(appointmentdata.newemployeeemail)
     browser.keys('Enter');
     $(EmployerObject.EditEmployeeBtn).click()
     browser.pause(timeout)
 
     //Verify Employee Data
-    assert.equal($(AppointmentObject.emailSelector).getValue(), employee1);
+    assert.equal($(AppointmentObject.emailSelector).getValue(), appointmentdata.newemployeeemail);
     assert.equal($(CalendarObject.employeeFirstNameInput).getValue(), appointmentdata.employeefirstname);
     assert.equal($(CalendarObject.employeeLastNameInput).getValue(), appointmentdata.employeelastname);
     assert.equal($(AppointmentObject.genderSelector).getText(), appointmentdata.employeegender);
@@ -215,6 +214,22 @@ Then("User can view Employee added in Employer", () => {
     assert.equal($(CalendarObject.employeePostCodeInput).getValue(), appointmentdata.employeepostalcode);
     assert.equal($(AppointmentObject.genderSelector).getText(), appointmentdata.employeegender);
     assert.equal($(AppointmentObject.masterRoleSelector).getText(), appointmentdata.employeerole);
+
+    //Delete new Employee
+    $(MenuObject.employer).click();
+    $(EmployerObject.searchBox).click()
+    $(EmployerObject.searchBox).setValue(appointmentdata.apemployer)
+    browser.keys('Enter');
+    $(EmployerObject.find(appointmentdata.apemployer)).click()
+    $(EmployerObject.employeeTab).click()
+    $(EmployerObject.searchBox).click()
+    $(EmployerObject.searchBox).setValue(appointmentdata.newemployeeemail)
+    browser.keys('Enter');
+    $(EmployerObject.deleteBtn).click();
+    browser.pause(timeout);
+    $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+    $(MedicalTypeObject.yesButtonOfConfirmation).click();
+    browser.pause(timeout);
 })
 
 /* CL003 */
@@ -264,11 +279,9 @@ When("User update existing Appointment", () => {
     browser.pause(timeout)
 
     //Update existing Appointment
-    $(MenuObject.calendar).scrollIntoView()
-    $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
     $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
-
+    browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
         elmth.click();
@@ -305,6 +318,7 @@ Then("User update Appointment Successfully", () => {
         assert.equal($(CalendarObject.employeePhoneInput).getValue(), appointmentdata.employeephone);
         assert.equal($(AppointmentObject.masterRoleSelector).getText(), appointmentdata.employeerole);
         assert.equal($(CalendarObject.employeeNoteInput).getValue(), 'NewUpdate');
+        
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
         $(CalendarObject.appointmentRemoveBtn).click();
         browser.pause(timeout);

@@ -104,11 +104,13 @@ When("User input correct Staff username and password", () => {
   $(StaffObject.staffusername).setValue(appointmentdata.emailmedicalstaff);
   $(StaffObject.staffpassword).setValue(123456);
   $(StaffObject.staffloginBtn).click();
+  browser.pause(1000)
 })
 Then("User can login Staff Successfully", () => {
 
 })
 When("User complete question and assessment", () => {
+  browser.url(StaffData.stafdateurl);
   $(StaffObject.selectCalendar(appointmentdata.calendarday)).click();
   $(StaffObject.selectAppointment(appointmentdata.fulltime)).click();
   $(StaffObject.selectEmployee(appointmentdata.employeefirstname)).click();

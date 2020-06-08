@@ -58,7 +58,7 @@ When('User input all valid information of Employer', () => {
   $(EmployerObject.saveBtn).click();
 })
 Then('User can create Employeer Scuccessful', () => {
-  assert.equal($(EmployerObject.employerPopup).getText(), EmployerData.successmessage);
+  assert.equal($(EmployerObject.employerPopup).getText(), EmployerData.employersuccessmessage);
   $(EmployerObject.searchBox).click();
   $(EmployerObject.searchBox).setValue(EmployerData.employername);
   browser.keys('Enter');
@@ -74,7 +74,88 @@ Then('User can create Employeer Scuccessful', () => {
   assert.equal($(EmployerObject.employerPostCode).getValue(), EmployerData.employerPostCode);
   assert.equal($(EmployerObject.employerSecrect).getValue(), EmployerData.employerSecrect);
   assert.equal($(EmployerObject.employerOnsitePassword).getValue(), EmployerData.onsitepassword);
+})
 
+/* ELs004 */
+When('User select access Location tab in Employer', () => {
+  browser.pause(timeout)
+  $(EmployerObject.locationTab).click();
+  $(EmployerObject.findLocation(appointmentdata.aplocation)).click();
+})
+Then('User can select location existing in System', () => {
+  browser.pause(timeout);
+  assert.equal($(EmployerObject.verify).isExisting(), true)
+})
+
+/* ELs005 */
+When('User create new Onsite Location and blank all field', () => {
+  $(EmployerObject.onsiteLocationTab).click();
+})
+Then('User can not create new Onsite Location', () => {
+  $(EmployerObject.newOnsiteLocationBtn).click();
+  $(EmployerObject.saveBtn).click();
+  browser.pause(timeout);
+  assert.equal($(EmployerObject.allerRequired).getText().slice(5, 37), EmployerData.required)
+  $(EmployerObject.onsiteLocation.titleInput).setValue(LocationData.sampleOnsiteLocation.title);
+  $(EmployerObject.saveBtn).click();
+  browser.pause(timeout);
+  assert.equal($(EmployerObject.allerRequired).getText().slice(5, 37), EmployerData.required)
+  $(EmployerObject.onsiteLocation.streetLine1Input).setValue(LocationData.sampleOnsiteLocation.streetLine1);
+  $(EmployerObject.saveBtn).click();
+  browser.pause(timeout);
+  assert.equal($(EmployerObject.allerRequired).getText().slice(5, 37), EmployerData.required)
+  $(EmployerObject.onsiteLocation.suburbInput).setValue(LocationData.sampleOnsiteLocation.suburb);
+  $(EmployerObject.saveBtn).click();
+  browser.pause(timeout);
+  assert.equal($(EmployerObject.allerRequired).getText().slice(5, 37), EmployerData.required)
+  $(EmployerObject.onsiteLocation.stateSelector).click();
+  $(EmployerObject.onsiteLocation.defaultState).click();
+  $(EmployerObject.saveBtn).click();
+  browser.pause(timeout);
+  assert.equal($(EmployerObject.allerRequired).getText().slice(5, 37), EmployerData.required)
+
+  browser.keys('Escape');
+  browser.pause(timeout);
+})
+
+/*  */
+When('User input all valid information of Onsite Location', () => {
+  $(EmployerObject.newOnsiteLocationBtn).click();
+  $(EmployerObject.onsiteLocation.titleInput).setValue(LocationData.sampleOnsiteLocation.title);
+  $(EmployerObject.onsiteLocation.streetLine1Input).setValue(LocationData.sampleOnsiteLocation.streetLine1);
+  $(EmployerObject.onsiteLocation.suburbInput).setValue(LocationData.sampleOnsiteLocation.suburb);
+  $(EmployerObject.onsiteLocation.stateSelector).click();
+  $(EmployerObject.onsiteLocation.defaultState).click();
+  $(EmployerObject.onsiteLocation.postCodeInput).setValue(LocationData.sampleOnsiteLocation.postCode);
+  $(EmployerObject.onsiteLocation.saveBtn).click();
+})
+Then('User create new Onsite Location in new Employer Successfully', () => {
+  browser.pause(timeout)
+  assert.equal($(EmployerObject.employerPopup).getText(), EmployerData.onsitesuccessmessage);
+})
+
+/*  */
+When('User select access Medical Type tab in Employer', () => {
+  $(EmployerObject.medicalTypeTab).click();
+  browser.pause(timeout);
+  $(EmployerObject.findMedicalType(appointmentdata.apmedtype)).click();
+})
+Then('User can select Medical Type existing in System', () => {
+  browser.pause(timeout)
+  $(EmployerObject.findMedicalType(appointmentdata.apmedtype)).scrollIntoView();
+  assert.equal($(EmployerObject.verify).isExisting(), true)
+})
+
+/*  */
+When('User select access Role tab in Employer', () => {
+  $(EmployerObject.roleTab).click();
+  browser.pause(timeout);
+  $(EmployerObject.findRole(appointmentdata.employeerole)).click();
+})
+Then('User can select Role existing in System', () => {
+  browser.pause(timeout)
+  $(EmployerObject.findRole(appointmentdata.employeerole)).scrollIntoView();
+  assert.equal($(EmployerObject.verify).isExisting(), true)
 })
 
 /* ELs002 */
@@ -83,7 +164,7 @@ When('User input all valid information of Employee', () => {
   $(EmployerObject.employeeNewBtn).click();
   browser.pause(2000);
 
-  $(EmployerObject.employeeEmail).setValue(appointmentdata.newemployeeemail());
+  $(EmployerObject.employeeEmail).setValue(appointmentdata.newemployeeemail);
   $(EmployerObject.employeeFirstName).setValue(appointmentdata.employeefirstname);
   $(EmployerObject.employeeLastName).setValue(appointmentdata.employeelastname);
   $(AppointmentObject.genderSelector).click();
@@ -98,152 +179,115 @@ When('User input all valid information of Employee', () => {
   $(EmployerObject.employeeSurb).setValue(appointmentdata.employeesuburb);
   $(EmployerObject.employeeState).click();
   $(AppointmentObject.selectState(appointmentdata.employeestate)).click();
-
   $(EmployerObject.employeePostCode).setValue(appointmentdata.employeepostalcode);
   $(AppointmentObject.masterRoleSelector).click();
-  $(AppointmentObject.selectRole(appointmentdata.employeerole));
+  browser.pause(timeout);
+  $(AppointmentObject.selectRole(appointmentdata.employeerole)).click();
   $(EmployerObject.employeeIsManager).click();
   $(EmployerObject.employeeIsMainContact).click();
 
-  // $(EmployerObject.saveBtn).click();
+  $(EmployerObject.saveBtn).click();
+  browser.pause(timeout);
 })
 Then('User can creat new Employee Successfully', () => {
-  // $(EmployerObject.searchBox).click();
-  // $(EmployerObject.searchBox).setValue();
-  // browser.keys('Enter');
+  $(EmployerObject.searchBox).click();
+  $(EmployerObject.searchBox).setValue();
+  browser.keys('Enter');
+  $(EmployerObject.EditEmployeeBtn).click()
+  browser.pause(timeout)
 
-  // assert.equal($(EmployerObject.employeeFirstName).getValue());
-  // assert.equal($(EmployerObject.employeeLastName).getValue());
-  // assert.equal($(EmployerObject.employeeGender).getValue());
-  // assert.equal($(EmployerObject.employeeDob).getValue());
-  // assert.equal($(EmployerObject.employeeIdType).getValue());
-  // assert.equal($(EmployerObject.employeedTypeValue).getValue());
-  // assert.equal($(EmployerObject.employeePhone).getValue());
-  // assert.equal($(EmployerObject.employeeEmail).getValue());
-  // assert.equal($(EmployerObject.employeeStrLn1).getValue());
-  // assert.equal($(EmployerObject.employeeStrLn2).getValue());
-  // assert.equal($(EmployerObject.employeeSurb).getValue());
-  // assert.equal($(EmployerObject.employeeState).getValue());
-  // assert.equal($(EmployerObject.employeePostCode).getValue());
-  // assert.equal($(EmployerObject.employeeMasterRoleID).getValue());
+  assert.equal($(EmployerObject.verifyemployeeEmail).getValue(), appointmentdata.newemployeeemail);
+  assert.equal($(EmployerObject.employeeFirstName).getValue(), appointmentdata.employeefirstname);
+  assert.equal($(EmployerObject.employeeLastName).getValue(), appointmentdata.employeelastname);
+  assert.equal($(EmployerObject.employeeGender).getText(), appointmentdata.employeegender);
+  assert.equal($(EmployerObject.employeeDob).getValue(), appointmentdata.employeedob);
+  assert.equal($(EmployerObject.employeeIdType).getText(), EmployerData.employeeIdType);
+  assert.equal($(EmployerObject.employeedTypeValue).getValue(), EmployerData.employeePassport);
+  assert.equal($(EmployerObject.verifyemployeePhone).getValue(), appointmentdata.employeephone);
+  assert.equal($(EmployerObject.verifyemployeeStrLn1).getValue(), appointmentdata.employeestrline);
+  assert.equal($(EmployerObject.verifyemployeeStrLn2).getValue(), appointmentdata.employeestrline2);
+  assert.equal($(EmployerObject.verifyemployeeSurb).getValue(), appointmentdata.employeesuburb);
+  assert.equal($(EmployerObject.verifyemployeeState).getText(), appointmentdata.employeestate);
+  assert.equal($(EmployerObject.verifyemployeePostCode).getValue(), appointmentdata.employeepostalcode);
+  assert.equal($(EmployerObject.employeeMasterRoleID).getText(), appointmentdata.employeerole);
 })
 
 /* ELs003 */
 When('User create new Appointment with new Employer', () => {
   $(MenuObject.calendar).click();
   browser.pause(timeout);
+  $(AppointmentObject.appointmentNewBtn).click();
 
-})
-
-/* ELs004 */
-When('User select access Location tab in Employer', () => {
-  $(MenuObject.employer).click();
+  //User Select Employer
   browser.pause(timeout);
+  $(AppointmentObject.employerSelector).click();
+  $(AppointmentObject.selectEmployer(EmployerData.employername)).click();
 
-  $(EmployerObject.searchBox).click();
-  $(EmployerObject.searchBox).setValue();
-  browser.keys('Enter');
+  //User Select Location
+  $(AppointmentObject.locationSelector).click();
+  $(AppointmentObject.selectLocation(appointmentdata.aplocation)).click();
 
-  $(EmployerObject.locationTab).click();
-})
-Then('User can select location existing in System', () => {
+  //User Select Medical Type
+  $(AppointmentObject.medicalTypeSelector).click();
+  $(AppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
 
-})
+  //User Select Medical Staff
+  $(AppointmentObject.staffSelector).click();
+  $(AppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+  $(AppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
 
-/* ELs005 */
-When('User create new Onsite Location and blank all field', () => {
-  $(MenuObject.employer).click();
+  //User Select Date
+  $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate);
+
+  //User Select Start Time
+  $(AppointmentObject.startTimeSelector).click();
+  $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+  //User Select End Time
+  $(AppointmentObject.endTimeSelector).click();
+  $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
+
+  //User Select Employee
+  $(AppointmentObject.emailSelector).click();
+  $(AppointmentObject.emailInput).setValue(appointmentdata.newemployeeemail);
   browser.pause(timeout);
+  $(AppointmentObject.selectEmail(appointmentdata.newemployeeemail)).click();
 
-  $(EmployerObject.searchBox).click();
-  $(EmployerObject.searchBox).setValue();
-  browser.keys('Enter');
-  $(EmployerObject.onsiteLocationTab).click();
-})
-Then('User can not create new Onsite Location', () => {
-  $(EmployerObject.newOnsiteLocationBtn).click();
-  $(EmployerObject.saveBtn).click();
-  assert.equal($(EmployerObject.allerRequired).getText())
-  $(EmployerObject.onsiteLocation.titleInput).setValue();
-  $(EmployerObject.saveBtn).click();
-  assert.equal($(EmployerObject.allerRequired).getText())
-  $(EmployerObject.onsiteLocation.streetLine1Input).setValue();
-  $(EmployerObject.saveBtn).click();
-  assert.equal($(EmployerObject.allerRequired).getText())
-  $(EmployerObject.onsiteLocation.suburbInput).setValue();
-  $(EmployerObject.saveBtn).click();
-  assert.equal($(EmployerObject.allerRequired).getText())
-  $(EmployerObject.onsiteLocation.stateSelector).setValue();
-  $(EmployerObject.saveBtn).click();
-  assert.equal($(EmployerObject.allerRequired).getText())
-  $(EmployerObject.onsiteLocation.defaultState).setValue();
-  $(EmployerObject.saveBtn).click();
-  assert.equal($(EmployerObject.allerRequired).getText())
-  $(EmployerObject.onsiteLocation.postCodeInput).setValue();
-  $(EmployerObject.saveBtn).click();
-  assert.equal($(EmployerObject.allerRequired).getText())
+  //Save Appointment
+  $(CalendarObject.appointmentSaveBtn).click();
+  $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
+  browser.pause(timeout)
 })
 
-/* ELs007 */
-When('User create new Onsite Appointment with new Onsite Location', () => {
+Then('User can create Appointment with new Employer Successfully', () => {
+  $(MenuObject.calendar).scrollIntoView()
+  $(MenuObject.calendar).click()
+  $(CalendarObject.calendarMonthBtn).click();
+  $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+  browser.pause(timeout);
+  // Find all appoinments which contain sample medical type. After that, removing it 
+  AppointmentObject.findApMonth({ employer: EmployerData.employername, employee: appointmentdata.newemployeeemail, location: appointmentdata.aplocation }).forEach(elmth => {
+    elmth.click();
+    browser.pause(timeout);
+    assert.equal($(AppointmentObject.employerSelector).getText(), EmployerData.employername)
+    assert.equal($(AppointmentObject.locationSelector).getText().slice(0, 11), appointmentdata.aplocation);
+    assert.equal($(AppointmentObject.medicalTypeSelector).getText().slice(0, 11), appointmentdata.apmedtype);
+    assert.equal($(AppointmentObject.staffSelector).getText().slice(1, 11), appointmentdata.staffname);
+    assert.equal($(CalendarObject.appointmentDateInput).getValue(), appointmentdata.fulldate);
+    assert.equal($(AppointmentObject.startTimeSelector).getText(), appointmentdata.apstartime);
+    assert.equal($(AppointmentObject.endTimeSelector).getText(), appointmentdata.apendtime);
 
-})
-Then('User create new Onsite Appoinment Successfully', () => {
+    assert.equal($(AppointmentObject.emailSelector).getText(), appointmentdata.newemployeeemail);
+    assert.equal($(CalendarObject.employeeFirstNameInput).getValue(), appointmentdata.employeefirstname);
+    assert.equal($(CalendarObject.employeeLastNameInput).getValue(), appointmentdata.employeelastname);
+    assert.equal($(CalendarObject.employeePhoneInput).getValue(), appointmentdata.employeephone);
+    assert.equal($(AppointmentObject.masterRoleSelector).getText(), appointmentdata.employeerole);
 
-})
-
-/* ELs008 */
-When('User create New Employee and blank all field', () => {
-
-})
-Then('User can not create new Employee', () => {
-
-})
-
-/* ELs009 */
-When('User create New Employee and input all valid information', () => {
-
-})
-Then('User create New Employee Successfully', () => {
-
-})
-
-/* ELs009 */
-When('User create new Appointment with new Employee', () => {
-
-})
-
-/* ELs010 */
-When('User create new Onsite Appointment with new Employee', () => {
-
-})
-Then('User create new Onsite Appoinment Successfully', () => {
-
-})
-
-/* ELs011 */
-When('User select access Medical Type tab in Employer', () => {
-
-})
-Then('User can select Medical Type existing in System', () => {
-
-})
-
-/* ELs012 */
-When('User select access Role tab in Employer', () => {
-
-})
-Then('User can select Role existing in System', () => {
-
-})
-
-/* ELs013 */
-When('User select access Supervisor tab in Employer', () => {
-
-})
-Then('User can select Supervisor existing in System', () => {
-
-})
-Then('User can assign Supervisor to Employee', () => {
-
+    $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+    $(CalendarObject.appointmentRemoveBtn).click();
+    browser.pause(timeout);
+    $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+    $(MedicalTypeObject.yesButtonOfConfirmation).click();
+    browser.pause(timeout);
+  })
 })

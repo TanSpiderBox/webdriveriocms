@@ -79,7 +79,7 @@ When('User input all valid information', () => {
     browser.pause(timeout)
 })
 Then('User can create Appointment in guest Biz UI', () => {
-    assert.equal($(BizUIObject.bizuiDate).getText(), DataBizUI.appointmentverifydate);
+    assert.equal($(BizUIObject.bizuiDate).getText(), DataBizUI.appointmentverifyfulldate);
     assert.equal($(BizUIObject.bizuiTime).getText().slice(0, 13), appointmentdata.timeslot);
     assert.equal($(BizUIObject.bizuiTime).getText().slice(15, 21), DataBizUI.room1);
     assert.equal($(BizUIObject.bizuiMedical).getText(), appointmentdata.apmedtype);

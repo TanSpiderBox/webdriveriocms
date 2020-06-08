@@ -4,22 +4,69 @@
   "children" : [ {
     "name" : "Test defects",
     "children" : [ {
-      "name" : "element click intercepted: Element <ng-select _ngcontent-sen-c18=\"\" class=\"ng-select ng-select-single ng-select-searchable ng-select-clearable ng-untouched ng-pristine ng-select-disabled\" formcontrolname=\"state\" name=\"state\" placeholder=\"State\" required=\"\" role=\"listbox\">...</ng-select> is not clickable at point (375, 775). Other element would receive the click: <modal-container class=\"modal fade show\" role=\"dialog\" tabindex=\"-1\" style=\"display: block;\" aria-modal=\"true\">...</modal-container>\n                  (Session info: chrome=83.0.4103.61)",
+      "name" : "element click intercepted: Element <a _ngcontent-hjp-c8=\"\" class=\"menu__link ng-star-inserted active\" routerlinkactive=\"active\" href=\"/r/employers\">...</a> is not clickable at point (110, 199). Other element would receive the click: <modal-container class=\"modal fade show\" role=\"dialog\" tabindex=\"-1\" style=\"display: block;\" aria-modal=\"true\">...</modal-container>\n                  (Session info: headless chrome=83.0.4103.61)",
       "children" : [ {
-        "name" : "Verify User can add New Employee in Employer",
-        "uid" : "b410fce612910cc2",
-        "parentUid" : "b8fd32af8687a899a0dcd7198a2bc708",
+        "name" : "Verify User can select Location in Employer",
+        "uid" : "145115a198192e41",
+        "parentUid" : "5a59d435da2261642c960ff52ed38955",
         "status" : "broken",
         "time" : {
-          "start" : 1591352753464,
-          "stop" : 1591352762464,
-          "duration" : 9000
+          "start" : 1591588444665,
+          "stop" : 1591588449228,
+          "duration" : 4563
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      }, {
+        "name" : "Verify User can not create new Onsite Location with blank field",
+        "uid" : "758ffb0b428cc364",
+        "parentUid" : "5a59d435da2261642c960ff52ed38955",
+        "status" : "broken",
+        "time" : {
+          "start" : 1591588449229,
+          "stop" : 1591588453872,
+          "duration" : 4643
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "chrome" ]
       } ],
-      "uid" : "b8fd32af8687a899a0dcd7198a2bc708"
+      "uid" : "5a59d435da2261642c960ff52ed38955"
+    }, {
+      "name" : "Step \"When User create new Onsite Location and input all valid information\" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.",
+      "children" : [ {
+        "name" : "Verify User can add New on site Location for Employer",
+        "uid" : "cac9f049b206c224",
+        "parentUid" : "739bcc319542f03aa2222bd5e90379b2",
+        "status" : "broken",
+        "time" : {
+          "start" : 1591588453873,
+          "stop" : 1591588453873,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "739bcc319542f03aa2222bd5e90379b2"
+    }, {
+      "name" : "Step \"Then User can create Appointment Successfully\" is not defined. You can ignore this error by setting cucumberOpts.ignoreUndefinedDefinitions as true.",
+      "children" : [ {
+        "name" : "Verify User can create new Appointment with new Employer",
+        "uid" : "3bdb020124dd9bf1",
+        "parentUid" : "8376bafba1c4af502cc575b54547c6e1",
+        "status" : "broken",
+        "time" : {
+          "start" : 1591595851728,
+          "stop" : 1591595856282,
+          "duration" : 4554
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "8376bafba1c4af502cc575b54547c6e1"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ]
