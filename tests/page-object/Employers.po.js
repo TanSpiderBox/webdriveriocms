@@ -124,7 +124,7 @@ const EmployerObject = {
   },
   roleInput: "//ng-select[@formcontrolname='masterRoleId']//input",
 
-  verify: "//app-employer-locations//*[contains(@class, 'bg-primary')]",
+  verify: "//*[contains(@class, 'bg-primary')]",
   allerRequired: "//*[contains(text(),'Please review required fields!')]",
 
   EditEmployeeBtn: '//*[text()="create"]',

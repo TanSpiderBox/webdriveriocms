@@ -4,7 +4,10 @@ import { MenuObject } from "../page-object/shared/Menu.po";
 import { EmployerData } from "../data/Data.Employer";
 import { EmployerObject } from "../page-object/Employers.po.js";
 import { appointmentdata } from "../data/Data.Calendar";
-import { AppointmentObject } from "../page-object/Calendar.po";
+import { AppointmentObject, CalendarObject, CalendarVerify, OnsiteAppointmentObject } from "../page-object/Calendar.po";
+import { LocationData } from "../data/Data.Location";
+import { MedicalTypeObject } from "../page-object/MedicalType.po";
+import { EmployeeData } from "../data/Data.Employee";
 
 function waitingLoad(name) {
   browser.waitUntil(() => {
@@ -82,7 +85,7 @@ When('User select access Location tab in Employer', () => {
   $(EmployerObject.locationTab).click();
   $(EmployerObject.findLocation(appointmentdata.aplocation)).click();
 })
-Then('User can select location existing in System', () => {
+Then('User can select Location existing in System', () => {
   browser.pause(timeout);
   assert.equal($(EmployerObject.verify).isExisting(), true)
 })
@@ -130,7 +133,6 @@ When('User input all valid information of Onsite Location', () => {
   $(EmployerObject.onsiteLocation.saveBtn).click();
 })
 Then('User create new Onsite Location in new Employer Successfully', () => {
-  browser.pause(timeout)
   assert.equal($(EmployerObject.employerPopup).getText(), EmployerData.onsitesuccessmessage);
 })
 
@@ -141,8 +143,7 @@ When('User select access Medical Type tab in Employer', () => {
   $(EmployerObject.findMedicalType(appointmentdata.apmedtype)).click();
 })
 Then('User can select Medical Type existing in System', () => {
-  browser.pause(timeout)
-  $(EmployerObject.findMedicalType(appointmentdata.apmedtype)).scrollIntoView();
+  browser.pause(timeout);
   assert.equal($(EmployerObject.verify).isExisting(), true)
 })
 
@@ -154,7 +155,6 @@ When('User select access Role tab in Employer', () => {
 })
 Then('User can select Role existing in System', () => {
   browser.pause(timeout)
-  $(EmployerObject.findRole(appointmentdata.employeerole)).scrollIntoView();
   assert.equal($(EmployerObject.verify).isExisting(), true)
 })
 
@@ -162,7 +162,7 @@ Then('User can select Role existing in System', () => {
 When('User input all valid information of Employee', () => {
   $(EmployerObject.employeeTab).click();
   $(EmployerObject.employeeNewBtn).click();
-  browser.pause(2000);
+  browser.pause(timeout);
 
   $(EmployerObject.employeeEmail).setValue(appointmentdata.newemployeeemail);
   $(EmployerObject.employeeFirstName).setValue(appointmentdata.employeefirstname);
@@ -265,7 +265,7 @@ Then('User can create Appointment with new Employer Successfully', () => {
   $(CalendarObject.calendarMonthBtn).click();
   $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
   browser.pause(timeout);
-  // Find all appoinments which contain sample medical type. After that, removing it 
+  // Find all appoinments which contain sample medical type.
   AppointmentObject.findApMonth({ employer: EmployerData.employername, employee: appointmentdata.newemployeeemail, location: appointmentdata.aplocation }).forEach(elmth => {
     elmth.click();
     browser.pause(timeout);
@@ -289,5 +289,84 @@ Then('User can create Appointment with new Employer Successfully', () => {
     $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
     $(MedicalTypeObject.yesButtonOfConfirmation).click();
     browser.pause(timeout);
+  })
+})
+
+When('User create new Onsite Appointment with new Employer', () => {
+  $(MenuObject.calendar).scrollIntoView()
+  $(MenuObject.calendar).click()
+  browser.pause(timeout);
+
+  //Create New Onsite Appointment
+  $(OnsiteAppointmentObject.appointmentNewOnsiteBtn).click()
+
+  //User Select Employer
+  browser.pause(timeout);
+  $(OnsiteAppointmentObject.employerSelect).click();
+  $(OnsiteAppointmentObject.selectEmployer(EmployerData.employeremail)).click();
+
+  //User Select Location
+  $(OnsiteAppointmentObject.locationSelect).click();
+  $(OnsiteAppointmentObject.selectLocation(LocationData.sampleOnsiteLocation.title)).click();
+
+  //User Select Medical Type
+  $(OnsiteAppointmentObject.medicalTypeSelect).click();
+  $(OnsiteAppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click();
+
+  //User Select Medical Staff
+  $(OnsiteAppointmentObject.staffSelector).click();
+  $(OnsiteAppointmentObject.staffInput).setValue(appointmentdata.emailmedicalstaff);
+  $(OnsiteAppointmentObject.selectStaff(appointmentdata.emailmedicalstaff)).click();
+
+  //User Select Date Time
+  $(CalendarObject.appointmentDateInput).setValue(appointmentdata.fulldate)
+
+  //User Select Start Time
+  $(AppointmentObject.startTimeSelector).click();
+  $(AppointmentObject.selectStartTime(appointmentdata.apstartime)).click();
+
+  //User Select End Time
+  $(AppointmentObject.endTimeSelector).click();
+  $(AppointmentObject.selectEndTime(appointmentdata.apendtime)).click();
+
+  //User Select Employee
+  $(OnsiteAppointmentObject.employeeDetails).click();
+  $(OnsiteAppointmentObject.emailSelector).click();
+  $(OnsiteAppointmentObject.emailInput).setValue(appointmentdata.newemployeeemail);
+  browser.pause(timeout)
+  $(OnsiteAppointmentObject.selectEmail(appointmentdata.employeeEmail)).click();
+  $(OnsiteAppointmentObject.onsiteappointmentAddEmployeeListBtn).click();
+  browser.pause(timeout)
+
+  //Save Appointment
+  $(CalendarObject.appointmentSaveBtn).click();
+  browser.pause(timeout)
+  $(CalendarVerify.createdSuccessfully).waitForExist(timeout)
+  browser.pause(timeout)
+})
+Then('User create new Onsite Appoinment with new Employer Successfully', () => {
+  $(MenuObject.calendar).scrollIntoView()
+  $(MenuObject.calendar).click()
+  $(CalendarObject.calendarMonthBtn).click();
+  $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+  browser.pause(timeout);
+  // Find all appoinments which contain sample medical type. After that, removing it 
+  OnsiteAppointmentObject.findApMonth({ employer: EmployerData.employeremail, location: LocationData.sampleOnsiteLocation.title }).forEach(elmth => {
+      elmth.click();
+      browser.pause(timeout);
+      assert.equal($(OnsiteAppointmentObject.employerSelect).getText(), EmployerData.employeremail)
+      assert.equal($(OnsiteAppointmentObject.locationSelect).getText().slice(0, 13), LocationData.sampleOnsiteLocation.title);
+      assert.equal($(OnsiteAppointmentObject.medicalTypeSelect).getText().slice(0, 11), appointmentdata.apmedtype);
+      assert.equal($(OnsiteAppointmentObject.staffSelector).getText().slice(1, 11), appointmentdata.staffname);
+      assert.equal($(CalendarObject.appointmentDateInput).getValue(), appointmentdata.fulldate);
+      assert.equal($(OnsiteAppointmentObject.startTimeSelector).getText(), appointmentdata.apstartime);
+      assert.equal($(OnsiteAppointmentObject.endTimeSelector).getText(), appointmentdata.apendtime);
+
+      $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
+      $(CalendarObject.appointmentRemoveBtn).click()
+      browser.pause(timeout)
+      $(MedicalTypeObject.yesButtonOfConfirmation).scrollIntoView();
+      $(MedicalTypeObject.yesButtonOfConfirmation).click()
+      browser.pause(timeout)
   })
 })
