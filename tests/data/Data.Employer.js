@@ -16,6 +16,7 @@ const EmployerData =  {
   employersuccessmessage:'Employer has been saved successfully',
   onsitesuccessmessage: 'Successfully',
   required:'Please review required fields!',
+  cannotdeleteemployer: 'Cannot delete employer with existing employees',
 
   employeeIdType: 'Passport',
   employeePassport: '12345679'

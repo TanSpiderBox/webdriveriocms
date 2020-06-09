@@ -53,3 +53,7 @@ Feature: Employers
     Scenario: Verify User can create new Onsite Appointment with new Onsite location
         When User create new Onsite Appointment with new Employer
         Then User create new Onsite Appoinment with new Employer Successfully
+        When User delete Employer have Employee
+        Then User can not delete Employer
+        When User delete Employer do not have Employee
+        Then User can delete Employer

@@ -60,6 +60,13 @@ Feature: BizUI
     @BU011
     Scenario: Verify User can not view Appointment don't public time slot
         When User create Onsite Appointment and do not public time slot
+        Given User access Biz UI Successfully
+        When User input correct employee UserName Password
+        Then Employee can not view time slot in BizUI
+        Given User Access CSM Website
+        When User input correct UserName and Password
+        Then User can login System Successfully
+        Then User create new Onsite Appointment Successfully
 
-    @BU012
-    Scenario: Verify User can not view time slot disable
+    # @BU012
+    # Scenario: Verify User can not view time slot disable

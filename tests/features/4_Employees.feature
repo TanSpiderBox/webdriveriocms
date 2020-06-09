@@ -3,11 +3,11 @@ Feature: Employees
 
     Background: As a User I want check all scenario of Employees feature
 
-@EL001
-    Scenario: Verify User can create New Employee in Appointment
-        When User create new Appointment with new Employee
-        Then User create new Appointment with new Employee Success and Employee added in Employer
-        Then User can view Employee added in Employer
+# @EL001
+#     Scenario: Verify User can create New Employee in Appointment
+#         When User create new Appointment with new Employee
+#         Then User create new Appointment with new Employee Success and Employee added in Employer
+#         Then User can view Employee added in Employer
 
 @EL002
     Scenario: Verify User can create New Employee in On site Appointment

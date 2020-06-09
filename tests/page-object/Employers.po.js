@@ -114,7 +114,7 @@ const EmployerObject = {
   // Location
   locationTab: "//app-employer-details//a[contains(text(), 'Locations') and contains(@class, 'nav-link')]",
   findLocation: (location) => {
-    return "//app-employer-locations//*[contains(@class, 'employer-location-item')]//*[contains(text()," + "'" + location + "'" + ")]"
+    return "//app-employer-locations//*[contains(@class, 'employer-location-item') and h4[contains(text()," + "'" + location + "'" + ")]]"
   },
 
   //Role

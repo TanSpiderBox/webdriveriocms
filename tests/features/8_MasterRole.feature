@@ -28,6 +28,7 @@ Feature: Master Role
 
   Scenario: Verify User can update a Master Role Successfully
     Given User open index page
+    When User presses enter
     When User clicks edit button of sample Role
     When Edit modal is appeared, user inputs a new Role name
     When User click save button
@@ -40,37 +41,30 @@ Feature: Master Role
     Then Removed a Master Role Successfully
 
   Scenario: Verify User can assign Master Role to Employer
-
-  Scenario: Verify User can assign Master Role to Employee
-
-  Scenario: Verify User can select Master Role when create new Employee in Appointment
-  
-  Scenario: Verify User can select Master Role when create new Employee in Onsite Appointment
-
-  Scenario: Verify User can not unassign Master Role assigned to Employee
-
-  Scenario: Verify User can not unassign Master Role assigned to Employer
-
-  Scenario: Verify Overview Logic
     Given User open index page
     When Create sample Role
     When User moves to Employer screen, choosing Employer
     When Assign sample Role to Employer
+  Scenario: Verify User can not unassign Master Role assigned to Employer
     Then Cannot remove sample Role
     When User moves to Employer screen, choosing Employer
+
+  Scenario: Verify User can unassign Master Role assigned to Employer
     When Un-assign sample Role
     Then Remove sample Role Successfully
+
+  Scenario: Verify User can assign Master Role to Employee
     When Create sample Role
     When User moves to Employer screen, choosing Employer
     When Assign sample Role to Employer
     When Assign sample Role to Employee
+
+  Scenario: Verify User can not unassign Master Role assigned to Employee
     When User moves to Employer screen, choosing Employer
     Then Cannot un-assign sample Role from Employer
     When Un-assign sample Role from Employee
+
+  Scenario: Verify User can unassign Master Role assigned to Employee
     When User moves to Employer screen, choosing Employer
     When Un-assign sample Role
     Then Remove sample Role Successfully
-
-
-
-

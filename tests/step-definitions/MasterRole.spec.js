@@ -5,6 +5,7 @@ import { MasterRoleData } from "../data/Data.MasterRole";
 import { EmployerData } from "../data/Data.Employer";
 import { EmployerObject } from "../page-object/Employers.po.js";
 import { EmployeeData } from "../data/Data.Employee";
+import { AppointmentObject } from "../page-object/Calendar.po";
 
 var removeRoleButton = function (name) {
   return "//tr[.//button[contains(text(), " + "'" + name + "'" + ")]]//button/i[contains(text(), 'clear')]";
@@ -163,7 +164,7 @@ When('Assign sample Role to Employee', () => {
   $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()
   
-  $(EmployerObject.roleSelector).click()
+  $(AppointmentObject.masterRoleSelector).click();
   $(EmployerObject.roleInput).setValue(MasterRoleData.sampleRole)
   browser.keys('Enter');
   $(EmployerObject.employee.saveBtn).click()
@@ -185,7 +186,7 @@ When('Un-assign sample Role from Employee', () => {
   $(EmployerObject.EditEmployeeBtn).click()
   $(EmployerObject.employee.editBtn).click()
   
-  $(EmployerObject.roleSelector).click()
+  $(AppointmentObject.masterRoleSelector).click();
   $(EmployerObject.roleInput).setValue(MasterRoleData.defaultRole)
   browser.keys('Enter');
   $(EmployerObject.employee.saveBtn).click()
