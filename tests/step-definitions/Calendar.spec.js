@@ -923,7 +923,7 @@ When('User create Onsite Appointment and remove room', () => {
     browser.pause(timeout)
 
     assert.equal($(OnsiteAppointmentObject.timeslotSlected(appointmentdata.timeslot)).isExisting(), true);
-
+    browser.pause(timeout)
     assert.equal($(OnsiteAppointmentObject.verifyName(appointmentdata.employeefirstname, appointmentdata.employeelastname)).isExisting(), true);
     assert.equal($(OnsiteAppointmentObject.verifyPhone(appointmentdata.employeephone)).isExisting(), true);
     assert.equal($(OnsiteAppointmentObject.verifyemail(appointmentdata.employeeEmail)).isExisting(), true);

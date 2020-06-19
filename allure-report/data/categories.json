@@ -1,5 +1,73 @@
 {
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
-  "children" : [ ]
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected false to equal true",
+      "children" : [ {
+        "name" : "Verify User can create Onsite Appointment and remove room",
+        "uid" : "ae26ecf60e49ede2",
+        "parentUid" : "d4a0243edab18cbbbb97b891737859ad",
+        "status" : "failed",
+        "time" : {
+          "start" : 1592540134651,
+          "stop" : 1592540149955,
+          "duration" : 15304
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "d4a0243edab18cbbbb97b891737859ad"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "element click intercepted: Element <a _ngcontent-vis-c8=\"\" class=\"menu__link ng-star-inserted active\" routerlinkactive=\"active\" href=\"/r/calendar\">...</a> is not clickable at point (110, 149). Other element would receive the click: <modal-container class=\"modal fade show\" role=\"dialog\" tabindex=\"-1\" style=\"display: block;\" aria-modal=\"true\">...</modal-container>\n                  (Session info: headless chrome=83.0.4103.97)",
+      "children" : [ {
+        "name" : "Verify User can view Question form in Onsite Appointment",
+        "uid" : "c4164ea730bca9a4",
+        "parentUid" : "162d3ad4b52caa81ea028622752be652",
+        "status" : "broken",
+        "time" : {
+          "start" : 1592540149957,
+          "stop" : 1592540154559,
+          "duration" : 4602
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      }, {
+        "name" : "Verify User can view Assessment form in Onsite Appointment",
+        "uid" : "342947961090d405",
+        "parentUid" : "162d3ad4b52caa81ea028622752be652",
+        "status" : "broken",
+        "time" : {
+          "start" : 1592540154561,
+          "stop" : 1592540159194,
+          "duration" : 4633
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      }, {
+        "name" : "Verify User can remove Employee in Onsite Appointment",
+        "uid" : "b7d911ae94b2591c",
+        "parentUid" : "162d3ad4b52caa81ea028622752be652",
+        "status" : "broken",
+        "time" : {
+          "start" : 1592540159196,
+          "stop" : 1592540163731,
+          "duration" : 4535
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "162d3ad4b52caa81ea028622752be652"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ]
 }

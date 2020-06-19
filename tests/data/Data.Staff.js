@@ -10,5 +10,4 @@ const StaffData = {
     email: 'hoang+' + Date.now() + '@spiderbox.design',
   }
 }
-
 export { StaffData }

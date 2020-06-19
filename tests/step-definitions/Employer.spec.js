@@ -417,5 +417,5 @@ Then('User can delete Employer', () => {
   $(MedicalTypeObject.yesButtonOfConfirmation).click()
   browser.pause(timeout)
 
-  // assert.equal($(EmployerObject.employerPopup).getText(), EmployerData.onsitesuccessmessage);  
+  assert.equal($(EmployerObject.employerPopup).getText(), EmployerData.employerdeletesucessfull);  
 })

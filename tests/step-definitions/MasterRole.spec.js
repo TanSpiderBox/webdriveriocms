@@ -6,6 +6,7 @@ import { EmployerData } from "../data/Data.Employer";
 import { EmployerObject } from "../page-object/Employers.po.js";
 import { EmployeeData } from "../data/Data.Employee";
 import { AppointmentObject } from "../page-object/Calendar.po";
+import { MenuObject } from "../page-object/shared/Menu.po";
 
 var removeRoleButton = function (name) {
   return "//tr[.//button[contains(text(), " + "'" + name + "'" + ")]]//button/i[contains(text(), 'clear')]";
@@ -21,10 +22,12 @@ Then('User is navigated to index page', () => {
 
 When('User click new button', () => {
   $(MasterRoleObject.newButton).click()
+  browser.pause(2000)
 })
 
 When('User click save button', () => {
   $(MasterRoleObject.saveButton).click()
+  browser.pause(2000)
 })
 
 Then('A failed message is appeared', () => {
@@ -94,15 +97,14 @@ When('Create sample Role', () => {
 })
 
 When('User moves to Employer screen, choosing Employer', () => {
-  $(MasterRoleObject.employerMenu).click()
-  // [Warning] - Because the loading-inner 
-  $(MasterRoleObject.masterRoleMenu).click()
-  $(MasterRoleObject.employerMenu).click()
+  $(MenuObject.employer).click();
+  browser.pause(1000)
   $(EmployerObject.searchBox).click()
   $(EmployerObject.searchBox).setValue(EmployerData.employer1.name);
   browser.keys("\uE007");
+  browser.pause(1000)
   $(EmployerObject.find(EmployerData.employer1.name)).click()
-  browser.pause(3000)
+  browser.pause(1000)
 })
 
 When('Assign sample Role to Employer', () => {

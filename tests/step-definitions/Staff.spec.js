@@ -4,14 +4,16 @@ import { StaffObject } from "../page-object/Staff.po";
 import { MenuObject } from "../page-object/shared/Menu.po";
 import { CalendarObject, OnsiteAppointmentObject, CalendarVerify } from "../page-object/Calendar.po";
 import { EmployerData } from "../data/Data.Employer";
-import { appointmentdata, employeedata } from "../data/Data.Calendar";
+import { appointmentdata } from "../data/Data.Calendar";
 import { BizUIObject } from "../page-object/BizUI.po";
 import { DataBizUI } from "../data/Data.BizUI";
 import { assert } from 'chai'
+import moment from "moment";
 
 Then('Staff - Create sample staff', () => {
+  browser.pause(1000)
   $(MenuObject.staff).click()
-  $(StaffObject.newButton).waitForExist(20000)
+  browser.pause(1000)
   $(StaffObject.newButton).click()
 
   $(StaffObject.firstNameInput).setValue(StaffData.sampleStaff.firstName)
@@ -69,11 +71,16 @@ Then('Staff - Cannot remove staff', () => {
 })
 
 When('Staff - Remove on-site appointment', () => {
+  browser.pause(2000)
+  $(MenuObject.calendar).scrollIntoView()
   $(MenuObject.calendar).click()
-  browser.pause(3000)
+  $(CalendarObject.calendarMonthBtn).click();
+  $(CalendarObject.calendarMonthBtn).click();
+  $(CalendarObject.selectCalendar(moment().format('D'), moment().format('dddd'))).click();
+  browser.pause(2000)
   // Find all appoinments which contain sample staff. After that, removing it 
-  OnsiteAppointmentObject.find({ employer: EmployerData.employer1.name, staff: StaffData.sampleStaff.firstName + ' ' + StaffData.sampleStaff.lastName }).forEach(el => {
-    el.click();
+  OnsiteAppointmentObject.findApMonth({ employer: EmployerData.employer1.name, staff: StaffData.sampleStaff.firstName + ' ' + StaffData.sampleStaff.lastName }).forEach(elmth => {
+    elmth.click();
     browser.pause(1000)
     $(CalendarObject.appointmentRemoveBtn).click()
     browser.pause(1000)
@@ -138,7 +145,7 @@ When("User complete question and assessment", () => {
 Then("User can accept onsite appointment", () => {
   $(StaffObject.backBtn).click();
   $(StaffObject.selectEmployee(appointmentdata.employeefirstname)).click();
-  assert.equal($(StaffObject.medicalform).isExisting(),true)
+  assert.equal($(StaffObject.medicalform).isExisting(), true)
   $(StaffObject.backBtn).click();
   $(StaffObject.stafflogoutBtn).click();
 })

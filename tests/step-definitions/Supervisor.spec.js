@@ -7,6 +7,8 @@ import { EmployerObject } from "../page-object/Employers.po";
 import { EmployerData } from "../data/Data.Employer";
 import { EmployeeData } from "../data/Data.Employee";
 import { AppointmentObject, CalendarObject } from "../page-object/Calendar.po";
+import { appointmentdata } from "../data/Data.Calendar";
+import moment from "moment";
 
 function waitingLoadingInner() {
   browser.waitUntil(() => {
@@ -23,6 +25,7 @@ function waitingLoad(name) {
 }
 
 Then('User Create sample Supervisor', () => {
+  browser.pause(1000)
   $(MenuObject.supervisor).click()
   waitingLoadingInner()
 
@@ -127,6 +130,7 @@ When('Create appointment which contains sample Supervisor', () => {
 
   $(AppointmentObject.emailSelector).click()
   $(AppointmentObject.emailInput).setValue(EmployeeData.emp1.email);
+  browser.pause(1000)
   $(AppointmentObject.selectEmail(EmployeeData.emp1.email)).click()
   browser.pause(1000)
 
@@ -158,10 +162,12 @@ When('Remove the appointment of Employer {string}', (num) => {
   browser.pause(2000)
   $(MenuObject.calendar).scrollIntoView()
   $(MenuObject.calendar).click()
+  $(CalendarObject.calendarMonthBtn).click();
+  $(CalendarObject.selectCalendar(moment().format('D'), moment().format('dddd'))).click();
   browser.pause(3000)
   // Find all appoinments which contain sample supervisor. After that, removing it 
-  AppointmentObject.find({ employer: employer.name, supervisor: SupervisorData.sampleSupervisor }).forEach(el => {
-    el.click();
+  AppointmentObject.findApMonth({ employer: employer.name, supervisor: SupervisorData.sampleSupervisor, location: appointmentdata.aplocation, employee: EmployeeData.emp1.email }).forEach(elmth => {
+    elmth.click();
     browser.pause(1000)
     $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
     browser.pause(1000)

@@ -14,6 +14,7 @@ const EmployerData =  {
   onsitepassword: '123456',
 
   employersuccessmessage:'Employer has been saved successfully',
+  employerdeletesucessfull: 'Employer has been removed successfully',
   onsitesuccessmessage: 'Successfully',
   required:'Please review required fields!',
   cannotdeleteemployer: 'Cannot delete employer with existing employees',

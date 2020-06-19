@@ -6,6 +6,8 @@ import { OnsiteAppointmentObject, CalendarObject } from "../page-object/Calendar
 import { MenuObject } from "../page-object/shared/Menu.po";
 import { MedicalTypeData } from "../data/Data.MedicalType"
 import { EmployerData } from "../data/Data.Employer"
+import { appointmentdata } from "../data/Data.Calendar"
+import moment from "moment";
 
 function waitingLoadingInner() {
   browser.waitUntil(() => {
@@ -133,10 +135,12 @@ When('Remove the Appointment of Employer {string}', (num) => {
   browser.pause(2000)
   $(MenuObject.calendar).scrollIntoView()
   $(MenuObject.calendar).click()
+  $(CalendarObject.calendarMonthBtn).click();
+  $(CalendarObject.selectCalendar(moment().format('D'), moment().format('dddd'))).click();
   browser.pause(3000)
   // Find all appoinments which contain sample medical type. After that, removing it 
-  OnsiteAppointmentObject.find({ employer: employer.name, type: MedicalTypeData.sampleMedicalType }).forEach(el => {
-    el.click();
+  OnsiteAppointmentObject.findApMonth({ employer: employer.name, employee: appointmentdata.employeeEmail, type: MedicalTypeData.sampleMedicalType }).forEach(elmth => {
+    elmth.click();
     browser.pause(1000)
     $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
     browser.pause(1000)

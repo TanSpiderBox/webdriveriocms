@@ -153,11 +153,13 @@ const OnsiteAppointmentObject = {
       elmth.click()
       browser.pause(3000)
       if (Mnthopts.type != undefined) {
-        var isType = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.type
+        var isType = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.type + "'" + "]")
+          .isExisting()
       } else { var isType = true }
 
       if (Mnthopts.employer != undefined) {
-        var isEmployer = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.employer
+        var isEmployer = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.employer + "'" + "]")
+          .isExisting()
       } else { var isEmployer = true }
 
       if (Mnthopts.staff != undefined) {
@@ -186,11 +188,13 @@ const OnsiteAppointmentObject = {
       el.click()
       browser.pause(3000)
       if (opts.type != undefined) {
-        var isType = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.type
+        var isType = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'medicalTypeId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.type + "'" + "]")
+          .isExisting()
       } else { var isType = true }
 
       if (opts.employer != undefined) {
-        var isEmployer = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.employer
+        var isEmployer = $("//app-appointment-onsite-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.employer + "'" + "]")
+          .isExisting()
       } else { var isEmployer = true }
 
       if (opts.staff != undefined) {
@@ -291,19 +295,23 @@ const AppointmentObject = {
       elmth.click()
       browser.pause(3000)
       if (Mnthopts.supervisor != undefined) {
-        var isSupervisor = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.supervisor
+        var isSupervisor = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.supervisor + "'" + "]")
+          .isExisting()
       } else { var isSupervisor = true }
 
       if (Mnthopts.employer != undefined) {
-        var isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.employer
+        var isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.employer + "'" + "]")
+          .isExisting()
       } else { var isEmployer = true }
 
       if (Mnthopts.location != undefined) {
-        var isLocation = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label')]").getText() == Mnthopts.location
+        var isLocation = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.location + "'" + "]")
+          .isExisting()
       } else { var isLocation = true }
 
       if (Mnthopts.employee != undefined) {
         var isEmployee = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'email')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + Mnthopts.employee + "'" + "]")
+          .isExisting()
       } else { var isEmployee = true }
 
       if (isEmployer && isSupervisor && isLocation && isEmployee) {
@@ -322,19 +330,23 @@ const AppointmentObject = {
       el.click()
       browser.pause(3000)
       if (opts.supervisor != undefined) {
-        var isSupervisor = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.supervisor
+        var isSupervisor = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'supervisorId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.supervisor + "'" + "]")
+          .isExisting()
       } else { var isSupervisor = true }
 
       if (opts.employer != undefined) {
-        var isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.employer
+        var isEmployer = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'employerId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.employer + "'" + "]")
+          .isExisting()
       } else { var isEmployer = true }
 
       if (opts.location != undefined) {
-        var isLocation = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label')]").getText() == opts.location
+        var isLocation = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'locationId')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.location + "'" + "]")
+          .isExisting()
       } else { var isLocation = true }
 
       if (opts.employee != undefined) {
         var isEmployee = $("//app-appointment-form//ng-select[contains(@formcontrolname, 'email')]//*[contains(@class, 'ng-value-label') and text()=" + "'" + opts.employee + "'" + "]")
+          .isExisting()
       } else { var isEmployee = true }
 
       if (isEmployer && isSupervisor && isLocation && isEmployee) {
@@ -343,7 +355,6 @@ const AppointmentObject = {
       $("//app-appointment-form//button[contains(@aria-label, 'Close')]").click()
       browser.pause(2000)
     })
-
     return results
   },
 }

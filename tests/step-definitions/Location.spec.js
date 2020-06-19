@@ -7,6 +7,8 @@ import { EmployeeData } from '../data/Data.Employee'
 import { MenuObject } from '../page-object/shared/Menu.po'
 import { CalendarObject, OnsiteAppointmentObject, AppointmentObject } from '../page-object/Calendar.po'
 import { LocationObject } from '../page-object/Location.po'
+import { appointmentdata } from "../data/Data.Calendar";
+import moment from "moment";
 
 Then('User create new Onsite Location Successfully', () => {
   $(EmployerObject.onsiteLocationTab).click()
@@ -37,7 +39,7 @@ When('Create a new Onsite Appointment', () => {
   $(OnsiteAppointmentObject.selectLocation(LocationData.sampleOnsiteLocation.title)).click()
   $(OnsiteAppointmentObject.medicalTypeSelect).click()
   $(OnsiteAppointmentObject.selectMedicalType('')).waitForExist(20000)
-  $(OnsiteAppointmentObject.selectMedicalType('')).click()
+  $(OnsiteAppointmentObject.selectMedicalType(appointmentdata.apmedtype)).click()
   //User Select Enable Time Slot
   $(OnsiteAppointmentObject.onsiteappointmentEnableBtn).click();
   $(OnsiteAppointmentObject.onsiteappointmentPublicBtn).click();
@@ -60,11 +62,15 @@ Then('User can not delete Onsite Appointment', () => {
 })
 
 When('User delete Onsite Appointment', () => {
+  browser.pause(2000)
+  $(MenuObject.calendar).scrollIntoView()
   $(MenuObject.calendar).click()
+  $(CalendarObject.calendarMonthBtn).click();
+  $(CalendarObject.selectCalendar(moment().format('D'), moment().format('dddd'))).click();
   browser.pause(2000)
   // Find all appoinments which contain sample staff. After that, removing it 
-  OnsiteAppointmentObject.find({ employer: EmployerData.employer1.name, location: LocationData.sampleOnsiteLocation.title }).forEach(el => {
-    el.click();
+  OnsiteAppointmentObject.findApMonth({ employer: EmployerData.employer1.name, type: appointmentdata.apmedtype, location: LocationData.sampleOnsiteLocation.title }).forEach(elmth => {
+    elmth.click();
     $(CalendarObject.appointmentRemoveBtn).click()
     browser.pause(1000)
     $(EmployerObject.yesButtonOfConfirmation).waitForExist(20000)
