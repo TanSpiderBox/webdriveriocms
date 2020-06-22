@@ -17,7 +17,7 @@ Feature: Calendar
         And User can view Employee added in Employer
 
     @CL003
-    Scenario: Verify user can update Appointment
+    Scenario: Verify user can update Existing Appointment
         When User update existing Appointment
         Then User update Appointment Successfully
 

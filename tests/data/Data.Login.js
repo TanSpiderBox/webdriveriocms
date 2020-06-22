@@ -2,6 +2,7 @@ const DataLogin = {
     url: '/auth/login',
     urlBizUI:'http://cms.spiderbox.design/onsiteregistration/rochell-maffetti',
     username: 'admin@companymedicalservices.com.au',
+    // username: 'cms@spiderbox.design',
     employeeMusername: 'tan+3@spiderbox.design',
     employeeusername: 'tan+4@spiderbox.design',
     inusername: 'abcxyz',

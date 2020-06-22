@@ -2,27 +2,35 @@ Feature: Staff
 
   Background: As a User I want check all scenario of Staff Feature
 
+  @ST001
   Scenario: Verify User can create new Staff Successfully
     Given User Access CSM Website
     When User input correct UserName and Password
     Then Staff - Create sample staff
 
+  @ST002
   Scenario: Verify User can create new Staff in Appointment Successfully
 
+  @ST003
   Scenario: Verify User can create new Staff in Onsite Appointment Successfully
 
+  @ST004
   Scenario: Verify Staff can login system with password recived in email
 
+  @ST005
   Scenario: Verify User can not remove staff which was be assiged to Appointment
 
+  @ST006
   Scenario: Verify User can not remove staff which was be assiged to Onsite appointment
     When Staff - Create on-site appointment
     Then Staff - Cannot remove staff
 
+  @ST007
   Scenario: Verify User can remove staff Successfully if it wasn't be assigned to anything
     When Staff - Remove on-site appointment
     Then Staff - Remove staff Successfully
 
+  @ST008
   Scenario: Verify Staff can complete Onsite Appointment assigned
     When User create new Onsite Appointment
     Given User access Biz UI Successfully
@@ -38,11 +46,12 @@ Feature: Staff
     When User input correct UserName and Password
     Then User can login System Successfully
     Then User create new Onsite Appointment Successfully
-     Given User Access CSM Website
+    Given User Access CSM Website
     When User input correct UserName and Password
     Then User can login System Successfully
     Then User create new Onsite Appointment Successfully
 
+  @ST009
   Scenario: Verify Staff can complete Appointment assigned
     When User create new Appointment with existing Employee
     Then User create new Appointment Successfully
@@ -50,10 +59,12 @@ Feature: Staff
     When User input correct Staff username and password
     Then User can login Staff Successfully
 
+# @ST010
 # Scenario: Verify Staff can create new walk in for Employee
 #   When Staff input all valid information of walkin
 #   Then Staff can add new walkin Successfully
 
+# @ST011
 # Scenario: Verify Staff can set status for Employee
 #   When Staff click button change status present to absent
 #   Then Status of Employee will change present  to absent
