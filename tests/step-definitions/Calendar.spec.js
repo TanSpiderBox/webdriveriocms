@@ -60,7 +60,16 @@ Then("User create new Appointment Successfully", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
@@ -157,7 +166,16 @@ Then("User create new Appointment with new Employee Success and Employee added i
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.newemployeeemail, location: appointmentdata.aplocation }).forEach(elmth => {
@@ -186,7 +204,47 @@ Then("User create new Appointment with new Employee Success and Employee added i
         browser.pause(timeout);
     })
 })
+Then("User can login with new Password", () => {
+    $(BizUIObject.bizuiReturnUserBtn).click()
+    browser.pause(timeout)
 
+    const GraphQLClient = require('@testmail.app/graphql-request').GraphQLClient;
+    const testmailClient = new GraphQLClient(
+        // API endpoint:
+        'https://api.testmail.app/api/graphql',
+        // Use your API key:
+        { headers: { 'Authorization': 'Bearer 8af5eac9-f446-4734-9f99-0de884a0f949' } }
+    );
+    testmailClient.request(`{
+    inbox (
+      namespace:"6pku9"
+      tag: "tan009"
+      advanced_filters:[{
+        field:subject
+        match:exact
+        action:include
+        value:"Login Information"
+      }]
+      ) {
+        result
+        message
+        emails {
+          subject
+          html
+          text
+        }
+      }
+  }`).then((data) => {
+        var test = data.inbox.emails[0].html;
+        var email = test.match(/6pku9(.*?)app/g)
+        var password = test.match(/Cms@(.*?)!/g)
+        console.log(password)
+        $(BizUIObject.bizuiUsername).setValue(email)
+        $(BizUIObject.bizuiPassword).setValue(password)
+        browser.keys('Enter')
+    })
+
+})
 Then("User can view Employee added in Employer", () => {
     //Select Employer
     $(MenuObject.employer).click();
@@ -280,7 +338,16 @@ When("User update existing Appointment", () => {
 
     //Update existing Appointment
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
@@ -297,7 +364,16 @@ Then("User update Appointment Successfully", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     AppointmentObject.findApMonth({ employer: appointmentdata.apemployer, employee: appointmentdata.employeeEmail, location: appointmentdata.aplocation }).forEach(elmth => {
@@ -318,7 +394,7 @@ Then("User update Appointment Successfully", () => {
         assert.equal($(CalendarObject.employeePhoneInput).getValue(), appointmentdata.employeephone);
         assert.equal($(AppointmentObject.masterRoleSelector).getText(), appointmentdata.employeerole);
         assert.equal($(CalendarObject.employeeNoteInput).getValue(), 'NewUpdate');
-        
+
         $(CalendarObject.appointmentRemoveBtn).scrollIntoView();
         $(CalendarObject.appointmentRemoveBtn).click();
         browser.pause(timeout);
@@ -385,7 +461,16 @@ Then("User create new Onsite Appointment Successfully", () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
@@ -940,7 +1025,16 @@ Then('User can not select room removed', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
@@ -958,7 +1052,16 @@ Then('User can not select room removed', () => {
         browser.pause(timeout);
     })
 
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
@@ -1061,7 +1164,16 @@ Then('User can view Question form of Employee', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
@@ -1102,7 +1214,16 @@ Then('User can view Assessment form of Employee', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {
@@ -1149,7 +1270,16 @@ Then('User can remove Employee in Onsite Appointment Successfully', () => {
     $(MenuObject.calendar).scrollIntoView()
     $(MenuObject.calendar).click()
     $(CalendarObject.calendarMonthBtn).click();
-    $(CalendarObject.selectCalendar(appointmentdata.calendarday, appointmentdata.calendardate)).click();
+    browser.pause(timeout);
+    var isExist = $(CalendarObject.selectCalendar(appointmentdata.calendardate)).isExisting();
+
+    if (isExist) {
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    } else {
+        $(CalendarObject.calendarNextBtn).click()
+        browser.pause(timeout);
+        $(CalendarObject.selectCalendar(appointmentdata.calendardate)).click();
+    }
     browser.pause(timeout);
     // Find all appoinments which contain sample medical type. After that, removing it 
     OnsiteAppointmentObject.findApMonth({ employer: appointmentdata.apemployer, location: appointmentdata.onsitelocation }).forEach(elmth => {

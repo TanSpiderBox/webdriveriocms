@@ -11,8 +11,8 @@ const CalendarObject = {
   calendarMonthBtn: '//button[contains(text(),"MONTH")]',
   calendarWeekBtn: '//button[contains(text(),"WEEK")]',
   calendarDayBtn: '//button[contains(text(),"DAY")]',
-  selectCalendar: (calendarday, calendardate) => {
-    return "//*[contains(@aria-label," + "'" + calendardate + "'" + ")]//*[contains(text()," + "'" + calendarday + "'" + ")]"
+  selectCalendar: (calendardate) => {
+    return "//*[contains(@aria-label," + "'" + calendardate + "'" + ")]/following-sibling::div[contains(@class,'cal-events')]"
   },
 
   //Employee

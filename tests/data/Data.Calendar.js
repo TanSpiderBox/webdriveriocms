@@ -12,8 +12,7 @@ const appointmentdata = {
     apendtime: moment().add(1, 'hours').format('HH:00'),
     fulltime: `${moment().format('HH:00')} ─ ${moment().add(1, 'hours').format('HH:00')}`,
     timeslot: `${moment().format('HH:00')} - ${moment().format('HH:05')}`,
-    calendardate: `${moment().add(2, 'day').format('dddd')}`,
-    calendarday: `${moment().add(2, 'day').format('D')}`,
+    calendardate: `${moment().add(2, 'day').format('dddd MMMM D')}`,
 
     employeeEmail: 'tan+3@spiderbox.design',
     employeefirstname: 'Tan',
@@ -30,8 +29,9 @@ const appointmentdata = {
     employeeposition: 'Position',
     employeedepartment: 'Department',
 
-    newemployeeemail: "tan+" + Date.now() + "@spiderbox.design",
-    employeemanageremail: 'tan+3@spiderbox.design',
+    // newemployeeemail: "6pku9." + Date.now() + "@inbox.testmail.app",
+    newemployeeemail: "6pku9.tan00016@inbox.testmail.app",
+    employeemanageremail: 'tan+4@spiderbox.design',
     emailmedicalstaff: 'tan+6@spiderbox.design',
     staffname: 'Amitie HAW',
 

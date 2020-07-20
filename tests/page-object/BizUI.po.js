@@ -55,9 +55,9 @@ const BizUIObject = {
     bizuiPopUp: '//simple-snack-bar[contains(@class,"mat-simple")]',
     bizuiForm: '//*[contains(@class,"biz-form")]',
     bizuiAlert: '//*[contains(@class,"alert alert-danger")]',
-    bizuiDate: '//*[@class="appt-detail shadow-lg"]//div[@class="date"]',
-    bizuiTime: '//*[@class="appt-detail shadow-lg"]//div[@class="time"]',
-    bizuiMedical: '//*[@class="appt-detail shadow-lg"]//div[@class="text-center"]'
+    bizuiDate: '//*[contains(@class,"appt-detail")]//div[@class="date"]',
+    bizuiTime: '//*[contains(@class,"appt-detail")]//div[@class="time"]',
+    bizuiMedical: '//*[contains(@class,"appt-detail")]//div[@class="text-center"]'
 }
 
 export { BizUIObject }

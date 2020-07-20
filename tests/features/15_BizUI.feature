@@ -35,14 +35,11 @@ Feature: BizUI
     # @BU005
     # Scenario: Verify User can view all Appointment incompleted
 
-
     # @BU006
     # Scenario: Verify User can create Appointment in Return User
 
-
     # @BU007
     # Scenario: Verify User can add Appointment to calendar
-
 
     @BU008
     Scenario: Verify User can reschedule

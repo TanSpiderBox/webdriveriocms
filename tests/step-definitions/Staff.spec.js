@@ -118,10 +118,13 @@ Then("User can login Staff Successfully", () => {
 })
 When("User complete question and assessment", () => {
   browser.url(StaffData.stafdateurl);
-  $(StaffObject.selectCalendar(appointmentdata.calendarday)).click();
   $(StaffObject.selectAppointment(appointmentdata.fulltime)).click();
   $(StaffObject.selectEmployee(appointmentdata.employeefirstname)).click();
   $(StaffObject.startsessionBtn).click();
+  browser.pause(1000)
+  $(StaffObject.selectForm(StaffData.staffquestionaire)).click();
+  browser.pause(1000)
+  $(StaffObject.acceptBtn).click();
   browser.pause(1000)
   $(StaffObject.selectForm(StaffData.staffasseessment)).click();
   browser.pause(1000)

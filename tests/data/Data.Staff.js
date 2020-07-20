@@ -1,7 +1,8 @@
 import moment from "moment";
 const StaffData = {
-  stafurl: '/medical-staff/auth/login',
+  stafurl: '/medical-staff/appointments',
   stafdateurl: '/medical-staff/appointments?date='+`${moment().add(2, 'day').format('MM-DD-YYYY')}`,
+  staffquestionaire: 'Quenstionaire',
   staffasseessment: 'Assessment',
   sampleStaff: {
     firstName: 'Sample',
