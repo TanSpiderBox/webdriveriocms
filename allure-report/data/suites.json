@@ -5,7 +5,7 @@
     "name" : "Calendar",
     "children" : [ {
       "name" : "Verify user can update Appointment",
-      "uid" : "9fe682062313f565",
+      "uid" : "c480b250de940d8b",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -18,7 +18,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify user can update Existing Appointment",
-      "uid" : "3078a6889a140e71",
+      "uid" : "1530a924d899df0e",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -31,7 +31,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify user can create Onsite Appointment",
-      "uid" : "968f931b02ae358",
+      "uid" : "cbe2ea6f34e53c0b",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -44,7 +44,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment with existing Employee",
-      "uid" : "9424e82ab60d1d86",
+      "uid" : "4b30b9b6ee438285",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -57,7 +57,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment with new Employee",
-      "uid" : "c59f8ef120956c0e",
+      "uid" : "b8844427926c06f2",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -70,7 +70,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment and do not enable time slot",
-      "uid" : "7e7040044b3657ab",
+      "uid" : "d2e84c826b3d3ca8",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -83,7 +83,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment and enable time slot",
-      "uid" : "6eb9d30e3b4a02a6",
+      "uid" : "3047a4ef1a97e15e",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -96,7 +96,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment and do not public time slot",
-      "uid" : "2eecc5ddfdb38f5d",
+      "uid" : "f8eb5ae0a4ab0c67",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -109,7 +109,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment and edit duration time slot",
-      "uid" : "cd1261a6384d83bc",
+      "uid" : "4aa51244c58bc7d2",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -122,7 +122,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment and add room",
-      "uid" : "79e896acd276c23d",
+      "uid" : "6a6351ce2f730c14",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -135,7 +135,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Onsite Appointment and remove room",
-      "uid" : "afb54959feb87a8b",
+      "uid" : "95ed8c124aa05c94",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -148,7 +148,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can view Question form in Onsite Appointment",
-      "uid" : "888759152a5607c7",
+      "uid" : "d33f693a40940db3",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -161,7 +161,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can view Assessment form in Onsite Appointment",
-      "uid" : "53e16d98a276ed4b",
+      "uid" : "4ac6edfaec3158d8",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -174,7 +174,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can remove Employee in Onsite Appointment",
-      "uid" : "79695bab787cc590",
+      "uid" : "e69cf09c3256d939",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
@@ -187,26 +187,26 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify user can create Appointment with existing Employee",
-      "uid" : "beaf2afed977e26d",
+      "uid" : "a0f7830d069250e6",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
       "status" : "passed",
       "time" : {
-        "start" : 1594959131778,
-        "stop" : 1594959147363,
-        "duration" : 15585
+        "start" : 1595991550536,
+        "stop" : 1595991565135,
+        "duration" : 14599
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify user can create Appointment which new Employee",
-      "uid" : "7b444620b5505028",
+      "uid" : "f693d443af300655",
       "parentUid" : "ac6f2152e63f3392cc0bab44858be2ab",
-      "status" : "passed",
+      "status" : "broken",
       "time" : {
-        "start" : 1594959147367,
-        "stop" : 1594959227310,
-        "duration" : 79943
+        "start" : 1595991565136,
+        "stop" : 1595991663785,
+        "duration" : 98649
       },
       "flaky" : false,
       "newFailed" : false,
@@ -217,7 +217,7 @@
     "name" : "BizUI",
     "children" : [ {
       "name" : "Verify User can not view Appointment don't public time slot",
-      "uid" : "6d71fb2fb61e5336",
+      "uid" : "74338c78de1c735d",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
@@ -230,7 +230,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can view all Appointment incompleted",
-      "uid" : "1481e87758aaa23",
+      "uid" : "61929cf8954aee37",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
@@ -243,7 +243,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Appointment in Return User",
-      "uid" : "11814e67a409a1c7",
+      "uid" : "d24cce51458769c2",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
@@ -256,7 +256,7 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can add Appointment to calendar",
-      "uid" : "f24c31f37a4ffbd1",
+      "uid" : "9bcaac318a6d1874",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
@@ -269,104 +269,104 @@
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not acess guest BizUI",
-      "uid" : "b9699f943a24a044",
+      "uid" : "5a465b766ef3f7db",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090817071,
-        "stop" : 1594090828961,
-        "duration" : 11890
+        "start" : 1595922271315,
+        "stop" : 1595922287854,
+        "duration" : 16539
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can acess guest BizUI",
-      "uid" : "e2b178a148b7957c",
+      "uid" : "5b5d0e25f6df6ac1",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090828962,
-        "stop" : 1594090842488,
-        "duration" : 13526
+        "start" : 1595922287854,
+        "stop" : 1595922303253,
+        "duration" : 15399
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Appointment in guest Biz UI",
-      "uid" : "b133c7617d756da5",
+      "uid" : "7812e2a0b2cc7555",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090842489,
-        "stop" : 1594090900999,
-        "duration" : 58510
+        "start" : 1595922303256,
+        "stop" : 1595922355065,
+        "duration" : 51809
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can login Biz UI",
-      "uid" : "eb4dd58b10495956",
+      "uid" : "e46fff031faea9a6",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090901000,
-        "stop" : 1594090912078,
-        "duration" : 11078
+        "start" : 1595922355066,
+        "stop" : 1595922372822,
+        "duration" : 17756
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can reschedule",
-      "uid" : "319f25304cc23085",
+      "uid" : "38079e1b8f5b5656",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090912079,
-        "stop" : 1594090919703,
-        "duration" : 7624
+        "start" : 1595922372824,
+        "stop" : 1595922380694,
+        "duration" : 7870
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can edit questionare",
-      "uid" : "d52853420caf8442",
+      "uid" : "4d2d3a8895561386",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090919703,
-        "stop" : 1594090923583,
-        "duration" : 3880
+        "start" : 1595922380695,
+        "stop" : 1595922384414,
+        "duration" : 3719
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can delete Appointment",
-      "uid" : "80204037fb01f519",
+      "uid" : "17d3159c63125cf0",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090923584,
-        "stop" : 1594090959399,
-        "duration" : 35815
+        "start" : 1595922384414,
+        "stop" : 1595922419729,
+        "duration" : 35315
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not view Appointment do not public time slot",
-      "uid" : "c1a0265761fe5e24",
+      "uid" : "64b2c0dafbc6da3f",
       "parentUid" : "f1f0bc2e97c02609302506e196166cab",
       "status" : "passed",
       "time" : {
-        "start" : 1594090959406,
-        "stop" : 1594091016031,
-        "duration" : 56625
+        "start" : 1595922419730,
+        "stop" : 1595922478093,
+        "duration" : 58363
       },
       "flaky" : false,
       "newFailed" : false,
@@ -374,189 +374,68 @@
     } ],
     "uid" : "f1f0bc2e97c02609302506e196166cab"
   }, {
-    "name" : "Staff",
-    "children" : [ {
-      "name" : "Verify User can create new Staff Successfully",
-      "uid" : "d0ec250efd59c4b4",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095026222,
-        "stop" : 1594095037089,
-        "duration" : 10867
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can create new Staff in Appointment Successfully",
-      "uid" : "87d46e2b65461572",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095037089,
-        "stop" : 1594095037091,
-        "duration" : 2
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can create new Staff in Onsite Appointment Successfully",
-      "uid" : "eca13616bac0e320",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095037091,
-        "stop" : 1594095037093,
-        "duration" : 2
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify Staff can login system with password recived in email",
-      "uid" : "661d365e6a270356",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095037093,
-        "stop" : 1594095037095,
-        "duration" : 2
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can not remove staff which was be assiged to Appointment",
-      "uid" : "a31681e24ff3876d",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095037095,
-        "stop" : 1594095037095,
-        "duration" : 0
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can not remove staff which was be assiged to Onsite appointment",
-      "uid" : "1b8cda1d47e6c2fd",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095037096,
-        "stop" : 1594095044594,
-        "duration" : 7498
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can remove staff Successfully if it wasn't be assigned to anything",
-      "uid" : "e62e676147df643e",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095044595,
-        "stop" : 1594095061619,
-        "duration" : 17024
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify Staff can complete Onsite Appointment assigned",
-      "uid" : "b3b496b104d2eaca",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "broken",
-      "time" : {
-        "start" : 1594095061621,
-        "stop" : 1594095194835,
-        "duration" : 133214
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify Staff can complete Appointment assigned",
-      "uid" : "81d3ab8823241de2",
-      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
-      "status" : "broken",
-      "time" : {
-        "start" : 1594095194843,
-        "stop" : 1594095196877,
-        "duration" : 2034
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    } ],
-    "uid" : "8b035d66f144a3d156cbd803eadae74e"
-  }, {
     "name" : "Location",
     "children" : [ {
       "name" : "Verify User create Onsite Location Successfully",
-      "uid" : "159b7a89e540d7f3",
+      "uid" : "bae1c18fc3c93868",
       "parentUid" : "078e3b92bea8e4b3acaf9e861a67c529",
       "status" : "passed",
       "time" : {
-        "start" : 1594095526967,
-        "stop" : 1594095549481,
-        "duration" : 22514
+        "start" : 1595917688257,
+        "stop" : 1595917711191,
+        "duration" : 22934
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not delete Onsite Location if it has a Appointment",
-      "uid" : "3473613f25c9dfb",
+      "uid" : "5c8bda037169aa2",
       "parentUid" : "078e3b92bea8e4b3acaf9e861a67c529",
       "status" : "passed",
       "time" : {
-        "start" : 1594095549481,
-        "stop" : 1594095569298,
-        "duration" : 19817
+        "start" : 1595917711194,
+        "stop" : 1595917731241,
+        "duration" : 20047
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can delete Onsite Location if it has not any Appointments",
-      "uid" : "6e16c57fc8f50534",
+      "uid" : "bd1c55ca93ab72c7",
       "parentUid" : "078e3b92bea8e4b3acaf9e861a67c529",
       "status" : "passed",
       "time" : {
-        "start" : 1594095569299,
-        "stop" : 1594095598608,
-        "duration" : 29309
+        "start" : 1595917731242,
+        "stop" : 1595917765635,
+        "duration" : 34393
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not un-assign a Location if if has a Appointment",
-      "uid" : "3722c5d327115246",
+      "uid" : "e1208933da9d4d53",
       "parentUid" : "078e3b92bea8e4b3acaf9e861a67c529",
       "status" : "passed",
       "time" : {
-        "start" : 1594095598610,
-        "stop" : 1594095634559,
-        "duration" : 35949
+        "start" : 1595917765638,
+        "stop" : 1595917801755,
+        "duration" : 36117
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can un-assign sample Location from Employer",
-      "uid" : "98d1cb0063eda32c",
+      "uid" : "3ffc33a584d2df65",
       "parentUid" : "078e3b92bea8e4b3acaf9e861a67c529",
       "status" : "passed",
       "time" : {
-        "start" : 1594095634568,
-        "stop" : 1594095706291,
-        "duration" : 71723
+        "start" : 1595917801757,
+        "stop" : 1595917872556,
+        "duration" : 70799
       },
       "flaky" : false,
       "newFailed" : false,
@@ -567,52 +446,52 @@
     "name" : "Medical Type",
     "children" : [ {
       "name" : "Verify Can not remove Medical Type when it was be assigned to Employer",
-      "uid" : "79b0736d73b2a63d",
+      "uid" : "d977aecd1a37f0f3",
       "parentUid" : "3b791ce9f3cfa7f1c851b2f6004ff92c",
       "status" : "passed",
       "time" : {
-        "start" : 1594095712570,
-        "stop" : 1594095737206,
-        "duration" : 24636
+        "start" : 1595917888723,
+        "stop" : 1595917911369,
+        "duration" : 22646
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify Can remove Medical Type if it was be un-assigned from Employer",
-      "uid" : "e94a6bbaebce65a7",
+      "uid" : "aee3033e56cf1fb",
       "parentUid" : "3b791ce9f3cfa7f1c851b2f6004ff92c",
       "status" : "passed",
       "time" : {
-        "start" : 1594095737207,
-        "stop" : 1594095750978,
-        "duration" : 13771
+        "start" : 1595917911370,
+        "stop" : 1595917925273,
+        "duration" : 13903
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify Can not unassign Medical Type if Appointment is existed",
-      "uid" : "310a31fe08a06fcb",
+      "uid" : "c396aec80c2b5db8",
       "parentUid" : "3b791ce9f3cfa7f1c851b2f6004ff92c",
       "status" : "passed",
       "time" : {
-        "start" : 1594095750980,
-        "stop" : 1594095781912,
-        "duration" : 30932
+        "start" : 1595917925274,
+        "stop" : 1595917955241,
+        "duration" : 29967
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify Can un-assign Medical Type if Appointment is not existed",
-      "uid" : "925167cda28d87a7",
+      "uid" : "c8287cbbdd85c5e3",
       "parentUid" : "3b791ce9f3cfa7f1c851b2f6004ff92c",
       "status" : "passed",
       "time" : {
-        "start" : 1594095781915,
-        "stop" : 1594095859949,
-        "duration" : 78034
+        "start" : 1595917955243,
+        "stop" : 1595918042927,
+        "duration" : 87684
       },
       "flaky" : false,
       "newFailed" : false,
@@ -623,156 +502,156 @@
     "name" : "Master Role",
     "children" : [ {
       "name" : "Verify Visit Master Role index screen Successfully",
-      "uid" : "afd29815c9e6501f",
+      "uid" : "359650527543103",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095865067,
-        "stop" : 1594095872716,
-        "duration" : 7649
+        "start" : 1595918053721,
+        "stop" : 1595918060279,
+        "duration" : 6558
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not creating a new Master Role with a blank field",
-      "uid" : "f59b6fb9f0ea7d3f",
+      "uid" : "e487dcb4987ee3d2",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095872717,
-        "stop" : 1594095880321,
-        "duration" : 7604
+        "start" : 1595918060280,
+        "stop" : 1595918067901,
+        "duration" : 7621
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create Master Role Successfully",
-      "uid" : "efb50648ff425942",
+      "uid" : "bdccd4e9490b8529",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095880322,
-        "stop" : 1594095888128,
-        "duration" : 7806
+        "start" : 1595918067902,
+        "stop" : 1595918075396,
+        "duration" : 7494
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can search Master Role",
-      "uid" : "b2b24bfef4147acd",
+      "uid" : "c082822541c10da7",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095888128,
-        "stop" : 1594095890769,
-        "duration" : 2641
+        "start" : 1595918075397,
+        "stop" : 1595918077943,
+        "duration" : 2546
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can update a Master Role Successfully",
-      "uid" : "a4546ca9bbd287fe",
+      "uid" : "83d68494aa134372",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095890771,
-        "stop" : 1594095896836,
-        "duration" : 6065
+        "start" : 1595918077945,
+        "stop" : 1595918083857,
+        "duration" : 5912
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can remove a Master Role not assigned",
-      "uid" : "4c6c72c2adf936e8",
+      "uid" : "edda533318b297a0",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095896837,
-        "stop" : 1594095900036,
-        "duration" : 3199
+        "start" : 1595918083859,
+        "stop" : 1595918087074,
+        "duration" : 3215
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can assign Master Role to Employer",
-      "uid" : "27a1eedfa2f121f7",
+      "uid" : "541a642098a953f6",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095900037,
-        "stop" : 1594095909033,
-        "duration" : 8996
+        "start" : 1595918087075,
+        "stop" : 1595918095849,
+        "duration" : 8774
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not unassign Master Role assigned to Employer",
-      "uid" : "b8877e77d2488d93",
+      "uid" : "3ac0f164391a1096",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095909033,
-        "stop" : 1594095919045,
-        "duration" : 10012
+        "start" : 1595918095850,
+        "stop" : 1595918105660,
+        "duration" : 9810
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can unassign Master Role assigned to Employer",
-      "uid" : "78aa8fc10463c8bd",
+      "uid" : "b57cd990e8968659",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095919045,
-        "stop" : 1594095929678,
-        "duration" : 10633
+        "start" : 1595918105660,
+        "stop" : 1595918116273,
+        "duration" : 10613
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can assign Master Role to Employee",
-      "uid" : "70fdc75d6cdd5eb5",
+      "uid" : "c3df7df7540269e8",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095929679,
-        "stop" : 1594095943802,
-        "duration" : 14123
+        "start" : 1595918116274,
+        "stop" : 1595918129162,
+        "duration" : 12888
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not unassign Master Role assigned to Employee",
-      "uid" : "e90c95d49e2f14de",
+      "uid" : "3533e2a78312838e",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095943803,
-        "stop" : 1594095958946,
-        "duration" : 15143
+        "start" : 1595918129163,
+        "stop" : 1595918143999,
+        "duration" : 14836
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can unassign Master Role assigned to Employee",
-      "uid" : "5cd79f2c3da96fd9",
+      "uid" : "f87868c358ef9f6b",
       "parentUid" : "89ed139b2a59efbc7be22270fdc1fbc2",
       "status" : "passed",
       "time" : {
-        "start" : 1594095958947,
-        "stop" : 1594095973303,
-        "duration" : 14356
+        "start" : 1595918144000,
+        "stop" : 1595918158021,
+        "duration" : 14021
       },
       "flaky" : false,
       "newFailed" : false,
@@ -780,323 +659,120 @@
     } ],
     "uid" : "89ed139b2a59efbc7be22270fdc1fbc2"
   }, {
-    "name" : "Supervisor",
-    "children" : [ {
-      "name" : "Verify User can create a Supervisor Successfully",
-      "uid" : "7e8b6a4bca79437f",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095978568,
-        "stop" : 1594095990618,
-        "duration" : 12050
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can create Supervisor in Appointment Successfully",
-      "uid" : "efea6f718a214ac3",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095990619,
-        "stop" : 1594095990620,
-        "duration" : 1
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can create Supervisor in Onsite Appointment Successfully",
-      "uid" : "d0537aab0cc7246c",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095990620,
-        "stop" : 1594095990621,
-        "duration" : 1
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can not delete Supervisor which was be assiged to Employer",
-      "uid" : "73dcad65e6e2d162",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594095990622,
-        "stop" : 1594096004588,
-        "duration" : 13966
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can not unassign Supervisor which was be assigned to Employee",
-      "uid" : "799909b95db8db5e",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594096004588,
-        "stop" : 1594096030798,
-        "duration" : 26210
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can unassign Supervisor which isn't be assigned to Employee",
-      "uid" : "1226d90326388e21",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594096030799,
-        "stop" : 1594096045467,
-        "duration" : 14668
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify Supervisor Auto assign Supervisor to Employee if appointment is created",
-      "uid" : "797a78fe3403a71b",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594096045468,
-        "stop" : 1594096090225,
-        "duration" : 44757
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify User can delete Supervisor which haven't be assigned to anything",
-      "uid" : "28828736f6d148c0",
-      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594096090226,
-        "stop" : 1594096134701,
-        "duration" : 44475
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    } ],
-    "uid" : "4cda5371764b9192c2fa8c0673ca6e89"
-  }, {
-    "name" : "Login",
-    "children" : [ {
-      "name" : "Verify user can not login when blank UserName and Password",
-      "uid" : "ec2c7d3a63df88b2",
-      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594958133568,
-        "stop" : 1594958145395,
-        "duration" : 11827
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify user can not login when blank UserName",
-      "uid" : "2c0edb6988a40dc4",
-      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594958145396,
-        "stop" : 1594958155858,
-        "duration" : 10462
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify user can not login when blank Password",
-      "uid" : "20297d815ea5bcb6",
-      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594958155860,
-        "stop" : 1594958165134,
-        "duration" : 9274
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify user can not login when incorect UserName and Password",
-      "uid" : "972b6f838e136a30",
-      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594958165135,
-        "stop" : 1594958170523,
-        "duration" : 5388
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify user can not login when input incorrect UserName",
-      "uid" : "50d980538d731999",
-      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594958170524,
-        "stop" : 1594958175853,
-        "duration" : 5329
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verify user can not login when input incorrect Password",
-      "uid" : "3c2ead354c8f6daa",
-      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594958175855,
-        "stop" : 1594958181517,
-        "duration" : 5662
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    }, {
-      "name" : "Verfiy user can login System with correct UserName and Password",
-      "uid" : "cb713d5ac3f3c83d",
-      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-      "status" : "passed",
-      "time" : {
-        "start" : 1594958181518,
-        "stop" : 1594958189875,
-        "duration" : 8357
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ "chrome" ]
-    } ],
-    "uid" : "1a85855463aca3ea10b8fe0fcb3372b8"
-  }, {
     "name" : "Employers",
     "children" : [ {
       "name" : "Verify User can create new Employer",
-      "uid" : "32fd1023f727069a",
+      "uid" : "d3b94d69a2634831",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959240985,
-        "stop" : 1594959259331,
-        "duration" : 18346
+        "start" : 1595921375461,
+        "stop" : 1595921400349,
+        "duration" : 24888
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can select Location in new Employer",
-      "uid" : "17de5628508a546f",
+      "uid" : "8975a4817362404f",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959259332,
-        "stop" : 1594959261529,
-        "duration" : 2197
+        "start" : 1595921400350,
+        "stop" : 1595921402513,
+        "duration" : 2163
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can not create new Onsite Location with blank field",
-      "uid" : "616b73332b88c518",
+      "uid" : "3bdfc95e22ac0dec",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959261530,
-        "stop" : 1594959269642,
-        "duration" : 8112
+        "start" : 1595921402514,
+        "stop" : 1595921410671,
+        "duration" : 8157
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can add New on site Location for Employer",
-      "uid" : "ef88cc2e57186249",
+      "uid" : "631bcb084a0e4e14",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959269644,
-        "stop" : 1594959270829,
-        "duration" : 1185
+        "start" : 1595921410671,
+        "stop" : 1595921411818,
+        "duration" : 1147
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can select Medical Type to Employer",
-      "uid" : "4e7614a005cd2983",
+      "uid" : "1e16770ba1836e2a",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959270829,
-        "stop" : 1594959273250,
-        "duration" : 2421
+        "start" : 1595921411819,
+        "stop" : 1595921414169,
+        "duration" : 2350
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can select Role to Employer",
-      "uid" : "aca92d5ffc66967b",
+      "uid" : "e5d7fc05ea5e6e74",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959273251,
-        "stop" : 1594959275433,
-        "duration" : 2182
+        "start" : 1595921414169,
+        "stop" : 1595921416304,
+        "duration" : 2135
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can add New Employee in Employer",
-      "uid" : "3cfb3a4a6ae03c9a",
+      "uid" : "368609b80a8499ed",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959275435,
-        "stop" : 1594959285235,
-        "duration" : 9800
+        "start" : 1595921416305,
+        "stop" : 1595921426978,
+        "duration" : 10673
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create new Appointment with new Employer",
-      "uid" : "2431a824ec381d57",
+      "uid" : "7b3ac2a35bc30aa6",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
       "status" : "passed",
       "time" : {
-        "start" : 1594959285237,
-        "stop" : 1594959309731,
-        "duration" : 24494
+        "start" : 1595921426981,
+        "stop" : 1595921451753,
+        "duration" : 24772
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create new Onsite Appointment with new Onsite location",
-      "uid" : "bb76ce563fdb94be",
+      "uid" : "3e2d8231b5e98bc9",
       "parentUid" : "b142e4e0f27cd46549676ff5c8acfa40",
-      "status" : "passed",
+      "status" : "failed",
       "time" : {
-        "start" : 1594959309732,
-        "stop" : 1594959343640,
-        "duration" : 33908
+        "start" : 1595921451754,
+        "stop" : 1595921477554,
+        "duration" : 25800
       },
       "flaky" : false,
       "newFailed" : false,
@@ -1107,44 +783,368 @@
     "name" : "Employees",
     "children" : [ {
       "name" : "Verify User can create New Employee in Appointment",
-      "uid" : "921195d8ccf7e40c",
+      "uid" : "124fc29ee2305e07",
       "parentUid" : "338ab1b99c76f6251f744b9ca9f7299a",
       "status" : "passed",
       "time" : {
-        "start" : 1594959359308,
-        "stop" : 1594959418580,
-        "duration" : 59272
+        "start" : 1595921669440,
+        "stop" : 1595921727536,
+        "duration" : 58096
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create New Employee in On site Appointment",
-      "uid" : "2ee9b4e254981607",
+      "uid" : "7efb7e961d29403d",
       "parentUid" : "338ab1b99c76f6251f744b9ca9f7299a",
       "status" : "passed",
       "time" : {
-        "start" : 1594959418581,
-        "stop" : 1594959470571,
-        "duration" : 51990
+        "start" : 1595921727537,
+        "stop" : 1595921778775,
+        "duration" : 51238
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     }, {
       "name" : "Verify User can create New Employee in Biz UI",
-      "uid" : "9772fa4f5d995edf",
+      "uid" : "bcb16d66fb0284a8",
       "parentUid" : "338ab1b99c76f6251f744b9ca9f7299a",
-      "status" : "broken",
+      "status" : "passed",
       "time" : {
-        "start" : 1594959470573,
-        "stop" : 1594959517374,
-        "duration" : 46801
+        "start" : 1595921778776,
+        "stop" : 1595921859877,
+        "duration" : 81101
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ "chrome" ]
     } ],
     "uid" : "338ab1b99c76f6251f744b9ca9f7299a"
+  }, {
+    "name" : "Supervisor",
+    "children" : [ {
+      "name" : "Verify User can create a Supervisor Successfully",
+      "uid" : "5ff04849ad1c361f",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921878714,
+        "stop" : 1595921891470,
+        "duration" : 12756
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can create Supervisor in Appointment Successfully",
+      "uid" : "3b6d4c143f76b77a",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921891471,
+        "stop" : 1595921891472,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can create Supervisor in Onsite Appointment Successfully",
+      "uid" : "fce7e63633ab292f",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921891472,
+        "stop" : 1595921891473,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can not delete Supervisor which was be assiged to Employer",
+      "uid" : "b5bfc72a1c5fdd8f",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921891473,
+        "stop" : 1595921905352,
+        "duration" : 13879
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can not unassign Supervisor which was be assigned to Employee",
+      "uid" : "483dcaec77ec5089",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921905352,
+        "stop" : 1595921931215,
+        "duration" : 25863
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can unassign Supervisor which isn't be assigned to Employee",
+      "uid" : "4f3dac854af45423",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921931216,
+        "stop" : 1595921945644,
+        "duration" : 14428
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify Supervisor Auto assign Supervisor to Employee if appointment is created",
+      "uid" : "3449451b0218f6cd",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921945648,
+        "stop" : 1595921990589,
+        "duration" : 44941
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can delete Supervisor which haven't be assigned to anything",
+      "uid" : "a2bb7fbd89853ad7",
+      "parentUid" : "4cda5371764b9192c2fa8c0673ca6e89",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595921990590,
+        "stop" : 1595922035036,
+        "duration" : 44446
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "4cda5371764b9192c2fa8c0673ca6e89"
+  }, {
+    "name" : "Staff",
+    "children" : [ {
+      "name" : "Verify User can create new Staff Successfully",
+      "uid" : "7e60dcf03859a7ab",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922048858,
+        "stop" : 1595922066834,
+        "duration" : 17976
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can create new Staff in Appointment Successfully",
+      "uid" : "2824af413d4764d3",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922066834,
+        "stop" : 1595922066835,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can create new Staff in Onsite Appointment Successfully",
+      "uid" : "22f9e4b383d2ab9d",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922066835,
+        "stop" : 1595922066836,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify Staff can login system with password recived in email",
+      "uid" : "28989114c835e34",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922066836,
+        "stop" : 1595922066837,
+        "duration" : 1
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can not remove staff which was be assiged to Appointment",
+      "uid" : "2a986196cd14ca21",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922066837,
+        "stop" : 1595922066837,
+        "duration" : 0
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can not remove staff which was be assiged to Onsite appointment",
+      "uid" : "398b97a44ac5d300",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922066838,
+        "stop" : 1595922074336,
+        "duration" : 7498
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify User can remove staff Successfully if it wasn't be assigned to anything",
+      "uid" : "5e98f7f7c5408477",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922074337,
+        "stop" : 1595922091361,
+        "duration" : 17024
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify Staff can complete Onsite Appointment assigned",
+      "uid" : "a563b0d7692e71e9",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922091365,
+        "stop" : 1595922197080,
+        "duration" : 105715
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify Staff can complete Appointment assigned",
+      "uid" : "2e5a6ecf43d2b571",
+      "parentUid" : "8b035d66f144a3d156cbd803eadae74e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595922197081,
+        "stop" : 1595922236562,
+        "duration" : 39481
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "8b035d66f144a3d156cbd803eadae74e"
+  }, {
+    "name" : "Login",
+    "children" : [ {
+      "name" : "Verify user can not login when blank UserName and Password",
+      "uid" : "eb102135fc5ed438",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "broken",
+      "time" : {
+        "start" : 1595990689304,
+        "stop" : 1595990749320,
+        "duration" : 60016
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify user can not login when blank UserName",
+      "uid" : "6c764f4dddfb2a7e",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595990749323,
+        "stop" : 1595990762800,
+        "duration" : 13477
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify user can not login when blank Password",
+      "uid" : "8e4e9bb3028616c8",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595990762800,
+        "stop" : 1595990768090,
+        "duration" : 5290
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify user can not login when incorect UserName and Password",
+      "uid" : "85f1c4e4350499c7",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595990768091,
+        "stop" : 1595990774223,
+        "duration" : 6132
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify user can not login when input incorrect UserName",
+      "uid" : "d25086f4a45c4435",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595990774224,
+        "stop" : 1595990780723,
+        "duration" : 6499
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verify user can not login when input incorrect Password",
+      "uid" : "58998a926273a75f",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595990780725,
+        "stop" : 1595990786490,
+        "duration" : 5765
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    }, {
+      "name" : "Verfiy user can login System with correct UserName and Password",
+      "uid" : "b940e3546b5d38a5",
+      "parentUid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1595990786490,
+        "stop" : 1595990795159,
+        "duration" : 8669
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "chrome" ]
+    } ],
+    "uid" : "1a85855463aca3ea10b8fe0fcb3372b8"
   } ]
 }

@@ -2,58 +2,58 @@
   "uid" : "4b4757e66a1912dae1a509f688f20b0f",
   "name" : "categories",
   "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "expected 'Cannot delete employer with existing appointments' to equal 'Cannot delete employer with existing employees'",
+      "children" : [ {
+        "name" : "Verify User can create new Onsite Appointment with new Onsite location",
+        "uid" : "3e2d8231b5e98bc9",
+        "parentUid" : "29b07cc8ccc83ebd41143ba12b9b5ded",
+        "status" : "failed",
+        "time" : {
+          "start" : 1595921451754,
+          "stop" : 1595921477554,
+          "duration" : 25800
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      } ],
+      "uid" : "29b07cc8ccc83ebd41143ba12b9b5ded"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  }, {
     "name" : "Test defects",
     "children" : [ {
       "name" : "function timed out, ensure the promise resolves within 60000 milliseconds",
       "children" : [ {
-        "name" : "Verify Staff can complete Onsite Appointment assigned",
-        "uid" : "b3b496b104d2eaca",
+        "name" : "Verify user can not login when blank UserName and Password",
+        "uid" : "eb102135fc5ed438",
         "parentUid" : "ed82e5a4118d2a39c32396704c5b2c27",
         "status" : "broken",
         "time" : {
-          "start" : 1594095061621,
-          "stop" : 1594095194835,
-          "duration" : 133214
+          "start" : 1595990689304,
+          "stop" : 1595990749320,
+          "duration" : 60016
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "chrome" ]
+      }, {
+        "name" : "Verify user can create Appointment which new Employee",
+        "uid" : "f693d443af300655",
+        "parentUid" : "ed82e5a4118d2a39c32396704c5b2c27",
+        "status" : "broken",
+        "time" : {
+          "start" : 1595991565136,
+          "stop" : 1595991663785,
+          "duration" : 98649
         },
         "flaky" : false,
         "newFailed" : false,
         "parameters" : [ "chrome" ]
       } ],
       "uid" : "ed82e5a4118d2a39c32396704c5b2c27"
-    }, {
-      "name" : "invalid session id",
-      "children" : [ {
-        "name" : "Verify Staff can complete Appointment assigned",
-        "uid" : "81d3ab8823241de2",
-        "parentUid" : "c7ba5785b051c5327e48866a5e1e1a06",
-        "status" : "broken",
-        "time" : {
-          "start" : 1594095194843,
-          "stop" : 1594095196877,
-          "duration" : 2034
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "chrome" ]
-      } ],
-      "uid" : "c7ba5785b051c5327e48866a5e1e1a06"
-    }, {
-      "name" : "Can't call getText on element with selector \"//*[contains(@class,\"alert alert-danger\")]\" because element wasn't found",
-      "children" : [ {
-        "name" : "Verify User can create New Employee in Biz UI",
-        "uid" : "9772fa4f5d995edf",
-        "parentUid" : "f2144c04d74dd457b2464cda9414d2ec",
-        "status" : "broken",
-        "time" : {
-          "start" : 1594959470573,
-          "stop" : 1594959517374,
-          "duration" : 46801
-        },
-        "flaky" : false,
-        "newFailed" : false,
-        "parameters" : [ "chrome" ]
-      } ],
-      "uid" : "f2144c04d74dd457b2464cda9414d2ec"
     } ],
     "uid" : "bdbf199525818fae7a8651db9eafe741"
   } ]

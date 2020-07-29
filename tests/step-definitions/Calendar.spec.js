@@ -208,41 +208,10 @@ Then("User can login with new Password", () => {
     $(BizUIObject.bizuiReturnUserBtn).click()
     browser.pause(timeout)
 
-    const GraphQLClient = require('@testmail.app/graphql-request').GraphQLClient;
-    const testmailClient = new GraphQLClient(
-        // API endpoint:
-        'https://api.testmail.app/api/graphql',
-        // Use your API key:
-        { headers: { 'Authorization': 'Bearer 8af5eac9-f446-4734-9f99-0de884a0f949' } }
-    );
-    testmailClient.request(`{
-    inbox (
-      namespace:"6pku9"
-      tag: "tan009"
-      advanced_filters:[{
-        field:subject
-        match:exact
-        action:include
-        value:"Login Information"
-      }]
-      ) {
-        result
-        message
-        emails {
-          subject
-          html
-          text
-        }
-      }
-  }`).then((data) => {
-        var test = data.inbox.emails[0].html;
-        var email = test.match(/6pku9(.*?)app/g)
-        var password = test.match(/Cms@(.*?)!/g)
-        console.log(password)
-        $(BizUIObject.bizuiUsername).setValue(email)
-        $(BizUIObject.bizuiPassword).setValue(password)
-        browser.keys('Enter')
-    })
+    console.log(password)
+    $(BizUIObject.bizuiUsername).setValue(email)
+    $(BizUIObject.bizuiPassword).setValue(password)
+    browser.keys('Enter')
 
 })
 Then("User can view Employee added in Employer", () => {

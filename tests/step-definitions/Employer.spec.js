@@ -50,7 +50,7 @@ When('User input all valid information of Employer', () => {
   $(EmployerObject.employerPhone).setValue(EmployerData.employerphone);
   $(EmployerObject.employerEmail).setValue(EmployerData.employeremail);
   $(EmployerObject.employerStrLn1).setValue(EmployerData.employerStrLn1);
-  $(EmployerObject.employerStrLn2).setValue(EmployerData.employerStrLn2);
+  // $(EmployerObject.employerStrLn2).setValue(EmployerData.employerStrLn2);
   $(EmployerObject.employerSuburb).setValue(EmployerData.employerSuburb);
   $(EmployerObject.employerState).click();
   $(EmployerObject.stateSelector(EmployerData.employerState)).click();
@@ -70,7 +70,7 @@ Then('User can create Employeer Scuccessful', () => {
   assert.equal($(EmployerObject.employerPhone).getValue(), EmployerData.employerphone);
   assert.equal($(EmployerObject.employerEmail).getValue(), EmployerData.employeremail);
   assert.equal($(EmployerObject.employerStrLn1).getValue(), EmployerData.employerStrLn1);
-  assert.equal($(EmployerObject.employerStrLn2).getValue(), EmployerData.employerStrLn2);
+  // assert.equal($(EmployerObject.employerStrLn2).getValue(), EmployerData.employerStrLn2);
   assert.equal($(EmployerObject.employerSuburb).getValue(), EmployerData.employerSuburb);
   assert.equal($(EmployerObject.employerState).getText(), EmployerData.employerState);
   assert.equal($(EmployerObject.employerPostCode).getValue(), EmployerData.employerPostCode);
@@ -174,7 +174,7 @@ When('User input all valid information of Employee', () => {
   $(EmployerObject.employeedTypeValue).setValue(EmployerData.employeePassport);
   $(EmployerObject.employeePhone).setValue(appointmentdata.employeephone);
   $(EmployerObject.employeeStrLn1).setValue(appointmentdata.employeestrline);
-  $(EmployerObject.employeeStrLn2).setValue(appointmentdata.employeestrline2);
+  // $(EmployerObject.employeeStrLn2).setValue(appointmentdata.employeestrline2);
   $(EmployerObject.employeeSurb).setValue(appointmentdata.employeesuburb);
   $(EmployerObject.employeeState).click();
   $(AppointmentObject.selectState(appointmentdata.employeestate)).click();
@@ -204,7 +204,7 @@ Then('User can creat new Employee Successfully', () => {
   assert.equal($(EmployerObject.employeedTypeValue).getValue(), EmployerData.employeePassport);
   assert.equal($(EmployerObject.verifyemployeePhone).getValue(), appointmentdata.employeephone);
   assert.equal($(EmployerObject.verifyemployeeStrLn1).getValue(), appointmentdata.employeestrline);
-  assert.equal($(EmployerObject.verifyemployeeStrLn2).getValue(), appointmentdata.employeestrline2);
+  // assert.equal($(EmployerObject.verifyemployeeStrLn2).getValue(), appointmentdata.employeestrline2);
   assert.equal($(EmployerObject.verifyemployeeSurb).getValue(), appointmentdata.employeesuburb);
   assert.equal($(EmployerObject.verifyemployeeState).getText(), appointmentdata.employeestate);
   assert.equal($(EmployerObject.verifyemployeePostCode).getValue(), appointmentdata.employeepostalcode);
