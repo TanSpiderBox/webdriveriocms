@@ -56,7 +56,7 @@ exports.config = {
         'goog:chromeOptions': {
             args: [
                 'start-maximized',
-                // '--headless',
+                '--headless',
                 '--window-size=1920,1080',
             ]
         },
@@ -156,7 +156,6 @@ exports.config = {
         tagExpression: 'not @ignore',  // <string> (expression) only execute the features or scenarios with tags matching the expression
         timeout: 60000,     // <number> timeout for step definitions
         ignoreUndefinedDefinitions: false, // <boolean> Enable this config to treat undefined definitions as warnings.
-        // tags: [''],
     },
 
     //

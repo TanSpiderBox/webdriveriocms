@@ -205,14 +205,32 @@ Then("User create new Appointment with new Employee Success and Employee added i
     })
 })
 Then("User can login with new Password", () => {
-    $(BizUIObject.bizuiReturnUserBtn).click()
-    browser.pause(timeout)
-
-    console.log(password)
-    $(BizUIObject.bizuiUsername).setValue(email)
-    $(BizUIObject.bizuiPassword).setValue(password)
-    browser.keys('Enter')
-
+    // $(BizUIObject.bizuiReturnUserBtn).click()
+    const GraphQLClient = require('@testmail.app/graphql-request').GraphQLClient;
+    const testmailClient = new GraphQLClient(
+      // API endpoint:
+      'https://api.testmail.app/api/graphql',
+      // Use your API key:
+      { headers: { 'Authorization': 'Bearer 8174c2e0-ff13-42b6-9b3a-b933fe1c921f' } }
+    );
+    testmailClient.request(`{
+      inbox (
+        namespace:"78zi8"
+        tag_prefix: "tan3"
+        advanced_filters: [
+          { field: subject, match: exact, action: include, value: "Login Informations – Tan NGUYEN - Rochell Maffetti" }
+        ]
+      ){
+        result
+        message
+        count
+        emails{
+          html
+        }
+      }
+    }`).then((data) => {
+      console.log(data.inbox.emails[0].html);
+    });
 })
 Then("User can view Employee added in Employer", () => {
     //Select Employer

@@ -4,45 +4,45 @@
     "uid" : "b142e4e0f27cd46549676ff5c8acfa40",
     "name" : "Employers",
     "statistic" : {
-      "failed" : 1,
-      "broken" : 0,
+      "failed" : 0,
+      "broken" : 9,
       "skipped" : 0,
-      "passed" : 8,
+      "passed" : 0,
       "unknown" : 0,
       "total" : 9
     }
   }, {
-    "uid" : "ac6f2152e63f3392cc0bab44858be2ab",
-    "name" : "Calendar",
+    "uid" : "338ab1b99c76f6251f744b9ca9f7299a",
+    "name" : "Employees",
     "statistic" : {
       "failed" : 0,
-      "broken" : 1,
+      "broken" : 3,
       "skipped" : 0,
-      "passed" : 15,
+      "passed" : 0,
       "unknown" : 0,
-      "total" : 16
-    }
-  }, {
-    "uid" : "1a85855463aca3ea10b8fe0fcb3372b8",
-    "name" : "Login",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 1,
-      "skipped" : 0,
-      "passed" : 6,
-      "unknown" : 0,
-      "total" : 7
+      "total" : 3
     }
   }, {
     "uid" : "f1f0bc2e97c02609302506e196166cab",
     "name" : "BizUI",
     "statistic" : {
       "failed" : 0,
-      "broken" : 0,
+      "broken" : 1,
       "skipped" : 0,
-      "passed" : 12,
+      "passed" : 11,
       "unknown" : 0,
       "total" : 12
+    }
+  }, {
+    "uid" : "ac6f2152e63f3392cc0bab44858be2ab",
+    "name" : "Calendar",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 16,
+      "unknown" : 0,
+      "total" : 16
     }
   }, {
     "uid" : "89ed139b2a59efbc7be22270fdc1fbc2",
@@ -78,6 +78,17 @@
       "total" : 8
     }
   }, {
+    "uid" : "1a85855463aca3ea10b8fe0fcb3372b8",
+    "name" : "Login",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 7,
+      "unknown" : 0,
+      "total" : 7
+    }
+  }, {
     "uid" : "078e3b92bea8e4b3acaf9e861a67c529",
     "name" : "Location",
     "statistic" : {
@@ -98,17 +109,6 @@
       "passed" : 4,
       "unknown" : 0,
       "total" : 4
-    }
-  }, {
-    "uid" : "338ab1b99c76f6251f744b9ca9f7299a",
-    "name" : "Employees",
-    "statistic" : {
-      "failed" : 0,
-      "broken" : 0,
-      "skipped" : 0,
-      "passed" : 3,
-      "unknown" : 0,
-      "total" : 3
     }
   } ]
 }

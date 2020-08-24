@@ -30,7 +30,7 @@ const appointmentdata = {
     employeedepartment: 'Department',
 
     // newemployeeemail: "6pku9." + Date.now() + "@inbox.testmail.app",
-    newemployeeemail: "6pku9.tan00016@inbox.testmail.app",
+    newemployeeemail: "78zi8.tan4@inbox.testmail.app",
     employeemanageremail: 'tan+4@spiderbox.design',
     emailmedicalstaff: 'tan+6@spiderbox.design',
     staffname: 'Amitie HAW',

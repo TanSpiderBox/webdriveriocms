@@ -7,37 +7,38 @@
     "test": "tests"
   },
   "dependencies": {
-    "@testmail.app/graphql-request": "^1.8.4",
     "babel": "^6.23.0",
     "chai": "^4.2.0",
     "chai-dom": "^1.8.2",
-    "chromedriver": "^84.0.0",
+    "chromedriver": "^84.0.1",
     "cucumber": "^6.0.5",
-    "faker": "^4.1.0",
+    "faker": "^5.0.0",
+    "graphql-request": "^3.0.0",
     "make-dir": "^3.1.0",
     "moment": "^2.27.0",
     "process-argv": "^1.0.0",
     "wdio": "^4.0.0",
-    "yarn": "^1.22.4"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.10.5",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/register": "^7.10.5",
-    "@wdio/allure-reporter": "^6.3.0",
-    "@wdio/cli": "^6.3.3",
-    "@wdio/cucumber-framework": "^6.3.0",
-    "@wdio/local-runner": "^6.3.3",
-    "@wdio/mocha-framework": "^6.3.0",
-    "@wdio/spec-reporter": "^6.3.0",
-    "@wdio/sync": "^6.3.3",
+    "yarn": "^1.22.4",
     "karma-allure-reporter": "^1.4.6",
     "wdio-chromedriver-service": "^6.0.3"
   },
+  "devDependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/register": "^7.10.5",
+    "@testmail.app/graphql-request": "^1.8.4",
+    "@wdio/allure-reporter": "^6.3.6",
+    "@wdio/cli": "^6.4.0",
+    "@wdio/cucumber-framework": "^6.4.0",
+    "@wdio/local-runner": "^6.4.0",
+    "@wdio/mocha-framework": "^6.4.0",
+    "@wdio/spec-reporter": "^6.4.0",
+    "@wdio/sync": "^6.4.0"
+  },
   "scripts": {
     "test": "wdio",
-    "report": "allure generate --clean"
+    "report": "allure generate --clean && allure open"
   },
   "repository": {
     "type": "git",
