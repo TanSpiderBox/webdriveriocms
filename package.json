@@ -15,7 +15,7 @@
     "faker": "^5.0.0",
     "graphql-request": "^3.0.0",
     "make-dir": "^3.1.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "process-argv": "^1.0.0",
     "wdio": "^4.0.0",
     "yarn": "^1.22.4",
